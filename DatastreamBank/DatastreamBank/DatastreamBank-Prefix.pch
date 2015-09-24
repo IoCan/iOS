@@ -1,0 +1,58 @@
+//
+// Prefix header for all source files of the 'WeiboSDKDemo' target in the 'WeiboSDKDemo' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
+
+
+#endif
+
+#import "WXHLGlobalUICommon.h"
+#import "UIViewExt.h"
+#import "UIView+ClickActions.h"
+
+//获取设备的物理高度
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//获取设备的物理宽度
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+
+//颜色
+#define Color(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+
+//font color keys
+#define kNavigationBarTitleLabel @"kNavigationBarTitleLabel"
+
+
+
+
+//只在debug下才输出日志, 在程序运行时取消log
+#ifdef DEBUG
+#define MyLog(...)  NSLog(__VA_ARGS__)
+#else
+#define MyLog(...)
+#endif
+
+//调用函数
+#define LogFun  MyLog(@"%s",__func__);
+
+//输出视图的frame边界
+#define LogFrame(view)  MyLog(@"%@",NSStringFromCGRect(view.frame) );
+
+//输出所有子视图
+#define LogSubviews(view)  MyLog(@"%@",view.subviews);
+
+#define iOS7   ([UIDevice currentDevice].systemVersion.floatValue>=7.0)

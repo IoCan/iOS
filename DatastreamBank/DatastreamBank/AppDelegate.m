@@ -74,6 +74,7 @@
     RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];
     [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController,
                                            thirdNavigationController]];
+
     self.viewController = tabBarController;
     
     [self customizeTabBarForController:tabBarController];
@@ -83,7 +84,47 @@
     UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_background"];
     UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
     NSArray *tabBarItemImages = @[@"first", @"second", @"third"];
+    NSDictionary *textAttributes = nil;
+    NSDictionary *textAttributes2 = nil;
+    UIColor *selabel = [UIColor colorWithRed:50/255.0
+                                       green:220/255.0
+                                        blue:181/255.0
+                                       alpha:1.0];
     
+    
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+
+        
+        textAttributes = @{
+                           NSFontAttributeName: [UIFont boldSystemFontOfSize:12],
+                           NSForegroundColorAttributeName: [UIColor blackColor],
+                           };
+        textAttributes2 = @{
+                            NSFontAttributeName:[UIFont boldSystemFontOfSize:12],
+                            NSForegroundColorAttributeName: selabel,
+                            
+                            };
+    } else {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
+
+        
+        textAttributes = @{
+                           UITextAttributeFont: [UIFont boldSystemFontOfSize:12],
+                           UITextAttributeTextColor: [UIColor blackColor],
+                           UITextAttributeTextShadowColor: [UIColor clearColor],
+                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
+                           };
+        
+        textAttributes2 = @{
+                           UITextAttributeFont: [UIFont boldSystemFontOfSize:12],
+                           UITextAttributeTextColor: selabel,
+                           UITextAttributeTextShadowColor: [UIColor clearColor],
+                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
+                           };
+
+#endif
+    }
+
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {
         [item setBackgroundSelectedImage:finishedImage withUnselectedImage:unfinishedImage];
@@ -92,7 +133,8 @@
         UIImage *unselectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_normal",
                                                         [tabBarItemImages objectAtIndex:index]]];
         [item setFinishedSelectedImage:selectedimage withFinishedUnselectedImage:unselectedimage];
-        
+        [item setSelectedTitleAttributes:textAttributes2];
+        [item setUnselectedTitleAttributes:textAttributes];
         index++;
     }
 }

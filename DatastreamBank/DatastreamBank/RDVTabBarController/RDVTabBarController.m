@@ -219,7 +219,7 @@
     };
     
     if (animated) {
-        [UIView animateWithDuration:0.24 animations:block completion:completion];
+        [UIView animateWithDuration:0.2 animations:block completion:completion];
     } else {
         block();
         completion(YES);

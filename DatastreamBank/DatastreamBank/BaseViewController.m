@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "AppDelegate.h"
+#import "RDVTabBarController.h"
 
 @interface BaseViewController ()
 
@@ -15,8 +16,7 @@
 
 @implementation BaseViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
          self.isBackButton = YES;
@@ -25,9 +25,9 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+//    MyLog(@"vvv----------vvv");
     NSArray *viewControllers = self.navigationController.viewControllers;
  
   
@@ -37,6 +37,7 @@
         self.navigationItem.backBarButtonItem = backItem;
  
     }
+   
     
 
     if (self.isCancelButton) {
@@ -49,13 +50,32 @@
         UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.navigationItem.leftBarButtonItem = backItem;
     }
+//    [self.navigationItem.leftBarButtonItem setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 
   
 }
 
+- (void)viewDidAppear:(BOOL)animated {
 
--(void)cancleAction
-{
+    [super viewWillAppear:animated];
+    if (self.navigationController.viewControllers.count==1) {
+        [[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.navigationController.viewControllers.count==1) {
+        //[[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
+    }else{
+        [[self rdv_tabBarController] setTabBarHidden:YES animated:YES];
+    }
+ 
+}
+
+
+-(void)cancleAction {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

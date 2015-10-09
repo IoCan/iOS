@@ -11,4 +11,8 @@
 
 @interface HomeViewController : BaseViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *btn;
+- (IBAction)click:(id)sender;
+
+
 @end

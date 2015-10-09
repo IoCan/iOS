@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "MessageViewController.h"
 
 @interface HomeViewController ()
 
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -33,4 +35,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)click:(id)sender {
+    MessageViewController *mes = [[MessageViewController alloc] init];
+    mes.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController: mes animated:YES];
+}
 @end

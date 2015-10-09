@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040072CE1BC78FD1009AC7AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040072CD1BC78FD1009AC7AD /* Images.xcassets */; };
+		040072D31BC793C5009AC7AD /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040072D11BC793C5009AC7AD /* MessageViewController.m */; };
+		040072D41BC793C5009AC7AD /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040072D21BC793C5009AC7AD /* MessageViewController.xib */; };
 		044D17D51BB3D1400077FAC9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044D17D41BB3D1400077FAC9 /* BaseViewController.m */; };
 		0461E4FB1BB0FCA600614492 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048868C61BAFF74B00BFFC2B /* SystemConfiguration.framework */; };
 		0461E4FC1BB0FCB900614492 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048868C81BAFF86300BFFC2B /* MobileCoreServices.framework */; };
@@ -103,11 +106,11 @@
 		0496EFB51BB2A6F700F93E8A /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496EFB41BB2A6F700F93E8A /* libicucore.dylib */; };
 		0496EFB71BB2A78700F93E8A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496EFB61BB2A78700F93E8A /* libsqlite3.dylib */; };
 		0496EFBB1BB2A7A900F93E8A /* FDStatusBarNotifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496EFBA1BB2A7A900F93E8A /* FDStatusBarNotifierView.m */; };
+		04A71D261BC76194002F45F1 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A71D251BC76194002F45F1 /* BaseNavigationController.m */; };
 		04D31D431BA00F6E00EA3DC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D31D421BA00F6E00EA3DC2 /* main.m */; };
 		04D31D461BA00F6E00EA3DC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D31D451BA00F6E00EA3DC2 /* AppDelegate.m */; };
 		04D31D491BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04D31D471BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodeld */; };
 		04D31D4F1BA00F6E00EA3DC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D31D4D1BA00F6E00EA3DC2 /* Main.storyboard */; };
-		04D31D511BA00F6E00EA3DC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D31D501BA00F6E00EA3DC2 /* Images.xcassets */; };
 		04D31D541BA00F6E00EA3DC2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D31D521BA00F6E00EA3DC2 /* LaunchScreen.xib */; };
 		04D31D601BA00F6E00EA3DC2 /* DatastreamBankTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D31D5F1BA00F6E00EA3DC2 /* DatastreamBankTests.m */; };
 /* End PBXBuildFile section */
@@ -123,6 +126,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040072CD1BC78FD1009AC7AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		040072D01BC793C5009AC7AD /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		040072D11BC793C5009AC7AD /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		040072D21BC793C5009AC7AD /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
 		044D17D31BB3D1400077FAC9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		044D17D41BB3D1400077FAC9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		0461E5051BB155A200614492 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -310,6 +317,8 @@
 		0496EFB61BB2A78700F93E8A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		0496EFB91BB2A7A900F93E8A /* FDStatusBarNotifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStatusBarNotifierView.h; sourceTree = "<group>"; };
 		0496EFBA1BB2A7A900F93E8A /* FDStatusBarNotifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStatusBarNotifierView.m; sourceTree = "<group>"; };
+		04A71D241BC76194002F45F1 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		04A71D251BC76194002F45F1 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		04D31D3D1BA00F6E00EA3DC2 /* DatastreamBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatastreamBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D31D411BA00F6E00EA3DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D31D421BA00F6E00EA3DC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -317,7 +326,6 @@
 		04D31D451BA00F6E00EA3DC2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04D31D481BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatastreamBank.xcdatamodel; sourceTree = "<group>"; };
 		04D31D4E1BA00F6E00EA3DC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		04D31D501BA00F6E00EA3DC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		04D31D531BA00F6E00EA3DC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		04D31D591BA00F6E00EA3DC2 /* DatastreamBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatastreamBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D31D5E1BA00F6E00EA3DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -351,9 +359,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040072CF1BC79353009AC7AD /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				040072D01BC793C5009AC7AD /* MessageViewController.h */,
+				040072D11BC793C5009AC7AD /* MessageViewController.m */,
+				040072D21BC793C5009AC7AD /* MessageViewController.xib */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
 		044D17D21BB3D1110077FAC9 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				04A71D241BC76194002F45F1 /* BaseNavigationController.h */,
+				04A71D251BC76194002F45F1 /* BaseNavigationController.m */,
 				044D17D31BB3D1400077FAC9 /* BaseViewController.h */,
 				044D17D41BB3D1400077FAC9 /* BaseViewController.m */,
 			);
@@ -394,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				044D17D21BB3D1110077FAC9 /* Base */,
+				040072CF1BC79353009AC7AD /* Message */,
 				0461E5041BB1546700614492 /* Mine */,
 				0461E5031BB1545800614492 /* Friends */,
 				0461E5021BB1545000614492 /* Home */,
@@ -749,7 +770,7 @@
 				04D31D451BA00F6E00EA3DC2 /* AppDelegate.m */,
 				04D31D4D1BA00F6E00EA3DC2 /* Main.storyboard */,
 				04D31D521BA00F6E00EA3DC2 /* LaunchScreen.xib */,
-				04D31D501BA00F6E00EA3DC2 /* Images.xcassets */,
+				040072CD1BC78FD1009AC7AD /* Images.xcassets */,
 				0461E53D1BB157D000614492 /* Src */,
 				04D31D401BA00F6E00EA3DC2 /* Supporting Files */,
 			);
@@ -879,11 +900,12 @@
 			files = (
 				04D31D4F1BA00F6E00EA3DC2 /* Main.storyboard in Resources */,
 				0461E5131BB155C600614492 /* MineViewController.xib in Resources */,
+				040072CE1BC78FD1009AC7AD /* Images.xcassets in Resources */,
 				04D31D541BA00F6E00EA3DC2 /* LaunchScreen.xib in Resources */,
 				0461E50E1BB155B700614492 /* FriendsViewController.xib in Resources */,
 				0461E5091BB155A200614492 /* HomeViewController.xib in Resources */,
+				040072D41BC793C5009AC7AD /* MessageViewController.xib in Resources */,
 				048867F51BAFE26E00BFFC2B /* MJRefresh.bundle in Resources */,
-				04D31D511BA00F6E00EA3DC2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,6 +961,7 @@
 				048868BC1BAFF4A700BFFC2B /* NSObject+MJKeyValue.m in Sources */,
 				0496EF991BB2A2D100F93E8A /* AFURLRequestSerialization.m in Sources */,
 				048868CD1BAFFC3A00BFFC2B /* WXHLGlobalUICommon.m in Sources */,
+				04A71D261BC76194002F45F1 /* BaseNavigationController.m in Sources */,
 				048868931BAFF08800BFFC2B /* UIViewExt.m in Sources */,
 				0496EF9C1BB2A2D100F93E8A /* AFNetworkActivityIndicatorManager.m in Sources */,
 				048868271BAFE2B500BFFC2B /* UIImage+MultiFormat.m in Sources */,
@@ -978,6 +1001,7 @@
 				048867F11BAFE26E00BFFC2B /* MJRefreshBackStateFooter.m in Sources */,
 				048868791BAFEA3100BFFC2B /* FMDatabaseAdditions.m in Sources */,
 				0496EF931BB2A2D100F93E8A /* AFHTTPRequestOperation.m in Sources */,
+				040072D31BC793C5009AC7AD /* MessageViewController.m in Sources */,
 				0488681E1BAFE2B500BFFC2B /* SDImageCache.m in Sources */,
 				048868B51BAFF4A700BFFC2B /* MJExtensionConst.m in Sources */,
 				0496EF9E1BB2A2D100F93E8A /* UIAlertView+AFNetworking.m in Sources */,
@@ -1186,7 +1210,7 @@
 				04D31D621BA00F6E00EA3DC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		04D31D631BA00F6E00EA3DC2 /* Build configuration list for PBXNativeTarget "DatastreamBank" */ = {
 			isa = XCConfigurationList;
@@ -1195,7 +1219,7 @@
 				04D31D651BA00F6E00EA3DC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		04D31D661BA00F6E00EA3DC2 /* Build configuration list for PBXNativeTarget "DatastreamBankTests" */ = {
 			isa = XCConfigurationList;
@@ -1204,7 +1228,7 @@
 				04D31D681BA00F6E00EA3DC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

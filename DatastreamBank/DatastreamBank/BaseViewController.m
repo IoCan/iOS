@@ -58,7 +58,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 
-    [super viewWillAppear:animated];
+    [super viewDidAppear:animated];
     if (self.navigationController.viewControllers.count==1) {
         [[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
     }
@@ -79,8 +79,45 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+#pragma mark 设置nav背景
+-(void)setBlueNav {
+    [self setNav:@"navigationbar_background_tall" fontColor:[UIColor whiteColor]];
+}
 
+-(void)setWhiteNav {
+    [self setNav:@"titlebar_white" fontColor:[UIColor blackColor]];
+}
 
+-(void)setNav:(NSString *) bgImg fontColor:(UIColor *) color {
+    UIImage *backgroundImage = nil;
+    NSDictionary *textAttributes = nil;
+    
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+        backgroundImage = [UIImage imageNamed:bgImg];
+        
+        textAttributes = @{
+                           NSFontAttributeName: [UIFont boldSystemFontOfSize:18],
+                           NSForegroundColorAttributeName: color,
+                           };
+    } else {
+        #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
+        backgroundImage = [UIImage imageNamed:@"navigationbar_background"];
+        
+        textAttributes = @{
+                           UITextAttributeFont: [UIFont boldSystemFontOfSize:18],
+                           UITextAttributeTextColor: [UIColor whiteColor],
+                           UITextAttributeTextShadowColor: [UIColor clearColor],
+                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
+                           };
+        #endif
+    }
+    [self.navigationController.navigationBar setBackgroundImage:backgroundImage
+                                                  forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
+    
+    [self.navigationController.navigationBar setTintColor:color];
+
+}
 
  
 - (void)didReceiveMemoryWarning {

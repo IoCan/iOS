@@ -37,8 +37,6 @@
 
 - (IBAction)click:(id)sender {
     MessageViewController *mes = [[MessageViewController alloc] init];
-    mes.hidesBottomBarWhenPushed = YES;
-    
     [self.navigationController pushViewController: mes animated:YES];
 }
 @end

@@ -10,7 +10,11 @@
 		040072CE1BC78FD1009AC7AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040072CD1BC78FD1009AC7AD /* Images.xcassets */; };
 		040072D31BC793C5009AC7AD /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040072D11BC793C5009AC7AD /* MessageViewController.m */; };
 		040072D41BC793C5009AC7AD /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040072D21BC793C5009AC7AD /* MessageViewController.xib */; };
+		043020061BCBA98A008EF0FF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043020041BCBA98A008EF0FF /* FeedbackViewController.m */; };
+		043020071BCBA98A008EF0FF /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043020051BCBA98A008EF0FF /* FeedbackViewController.xib */; };
+		043C74511BCB84B300CF0003 /* mine_bg_aplha.png in Resources */ = {isa = PBXBuildFile; fileRef = 043C74501BCB84B300CF0003 /* mine_bg_aplha.png */; };
 		044D17D51BB3D1400077FAC9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044D17D41BB3D1400077FAC9 /* BaseViewController.m */; };
+		0453D3C11BCB8A4C00E1E39B /* mine_horizontal_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 0453D3C01BCB8A4C00E1E39B /* mine_horizontal_line.png */; };
 		0461E4FB1BB0FCA600614492 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048868C61BAFF74B00BFFC2B /* SystemConfiguration.framework */; };
 		0461E4FC1BB0FCB900614492 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048868C81BAFF86300BFFC2B /* MobileCoreServices.framework */; };
 		0461E5081BB155A200614492 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461E5061BB155A200614492 /* HomeViewController.m */; };
@@ -19,6 +23,26 @@
 		0461E50E1BB155B700614492 /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0461E50C1BB155B700614492 /* FriendsViewController.xib */; };
 		0461E5121BB155C600614492 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461E5101BB155C600614492 /* MineViewController.m */; };
 		0461E5131BB155C600614492 /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0461E5111BB155C600614492 /* MineViewController.xib */; };
+		046A489B1BCB461700BED0C0 /* MineHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046A489A1BCB461700BED0C0 /* MineHeadView.xib */; };
+		046A489F1BCB4ACA00BED0C0 /* mine_head_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 046A489E1BCB4ACA00BED0C0 /* mine_head_default.png */; };
+		046A48A21BCB4BAC00BED0C0 /* mine_btn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 046A48A01BCB4BAC00BED0C0 /* mine_btn1.png */; };
+		046A48A31BCB4BAC00BED0C0 /* mine_btn2.png in Resources */ = {isa = PBXBuildFile; fileRef = 046A48A11BCB4BAC00BED0C0 /* mine_btn2.png */; };
+		046A48A91BCB502700BED0C0 /* mine_vertical_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 046A48A81BCB502700BED0C0 /* mine_vertical_line.png */; };
+		046A48AE1BCB516F00BED0C0 /* MineHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A48AD1BCB516F00BED0C0 /* MineHeadView.m */; };
+		046A48B01BCB576800BED0C0 /* mine_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 046A48AF1BCB576800BED0C0 /* mine_bg.png */; };
+		046D50011BCCAAC100523798 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D4FFF1BCCAAC100523798 /* AboutViewController.m */; };
+		046D50021BCCAAC100523798 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D50001BCCAAC100523798 /* AboutViewController.xib */; };
+		046D50091BCCD7FF00523798 /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D50071BCCD7FF00523798 /* MyOrderViewController.m */; };
+		046D500A1BCCD7FF00523798 /* MyOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D50081BCCD7FF00523798 /* MyOrderViewController.xib */; };
+		046D500C1BCCE36200523798 /* about_wx_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 046D500B1BCCE36200523798 /* about_wx_bg.png */; };
+		046D50101BCCF21C00523798 /* MyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D500E1BCCF21C00523798 /* MyOrderCell.m */; };
+		046D50111BCCF21C00523798 /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D500F1BCCF21C00523798 /* MyOrderCell.xib */; };
+		046D50161BCD0B6800523798 /* MyScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D50141BCD0B6800523798 /* MyScoreViewController.m */; };
+		046D50171BCD0B6800523798 /* MyScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D50151BCD0B6800523798 /* MyScoreViewController.xib */; };
+		046D501C1BCD0BE600523798 /* UserInfoSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D501A1BCD0BE600523798 /* UserInfoSettingViewController.m */; };
+		046D501D1BCD0BE600523798 /* UserInfoSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D501B1BCD0BE600523798 /* UserInfoSettingViewController.xib */; };
+		04760F2A1BC903CD0008F4AE /* mineitem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04760F291BC903CD0008F4AE /* mineitem.plist */; };
+		04760F2C1BC90C570008F4AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04760F2B1BC90C570008F4AE /* AppDelegate.m */; };
 		048867791BAFDA7E00BFFC2B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 048867781BAFDA7E00BFFC2B /* MBProgressHUD.m */; };
 		048867E71BAFE26E00BFFC2B /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 048867BD1BAFE26E00BFFC2B /* MJRefreshAutoFooter.m */; };
 		048867E81BAFE26E00BFFC2B /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 048867BF1BAFE26E00BFFC2B /* MJRefreshBackFooter.m */; };
@@ -108,7 +132,6 @@
 		0496EFBB1BB2A7A900F93E8A /* FDStatusBarNotifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496EFBA1BB2A7A900F93E8A /* FDStatusBarNotifierView.m */; };
 		04A71D261BC76194002F45F1 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A71D251BC76194002F45F1 /* BaseNavigationController.m */; };
 		04D31D431BA00F6E00EA3DC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D31D421BA00F6E00EA3DC2 /* main.m */; };
-		04D31D461BA00F6E00EA3DC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D31D451BA00F6E00EA3DC2 /* AppDelegate.m */; };
 		04D31D491BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04D31D471BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodeld */; };
 		04D31D4F1BA00F6E00EA3DC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D31D4D1BA00F6E00EA3DC2 /* Main.storyboard */; };
 		04D31D541BA00F6E00EA3DC2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D31D521BA00F6E00EA3DC2 /* LaunchScreen.xib */; };
@@ -130,8 +153,13 @@
 		040072D01BC793C5009AC7AD /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		040072D11BC793C5009AC7AD /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		040072D21BC793C5009AC7AD /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		043020031BCBA98A008EF0FF /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		043020041BCBA98A008EF0FF /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		043020051BCBA98A008EF0FF /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
+		043C74501BCB84B300CF0003 /* mine_bg_aplha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_bg_aplha.png; sourceTree = "<group>"; };
 		044D17D31BB3D1400077FAC9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		044D17D41BB3D1400077FAC9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		0453D3C01BCB8A4C00E1E39B /* mine_horizontal_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_horizontal_line.png; sourceTree = "<group>"; };
 		0461E5051BB155A200614492 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0461E5061BB155A200614492 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0461E5071BB155A200614492 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -141,6 +169,32 @@
 		0461E50F1BB155C600614492 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		0461E5101BB155C600614492 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		0461E5111BB155C600614492 /* MineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
+		046A489A1BCB461700BED0C0 /* MineHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeadView.xib; sourceTree = "<group>"; };
+		046A489E1BCB4ACA00BED0C0 /* mine_head_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_head_default.png; sourceTree = "<group>"; };
+		046A48A01BCB4BAC00BED0C0 /* mine_btn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_btn1.png; sourceTree = "<group>"; };
+		046A48A11BCB4BAC00BED0C0 /* mine_btn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_btn2.png; sourceTree = "<group>"; };
+		046A48A81BCB502700BED0C0 /* mine_vertical_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_vertical_line.png; sourceTree = "<group>"; };
+		046A48AC1BCB516F00BED0C0 /* MineHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeadView.h; sourceTree = "<group>"; };
+		046A48AD1BCB516F00BED0C0 /* MineHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeadView.m; sourceTree = "<group>"; };
+		046A48AF1BCB576800BED0C0 /* mine_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_bg.png; sourceTree = "<group>"; };
+		046D4FFE1BCCAAC100523798 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		046D4FFF1BCCAAC100523798 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		046D50001BCCAAC100523798 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		046D50061BCCD7FF00523798 /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
+		046D50071BCCD7FF00523798 /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
+		046D50081BCCD7FF00523798 /* MyOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderViewController.xib; sourceTree = "<group>"; };
+		046D500B1BCCE36200523798 /* about_wx_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_wx_bg.png; sourceTree = "<group>"; };
+		046D500D1BCCF21C00523798 /* MyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderCell.h; sourceTree = "<group>"; };
+		046D500E1BCCF21C00523798 /* MyOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderCell.m; sourceTree = "<group>"; };
+		046D500F1BCCF21C00523798 /* MyOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
+		046D50131BCD0B6800523798 /* MyScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScoreViewController.h; sourceTree = "<group>"; };
+		046D50141BCD0B6800523798 /* MyScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScoreViewController.m; sourceTree = "<group>"; };
+		046D50151BCD0B6800523798 /* MyScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyScoreViewController.xib; sourceTree = "<group>"; };
+		046D50191BCD0BE600523798 /* UserInfoSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoSettingViewController.h; sourceTree = "<group>"; };
+		046D501A1BCD0BE600523798 /* UserInfoSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoSettingViewController.m; sourceTree = "<group>"; };
+		046D501B1BCD0BE600523798 /* UserInfoSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoSettingViewController.xib; sourceTree = "<group>"; };
+		04760F291BC903CD0008F4AE /* mineitem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mineitem.plist; sourceTree = "<group>"; };
+		04760F2B1BC90C570008F4AE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		048867771BAFDA7E00BFFC2B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		048867781BAFDA7E00BFFC2B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		048867BC1BAFE26E00BFFC2B /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -323,7 +377,6 @@
 		04D31D411BA00F6E00EA3DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D31D421BA00F6E00EA3DC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04D31D441BA00F6E00EA3DC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		04D31D451BA00F6E00EA3DC2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04D31D481BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatastreamBank.xcdatamodel; sourceTree = "<group>"; };
 		04D31D4E1BA00F6E00EA3DC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04D31D531BA00F6E00EA3DC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -403,9 +456,23 @@
 		0461E5041BB1546700614492 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				046D50181BCD0BB400523798 /* MyOrder */,
+				046D50121BCD0B4100523798 /* MyScore */,
 				0461E50F1BB155C600614492 /* MineViewController.h */,
 				0461E5101BB155C600614492 /* MineViewController.m */,
 				0461E5111BB155C600614492 /* MineViewController.xib */,
+				046A48AC1BCB516F00BED0C0 /* MineHeadView.h */,
+				046A48AD1BCB516F00BED0C0 /* MineHeadView.m */,
+				046A489A1BCB461700BED0C0 /* MineHeadView.xib */,
+				043020031BCBA98A008EF0FF /* FeedbackViewController.h */,
+				043020041BCBA98A008EF0FF /* FeedbackViewController.m */,
+				043020051BCBA98A008EF0FF /* FeedbackViewController.xib */,
+				046D4FFE1BCCAAC100523798 /* AboutViewController.h */,
+				046D4FFF1BCCAAC100523798 /* AboutViewController.m */,
+				046D50001BCCAAC100523798 /* AboutViewController.xib */,
+				046D50191BCD0BE600523798 /* UserInfoSettingViewController.h */,
+				046D501A1BCD0BE600523798 /* UserInfoSettingViewController.m */,
+				046D501B1BCD0BE600523798 /* UserInfoSettingViewController.xib */,
 			);
 			name = Mine;
 			sourceTree = "<group>";
@@ -420,6 +487,68 @@
 				0461E5021BB1545000614492 /* Home */,
 			);
 			name = Src;
+			sourceTree = "<group>";
+		};
+		046A489C1BCB4AA200BED0C0 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				046D4FF81BCC9A6300523798 /* Home */,
+				046A489D1BCB4AAE00BED0C0 /* Mine */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		046A489D1BCB4AAE00BED0C0 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				046D50031BCCAF3E00523798 /* about */,
+				0453D3C01BCB8A4C00E1E39B /* mine_horizontal_line.png */,
+				046A48AF1BCB576800BED0C0 /* mine_bg.png */,
+				043C74501BCB84B300CF0003 /* mine_bg_aplha.png */,
+				046A48A81BCB502700BED0C0 /* mine_vertical_line.png */,
+				046A48A01BCB4BAC00BED0C0 /* mine_btn1.png */,
+				046A48A11BCB4BAC00BED0C0 /* mine_btn2.png */,
+				046A489E1BCB4ACA00BED0C0 /* mine_head_default.png */,
+			);
+			name = Mine;
+			sourceTree = "<group>";
+		};
+		046D4FF81BCC9A6300523798 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		046D50031BCCAF3E00523798 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				046D500B1BCCE36200523798 /* about_wx_bg.png */,
+			);
+			name = about;
+			sourceTree = "<group>";
+		};
+		046D50121BCD0B4100523798 /* MyScore */ = {
+			isa = PBXGroup;
+			children = (
+				046D50131BCD0B6800523798 /* MyScoreViewController.h */,
+				046D50141BCD0B6800523798 /* MyScoreViewController.m */,
+				046D50151BCD0B6800523798 /* MyScoreViewController.xib */,
+			);
+			name = MyScore;
+			sourceTree = "<group>";
+		};
+		046D50181BCD0BB400523798 /* MyOrder */ = {
+			isa = PBXGroup;
+			children = (
+				046D50061BCCD7FF00523798 /* MyOrderViewController.h */,
+				046D50071BCCD7FF00523798 /* MyOrderViewController.m */,
+				046D50081BCCD7FF00523798 /* MyOrderViewController.xib */,
+				046D500D1BCCF21C00523798 /* MyOrderCell.h */,
+				046D500E1BCCF21C00523798 /* MyOrderCell.m */,
+				046D500F1BCCF21C00523798 /* MyOrderCell.xib */,
+			);
+			name = MyOrder;
 			sourceTree = "<group>";
 		};
 		048867761BAFDA5200BFFC2B /* MBProgressHUD */ = {
@@ -767,7 +896,7 @@
 			isa = PBXGroup;
 			children = (
 				04D31D441BA00F6E00EA3DC2 /* AppDelegate.h */,
-				04D31D451BA00F6E00EA3DC2 /* AppDelegate.m */,
+				04760F2B1BC90C570008F4AE /* AppDelegate.m */,
 				04D31D4D1BA00F6E00EA3DC2 /* Main.storyboard */,
 				04D31D521BA00F6E00EA3DC2 /* LaunchScreen.xib */,
 				040072CD1BC78FD1009AC7AD /* Images.xcassets */,
@@ -780,6 +909,7 @@
 		04D31D401BA00F6E00EA3DC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				046A489C1BCB4AA200BED0C0 /* Image */,
 				0496EFB81BB2A7A900F93E8A /* FDStatusBarNotifierView */,
 				0496EF6D1BB2A2D100F93E8A /* AFNetworking */,
 				0496EF811BB2A2D100F93E8A /* UIKit+AFNetworking */,
@@ -797,6 +927,7 @@
 				04D31D471BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodeld */,
 				04D31D421BA00F6E00EA3DC2 /* main.m */,
 				048868CA1BAFF98E00BFFC2B /* DatastreamBank-Prefix.pch */,
+				04760F291BC903CD0008F4AE /* mineitem.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -898,14 +1029,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04760F2A1BC903CD0008F4AE /* mineitem.plist in Resources */,
+				043020071BCBA98A008EF0FF /* FeedbackViewController.xib in Resources */,
 				04D31D4F1BA00F6E00EA3DC2 /* Main.storyboard in Resources */,
+				046A48A91BCB502700BED0C0 /* mine_vertical_line.png in Resources */,
+				046D50111BCCF21C00523798 /* MyOrderCell.xib in Resources */,
+				046D500C1BCCE36200523798 /* about_wx_bg.png in Resources */,
 				0461E5131BB155C600614492 /* MineViewController.xib in Resources */,
 				040072CE1BC78FD1009AC7AD /* Images.xcassets in Resources */,
 				04D31D541BA00F6E00EA3DC2 /* LaunchScreen.xib in Resources */,
+				046A48A21BCB4BAC00BED0C0 /* mine_btn1.png in Resources */,
 				0461E50E1BB155B700614492 /* FriendsViewController.xib in Resources */,
+				0453D3C11BCB8A4C00E1E39B /* mine_horizontal_line.png in Resources */,
+				046D500A1BCCD7FF00523798 /* MyOrderViewController.xib in Resources */,
+				046A489F1BCB4ACA00BED0C0 /* mine_head_default.png in Resources */,
+				046D50021BCCAAC100523798 /* AboutViewController.xib in Resources */,
 				0461E5091BB155A200614492 /* HomeViewController.xib in Resources */,
+				046A48B01BCB576800BED0C0 /* mine_bg.png in Resources */,
+				043C74511BCB84B300CF0003 /* mine_bg_aplha.png in Resources */,
 				040072D41BC793C5009AC7AD /* MessageViewController.xib in Resources */,
 				048867F51BAFE26E00BFFC2B /* MJRefresh.bundle in Resources */,
+				046A48A31BCB4BAC00BED0C0 /* mine_btn2.png in Resources */,
+				046A489B1BCB461700BED0C0 /* MineHeadView.xib in Resources */,
+				046D501D1BCD0BE600523798 /* UserInfoSettingViewController.xib in Resources */,
+				046D50171BCD0B6800523798 /* MyScoreViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,7 +1075,6 @@
 				048867F71BAFE26E00BFFC2B /* UIScrollView+MJExtension.m in Sources */,
 				048868231BAFE2B500BFFC2B /* SDWebImageManager.m in Sources */,
 				0496EF981BB2A2D100F93E8A /* AFURLConnectionOperation.m in Sources */,
-				04D31D461BA00F6E00EA3DC2 /* AppDelegate.m in Sources */,
 				0496EFA31BB2A2D100F93E8A /* UIWebView+AFNetworking.m in Sources */,
 				048867E71BAFE26E00BFFC2B /* MJRefreshAutoFooter.m in Sources */,
 				0496EFA21BB2A2D100F93E8A /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -937,16 +1083,20 @@
 				0496EF971BB2A2D100F93E8A /* AFSecurityPolicy.m in Sources */,
 				0488681F1BAFE2B500BFFC2B /* SDWebImageCompat.m in Sources */,
 				048868221BAFE2B500BFFC2B /* SDWebImageDownloaderOperation.m in Sources */,
+				046D50161BCD0B6800523798 /* MyScoreViewController.m in Sources */,
+				046D50101BCCF21C00523798 /* MyOrderCell.m in Sources */,
 				048867EF1BAFE26E00BFFC2B /* MJRefreshBackGifFooter.m in Sources */,
 				044D17D51BB3D1400077FAC9 /* BaseViewController.m in Sources */,
 				048868C11BAFF55500BFFC2B /* RTLabel.m in Sources */,
 				048868B61BAFF4A700BFFC2B /* MJFoundation.m in Sources */,
+				043020061BCBA98A008EF0FF /* FeedbackViewController.m in Sources */,
 				04D31D491BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodeld in Sources */,
 				048868BB1BAFF4A700BFFC2B /* NSObject+MJCoding.m in Sources */,
 				0488682A1BAFE2B500BFFC2B /* UIImageView+WebCache.m in Sources */,
 				048868B81BAFF4A700BFFC2B /* MJPropertyKey.m in Sources */,
 				048867F91BAFE26E00BFFC2B /* UIView+MJExtension.m in Sources */,
 				048867F41BAFE26E00BFFC2B /* MJRefreshStateHeader.m in Sources */,
+				046D50011BCCAAC100523798 /* AboutViewController.m in Sources */,
 				048868B41BAFF4A700BFFC2B /* MJDictionaryCache.m in Sources */,
 				048867F01BAFE26E00BFFC2B /* MJRefreshBackNormalFooter.m in Sources */,
 				048868861BAFEACC00BFFC2B /* RDVTabBarItem.m in Sources */,
@@ -954,6 +1104,7 @@
 				048867F81BAFE26E00BFFC2B /* UIScrollView+MJRefresh.m in Sources */,
 				0496EF9A1BB2A2D100F93E8A /* AFURLResponseSerialization.m in Sources */,
 				048867ED1BAFE26E00BFFC2B /* MJRefreshAutoNormalFooter.m in Sources */,
+				046A48AE1BCB516F00BED0C0 /* MineHeadView.m in Sources */,
 				0496EFA11BB2A2D100F93E8A /* UIProgressView+AFNetworking.m in Sources */,
 				048867791BAFDA7E00BFFC2B /* MBProgressHUD.m in Sources */,
 				048868261BAFE2B500BFFC2B /* UIImage+GIF.m in Sources */,
@@ -997,6 +1148,7 @@
 				048868BA1BAFF4A700BFFC2B /* NSObject+MJClass.m in Sources */,
 				0488681D1BAFE2B500BFFC2B /* NSData+ImageContentType.m in Sources */,
 				048868B71BAFF4A700BFFC2B /* MJProperty.m in Sources */,
+				04760F2C1BC90C570008F4AE /* AppDelegate.m in Sources */,
 				048867EA1BAFE26E00BFFC2B /* MJRefreshFooter.m in Sources */,
 				048867F11BAFE26E00BFFC2B /* MJRefreshBackStateFooter.m in Sources */,
 				048868791BAFEA3100BFFC2B /* FMDatabaseAdditions.m in Sources */,
@@ -1011,6 +1163,8 @@
 				04D31D431BA00F6E00EA3DC2 /* main.m in Sources */,
 				048868841BAFEACC00BFFC2B /* RDVTabBar.m in Sources */,
 				048868BE1BAFF4A700BFFC2B /* NSString+MJExtension.m in Sources */,
+				046D50091BCCD7FF00523798 /* MyOrderViewController.m in Sources */,
+				046D501C1BCD0BE600523798 /* UserInfoSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1136,6 +1290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/DatastreamBank";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1153,6 +1308,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/DatastreamBank";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

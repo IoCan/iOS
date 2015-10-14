@@ -105,7 +105,9 @@
     self.viewController = tabBarController;
     
     
-    
+//    [tabBarController.tabBarItem setBadgeValue:@"1"];
+    [tabBarController.tabBar.items[2] setBadgeValue:@"99"];
+    [tabBarController.tabBar.items[2] setBadgeTextFont:[UIFont systemFontOfSize:10]];
     [self customizeTabBarForController:tabBarController];
 }
 
@@ -126,11 +128,11 @@
                                        alpha:1.0];
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
         textAttributes = @{
-                           NSFontAttributeName: [UIFont boldSystemFontOfSize:12],
+                           NSFontAttributeName: [UIFont systemFontOfSize:10],
                            NSForegroundColorAttributeName: color,
                            };
         textAttributes2 = @{
-                            NSFontAttributeName:[UIFont boldSystemFontOfSize:12],
+                            NSFontAttributeName:[UIFont systemFontOfSize:10],
                             NSForegroundColorAttributeName: selcolor,
                             
                             };
@@ -139,14 +141,14 @@
 
         
         textAttributes = @{
-                           UITextAttributeFont: [UIFont boldSystemFontOfSize:12],
-                           UITextAttributeTextColor: [UIColor blackColor],
+                           UITextAttributeFont: [UIFont systemFontOfSize:10],
+                           UITextAttributeTextColor: color,
                            UITextAttributeTextShadowColor: [UIColor clearColor],
                            UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                            };
         
         textAttributes2 = @{
-                           UITextAttributeFont: [UIFont boldSystemFontOfSize:12],
+                           UITextAttributeFont: [UIFont systemFontOfSize:10],
                            UITextAttributeTextColor: selabel,
                            UITextAttributeTextShadowColor: [UIColor clearColor],
                            UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
@@ -155,11 +157,11 @@
 #endif
     }
 
-    NSInteger index = 0;
+    NSInteger index = 1;
     for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {
         [item setBackgroundSelectedImage:unfinishedImage withUnselectedImage:unfinishedImage];
-        UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"icon_undertab_%lda",index+1]];
-        UIImage *unselectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"icon_undertab_%ld",index+1]];
+        UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"icon_undertab_%lda",(long)index]];
+        UIImage *unselectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"icon_undertab_%ld",(long)index]];
         [item setFinishedSelectedImage:selectedimage withFinishedUnselectedImage:unselectedimage];
         [item setSelectedTitleAttributes:textAttributes2];
         [item setUnselectedTitleAttributes:textAttributes];

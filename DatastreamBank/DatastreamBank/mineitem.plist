@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>icon</key>
+			<string>icon_mine_1.png</string>
+			<key>desc</key>
+			<string>00</string>
+			<key>title</key>
+			<string>我的订单</string>
+		</dict>
+		<dict>
+			<key>icon</key>
+			<string>icon_mine_2.png</string>
+			<key>desc</key>
+			<string>00</string>
+			<key>title</key>
+			<string>我的积分</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>icon</key>
+			<string>icon_mine_3.png</string>
+			<key>desc</key>
+			<string>00</string>
+			<key>title</key>
+			<string>意见反馈</string>
+		</dict>
+		<dict>
+			<key>icon</key>
+			<string>icon_mine_4.png</string>
+			<key>desc</key>
+			<string>01</string>
+			<key>title</key>
+			<string>检查更新</string>
+		</dict>
+		<dict>
+			<key>icon</key>
+			<string>icon_mine_5.png</string>
+			<key>desc</key>
+			<string>00</string>
+			<key>title</key>
+			<string>关于我们</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>icon</key>
+			<string>icon_mine_6.png</string>
+			<key>desc</key>
+			<string>00</string>
+			<key>title</key>
+			<string>注销</string>
+		</dict>
+	</array>
+</array>
+</plist>

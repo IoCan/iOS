@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>icon</key>
+			<string>infosetting_header_default.png</string>
+			<key>desc</key>
+			<string></string>
+			<key>title</key>
+			<string>头像</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>icon</key>
+			<string></string>
+			<key>desc</key>
+			<string>未设置</string>
+			<key>title</key>
+			<string>昵称</string>
+		</dict>
+		<dict>
+			<key>icon</key>
+			<string></string>
+			<key>desc</key>
+			<string>未设置</string>
+			<key>title</key>
+			<string>性别</string>
+		</dict>
+		<dict>
+			<key>icon</key>
+			<string></string>
+			<key>desc</key>
+			<string>未设置</string>
+			<key>title</key>
+			<string>生日</string>
+		</dict>
+		<dict>
+			<key>icon</key>
+			<string></string>
+			<key>desc</key>
+			<string>未设置</string>
+			<key>title</key>
+			<string>所在地</string>
+		</dict>
+	</array>
+</array>
+</plist>

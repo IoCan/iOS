@@ -60,6 +60,7 @@
 
     [super viewDidAppear:animated];
     if (self.navigationController.viewControllers.count==1) {
+        [self setBlueNav];
         [[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
     }
 }
@@ -68,7 +69,9 @@
     [super viewWillAppear:animated];
     if (self.navigationController.viewControllers.count==1) {
         //[[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
+        [self setBlueNav];
     }else{
+        [self setWhiteNav];
         [[self rdv_tabBarController] setTabBarHidden:YES animated:YES];
     }
  
@@ -80,11 +83,15 @@
 }
 
 #pragma mark 设置nav背景
+//设置蓝色顶部
 -(void)setBlueNav {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNav:@"navigationbar_background_tall" fontColor:[UIColor whiteColor]];
 }
 
+//设置白色顶部
 -(void)setWhiteNav {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [self setNav:@"titlebar_white" fontColor:[UIColor blackColor]];
 }
 
@@ -119,7 +126,21 @@
 
 }
 
- 
+
+-(void)toast:(UIView *) view cotent:(NSString *) param{
+
+    _toast = [[MBProgressHUD alloc] initWithView:view];
+    _toast.labelText = param;
+    _toast.mode = MBProgressHUDModeText;
+    [self.view addSubview:_toast];
+    [_toast showAnimated:YES whileExecutingBlock:^{
+        sleep(1);
+    } completionBlock:^{
+        [_toast removeFromSuperview];
+        _toast = nil;
+    }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -11,10 +11,8 @@
 @interface FeedbackViewController : BaseViewController<UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView *utv_content;
-
 @property (strong, nonatomic) IBOutlet UIButton *btn_submit;
-
-@property (strong, nonatomic) IBOutlet UIView *view_bg;
+@property (strong, nonatomic) IBOutlet UIImageView *img_bg;
 
 - (IBAction)submit:(id)sender;
 

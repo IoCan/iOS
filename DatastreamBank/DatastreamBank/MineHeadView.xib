@@ -8,7 +8,7 @@
             <connections>
                 <outlet property="btn_addfriend" destination="uSy-EP-aIY" id="QzN-Iv-hAh"/>
                 <outlet property="btn_infosetting" destination="xjk-W4-X9q" id="3hp-SI-FSm"/>
-                <outlet property="img_userhead" destination="QI8-Do-njn" id="1aK-MF-2aj"/>
+                <outlet property="img_userhead" destination="71y-ej-TxI" id="Qlr-g1-pqo"/>
                 <outlet property="label_userphone" destination="HxV-hX-UzO" id="7mX-e6-Rzl"/>
             </connections>
         </placeholder>
@@ -21,10 +21,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_head_default.png" id="QI8-Do-njn">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="71y-ej-TxI">
                     <rect key="frame" x="18" y="24" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
+                    <state key="normal" image="mine_head_default.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="action_head:" destination="-1" eventType="touchUpInside" id="mBy-mp-PcW"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户：15105175425" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HxV-hX-UzO">
                     <rect key="frame" x="93" y="8" width="207" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -41,6 +47,9 @@
                     <state key="normal" title="添加好友" image="mine_icon_add">
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="action_add:" destination="-1" eventType="touchUpInside" id="g5w-RH-bDe"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_bg_aplha.png" id="GPd-iL-LX7">
                     <rect key="frame" x="0.0" y="104" width="375" height="56"/>
@@ -59,7 +68,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备胎余额：322M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hpu-OL-Rrw">
-                    <rect key="frame" x="187.99999996791163" y="104" width="186" height="56"/>
+                    <rect key="frame" x="187.99999993565154" y="104" width="186" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,6 +87,9 @@
                     <state key="normal" title="资料设置" image="mine_icon_set">
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="action_set:" destination="-1" eventType="touchUpInside" id="eML-88-VkV"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

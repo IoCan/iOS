@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface MineViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface MineViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate>
 
+//@property (nonatomic,strong) MBProgressHUD *toast;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSMutableArray *data;//数据源
+
+
 
 @end

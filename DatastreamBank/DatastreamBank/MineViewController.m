@@ -11,6 +11,8 @@
 #import "FeedbackViewController.h"
 #import "AboutViewController.h"
 #import "MyOrderViewController.h"
+#import "MyScoreViewController.h"
+#import "MBProgressHUD.h"
 
 @interface MineViewController ()
 
@@ -33,8 +35,7 @@
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *plistPath = [bundle pathForResource:@"mineitem" ofType:@"plist"];
     self.data = [[NSMutableArray  alloc] initWithContentsOfFile:plistPath];
-    MineHeadView *tableHeadView = [[MineHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 160)];
-    self.tableView.autoresizesSubviews = YES;
+    MineHeadView *tableHeadView = [[MineHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 160) navg:self.navigationController];
     self.tableView.tableHeaderView =tableHeadView;
 }
 
@@ -77,40 +78,60 @@
     long section = indexPath.section;
     long row = indexPath.row;
     NSString *selabel = [self getVauleForDicByGroup:section selectRow:row];
-    MyLog(selabel,nil);
+    BaseViewController *viewCtrl = nil;
     if ([[self getVauleForDicByGroup:0 selectRow:0] isEqualToString:selabel]) {
-        MyOrderViewController *orderCtrl = [[MyOrderViewController alloc] init];
-        [self.navigationController pushViewController:orderCtrl animated:YES];
+        //我的订单
+        viewCtrl = [[MyOrderViewController alloc] init];
     }
     if ([[self getVauleForDicByGroup:0 selectRow:1] isEqualToString:selabel]) {
-        
+        //我的积分
+        viewCtrl = [[MyScoreViewController alloc] init];
     }
     if ([[self getVauleForDicByGroup:1 selectRow:0] isEqualToString:selabel]) {
-        FeedbackViewController *feedbackCtrl = [[FeedbackViewController alloc] init];
-        [self.navigationController pushViewController:feedbackCtrl animated:YES];
+        //意见反馈
+        viewCtrl = [[FeedbackViewController alloc] init];
     }
     if ([[self getVauleForDicByGroup:1 selectRow:1] isEqualToString:selabel]) {
-        
+        //检查更新
+        MBProgressHUD *toast = [[MBProgressHUD alloc] initWithView:self.view];
+        toast.labelText = @"正在检查";
+        toast.mode = MBProgressHUDModeIndeterminate;
+        [self.view addSubview:toast];
+        [toast showAnimated:YES whileExecutingBlock:^{
+            sleep(1);
+        } completionBlock:^{
+            
+//            toast = nil;
+            [self toast:self.view cotent:@"已经是最新的了！"];
+        }];
     }
     if ([[self getVauleForDicByGroup:1 selectRow:2] isEqualToString:selabel]) {
-        AboutViewController *aboutCtrl = [[AboutViewController alloc] init];
-        [self.navigationController pushViewController:aboutCtrl animated:YES];
+        //关于我们
+        viewCtrl = [[AboutViewController alloc] init];
     }
     if ([[self getVauleForDicByGroup:2 selectRow:0] isEqualToString:selabel]) {
-        
+        //注销
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"注销后将会移除本地缓存历史数据，下次登录将会加载最新数据。" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"注销" otherButtonTitles:nil, nil];
+        [actionSheet showInView:self.view];
+    }
+    if (viewCtrl) {
+        [self.navigationController pushViewController:viewCtrl animated:YES];
     }
     
     
 }
+
+#pragma mark -UIActionSheet delegate
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        [self toast:self.view cotent:@"注销成功"];
+    }
+    
+}
+
 
 -(id)getVauleForDicByGroup:(long) section selectRow:(long) row {
     return [[self.data objectAtIndex:section][row] objectForKey:@"title"];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self setBlueNav];
-    [super viewWillAppear:animated];
-    
 }
 
 

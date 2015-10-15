@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-#import "MessageViewController.h"
+#import "TestViewController.h"
 
 @interface HomeViewController ()
 
@@ -36,7 +36,7 @@
 }
 
 - (IBAction)click:(id)sender {
-    MessageViewController *mes = [[MessageViewController alloc] init];
-    [self.navigationController pushViewController: mes animated:YES];
+    TestViewController *test = [[TestViewController alloc] init];
+    [self.navigationController pushViewController: test animated:YES];
 }
 @end

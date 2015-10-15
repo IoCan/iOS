@@ -12,13 +12,15 @@
 
 @interface BaseViewController : UIViewController
 
+@property (nonatomic,strong) MBProgressHUD *toast;
 
 @property(nonatomic,assign)BOOL isBackButton;
 @property(nonatomic,assign)BOOL isCancelButton;
  
 -(void)setWhiteNav;
 -(void)setBlueNav;
-
+-(void)toast:(UIView *) view cotent:(NSString *) param;
+ 
 
 
 @end

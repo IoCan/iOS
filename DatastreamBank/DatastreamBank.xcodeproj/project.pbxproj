@@ -14,6 +14,7 @@
 		043020071BCBA98A008EF0FF /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043020051BCBA98A008EF0FF /* FeedbackViewController.xib */; };
 		043C74511BCB84B300CF0003 /* mine_bg_aplha.png in Resources */ = {isa = PBXBuildFile; fileRef = 043C74501BCB84B300CF0003 /* mine_bg_aplha.png */; };
 		044D17D51BB3D1400077FAC9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044D17D41BB3D1400077FAC9 /* BaseViewController.m */; };
+		045360CE1BCF4DAB008F7B64 /* scoretake.plist in Resources */ = {isa = PBXBuildFile; fileRef = 045360CD1BCF4DAB008F7B64 /* scoretake.plist */; };
 		0453D3C11BCB8A4C00E1E39B /* mine_horizontal_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 0453D3C01BCB8A4C00E1E39B /* mine_horizontal_line.png */; };
 		0461E4FB1BB0FCA600614492 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048868C61BAFF74B00BFFC2B /* SystemConfiguration.framework */; };
 		0461E4FC1BB0FCB900614492 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048868C81BAFF86300BFFC2B /* MobileCoreServices.framework */; };
@@ -41,6 +42,16 @@
 		046D50171BCD0B6800523798 /* MyScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D50151BCD0B6800523798 /* MyScoreViewController.xib */; };
 		046D501C1BCD0BE600523798 /* UserInfoSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D501A1BCD0BE600523798 /* UserInfoSettingViewController.m */; };
 		046D501D1BCD0BE600523798 /* UserInfoSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D501B1BCD0BE600523798 /* UserInfoSettingViewController.xib */; };
+		046D56041BCDFD2700F3B37C /* bg_white_sxline.png in Resources */ = {isa = PBXBuildFile; fileRef = 046D56031BCDFD2700F3B37C /* bg_white_sxline.png */; };
+		046D56081BCE44BD00F3B37C /* ScoreTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D56061BCE44BD00F3B37C /* ScoreTakeViewController.m */; };
+		046D56091BCE44BD00F3B37C /* ScoreTakeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D56071BCE44BD00F3B37C /* ScoreTakeViewController.xib */; };
+		046D560D1BCE451800F3B37C /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D560B1BCE451800F3B37C /* WebViewController.m */; };
+		046D560E1BCE451800F3B37C /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D560C1BCE451800F3B37C /* WebViewController.xib */; };
+		046D56121BCE459500F3B37C /* ScoreTakeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D56101BCE459500F3B37C /* ScoreTakeViewCell.m */; };
+		046D56131BCE459500F3B37C /* ScoreTakeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D56111BCE459500F3B37C /* ScoreTakeViewCell.xib */; };
+		046D56161BCE4B6A00F3B37C /* jf_rule.html in Resources */ = {isa = PBXBuildFile; fileRef = 046D56151BCE4B6A00F3B37C /* jf_rule.html */; };
+		046F4CB71BCE8A880055A0DF /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046F4CB51BCE8A880055A0DF /* TestViewController.m */; };
+		047036D31BCFFB2200CE3AC9 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047036D21BCFFB2200CE3AC9 /* TestViewController.xib */; };
 		04760F2A1BC903CD0008F4AE /* mineitem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04760F291BC903CD0008F4AE /* mineitem.plist */; };
 		04760F2C1BC90C570008F4AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04760F2B1BC90C570008F4AE /* AppDelegate.m */; };
 		048867791BAFDA7E00BFFC2B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 048867781BAFDA7E00BFFC2B /* MBProgressHUD.m */; };
@@ -136,6 +147,8 @@
 		04D31D4F1BA00F6E00EA3DC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D31D4D1BA00F6E00EA3DC2 /* Main.storyboard */; };
 		04D31D541BA00F6E00EA3DC2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D31D521BA00F6E00EA3DC2 /* LaunchScreen.xib */; };
 		04D31D601BA00F6E00EA3DC2 /* DatastreamBankTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D31D5F1BA00F6E00EA3DC2 /* DatastreamBankTests.m */; };
+		04ED37A41BCFA3080053621C /* infosetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04ED37A31BCFA3080053621C /* infosetting.plist */; };
+		04ED37A61BCFA6090053621C /* infosetting_header_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ED37A51BCFA6090053621C /* infosetting_header_default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +172,7 @@
 		043C74501BCB84B300CF0003 /* mine_bg_aplha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_bg_aplha.png; sourceTree = "<group>"; };
 		044D17D31BB3D1400077FAC9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		044D17D41BB3D1400077FAC9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		045360CD1BCF4DAB008F7B64 /* scoretake.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scoretake.plist; sourceTree = "<group>"; };
 		0453D3C01BCB8A4C00E1E39B /* mine_horizontal_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_horizontal_line.png; sourceTree = "<group>"; };
 		0461E5051BB155A200614492 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0461E5061BB155A200614492 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -193,6 +207,20 @@
 		046D50191BCD0BE600523798 /* UserInfoSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoSettingViewController.h; sourceTree = "<group>"; };
 		046D501A1BCD0BE600523798 /* UserInfoSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoSettingViewController.m; sourceTree = "<group>"; };
 		046D501B1BCD0BE600523798 /* UserInfoSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoSettingViewController.xib; sourceTree = "<group>"; };
+		046D56031BCDFD2700F3B37C /* bg_white_sxline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_white_sxline.png; sourceTree = "<group>"; };
+		046D56051BCE44BD00F3B37C /* ScoreTakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreTakeViewController.h; sourceTree = "<group>"; };
+		046D56061BCE44BD00F3B37C /* ScoreTakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTakeViewController.m; sourceTree = "<group>"; };
+		046D56071BCE44BD00F3B37C /* ScoreTakeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreTakeViewController.xib; sourceTree = "<group>"; };
+		046D560A1BCE451800F3B37C /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		046D560B1BCE451800F3B37C /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		046D560C1BCE451800F3B37C /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		046D560F1BCE459500F3B37C /* ScoreTakeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreTakeViewCell.h; sourceTree = "<group>"; };
+		046D56101BCE459500F3B37C /* ScoreTakeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTakeViewCell.m; sourceTree = "<group>"; };
+		046D56111BCE459500F3B37C /* ScoreTakeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreTakeViewCell.xib; sourceTree = "<group>"; };
+		046D56151BCE4B6A00F3B37C /* jf_rule.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jf_rule.html; sourceTree = "<group>"; };
+		046F4CB41BCE8A880055A0DF /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		046F4CB51BCE8A880055A0DF /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		047036D21BCFFB2200CE3AC9 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		04760F291BC903CD0008F4AE /* mineitem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mineitem.plist; sourceTree = "<group>"; };
 		04760F2B1BC90C570008F4AE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		048867771BAFDA7E00BFFC2B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -383,6 +411,8 @@
 		04D31D591BA00F6E00EA3DC2 /* DatastreamBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatastreamBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D31D5E1BA00F6E00EA3DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D31D5F1BA00F6E00EA3DC2 /* DatastreamBankTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatastreamBankTests.m; sourceTree = "<group>"; };
+		04ED37A31BCFA3080053621C /* infosetting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = infosetting.plist; sourceTree = "<group>"; };
+		04ED37A51BCFA6090053621C /* infosetting_header_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infosetting_header_default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +469,9 @@
 				0461E5051BB155A200614492 /* HomeViewController.h */,
 				0461E5061BB155A200614492 /* HomeViewController.m */,
 				0461E5071BB155A200614492 /* HomeViewController.xib */,
+				046F4CB41BCE8A880055A0DF /* TestViewController.h */,
+				046F4CB51BCE8A880055A0DF /* TestViewController.m */,
+				047036D21BCFFB2200CE3AC9 /* TestViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -492,6 +525,7 @@
 		046A489C1BCB4AA200BED0C0 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				046D56031BCDFD2700F3B37C /* bg_white_sxline.png */,
 				046D4FF81BCC9A6300523798 /* Home */,
 				046A489D1BCB4AAE00BED0C0 /* Mine */,
 			);
@@ -503,6 +537,7 @@
 			children = (
 				046D50031BCCAF3E00523798 /* about */,
 				0453D3C01BCB8A4C00E1E39B /* mine_horizontal_line.png */,
+				04ED37A51BCFA6090053621C /* infosetting_header_default.png */,
 				046A48AF1BCB576800BED0C0 /* mine_bg.png */,
 				043C74501BCB84B300CF0003 /* mine_bg_aplha.png */,
 				046A48A81BCB502700BED0C0 /* mine_vertical_line.png */,
@@ -534,6 +569,15 @@
 				046D50131BCD0B6800523798 /* MyScoreViewController.h */,
 				046D50141BCD0B6800523798 /* MyScoreViewController.m */,
 				046D50151BCD0B6800523798 /* MyScoreViewController.xib */,
+				046D56051BCE44BD00F3B37C /* ScoreTakeViewController.h */,
+				046D56061BCE44BD00F3B37C /* ScoreTakeViewController.m */,
+				046D56071BCE44BD00F3B37C /* ScoreTakeViewController.xib */,
+				046D560A1BCE451800F3B37C /* WebViewController.h */,
+				046D560B1BCE451800F3B37C /* WebViewController.m */,
+				046D560C1BCE451800F3B37C /* WebViewController.xib */,
+				046D560F1BCE459500F3B37C /* ScoreTakeViewCell.h */,
+				046D56101BCE459500F3B37C /* ScoreTakeViewCell.m */,
+				046D56111BCE459500F3B37C /* ScoreTakeViewCell.xib */,
 			);
 			name = MyScore;
 			sourceTree = "<group>";
@@ -926,8 +970,11 @@
 				04D31D411BA00F6E00EA3DC2 /* Info.plist */,
 				04D31D471BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodeld */,
 				04D31D421BA00F6E00EA3DC2 /* main.m */,
+				046D56151BCE4B6A00F3B37C /* jf_rule.html */,
 				048868CA1BAFF98E00BFFC2B /* DatastreamBank-Prefix.pch */,
 				04760F291BC903CD0008F4AE /* mineitem.plist */,
+				045360CD1BCF4DAB008F7B64 /* scoretake.plist */,
+				04ED37A31BCFA3080053621C /* infosetting.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1030,27 +1077,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				04760F2A1BC903CD0008F4AE /* mineitem.plist in Resources */,
+				046D56041BCDFD2700F3B37C /* bg_white_sxline.png in Resources */,
 				043020071BCBA98A008EF0FF /* FeedbackViewController.xib in Resources */,
 				04D31D4F1BA00F6E00EA3DC2 /* Main.storyboard in Resources */,
+				046D56091BCE44BD00F3B37C /* ScoreTakeViewController.xib in Resources */,
 				046A48A91BCB502700BED0C0 /* mine_vertical_line.png in Resources */,
 				046D50111BCCF21C00523798 /* MyOrderCell.xib in Resources */,
+				045360CE1BCF4DAB008F7B64 /* scoretake.plist in Resources */,
 				046D500C1BCCE36200523798 /* about_wx_bg.png in Resources */,
 				0461E5131BB155C600614492 /* MineViewController.xib in Resources */,
 				040072CE1BC78FD1009AC7AD /* Images.xcassets in Resources */,
 				04D31D541BA00F6E00EA3DC2 /* LaunchScreen.xib in Resources */,
 				046A48A21BCB4BAC00BED0C0 /* mine_btn1.png in Resources */,
+				046D560E1BCE451800F3B37C /* WebViewController.xib in Resources */,
 				0461E50E1BB155B700614492 /* FriendsViewController.xib in Resources */,
 				0453D3C11BCB8A4C00E1E39B /* mine_horizontal_line.png in Resources */,
 				046D500A1BCCD7FF00523798 /* MyOrderViewController.xib in Resources */,
 				046A489F1BCB4ACA00BED0C0 /* mine_head_default.png in Resources */,
 				046D50021BCCAAC100523798 /* AboutViewController.xib in Resources */,
+				04ED37A61BCFA6090053621C /* infosetting_header_default.png in Resources */,
+				046D56131BCE459500F3B37C /* ScoreTakeViewCell.xib in Resources */,
+				04ED37A41BCFA3080053621C /* infosetting.plist in Resources */,
 				0461E5091BB155A200614492 /* HomeViewController.xib in Resources */,
 				046A48B01BCB576800BED0C0 /* mine_bg.png in Resources */,
 				043C74511BCB84B300CF0003 /* mine_bg_aplha.png in Resources */,
+				047036D31BCFFB2200CE3AC9 /* TestViewController.xib in Resources */,
 				040072D41BC793C5009AC7AD /* MessageViewController.xib in Resources */,
 				048867F51BAFE26E00BFFC2B /* MJRefresh.bundle in Resources */,
 				046A48A31BCB4BAC00BED0C0 /* mine_btn2.png in Resources */,
 				046A489B1BCB461700BED0C0 /* MineHeadView.xib in Resources */,
+				046D56161BCE4B6A00F3B37C /* jf_rule.html in Resources */,
 				046D501D1BCD0BE600523798 /* UserInfoSettingViewController.xib in Resources */,
 				046D50171BCD0B6800523798 /* MyScoreViewController.xib in Resources */,
 			);
@@ -1072,6 +1128,7 @@
 			files = (
 				048868201BAFE2B500BFFC2B /* SDWebImageDecoder.m in Sources */,
 				0488682B1BAFE2B500BFFC2B /* UIView+WebCacheOperation.m in Sources */,
+				046D56121BCE459500F3B37C /* ScoreTakeViewCell.m in Sources */,
 				048867F71BAFE26E00BFFC2B /* UIScrollView+MJExtension.m in Sources */,
 				048868231BAFE2B500BFFC2B /* SDWebImageManager.m in Sources */,
 				0496EF981BB2A2D100F93E8A /* AFURLConnectionOperation.m in Sources */,
@@ -1120,11 +1177,14 @@
 				048868281BAFE2B500BFFC2B /* UIImage+WebP.m in Sources */,
 				048868241BAFE2B500BFFC2B /* SDWebImagePrefetcher.m in Sources */,
 				048867EE1BAFE26E00BFFC2B /* MJRefreshAutoStateFooter.m in Sources */,
+				046F4CB71BCE8A880055A0DF /* TestViewController.m in Sources */,
 				0461E5081BB155A200614492 /* HomeViewController.m in Sources */,
 				0488687B1BAFEA3100BFFC2B /* FMDatabaseQueue.m in Sources */,
+				046D56081BCE44BD00F3B37C /* ScoreTakeViewController.m in Sources */,
 				048868BD1BAFF4A700BFFC2B /* NSObject+MJProperty.m in Sources */,
 				0496EF951BB2A2D100F93E8A /* AFHTTPSessionManager.m in Sources */,
 				0488687A1BAFEA3100BFFC2B /* FMDatabasePool.m in Sources */,
+				046D560D1BCE451800F3B37C /* WebViewController.m in Sources */,
 				0496EF9D1BB2A2D100F93E8A /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				048868D31BAFFE2400BFFC2B /* NSString+URLEncode.m in Sources */,
 				0496EFBB1BB2A7A900F93E8A /* FDStatusBarNotifierView.m in Sources */,

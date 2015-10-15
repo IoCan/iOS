@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface UserInfoSettingViewController : BaseViewController
+@interface UserInfoSettingViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NSMutableArray *data;//数据源
 
 @end

@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setWhiteNav];
+//    [self setWhiteNav];s
     // Do any additional setup after loading the view from its nib.
 }
 

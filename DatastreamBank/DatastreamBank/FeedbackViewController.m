@@ -32,8 +32,10 @@
     _utv_content.layer.cornerRadius = 6;
     _utv_content.layer.masksToBounds = YES;
     _btn_submit.layer.cornerRadius = 6;
-    _view_bg.layer.borderWidth = 0.4;
-    _view_bg.layer.borderColor = UIColor.lightGrayColor.CGColor;
+    UIImage *sxImg = [UIImage imageNamed:@"bg_white_sxline.png"];
+    UIEdgeInsets insets = UIEdgeInsetsMake(8, 12, 8, 12);
+    sxImg = [sxImg resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+    _img_bg.image = sxImg;
 //    UIImage *btnImg = [UIImage imageNamed:@"btn_submit.png"];
 //     UIEdgeInsets insets = UIEdgeInsetsMake(14, 14, 14, 14);
 //    btnImg = [btnImg resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];

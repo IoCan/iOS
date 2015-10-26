@@ -30,11 +30,9 @@
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *plistPath = [bundle pathForResource:@"scoretake" ofType:@"plist"];
     self.data = [[NSMutableArray  alloc] initWithContentsOfFile:plistPath];
-    }
+}
 
 #pragma mark -数据源方法
-
-
 //这个方法用来告诉某个分组的某一行是什么数据，返回一个UITableViewCel
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identify = @"ScoreTakeViewCell";
@@ -50,10 +48,7 @@
     cell.label_state.text = [items objectForKey:@"state"];
     cell.label_type.text = [items objectForKey:@"desc"];
     UIColor *defalutColor = cell.label_state.textColor;
-    UIColor *yellowColor = [UIColor colorWithRed:255/255.0
-                                        green:120/255.0
-                                         blue:2/255.0
-                                        alpha:1.0];
+    UIColor *yellowColor = RGBA(266, 120, 2, 1.0);
     if ([cell.label_state.text isEqualToString:@"已完成"]) {
         cell.img_arrow.hidden = YES;
         cell.label_state.textColor = defalutColor;

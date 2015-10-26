@@ -13,6 +13,7 @@
 #import "MyOrderViewController.h"
 #import "MyScoreViewController.h"
 #import "MBProgressHUD.h"
+#import "UserLoginViewController.h"
 
 @interface MineViewController ()
 
@@ -35,7 +36,7 @@
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *plistPath = [bundle pathForResource:@"mineitem" ofType:@"plist"];
     self.data = [[NSMutableArray  alloc] initWithContentsOfFile:plistPath];
-    MineHeadView *tableHeadView = [[MineHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 160) navg:self.navigationController];
+    MineHeadView *tableHeadView = [[MineHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 160)];
     self.tableView.tableHeaderView =tableHeadView;
 }
 
@@ -66,6 +67,7 @@
        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
        cell.detailTextLabel.text = @"●";
+        cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:20];
        cell.detailTextLabel.textColor = [UIColor redColor];
     }
     return cell;
@@ -125,8 +127,17 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         [self toast:self.view cotent:@"注销成功"];
+        UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
+        [self.navigationController pushViewController:loginCtrl animated:YES];
     }
     
+}
+
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 

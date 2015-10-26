@@ -8,11 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "JDFPeekabooCoordinator.h"
 
-@interface HomeViewController : BaseViewController
+@interface HomeViewController : BaseViewController<UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIButton *btn;
-- (IBAction)click:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionTwoView;
+
+@property (strong, nonatomic) NSMutableArray *data;//数据源
+@property (strong, nonatomic) NSMutableArray *datatwo;//数据源
+@property (nonatomic, strong) JDFPeekabooCoordinator *scrollCoordinator;
 
 @end

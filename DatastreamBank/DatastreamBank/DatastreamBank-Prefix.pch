@@ -32,12 +32,15 @@
 //颜色
 #define Color(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
+#define ALLBg RGBA(246,246,246,1)
+
 
 //font color keys
 #define kNavigationBarTitleLabel @"kNavigationBarTitleLabel"
 
 
-
+#define RGBA(R/*红*/, G/*绿*/, B/*蓝*/, A/*透明*/) \
+[UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:A]
 
 //只在debug下才输出日志, 在程序运行时取消log
 #ifdef DEBUG

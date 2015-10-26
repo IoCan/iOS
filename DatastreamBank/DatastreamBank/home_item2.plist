@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>rgbcolor</key>
+		<string>234,125,181</string>
+		<key>icon</key>
+		<string>icon_index_5</string>
+		<key>title</key>
+		<string>备胎流量</string>
+		<key>desc</key>
+		<string>放心用</string>
+	</dict>
+	<dict>
+        <key>rgbcolor</key>
+        <string>122,205,221</string>
+		<key>icon</key>
+		<string>icon_index_6</string>
+		<key>title</key>
+		<string>积分优惠</string>
+		<key>desc</key>
+		<string>开心换</string>
+	</dict>
+	<dict>
+        <key>rgbcolor</key>
+        <string>234,125,181</string>
+		<key>icon</key>
+		<string>icon_index_7</string>
+		<key>title</key>
+		<string>注册好礼</string>
+		<key>desc</key>
+		<string>立送30M</string>
+	</dict>
+	<dict>
+        <key>rgbcolor</key>
+        <string>234,125,181</string>
+		<key>icon</key>
+		<string>icon_index_8</string>
+		<key>title</key>
+		<string>首订红包</string>
+		<key>desc</key>
+		<string>试试手气</string>
+	</dict>
+    <dict>
+        <key>rgbcolor</key>
+        <string>234,125,181</string>
+        <key>icon</key>
+        <string>icon_index_9</string>
+        <key>title</key>
+        <string>充手机账户</string>
+        <key>desc</key>
+        <string>立即生效</string>
+    </dict>
+    <dict>
+        <key>rgbcolor</key>
+        <string>234,125,181</string>
+        <key>icon</key>
+        <string>icon_index_10</string>
+        <key>title</key>
+        <string>定时生效</string>
+        <key>desc</key>
+        <string>立即预约</string>
+    </dict>
+</array>
+</plist>

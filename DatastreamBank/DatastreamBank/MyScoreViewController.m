@@ -37,10 +37,7 @@
    
     _view_changebg1.layer.borderWidth =2.0f;
     _view_changebg1.layer.backgroundColor = UIColor.whiteColor.CGColor;
-    UIColor *selcolor = [UIColor colorWithRed:91/255.0
-                                        green:190/255.0
-                                         blue:211/255.0
-                                        alpha:1.0];
+    UIColor *selcolor = RGBA(91, 190, 211, 1.0);
     
     _view_changebg1.layer.borderColor = selcolor.CGColor;
     _view_changebg2.layer.borderWidth = 2.0f;

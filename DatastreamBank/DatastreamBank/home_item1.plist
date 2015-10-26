@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        
+        <dict>
+            <key>icon</key>
+            <string>icon_index_1</string>
+            <key>title</key>
+            <string>好实惠</string>
+        </dict>
+        <dict>
+            <key>icon</key>
+            <string>icon_index_2</string>
+            <key>title</key>
+            <string>退流量</string>
+        </dict>
+        <dict>
+            <key>icon</key>
+            <string>icon_index_3</string>
+            <key>title</key>
+            <string>送好友</string>
+        </dict>
+        <dict>
+            <key>icon</key>
+            <string>icon_index_4</string>
+            <key>title</key>
+            <string>游乐场</string>
+        </dict>
+        
+    </array>
+</plist>

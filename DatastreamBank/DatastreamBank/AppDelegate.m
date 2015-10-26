@@ -101,13 +101,11 @@
     RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];
     [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController,
                                            thirdNavigationController,fourNavigationController]];
-//    [tabBarController setTabBarHidden:YES animated:YES];
+
     self.viewController = tabBarController;
-    
-    
-//    [tabBarController.tabBarItem setBadgeValue:@"1"];
-    [tabBarController.tabBar.items[2] setBadgeValue:@"99"];
-    [tabBarController.tabBar.items[2] setBadgeTextFont:[UIFont systemFontOfSize:10]];
+  
+//    [tabBarController.tabBar.items[2] setBadgeValue:@"9"];
+//    [tabBarController.tabBar.items[2] setBadgeTextFont:[UIFont systemFontOfSize:10]];
     [self customizeTabBarForController:tabBarController];
 }
 
@@ -118,14 +116,9 @@
 //  NSArray *tabBarItemImages = @[@"icon_undertab_", @"second", @"third"];
     NSDictionary *textAttributes = nil;
     NSDictionary *textAttributes2 = nil;
-    UIColor *selcolor = [UIColor colorWithRed:0/255.0
-                                       green:175/255.0
-                                        blue:209/255.0
-                                       alpha:1.0];
-    UIColor *color = [UIColor colorWithRed:153/255.0
-                                       green:153/255.0
-                                        blue:153/255.0
-                                       alpha:1.0];
+    
+    UIColor *selcolor = RGBA(0, 175, 209, 1.0);
+    UIColor *color = RGBA(153, 153, 153, 1.0);
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
         textAttributes = @{
                            NSFontAttributeName: [UIFont systemFontOfSize:10],
@@ -149,7 +142,7 @@
         
         textAttributes2 = @{
                            UITextAttributeFont: [UIFont systemFontOfSize:10],
-                           UITextAttributeTextColor: selabel,
+                           UITextAttributeTextColor: selcolor,
                            UITextAttributeTextShadowColor: [UIColor clearColor],
                            UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                            };
@@ -195,9 +188,8 @@
                            };
 #endif
     }
-    
-    [navigationBarAppearance setBackgroundImage:backgroundImage
-                                  forBarMetrics:UIBarMetricsDefault];
+   
+    [navigationBarAppearance setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     [navigationBarAppearance setTitleTextAttributes:textAttributes];
 }
 

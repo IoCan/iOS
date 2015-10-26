@@ -8,12 +8,17 @@
 
 #import "MessageViewController.h"
 #import "RDVTabBarController.h"
+#import "SegTabBarView.h"
+
 
 @interface MessageViewController ()
+
+@property (strong, nonatomic) SegTabBarView *segTabBarView;
 
 @end
 
 @implementation MessageViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,40 +30,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.view.frame = CGRectMake(0,0,ScreenWidth,ScreenHeight);
+//    NSLog(@"%f",self.view.frame.size.width);
+//    CGRect screenBound = [[UIScreen mainScreen] bounds];
+//    screenBound.origin.y = 60;
+    NSArray *array = @[@"消息通知", @"备胎消息", @"优惠消息"];
+    NSMutableArray *items =[[NSMutableArray alloc] initWithArray:array];
+    _segTabBarView = [[SegTabBarView alloc] initWithFrame:self.view.frame WithArray:items];
+    [self.view addSubview:_segTabBarView];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-//    [[self rdv_tabBarController] setTabBarHidden:YES animated:YES];
-}
 
-- (void)viewWillDisappear:(BOOL)animated {
-   
-
-    
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated{
-    
-    [super viewDidDisappear:animated];
-    }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

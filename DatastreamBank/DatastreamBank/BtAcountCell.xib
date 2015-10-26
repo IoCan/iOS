@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BtAcountCell">
+            <connections>
+                <outlet property="backgroundView" destination="gTV-IL-0wX" id="l9o-1T-fhJ"/>
+                <outlet property="img_icon" destination="mmK-Hr-89y" id="dSg-n2-OYh"/>
+                <outlet property="labe_title" destination="L9v-u9-vxg" id="az3-FG-RPJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" id="gTV-IL-0wX" customClass="BtAcountCell">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="90"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_index_1" translatesAutoresizingMaskIntoConstraints="NO" id="mmK-Hr-89y">
+                        <rect key="frame" x="12" y="27" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="QXj-ms-tnY"/>
+                            <constraint firstAttribute="width" constant="36" id="d8p-GY-EzM"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9v-u9-vxg">
+                        <rect key="frame" x="55" y="35" width="97" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="mmK-Hr-89y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="5dk-rH-VHF"/>
+                <constraint firstItem="L9v-u9-vxg" firstAttribute="trailing" secondItem="mmK-Hr-89y" secondAttribute="trailing" constant="104" id="5g7-59-4Ac"/>
+                <constraint firstAttribute="centerY" secondItem="mmK-Hr-89y" secondAttribute="centerY" id="Fpt-PA-qhc"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="L9v-u9-vxg" secondAttribute="trailing" constant="6" id="Gto-wh-qRL"/>
+                <constraint firstAttribute="centerY" secondItem="L9v-u9-vxg" secondAttribute="centerY" id="Kcg-2k-i5W"/>
+                <constraint firstItem="L9v-u9-vxg" firstAttribute="leading" relation="lessThanOrEqual" secondItem="mmK-Hr-89y" secondAttribute="leading" constant="43" id="KzA-tT-bEx"/>
+                <constraint firstAttribute="centerX" secondItem="mmK-Hr-89y" secondAttribute="centerX" constant="50" id="meU-ZL-vsl"/>
+            </constraints>
+            <size key="customSize" width="250" height="95"/>
+            <point key="canvasLocation" x="400" y="414"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_index_1" width="46" height="46"/>
+    </resources>
+</document>

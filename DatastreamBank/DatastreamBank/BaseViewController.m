@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "RDVTabBarController.h"
 
+
 @interface BaseViewController ()
 
 @end
@@ -61,7 +62,7 @@
     [super viewDidAppear:animated];
     if (self.navigationController.viewControllers.count==1) {
         [self setBlueNav];
-        [[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
+        [[self rdv_tabBarController] setTabBarHidden:NO animated:animated];
     }
 }
 
@@ -72,7 +73,8 @@
         [self setBlueNav];
     }else{
         [self setWhiteNav];
-        [[self rdv_tabBarController] setTabBarHidden:YES animated:YES];
+//        self.navigationController.navigationBar.hidden = NO;
+        [[self rdv_tabBarController] setTabBarHidden:YES animated:animated];
     }
  
 }
@@ -92,7 +94,7 @@
 //设置白色顶部
 -(void)setWhiteNav {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    [self setNav:@"titlebar_white" fontColor:[UIColor blackColor]];
+    [self setNav:@"titlebar_white" fontColor:RGBA(74,74,74,1)];
 }
 
 -(void)setNav:(NSString *) bgImg fontColor:(UIColor *) color {

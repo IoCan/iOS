@@ -11,8 +11,6 @@
 @interface MineHeadView : UIView<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic,strong) UIImage *headImage;
-@property (nonatomic,strong)  UINavigationController *navigationController;
-- (id)initWithFrame:(CGRect)frame navg:(UINavigationController *) nav;
 
  
 @property (strong, nonatomic) IBOutlet UIButton *img_userhead;

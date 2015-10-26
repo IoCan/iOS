@@ -25,9 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setWhiteNav];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
+//    self.tableView.delegate = self;
 }
 
 #pragma mark -数据源方法

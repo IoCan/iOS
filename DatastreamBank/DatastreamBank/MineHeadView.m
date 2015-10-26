@@ -32,10 +32,6 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame navg:(UINavigationController *) nav{
-    _navigationController = nav;
-    return  [self initWithFrame:frame];
-}
 
 -(void)layoutSubviews{
     [super layoutSubviews];
@@ -47,25 +43,15 @@
     [self.btn_infosetting setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [self.btn_addfriend setImage:[UIImage imageNamed:@"mine_icon_add"] forState:UIControlStateHighlighted];
     [self.btn_infosetting setImage:[UIImage imageNamed:@"mine_icon_set"] forState:UIControlStateHighlighted];
+    _img_userhead.layer.cornerRadius = 30;
+    _img_userhead.clipsToBounds = YES;
 }
 
- 
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 - (IBAction)action_set:(id)sender {
-    if (_navigationController) {
-        UserInfoSettingViewController *setCtrl = [[UserInfoSettingViewController alloc] init];
-        [_navigationController pushViewController:setCtrl animated:YES];
-//        BaseNavigationController *sendNav = [[BaseNavigationController alloc] initWithRootViewController:setCtrl];
-//        [_navigationController presentViewController:sendNav animated:YES completion:NULL];
-    }
+    UIViewController *uvCtrl  = (UIViewController *)[self.superview.superview nextResponder];
+    UserInfoSettingViewController *setCtrl = [[UserInfoSettingViewController alloc] init];
+    [uvCtrl.navigationController pushViewController:setCtrl animated:YES];
 }
 
 - (IBAction)action_add:(id)sender {
@@ -101,7 +87,7 @@
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.sourceType = sourceType;
     imagePicker.delegate = self;
-    [_navigationController presentViewController:imagePicker animated:YES completion:nil];
+    [(UIViewController *)[self.superview.superview nextResponder] presentViewController:imagePicker animated:YES completion:nil];
     
 }
 

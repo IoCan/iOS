@@ -67,7 +67,8 @@
                                                                   startAngle:startAngle
                                                                     endAngle:(CGFloat)(- M_PI_2 + self.progress * 2 * M_PI)
                                                                    clockwise:YES];
-        [self.progressColor setStroke];
+//        [self.progressColor setStroke];
+        [RGBA(143, 245, 238, 0.45) setStroke];
         progressCircle.lineWidth = self.lineWidth;
         [progressCircle stroke];
         
@@ -82,9 +83,14 @@
         progressCircle2.lineWidth = lineWidth1;
         [progressCircle2 stroke];
 //        UIImage *image = [self image:[UIImage imageNamed:@"zhizhen.png"] rotation:UIImageOrientationLeft];
-//        UIImageView *imgView = [[UIImageView alloc] initWithImage:image];
-//        imgView.frame = CGRectMake(self.height/2-80, self.width/2-80, 160, 160);
-//        [self addSubview:imgView];
+        UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zhizhen2.png"]];
+        imgView.frame = CGRectMake(self.height/2-74, self.width/2-74, 148, 148);
+        imgView.tag = 22;
+        
+       
+        [self addSubview:imgView];
+        CGAffineTransform transform =CGAffineTransformMakeRotation((CGFloat)( self.progress * 2 * M_PI));
+        imgView.transform = transform;
     }
 }
 

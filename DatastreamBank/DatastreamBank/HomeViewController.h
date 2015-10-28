@@ -24,6 +24,14 @@
 @property (strong, nonatomic) IBOutlet UIView *view2;
 @property (strong, nonatomic) IBOutlet UIView *view3;
 @property (strong, nonatomic) IBOutlet CircularProgressView *progress;
+@property (strong, nonatomic) IBOutlet UIScrollView *contentScrollView;
+
+@property (strong, nonatomic) IBOutlet UIButton *btn_tnf;
+@property (strong, nonatomic) IBOutlet UIButton *btn_btf;
+
+- (IBAction)action_tnf:(id)sender;
+- (IBAction)action_btf:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *slideView;
 
 @property (strong, nonatomic) NSMutableArray *data;//数据源
 @property (strong, nonatomic) NSMutableArray *datatwo;//数据源

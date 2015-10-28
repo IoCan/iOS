@@ -96,7 +96,12 @@
 		0481171C1BD6100300970389 /* UIButton+IcUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481171B1BD6100300970389 /* UIButton+IcUIButton.m */; };
 		048117201BD62F5500970389 /* JDFPeekabooCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481171F1BD62F5500970389 /* JDFPeekabooCoordinator.m */; };
 		04846ED71BE057B8007B8120 /* bg_check_sel2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04846ED61BE057B8007B8120 /* bg_check_sel2.png */; };
-		04846ED91BE0591F007B8120 /* zhizhen.png in Resources */ = {isa = PBXBuildFile; fileRef = 04846ED81BE0591F007B8120 /* zhizhen.png */; };
+		04846EDB1BE06710007B8120 /* zhizhen.png in Resources */ = {isa = PBXBuildFile; fileRef = 04846EDA1BE06710007B8120 /* zhizhen.png */; };
+		04846EDD1BE06CE4007B8120 /* zhizhen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04846EDC1BE06CE4007B8120 /* zhizhen2.png */; };
+		04846EE31BE0BDA4007B8120 /* HomeProgessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04846EE21BE0BDA4007B8120 /* HomeProgessView.xib */; };
+		04846EE61BE0BDC7007B8120 /* HomeProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04846EE51BE0BDC7007B8120 /* HomeProgressView.m */; };
+		04846EE91BE0CB9E007B8120 /* HomeProgress2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 04846EE81BE0CB9E007B8120 /* HomeProgress2View.m */; };
+		04846EEB1BE0CBAF007B8120 /* HomeProgress2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04846EEA1BE0CBAF007B8120 /* HomeProgress2View.xib */; };
 		048867791BAFDA7E00BFFC2B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 048867781BAFDA7E00BFFC2B /* MBProgressHUD.m */; };
 		048867E71BAFE26E00BFFC2B /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 048867BD1BAFE26E00BFFC2B /* MJRefreshAutoFooter.m */; };
 		048867E81BAFE26E00BFFC2B /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 048867BF1BAFE26E00BFFC2B /* MJRefreshBackFooter.m */; };
@@ -344,7 +349,14 @@
 		0481171E1BD62F5500970389 /* JDFPeekabooCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFPeekabooCoordinator.h; sourceTree = "<group>"; };
 		0481171F1BD62F5500970389 /* JDFPeekabooCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFPeekabooCoordinator.m; sourceTree = "<group>"; };
 		04846ED61BE057B8007B8120 /* bg_check_sel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_check_sel2.png; sourceTree = "<group>"; };
-		04846ED81BE0591F007B8120 /* zhizhen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhizhen.png; sourceTree = "<group>"; };
+		04846EDA1BE06710007B8120 /* zhizhen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhizhen.png; sourceTree = "<group>"; };
+		04846EDC1BE06CE4007B8120 /* zhizhen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhizhen2.png; sourceTree = "<group>"; };
+		04846EE21BE0BDA4007B8120 /* HomeProgessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeProgessView.xib; sourceTree = "<group>"; };
+		04846EE41BE0BDC7007B8120 /* HomeProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProgressView.h; sourceTree = "<group>"; };
+		04846EE51BE0BDC7007B8120 /* HomeProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProgressView.m; sourceTree = "<group>"; };
+		04846EE71BE0CB9E007B8120 /* HomeProgress2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProgress2View.h; sourceTree = "<group>"; };
+		04846EE81BE0CB9E007B8120 /* HomeProgress2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProgress2View.m; sourceTree = "<group>"; };
+		04846EEA1BE0CBAF007B8120 /* HomeProgress2View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeProgress2View.xib; sourceTree = "<group>"; };
 		048867771BAFDA7E00BFFC2B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		048867781BAFDA7E00BFFC2B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		048867BC1BAFE26E00BFFC2B /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -638,6 +650,12 @@
 				047A7C151BD8815D0082F3C6 /* HomeTwoCell.h */,
 				047A7C161BD8815D0082F3C6 /* HomeTwoCell.m */,
 				047A7C171BD8815D0082F3C6 /* HomeTwoCell.xib */,
+				04846EE41BE0BDC7007B8120 /* HomeProgressView.h */,
+				04846EE51BE0BDC7007B8120 /* HomeProgressView.m */,
+				04846EE21BE0BDA4007B8120 /* HomeProgessView.xib */,
+				04846EE71BE0CB9E007B8120 /* HomeProgress2View.h */,
+				04846EE81BE0CB9E007B8120 /* HomeProgress2View.m */,
+				04846EEA1BE0CBAF007B8120 /* HomeProgress2View.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -702,7 +720,8 @@
 		046A489C1BCB4AA200BED0C0 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				04846ED81BE0591F007B8120 /* zhizhen.png */,
+				04846EDA1BE06710007B8120 /* zhizhen.png */,
+				04846EDC1BE06CE4007B8120 /* zhizhen2.png */,
 				0449C7D91BDF74E600CB5856 /* guangyun.png */,
 				04846ED61BE057B8007B8120 /* bg_check_sel2.png */,
 				047D34E71BDF499E005DD451 /* bg_check_blue.png */,
@@ -1429,6 +1448,7 @@
 				046C47B31BDE354D00C76A1C /* RechargeViewController.xib in Resources */,
 				046C47A31BDDBAA000C76A1C /* BtFlowDetailsCell.xib in Resources */,
 				047A7C0C1BD76F1E0082F3C6 /* HomeCell.xib in Resources */,
+				04846EEB1BE0CBAF007B8120 /* HomeProgress2View.xib in Resources */,
 				046D500A1BCCD7FF00523798 /* MyOrderViewController.xib in Resources */,
 				047A7C3F1BD8C99B0082F3C6 /* checkbox_1.png in Resources */,
 				046A489F1BCB4ACA00BED0C0 /* mine_head_default.png in Resources */,
@@ -1439,6 +1459,7 @@
 				04ED37A61BCFA6090053621C /* infosetting_header_default.png in Resources */,
 				047D34E51BDF4934005DD451 /* bg_check_sel.png in Resources */,
 				049D346A1BDCA3F1009F7A5B /* BtAcountCell.xib in Resources */,
+				04846EDD1BE06CE4007B8120 /* zhizhen2.png in Resources */,
 				046D56131BCE459500F3B37C /* ScoreTakeViewCell.xib in Resources */,
 				047A7C1B1BD8AE170082F3C6 /* home_item2.plist in Resources */,
 				04ED37A41BCFA3080053621C /* infosetting.plist in Resources */,
@@ -1455,8 +1476,9 @@
 				047A7C331BD8C6DD0082F3C6 /* bt_rule.html in Resources */,
 				04901B541BD9E05900E9A607 /* 14-22.png in Resources */,
 				040072D41BC793C5009AC7AD /* MessageViewController.xib in Resources */,
-				04846ED91BE0591F007B8120 /* zhizhen.png in Resources */,
+				04846EDB1BE06710007B8120 /* zhizhen.png in Resources */,
 				047A7C361BD8C6DD0082F3C6 /* b3.png in Resources */,
+				04846EE31BE0BDA4007B8120 /* HomeProgessView.xib in Resources */,
 				048867F51BAFE26E00BFFC2B /* MJRefresh.bundle in Resources */,
 				046A48A31BCB4BAC00BED0C0 /* mine_btn2.png in Resources */,
 				046C47B81BDE357600C76A1C /* TimingRechargeViewController.xib in Resources */,
@@ -1486,6 +1508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04846EE91BE0CB9E007B8120 /* HomeProgress2View.m in Sources */,
 				048868201BAFE2B500BFFC2B /* SDWebImageDecoder.m in Sources */,
 				046C479D1BDDBA8100C76A1C /* BtFlowDetailsViewController.m in Sources */,
 				0488682B1BAFE2B500BFFC2B /* UIView+WebCacheOperation.m in Sources */,
@@ -1580,6 +1603,7 @@
 				0496EF651BB29ADC00F93E8A /* MGJRequestManager.m in Sources */,
 				046C47A21BDDBAA000C76A1C /* BtFlowDetailsCell.m in Sources */,
 				0496EF961BB2A2D100F93E8A /* AFNetworkReachabilityManager.m in Sources */,
+				04846EE61BE0BDC7007B8120 /* HomeProgressView.m in Sources */,
 				048867EC1BAFE26E00BFFC2B /* MJRefreshAutoGifFooter.m in Sources */,
 				0496EF9B1BB2A2D100F93E8A /* AFURLSessionManager.m in Sources */,
 				048117201BD62F5500970389 /* JDFPeekabooCoordinator.m in Sources */,

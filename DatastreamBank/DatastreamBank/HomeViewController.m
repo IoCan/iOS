@@ -17,8 +17,13 @@
 #import "RechargeViewController.h"
 #import "TimingRechargeViewController.h"
 
+#import "HomeProgressView.h"
+#import "HomeProgress2View.h"
+
 @interface HomeViewController ()
 @property (assign) BOOL isShow;
+//当前选中页数
+@property (assign) NSInteger currentPage;
 
 @end
 
@@ -47,40 +52,16 @@
     _collectionTwoView.delegate = self;
     [_collectionView registerClass:[HomeCell class] forCellWithReuseIdentifier:@"HomeCell"];
     [_collectionTwoView registerClass:[HomeTwoCell class] forCellWithReuseIdentifier:@"HomeTwoCell"];
-    _view1.layer.cornerRadius = _view1.width/2;
-
-
-    _view1.layer.shadowColor = [UIColor whiteColor].CGColor;
-    _view1.layer.shadowOffset = CGSizeMake(10, 10);
-    _view1.layer.shadowOpacity = 0.3;
-    _view1.layer.shadowRadius = _view1.width/2+50;
-    _view1.clipsToBounds = YES;
-
+  
     
+    _contentScrollView.contentSize = CGSizeMake(ScreenWidth*2, 220);
+    _contentScrollView.delegate = self;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    HomeProgressView *view = [[HomeProgressView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 220)];
+    [_contentScrollView addSubview:view];
     
-    _view2.layer.cornerRadius = _view2.width/2;
-//    
-//    _view2.layer.shadowColor = [UIColor whiteColor].CGColor;
-//    _view2.layer.shadowOffset = CGSizeMake(10, 10);
-//    _view2.layer.shadowOpacity = 0.3;
-//    _view2.layer.shadowRadius = _view1.width/2+50;
-    _view2.clipsToBounds = YES;
-    
-    
-    _view3.layer.cornerRadius = _view3.width/2;
-    _view3.layer.shadowColor = [UIColor redColor].CGColor;
-    _view3.layer.shadowOffset = CGSizeMake(50, 50);
-    _view3.clipsToBounds = YES;
-    
-    self.progress.progressColor = RGBA(54, 246, 226, 0.3);
-    
-    self.progress.lineWidth = 30;
-    
-    //set CircularProgressView delegate
-    self.progress.progress = 0.7;
-
-
-   
+    HomeProgress2View *view2 = [[HomeProgress2View alloc] initWithFrame:CGRectMake(ScreenWidth/2, 0, ScreenWidth, 220)];
+    [_contentScrollView addSubview:view2];
 }
 
 - (CAGradientLayer *)shadowAsInverse
@@ -224,38 +205,34 @@
 
 
 
-#pragma mark -- scrollView的代理方法
--(void) modifyTopScrollViewPositiong: (UIScrollView *) scrollView{
-    
-    
-}
-
+#pragma mark -scrollView的代理方法
 
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if ([_scrollView isEqual:scrollView] && _isShow != self.navigationController.isNavigationBarHidden) {
-        CGFloat contentOffsetY = _scrollView.contentOffset.y;
-        if (contentOffsetY > ScreenHeight/3) {
-             _isShow = YES;
-            [self.navigationController setNavigationBarHidden:NO animated:YES];
-        }
-        else if (contentOffsetY < 40) {
-            _isShow = NO;
-            [self.navigationController setNavigationBarHidden:YES animated:YES];
-        }
-        return;
+//    if ([_scrollView isEqual:scrollView] && _isShow != self.navigationController.isNavigationBarHidden) {
+//        CGFloat contentOffsetY = _scrollView.contentOffset.y;
+//        if (contentOffsetY > ScreenHeight/3) {
+//             _isShow = YES;
+//            [self.navigationController setNavigationBarHidden:NO animated:YES];
+//        }
+//        else if (contentOffsetY < 40) {
+//            _isShow = NO;
+//            [self.navigationController setNavigationBarHidden:YES animated:YES];
+//        }
+//        return;
+//    }
+    
+    if ([_contentScrollView isEqual:scrollView]) {
+        CGRect frame = _slideView.frame;
+        frame.origin.x = scrollView.contentOffset.x/2+(ScreenWidth/2-_slideView.width)/2;
+        _slideView.frame = frame;
     }
 
 }
 
-///拖拽后调用的方法
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-//    [self modifyTopScrollViewPositiong:scrollView];
-    //     NSLog(@"scrollViewDidEndDragging....");
-}
 
 
-
+#pragma mark －生命周期
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
@@ -267,9 +244,16 @@
 }
 
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark -按钮事件处理
+- (IBAction)action_tnf:(id)sender {
+     [_contentScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+}
+
+- (IBAction)action_btf:(id)sender {
+     [_contentScrollView setContentOffset:CGPointMake(ScreenWidth, 0) animated:YES];
+}
  @end

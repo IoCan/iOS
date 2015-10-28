@@ -12,7 +12,7 @@
 #import "BenefitsFootView.h"
 #import "BtAcountViewController.h"
 #import "BtFlowDetailsViewController.h"
-
+#import "ConfirmOrderViewController.h"
 
 static NSString *kcellIdentifier = @"BenefitsCell";
 static NSString *kheaderIdentifier = @"headerIdentifier";
@@ -99,14 +99,13 @@ static NSString *kfooterIdentifier = @"footerIdentifier";
             //
             break;
         case 5:
-            ctrl = [[BtFlowDetailsViewController alloc] init];
+            ctrl = [[ConfirmOrderViewController alloc] init];
             break;
         default:
             break;
     }
     if (ctrl) {
         [self.navigationController pushViewController:ctrl animated:YES];
-//        ctrl = nil;
     }
    
 }

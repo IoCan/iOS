@@ -11,6 +11,10 @@
 #import "BtAcountHeadView.h"
 #import "UIViewExt.h"
 #import "BtFlowDetailsViewController.h"
+#import "BenefitsViewController.h"
+#import "FlowUnsubscribeViewController.h"
+#import "RechargeViewController.h"
+#import "TimingRechargeViewController.h"
 
 
 static NSString *kcellIdentifier = @"BtAcountCell";
@@ -117,7 +121,23 @@ static NSString *kfooterIdentifier = @"footerIdentifier";
     BaseViewController *ctrl;
     switch (indexPath.row) {
         case 0:
-            //
+            //冲进手机账户
+            ctrl = [[RechargeViewController alloc] init];
+            break;
+        case 1:
+            // 定时生效
+            ctrl = [[TimingRechargeViewController alloc] init];
+            break;
+        case 2:
+            //充值备胎流量
+            ctrl = [[BenefitsViewController alloc] init];
+            break;
+        case 3:
+            //赠送给TA
+            break;
+        case 4:
+            //流量用不完
+            ctrl = [[FlowUnsubscribeViewController alloc] init];
             break;
         case 5:
             ctrl = [[BtFlowDetailsViewController alloc] init];

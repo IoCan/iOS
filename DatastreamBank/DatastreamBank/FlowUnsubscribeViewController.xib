@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l18-eY-GPe">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l18-eY-GPe">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjr-Nd-UDj">
@@ -70,11 +70,6 @@
                                             <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Io-3h-QU1">
-                                            <rect key="frame" x="15" y="45" width="97" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="M（可退3元）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm7-ZQ-LRe">
                                             <rect key="frame" x="120" y="49" width="110" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -88,6 +83,11 @@
                                                 <constraint firstAttribute="height" constant="1" id="zS3-bc-ub9"/>
                                             </constraints>
                                         </view>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Io-3h-QU1">
+                                            <rect key="frame" x="15" y="45" width="97" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -195,7 +195,9 @@
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baW-OR-DWa">
                                             <rect key="frame" x="15" y="55" width="290" height="153"/>
-                                            <string key="text">1、退订的流量须是备胎账户内未使用的流量；2、按照1M=0.05元进行退订，退费计算公式：退订金额=0.05元*退订额度，如：用户退订200M流量，可退费：0.05元*200=10元；3、退订的费用将于24小时内退还至支付账户中。</string>
+                                            <string key="text">1、退订的流量须是备胎账户内未使用的流量；
+2、按照1M=0.05元进行退订，退费计算公式：退订金额=0.05元*退订额度，如：用户退订200M流量，可退费：0.05元*200=10元；
+3、退订的费用将于24小时内退还至支付账户中。</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -232,15 +234,15 @@
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="tcF-Sj-2zN" secondAttribute="trailing" id="21X-tN-bJt"/>
                                 <constraint firstItem="88x-ET-lmD" firstAttribute="top" secondItem="zjr-Nd-UDj" secondAttribute="top" id="IpP-Tp-av4"/>
+                                <constraint firstItem="tcF-Sj-2zN" firstAttribute="top" secondItem="YgP-w7-FTY" secondAttribute="bottom" constant="20" id="LLH-ND-zzD"/>
                                 <constraint firstAttribute="trailing" secondItem="YgP-w7-FTY" secondAttribute="trailing" id="Uad-IZ-Lql"/>
                                 <constraint firstItem="88x-ET-lmD" firstAttribute="leading" secondItem="zjr-Nd-UDj" secondAttribute="leading" id="WHs-La-1Sf"/>
                                 <constraint firstAttribute="trailing" secondItem="88x-ET-lmD" secondAttribute="trailing" id="Yen-Hg-cZU"/>
                                 <constraint firstItem="tcF-Sj-2zN" firstAttribute="leading" secondItem="zjr-Nd-UDj" secondAttribute="leading" id="bHH-Jm-Trw"/>
                                 <constraint firstItem="WWV-Na-tYA" firstAttribute="leading" secondItem="zjr-Nd-UDj" secondAttribute="leading" id="bj3-Jt-fIa"/>
-                                <constraint firstItem="YgP-w7-FTY" firstAttribute="top" secondItem="tcF-Sj-2zN" secondAttribute="top" constant="-250" id="dx6-jB-e6N"/>
                                 <constraint firstAttribute="height" constant="710" id="hx9-1V-aiX"/>
                                 <constraint firstAttribute="trailing" secondItem="WWV-Na-tYA" secondAttribute="trailing" id="l0s-us-h6F"/>
-                                <constraint firstItem="WWV-Na-tYA" firstAttribute="top" secondItem="YgP-w7-FTY" secondAttribute="top" constant="-110" id="m24-pm-kDZ"/>
+                                <constraint firstItem="YgP-w7-FTY" firstAttribute="top" secondItem="WWV-Na-tYA" secondAttribute="bottom" constant="20" id="pL2-kZ-3bi"/>
                                 <constraint firstItem="WWV-Na-tYA" firstAttribute="top" secondItem="88x-ET-lmD" secondAttribute="top" constant="100" id="xCk-6M-h3o"/>
                                 <constraint firstItem="YgP-w7-FTY" firstAttribute="leading" secondItem="zjr-Nd-UDj" secondAttribute="leading" id="ycE-ub-27b"/>
                             </constraints>
@@ -264,7 +266,7 @@
                 <constraint firstAttribute="bottom" secondItem="l18-eY-GPe" secondAttribute="bottom" id="fmQ-3x-IW9"/>
                 <constraint firstAttribute="centerX" secondItem="l18-eY-GPe" secondAttribute="centerX" id="sER-cD-adW"/>
             </constraints>
-            <point key="canvasLocation" x="242" y="376"/>
+            <point key="canvasLocation" x="425" y="369"/>
         </view>
     </objects>
     <resources>

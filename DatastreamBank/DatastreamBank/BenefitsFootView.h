@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BenefitsFootView : UICollectionReusableView
+@interface BenefitsFootView : UICollectionReusableView<UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *view1;
 

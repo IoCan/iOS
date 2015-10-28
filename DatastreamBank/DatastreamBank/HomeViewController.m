@@ -14,6 +14,8 @@
 #import "BaseNavigationController.h"
 #import "BtAcountViewController.h"
 #import "FlowUnsubscribeViewController.h"
+#import "RechargeViewController.h"
+#import "TimingRechargeViewController.h"
 
 @interface HomeViewController ()
 @property (assign) BOOL isShow;
@@ -45,7 +47,50 @@
     _collectionTwoView.delegate = self;
     [_collectionView registerClass:[HomeCell class] forCellWithReuseIdentifier:@"HomeCell"];
     [_collectionTwoView registerClass:[HomeTwoCell class] forCellWithReuseIdentifier:@"HomeTwoCell"];
+    _view1.layer.cornerRadius = _view1.width/2;
+
+
+    _view1.layer.shadowColor = [UIColor whiteColor].CGColor;
+    _view1.layer.shadowOffset = CGSizeMake(10, 10);
+    _view1.layer.shadowOpacity = 0.3;
+    _view1.layer.shadowRadius = _view1.width/2+50;
+    _view1.clipsToBounds = YES;
+
+    
+    
+    _view2.layer.cornerRadius = _view2.width/2;
+//    
+//    _view2.layer.shadowColor = [UIColor whiteColor].CGColor;
+//    _view2.layer.shadowOffset = CGSizeMake(10, 10);
+//    _view2.layer.shadowOpacity = 0.3;
+//    _view2.layer.shadowRadius = _view1.width/2+50;
+    _view2.clipsToBounds = YES;
+    
+    
+    _view3.layer.cornerRadius = _view3.width/2;
+    _view3.layer.shadowColor = [UIColor redColor].CGColor;
+    _view3.layer.shadowOffset = CGSizeMake(50, 50);
+    _view3.clipsToBounds = YES;
+    
+    self.progress.progressColor = RGBA(54, 246, 226, 0.3);
+    
+    self.progress.lineWidth = 30;
+    
+    //set CircularProgressView delegate
+    self.progress.progress = 0.7;
+
+
    
+}
+
+- (CAGradientLayer *)shadowAsInverse
+{
+    CAGradientLayer *newShadow = [[CAGradientLayer alloc] init];
+    CGRect newShadowFrame = CGRectMake(0, 0, 200, 200);
+    newShadow.frame = newShadowFrame;
+    //添加渐变的颜色组合
+    newShadow.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor,(id)[UIColor blackColor].CGColor,nil];
+    return newShadow;
 }
 
 #pragma mark - Collection View Data Source
@@ -117,8 +162,6 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([_collectionView isEqual:collectionView]) {
         [_collectionView deselectItemAtIndexPath:indexPath animated:YES];
-
-        //
         BaseViewController *vCtrl;
         switch (indexPath.row) {
             case 0:
@@ -126,10 +169,16 @@
                 vCtrl = [[BenefitsViewController alloc] init];
                 break;
             case 1:
+                //退流量
                 vCtrl = [[FlowUnsubscribeViewController alloc] init];
                 break;
             case 2:
+                //送好友
                 vCtrl = [[BtAcountViewController alloc] init];
+                break;
+            case 3:
+                //游乐场
+                
                 break;
             default:
                 break;
@@ -139,8 +188,36 @@
             vCtrl = nil;
         }
     } else if([_collectionTwoView isEqual:collectionView]) {
-        //
         [_collectionTwoView deselectItemAtIndexPath:indexPath animated:YES];
+        BaseViewController *vCtrl;
+        switch (indexPath.row) {
+            case 0:
+                //备胎流量
+                break;
+            case 1:
+                //积分优惠
+                break;
+            case 2:
+                //注册好礼
+                break;
+            case 3:
+                //首订红包
+                break;
+            case 4:
+                //充手机账户
+                vCtrl = [[RechargeViewController alloc] init];
+                break;
+            case 5:
+                vCtrl = [[TimingRechargeViewController alloc] init];
+                //定时生效
+                break;
+            default:
+                break;
+        }
+        if (vCtrl) {
+            [self.navigationController pushViewController:vCtrl animated:YES];
+            vCtrl = nil;
+        }
     }
    
 }

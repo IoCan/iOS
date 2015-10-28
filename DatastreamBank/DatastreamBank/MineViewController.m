@@ -14,6 +14,7 @@
 #import "MyScoreViewController.h"
 #import "MBProgressHUD.h"
 #import "UserLoginViewController.h"
+#import "AppDelegate.h"
 
 @interface MineViewController ()
 
@@ -127,8 +128,10 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         [self toast:self.view cotent:@"注销成功"];
-        UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
-        [self.navigationController pushViewController:loginCtrl animated:YES];
+         UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
+//        [self.navigationController pushViewController:loginCtrl animated:YES];
+        AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
+        deleteview.window.rootViewController = loginCtrl;
     }
     
 }

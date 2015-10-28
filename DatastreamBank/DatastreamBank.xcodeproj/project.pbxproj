@@ -13,6 +13,8 @@
 		043020061BCBA98A008EF0FF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043020041BCBA98A008EF0FF /* FeedbackViewController.m */; };
 		043020071BCBA98A008EF0FF /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043020051BCBA98A008EF0FF /* FeedbackViewController.xib */; };
 		043C74511BCB84B300CF0003 /* mine_bg_aplha.png in Resources */ = {isa = PBXBuildFile; fileRef = 043C74501BCB84B300CF0003 /* mine_bg_aplha.png */; };
+		0449C7D81BDF67F400CB5856 /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449C7D71BDF67F400CB5856 /* CircularProgressView.m */; };
+		0449C7DA1BDF74E600CB5856 /* guangyun.png in Resources */ = {isa = PBXBuildFile; fileRef = 0449C7D91BDF74E600CB5856 /* guangyun.png */; };
 		044D17D51BB3D1400077FAC9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044D17D41BB3D1400077FAC9 /* BaseViewController.m */; };
 		045360CE1BCF4DAB008F7B64 /* scoretake.plist in Resources */ = {isa = PBXBuildFile; fileRef = 045360CD1BCF4DAB008F7B64 /* scoretake.plist */; };
 		0453D3C11BCB8A4C00E1E39B /* mine_horizontal_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 0453D3C01BCB8A4C00E1E39B /* mine_horizontal_line.png */; };
@@ -35,6 +37,10 @@
 		046C479E1BDDBA8100C76A1C /* BtFlowDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C479C1BDDBA8100C76A1C /* BtFlowDetailsViewController.xib */; };
 		046C47A21BDDBAA000C76A1C /* BtFlowDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C47A01BDDBAA000C76A1C /* BtFlowDetailsCell.m */; };
 		046C47A31BDDBAA000C76A1C /* BtFlowDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C47A11BDDBAA000C76A1C /* BtFlowDetailsCell.xib */; };
+		046C47B21BDE354D00C76A1C /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C47B01BDE354D00C76A1C /* RechargeViewController.m */; };
+		046C47B31BDE354D00C76A1C /* RechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C47B11BDE354D00C76A1C /* RechargeViewController.xib */; };
+		046C47B71BDE357600C76A1C /* TimingRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C47B51BDE357600C76A1C /* TimingRechargeViewController.m */; };
+		046C47B81BDE357600C76A1C /* TimingRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046C47B61BDE357600C76A1C /* TimingRechargeViewController.xib */; };
 		046D50011BCCAAC100523798 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D4FFF1BCCAAC100523798 /* AboutViewController.m */; };
 		046D50021BCCAAC100523798 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D50001BCCAAC100523798 /* AboutViewController.xib */; };
 		046D50091BCCD7FF00523798 /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D50071BCCD7FF00523798 /* MyOrderViewController.m */; };
@@ -80,10 +86,17 @@
 		047A7C381BD8C6DD0082F3C6 /* b5.png in Resources */ = {isa = PBXBuildFile; fileRef = 047A7C321BD8C6DD0082F3C6 /* b5.png */; };
 		047A7C3F1BD8C99B0082F3C6 /* checkbox_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 047A7C3D1BD8C99B0082F3C6 /* checkbox_1.png */; };
 		047A7C401BD8C99B0082F3C6 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 047A7C3E1BD8C99B0082F3C6 /* checkbox.png */; };
+		047D34DB1BDF0C24005DD451 /* ConfirmOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D34D91BDF0C24005DD451 /* ConfirmOrderViewController.m */; };
+		047D34DC1BDF0C24005DD451 /* ConfirmOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047D34DA1BDF0C24005DD451 /* ConfirmOrderViewController.xib */; };
+		047D34E51BDF4934005DD451 /* bg_check_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 047D34E31BDF4934005DD451 /* bg_check_sel.png */; };
+		047D34E61BDF4934005DD451 /* bg_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 047D34E41BDF4934005DD451 /* bg_check.png */; };
+		047D34E81BDF499E005DD451 /* bg_check_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 047D34E71BDF499E005DD451 /* bg_check_blue.png */; };
 		048117171BD5D7B700970389 /* InviteFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048117151BD5D7B700970389 /* InviteFriendsViewController.m */; };
 		048117181BD5D7B700970389 /* InviteFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048117161BD5D7B700970389 /* InviteFriendsViewController.xib */; };
 		0481171C1BD6100300970389 /* UIButton+IcUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481171B1BD6100300970389 /* UIButton+IcUIButton.m */; };
 		048117201BD62F5500970389 /* JDFPeekabooCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481171F1BD62F5500970389 /* JDFPeekabooCoordinator.m */; };
+		04846ED71BE057B8007B8120 /* bg_check_sel2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04846ED61BE057B8007B8120 /* bg_check_sel2.png */; };
+		04846ED91BE0591F007B8120 /* zhizhen.png in Resources */ = {isa = PBXBuildFile; fileRef = 04846ED81BE0591F007B8120 /* zhizhen.png */; };
 		048867791BAFDA7E00BFFC2B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 048867781BAFDA7E00BFFC2B /* MBProgressHUD.m */; };
 		048867E71BAFE26E00BFFC2B /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 048867BD1BAFE26E00BFFC2B /* MJRefreshAutoFooter.m */; };
 		048867E81BAFE26E00BFFC2B /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 048867BF1BAFE26E00BFFC2B /* MJRefreshBackFooter.m */; };
@@ -221,6 +234,9 @@
 		043020041BCBA98A008EF0FF /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		043020051BCBA98A008EF0FF /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
 		043C74501BCB84B300CF0003 /* mine_bg_aplha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_bg_aplha.png; sourceTree = "<group>"; };
+		0449C7D61BDF67F400CB5856 /* CircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularProgressView.h; sourceTree = "<group>"; };
+		0449C7D71BDF67F400CB5856 /* CircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularProgressView.m; sourceTree = "<group>"; };
+		0449C7D91BDF74E600CB5856 /* guangyun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guangyun.png; sourceTree = "<group>"; };
 		044D17D31BB3D1400077FAC9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		044D17D41BB3D1400077FAC9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		045360CD1BCF4DAB008F7B64 /* scoretake.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scoretake.plist; sourceTree = "<group>"; };
@@ -248,6 +264,12 @@
 		046C479F1BDDBAA000C76A1C /* BtFlowDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtFlowDetailsCell.h; sourceTree = "<group>"; };
 		046C47A01BDDBAA000C76A1C /* BtFlowDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtFlowDetailsCell.m; sourceTree = "<group>"; };
 		046C47A11BDDBAA000C76A1C /* BtFlowDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BtFlowDetailsCell.xib; sourceTree = "<group>"; };
+		046C47AF1BDE354D00C76A1C /* RechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeViewController.h; sourceTree = "<group>"; };
+		046C47B01BDE354D00C76A1C /* RechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeViewController.m; sourceTree = "<group>"; };
+		046C47B11BDE354D00C76A1C /* RechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RechargeViewController.xib; sourceTree = "<group>"; };
+		046C47B41BDE357600C76A1C /* TimingRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingRechargeViewController.h; sourceTree = "<group>"; };
+		046C47B51BDE357600C76A1C /* TimingRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingRechargeViewController.m; sourceTree = "<group>"; };
+		046C47B61BDE357600C76A1C /* TimingRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimingRechargeViewController.xib; sourceTree = "<group>"; };
 		046D4FFE1BCCAAC100523798 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		046D4FFF1BCCAAC100523798 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		046D50001BCCAAC100523798 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
@@ -308,6 +330,12 @@
 		047A7C321BD8C6DD0082F3C6 /* b5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b5.png; sourceTree = "<group>"; };
 		047A7C3D1BD8C99B0082F3C6 /* checkbox_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_1.png; sourceTree = "<group>"; };
 		047A7C3E1BD8C99B0082F3C6 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		047D34D81BDF0C24005DD451 /* ConfirmOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmOrderViewController.h; sourceTree = "<group>"; };
+		047D34D91BDF0C24005DD451 /* ConfirmOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmOrderViewController.m; sourceTree = "<group>"; };
+		047D34DA1BDF0C24005DD451 /* ConfirmOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmOrderViewController.xib; sourceTree = "<group>"; };
+		047D34E31BDF4934005DD451 /* bg_check_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_check_sel.png; sourceTree = "<group>"; };
+		047D34E41BDF4934005DD451 /* bg_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_check.png; sourceTree = "<group>"; };
+		047D34E71BDF499E005DD451 /* bg_check_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_check_blue.png; sourceTree = "<group>"; };
 		048117141BD5D7B700970389 /* InviteFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendsViewController.h; sourceTree = "<group>"; };
 		048117151BD5D7B700970389 /* InviteFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendsViewController.m; sourceTree = "<group>"; };
 		048117161BD5D7B700970389 /* InviteFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteFriendsViewController.xib; sourceTree = "<group>"; };
@@ -315,6 +343,8 @@
 		0481171B1BD6100300970389 /* UIButton+IcUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+IcUIButton.m"; sourceTree = "<group>"; };
 		0481171E1BD62F5500970389 /* JDFPeekabooCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFPeekabooCoordinator.h; sourceTree = "<group>"; };
 		0481171F1BD62F5500970389 /* JDFPeekabooCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFPeekabooCoordinator.m; sourceTree = "<group>"; };
+		04846ED61BE057B8007B8120 /* bg_check_sel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_check_sel2.png; sourceTree = "<group>"; };
+		04846ED81BE0591F007B8120 /* zhizhen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhizhen.png; sourceTree = "<group>"; };
 		048867771BAFDA7E00BFFC2B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		048867781BAFDA7E00BFFC2B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		048867BC1BAFE26E00BFFC2B /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -672,6 +702,12 @@
 		046A489C1BCB4AA200BED0C0 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				04846ED81BE0591F007B8120 /* zhizhen.png */,
+				0449C7D91BDF74E600CB5856 /* guangyun.png */,
+				04846ED61BE057B8007B8120 /* bg_check_sel2.png */,
+				047D34E71BDF499E005DD451 /* bg_check_blue.png */,
+				047D34E31BDF4934005DD451 /* bg_check_sel.png */,
+				047D34E41BDF4934005DD451 /* bg_check.png */,
 				04901B531BD9E05900E9A607 /* 14-22.png */,
 				04901B4F1BD9DBE500E9A607 /* nav_back3.png */,
 				04BEA5CB1BD13B7F000D45BB /* img_header_default.png */,
@@ -709,6 +745,22 @@
 				046C47A11BDDBAA000C76A1C /* BtFlowDetailsCell.xib */,
 			);
 			name = BtFlowDetails;
+			sourceTree = "<group>";
+		};
+		046C47A41BDE341300C76A1C /* Recharge */ = {
+			isa = PBXGroup;
+			children = (
+				046C47AF1BDE354D00C76A1C /* RechargeViewController.h */,
+				046C47B01BDE354D00C76A1C /* RechargeViewController.m */,
+				046C47B11BDE354D00C76A1C /* RechargeViewController.xib */,
+				046C47B41BDE357600C76A1C /* TimingRechargeViewController.h */,
+				046C47B51BDE357600C76A1C /* TimingRechargeViewController.m */,
+				046C47B61BDE357600C76A1C /* TimingRechargeViewController.xib */,
+				047D34D81BDF0C24005DD451 /* ConfirmOrderViewController.h */,
+				047D34D91BDF0C24005DD451 /* ConfirmOrderViewController.m */,
+				047D34DA1BDF0C24005DD451 /* ConfirmOrderViewController.xib */,
+			);
+			name = Recharge;
 			sourceTree = "<group>";
 		};
 		046D4FF81BCC9A6300523798 /* Home */ = {
@@ -810,6 +862,8 @@
 		048117191BD60F6000970389 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0449C7D61BDF67F400CB5856 /* CircularProgressView.h */,
+				0449C7D71BDF67F400CB5856 /* CircularProgressView.m */,
 				0481171A1BD6100300970389 /* UIButton+IcUIButton.h */,
 				0481171B1BD6100300970389 /* UIButton+IcUIButton.m */,
 				04901B661BDA34B400E9A607 /* UIView+Layer.h */,
@@ -1094,6 +1148,7 @@
 		04901B601BDA1A1300E9A607 /* BtAcount */ = {
 			isa = PBXGroup;
 			children = (
+				046C47A41BDE341300C76A1C /* Recharge */,
 				046C47991BDDBA3700C76A1C /* BtFlowDetails */,
 				04901B611BDA1A2A00E9A607 /* BtAcountViewController.h */,
 				04901B621BDA1A2A00E9A607 /* BtAcountViewController.m */,
@@ -1212,7 +1267,6 @@
 		04D31D401BA00F6E00EA3DC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				047A7C2C1BD8C6DD0082F3C6 /* bt_rule.html */,
 				047A7C2D1BD8C6DD0082F3C6 /* images */,
 				0481171D1BD62F3900970389 /* JDFPeekaboo */,
 				046A489C1BCB4AA200BED0C0 /* Image */,
@@ -1231,6 +1285,7 @@
 				048867761BAFDA5200BFFC2B /* MBProgressHUD */,
 				04D31D411BA00F6E00EA3DC2 /* Info.plist */,
 				04D31D471BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodeld */,
+				047A7C2C1BD8C6DD0082F3C6 /* bt_rule.html */,
 				04D31D421BA00F6E00EA3DC2 /* main.m */,
 				046D56151BCE4B6A00F3B37C /* jf_rule.html */,
 				048868CA1BAFF98E00BFFC2B /* DatastreamBank-Prefix.pch */,
@@ -1351,10 +1406,12 @@
 				046D56091BCE44BD00F3B37C /* ScoreTakeViewController.xib in Resources */,
 				04BEA5DA1BD229F8000D45BB /* MessageCell.xib in Resources */,
 				046A48A91BCB502700BED0C0 /* mine_vertical_line.png in Resources */,
+				047D34E81BDF499E005DD451 /* bg_check_blue.png in Resources */,
 				046D50111BCCF21C00523798 /* MyOrderCell.xib in Resources */,
 				045360CE1BCF4DAB008F7B64 /* scoretake.plist in Resources */,
 				04901B4A1BD9C78F00E9A607 /* item_benefit_top.png in Resources */,
 				046D500C1BCCE36200523798 /* about_wx_bg.png in Resources */,
+				04846ED71BE057B8007B8120 /* bg_check_sel2.png in Resources */,
 				0461E5131BB155C600614492 /* MineViewController.xib in Resources */,
 				040072CE1BC78FD1009AC7AD /* Images.xcassets in Resources */,
 				046C479E1BDDBA8100C76A1C /* BtFlowDetailsViewController.xib in Resources */,
@@ -1362,11 +1419,14 @@
 				04D31D541BA00F6E00EA3DC2 /* LaunchScreen.xib in Resources */,
 				04BEA5CC1BD13B7F000D45BB /* img_header_default.png in Resources */,
 				04901B5F1BDA1A0400E9A607 /* FlowUnsubscribeViewController.xib in Resources */,
+				047D34E61BDF4934005DD451 /* bg_check.png in Resources */,
 				046A48A21BCB4BAC00BED0C0 /* mine_btn1.png in Resources */,
+				047D34DC1BDF0C24005DD451 /* ConfirmOrderViewController.xib in Resources */,
 				046D560E1BCE451800F3B37C /* WebViewController.xib in Resources */,
 				0461E50E1BB155B700614492 /* FriendsViewController.xib in Resources */,
 				0453D3C11BCB8A4C00E1E39B /* mine_horizontal_line.png in Resources */,
 				047A7C261BD8C2140082F3C6 /* BenefitsCell.xib in Resources */,
+				046C47B31BDE354D00C76A1C /* RechargeViewController.xib in Resources */,
 				046C47A31BDDBAA000C76A1C /* BtFlowDetailsCell.xib in Resources */,
 				047A7C0C1BD76F1E0082F3C6 /* HomeCell.xib in Resources */,
 				046D500A1BCCD7FF00523798 /* MyOrderViewController.xib in Resources */,
@@ -1377,6 +1437,7 @@
 				046D50021BCCAAC100523798 /* AboutViewController.xib in Resources */,
 				047A7C141BD86F2C0082F3C6 /* UserLoginViewController.xib in Resources */,
 				04ED37A61BCFA6090053621C /* infosetting_header_default.png in Resources */,
+				047D34E51BDF4934005DD451 /* bg_check_sel.png in Resources */,
 				049D346A1BDCA3F1009F7A5B /* BtAcountCell.xib in Resources */,
 				046D56131BCE459500F3B37C /* ScoreTakeViewCell.xib in Resources */,
 				047A7C1B1BD8AE170082F3C6 /* home_item2.plist in Resources */,
@@ -1387,15 +1448,18 @@
 				047A7C2B1BD8C31F0082F3C6 /* BenefitsFootView.xib in Resources */,
 				046A48B01BCB576800BED0C0 /* mine_bg.png in Resources */,
 				043C74511BCB84B300CF0003 /* mine_bg_aplha.png in Resources */,
+				0449C7DA1BDF74E600CB5856 /* guangyun.png in Resources */,
 				047A7C191BD8815D0082F3C6 /* HomeTwoCell.xib in Resources */,
 				047036D31BCFFB2200CE3AC9 /* TestViewController.xib in Resources */,
 				047A7C371BD8C6DD0082F3C6 /* b4.png in Resources */,
 				047A7C331BD8C6DD0082F3C6 /* bt_rule.html in Resources */,
 				04901B541BD9E05900E9A607 /* 14-22.png in Resources */,
 				040072D41BC793C5009AC7AD /* MessageViewController.xib in Resources */,
+				04846ED91BE0591F007B8120 /* zhizhen.png in Resources */,
 				047A7C361BD8C6DD0082F3C6 /* b3.png in Resources */,
 				048867F51BAFE26E00BFFC2B /* MJRefresh.bundle in Resources */,
 				046A48A31BCB4BAC00BED0C0 /* mine_btn2.png in Resources */,
+				046C47B81BDE357600C76A1C /* TimingRechargeViewController.xib in Resources */,
 				047A7C0E1BD786E80082F3C6 /* home_item1.plist in Resources */,
 				046A489B1BCB461700BED0C0 /* MineHeadView.xib in Resources */,
 				049D346F1BDCA7A2009F7A5B /* BtAcountHeadView.xib in Resources */,
@@ -1428,6 +1492,7 @@
 				046D56121BCE459500F3B37C /* ScoreTakeViewCell.m in Sources */,
 				048867F71BAFE26E00BFFC2B /* UIScrollView+MJExtension.m in Sources */,
 				048868231BAFE2B500BFFC2B /* SDWebImageManager.m in Sources */,
+				046C47B71BDE357600C76A1C /* TimingRechargeViewController.m in Sources */,
 				0496EF981BB2A2D100F93E8A /* AFURLConnectionOperation.m in Sources */,
 				0496EFA31BB2A2D100F93E8A /* UIWebView+AFNetworking.m in Sources */,
 				048867E71BAFE26E00BFFC2B /* MJRefreshAutoFooter.m in Sources */,
@@ -1440,7 +1505,9 @@
 				048868221BAFE2B500BFFC2B /* SDWebImageDownloaderOperation.m in Sources */,
 				046D50161BCD0B6800523798 /* MyScoreViewController.m in Sources */,
 				046D50101BCCF21C00523798 /* MyOrderCell.m in Sources */,
+				0449C7D81BDF67F400CB5856 /* CircularProgressView.m in Sources */,
 				048867EF1BAFE26E00BFFC2B /* MJRefreshBackGifFooter.m in Sources */,
+				046C47B21BDE354D00C76A1C /* RechargeViewController.m in Sources */,
 				044D17D51BB3D1400077FAC9 /* BaseViewController.m in Sources */,
 				048868C11BAFF55500BFFC2B /* RTLabel.m in Sources */,
 				04BEA5E51BD4CB76000D45BB /* FriendsCell.m in Sources */,
@@ -1516,6 +1583,7 @@
 				048867EC1BAFE26E00BFFC2B /* MJRefreshAutoGifFooter.m in Sources */,
 				0496EF9B1BB2A2D100F93E8A /* AFURLSessionManager.m in Sources */,
 				048117201BD62F5500970389 /* JDFPeekabooCoordinator.m in Sources */,
+				047D34DB1BDF0C24005DD451 /* ConfirmOrderViewController.m in Sources */,
 				047A7C251BD8C2140082F3C6 /* BenefitsCell.m in Sources */,
 				049D34691BDCA3F1009F7A5B /* BtAcountCell.m in Sources */,
 				048868BA1BAFF4A700BFFC2B /* NSObject+MJClass.m in Sources */,

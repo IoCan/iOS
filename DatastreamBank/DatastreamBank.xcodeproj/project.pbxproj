@@ -86,6 +86,7 @@
 		047A7C381BD8C6DD0082F3C6 /* b5.png in Resources */ = {isa = PBXBuildFile; fileRef = 047A7C321BD8C6DD0082F3C6 /* b5.png */; };
 		047A7C3F1BD8C99B0082F3C6 /* checkbox_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 047A7C3D1BD8C99B0082F3C6 /* checkbox_1.png */; };
 		047A7C401BD8C99B0082F3C6 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 047A7C3E1BD8C99B0082F3C6 /* checkbox.png */; };
+		047B0F3C1BE1F2E100C516C8 /* NSString+Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B0F3B1BE1F2E100C516C8 /* NSString+Phone.m */; };
 		047D34DB1BDF0C24005DD451 /* ConfirmOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D34D91BDF0C24005DD451 /* ConfirmOrderViewController.m */; };
 		047D34DC1BDF0C24005DD451 /* ConfirmOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047D34DA1BDF0C24005DD451 /* ConfirmOrderViewController.xib */; };
 		047D34E51BDF4934005DD451 /* bg_check_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = 047D34E31BDF4934005DD451 /* bg_check_sel.png */; };
@@ -202,6 +203,7 @@
 		049D346E1BDCA7A2009F7A5B /* BtAcountHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D346C1BDCA7A2009F7A5B /* BtAcountHeadView.m */; };
 		049D346F1BDCA7A2009F7A5B /* BtAcountHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049D346D1BDCA7A2009F7A5B /* BtAcountHeadView.xib */; };
 		049D34711BDCBFDB009F7A5B /* btacount.plist in Resources */ = {isa = PBXBuildFile; fileRef = 049D34701BDCBFDB009F7A5B /* btacount.plist */; };
+		04A4768D1BE21D880030580C /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4768C1BE21D880030580C /* UIDeviceHardware.m */; };
 		04A71D261BC76194002F45F1 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A71D251BC76194002F45F1 /* BaseNavigationController.m */; };
 		04BEA5CC1BD13B7F000D45BB /* img_header_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BEA5CB1BD13B7F000D45BB /* img_header_default.png */; };
 		04BEA5D01BD2285B000D45BB /* SegTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEA5CF1BD2285B000D45BB /* SegTabBarView.m */; };
@@ -335,6 +337,8 @@
 		047A7C321BD8C6DD0082F3C6 /* b5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b5.png; sourceTree = "<group>"; };
 		047A7C3D1BD8C99B0082F3C6 /* checkbox_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_1.png; sourceTree = "<group>"; };
 		047A7C3E1BD8C99B0082F3C6 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		047B0F3A1BE1F2E100C516C8 /* NSString+Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Phone.h"; sourceTree = "<group>"; };
+		047B0F3B1BE1F2E100C516C8 /* NSString+Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Phone.m"; sourceTree = "<group>"; };
 		047D34D81BDF0C24005DD451 /* ConfirmOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmOrderViewController.h; sourceTree = "<group>"; };
 		047D34D91BDF0C24005DD451 /* ConfirmOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmOrderViewController.m; sourceTree = "<group>"; };
 		047D34DA1BDF0C24005DD451 /* ConfirmOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmOrderViewController.xib; sourceTree = "<group>"; };
@@ -551,6 +555,8 @@
 		049D346C1BDCA7A2009F7A5B /* BtAcountHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtAcountHeadView.m; sourceTree = "<group>"; };
 		049D346D1BDCA7A2009F7A5B /* BtAcountHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BtAcountHeadView.xib; sourceTree = "<group>"; };
 		049D34701BDCBFDB009F7A5B /* btacount.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = btacount.plist; sourceTree = "<group>"; };
+		04A4768B1BE21D880030580C /* UIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
+		04A4768C1BE21D880030580C /* UIDeviceHardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceHardware.m; sourceTree = "<group>"; };
 		04A71D241BC76194002F45F1 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		04A71D251BC76194002F45F1 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		04BEA5CB1BD13B7F000D45BB /* img_header_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_header_default.png; sourceTree = "<group>"; };
@@ -706,6 +712,8 @@
 		0461E53D1BB157D000614492 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				048229691BE36E3300159192 /* Model */,
+				047B0F391BE1F2B300C516C8 /* Utils */,
 				047A7C0F1BD86BC10082F3C6 /* Introduction */,
 				048117191BD60F6000970389 /* View */,
 				044D17D21BB3D1110077FAC9 /* Base */,
@@ -878,6 +886,17 @@
 			name = Benefits;
 			sourceTree = "<group>";
 		};
+		047B0F391BE1F2B300C516C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				04A4768B1BE21D880030580C /* UIDeviceHardware.h */,
+				04A4768C1BE21D880030580C /* UIDeviceHardware.m */,
+				047B0F3A1BE1F2E100C516C8 /* NSString+Phone.h */,
+				047B0F3B1BE1F2E100C516C8 /* NSString+Phone.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		048117191BD60F6000970389 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -898,6 +917,13 @@
 				0481171F1BD62F5500970389 /* JDFPeekabooCoordinator.m */,
 			);
 			name = JDFPeekaboo;
+			sourceTree = "<group>";
+		};
+		048229691BE36E3300159192 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		048867761BAFDA5200BFFC2B /* MBProgressHUD */ = {
@@ -1600,6 +1626,7 @@
 				048868211BAFE2B500BFFC2B /* SDWebImageDownloader.m in Sources */,
 				048868921BAFF08800BFFC2B /* UIUtils.m in Sources */,
 				048868251BAFE2B500BFFC2B /* UIButton+WebCache.m in Sources */,
+				04A4768D1BE21D880030580C /* UIDeviceHardware.m in Sources */,
 				0496EF651BB29ADC00F93E8A /* MGJRequestManager.m in Sources */,
 				046C47A21BDDBAA000C76A1C /* BtFlowDetailsCell.m in Sources */,
 				0496EF961BB2A2D100F93E8A /* AFNetworkReachabilityManager.m in Sources */,
@@ -1630,6 +1657,7 @@
 				049D346E1BDCA7A2009F7A5B /* BtAcountHeadView.m in Sources */,
 				048868841BAFEACC00BFFC2B /* RDVTabBar.m in Sources */,
 				048868BE1BAFF4A700BFFC2B /* NSString+MJExtension.m in Sources */,
+				047B0F3C1BE1F2E100C516C8 /* NSString+Phone.m in Sources */,
 				04BEA5D91BD229F8000D45BB /* MessageCell.m in Sources */,
 				046D50091BCCD7FF00523798 /* MyOrderViewController.m in Sources */,
 				046D501C1BCD0BE600523798 /* UserInfoSettingViewController.m in Sources */,

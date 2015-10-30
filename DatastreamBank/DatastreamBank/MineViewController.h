@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "MineHeadView.h"
 
 @interface MineViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate>
 
@@ -15,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSMutableArray *data;//数据源
+
+@property (strong, nonatomic) MineHeadView *tableHeadView;
 
 
 

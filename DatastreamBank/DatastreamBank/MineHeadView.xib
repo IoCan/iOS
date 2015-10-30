@@ -10,7 +10,9 @@
                 <outlet property="btn_addfriend" destination="uSy-EP-aIY" id="QzN-Iv-hAh"/>
                 <outlet property="btn_infosetting" destination="xjk-W4-X9q" id="3hp-SI-FSm"/>
                 <outlet property="img_userhead" destination="71y-ej-TxI" id="Qlr-g1-pqo"/>
+                <outlet property="label_score" destination="Hpu-OL-Rrw" id="KbN-aL-4A5"/>
                 <outlet property="label_userphone" destination="HxV-hX-UzO" id="7mX-e6-Rzl"/>
+                <outlet property="label_virtualflow" destination="Jgo-5n-KY7" id="rJ3-ME-VFd"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -32,7 +34,7 @@
                         <action selector="action_head:" destination="-1" eventType="touchUpInside" id="mBy-mp-PcW"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户：15105175425" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HxV-hX-UzO">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HxV-hX-UzO">
                     <rect key="frame" x="93" y="8" width="207" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -56,7 +58,7 @@
                     <rect key="frame" x="0.0" y="104" width="375" height="56"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备胎余额：322M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jgo-5n-KY7">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备胎余额：0M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jgo-5n-KY7">
                     <rect key="frame" x="0.0" y="104" width="186" height="56"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -68,8 +70,8 @@
                     <rect key="frame" x="186" y="104" width="2" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备胎余额：322M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hpu-OL-Rrw">
-                    <rect key="frame" x="187.99999998397726" y="104" width="186" height="56"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前积分：0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hpu-OL-Rrw">
+                    <rect key="frame" x="187.99999995180312" y="104" width="186" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

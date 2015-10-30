@@ -37,6 +37,8 @@
 
 //font color keys
 #define kNavigationBarTitleLabel @"kNavigationBarTitleLabel"
+//请求服务器连接
+#define BaseUrlString @"http://202.102.39.91/spare_wheel/"
 
 
 #define RGBA(R/*红*/, G/*绿*/, B/*蓝*/, A/*透明*/) \
@@ -59,3 +61,23 @@
 #define LogSubviews(view)  MyLog(@"%@",view.subviews);
 
 #define iOS7   ([UIDevice currentDevice].systemVersion.floatValue>=7.0)
+
+
+ //用户信息
+#define UserInfo @"userList"
+
+#define ican_address @"address"
+#define ican_birthday @"birthday"
+#define ican_city @"city"
+#define ican_flowsee @"flowsee"
+#define ican_gender @"gender"
+#define ican_headpath @"headpath"
+#define ican_operator @"operator"//属于哪个运营商
+#define ican_mobile @"mobile"
+#define ican_nickname @"nickname"
+#define ican_virtualflow @"virtualflow"
+#define ican_score @"score"
+#define ican_password @"password"
+
+
+

@@ -15,6 +15,9 @@
 #import "FriendsViewController.h"
 #import "MessageViewController.h"
 #import "BaseNavigationController.h"
+#import "UserLoginViewController.h"
+#import "NSString+Phone.h"
+#import "SDWebImage/SDImageCache.h"
 
 @interface AppDelegate ()
 
@@ -28,17 +31,32 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOption {
     [application setStatusBarStyle:UIStatusBarStyleLightContent];//设置全局状态栏颜色
     [application setStatusBarHidden:NO]; //启动的时候设置显示, 启动后要打开
+    
+    NSString *bundledPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"IoCanImages"];
+    [[SDImageCache sharedImageCache] addReadOnlyCachePath:bundledPath];
+    
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
     [NSURLCache setSharedURLCache:URLCache];
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self setupViewControllers];
-    [self.window setRootViewController:self.viewController];
-    [self.window makeKeyAndVisible];
     
-    [self customizeInterface];
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    NSDictionary *userInfo = [defaults objectForKey:UserInfo];
+    NSString *mobile = [userInfo objectForKey:ican_mobile];
+    if ([NSString isMobileNumber:mobile]) {
+        //主页面
+        [self setupViewControllers];
+        [self.window setRootViewController:self.viewController];
+        [self.window makeKeyAndVisible];
+        [self customizeInterface];
+    } else {
+        //登录页面
+        UserLoginViewController *login = [[UserLoginViewController alloc] init];
+        [self.window setRootViewController:login];
+        [self.window makeKeyAndVisible];
+    }
     return YES;
 }
 

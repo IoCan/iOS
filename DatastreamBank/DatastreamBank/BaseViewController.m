@@ -130,17 +130,23 @@
 
 
 -(void)toast:(UIView *) view cotent:(NSString *) param{
-
     _toast = [[MBProgressHUD alloc] initWithView:view];
     _toast.labelText = param;
     _toast.mode = MBProgressHUDModeText;
     [self.view addSubview:_toast];
-    [_toast showAnimated:YES whileExecutingBlock:^{
-        sleep(1);
-    } completionBlock:^{
-        [_toast removeFromSuperview];
-        _toast = nil;
-    }];
+    [_toast show:YES];
+    [_toast hide:YES afterDelay:2];
+}
+
+-(void)toastsucess:(UIView *) view cotent:(NSString *) param{
+    _toast = [[MBProgressHUD alloc] initWithView:view];
+    _toast.labelText = param;
+    _toast.mode = MBProgressHUDModeCustomView;
+    _toast.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark"]];
+    _toast.labelText = param;
+    [self.view addSubview:_toast];
+    [_toast show:YES];
+    [_toast hide:YES afterDelay:2];
 }
 
 - (void)didReceiveMemoryWarning {

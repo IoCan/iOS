@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDImageCache.h"
 
 @interface MineHeadView : UIView<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic,strong) UIImage *headImage;
 
+@property (strong, nonatomic) IBOutlet UILabel *label_score;
  
+@property (strong, nonatomic) IBOutlet UILabel *label_virtualflow;
 @property (strong, nonatomic) IBOutlet UIButton *img_userhead;
 @property (strong, nonatomic) IBOutlet UILabel *label_userphone;
 @property (strong, nonatomic) IBOutlet UIButton *btn_addfriend;

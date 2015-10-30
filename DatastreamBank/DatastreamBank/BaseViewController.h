@@ -20,6 +20,7 @@
 -(void)setWhiteNav;
 -(void)setBlueNav;
 -(void)toast:(UIView *) view cotent:(NSString *) param;
+-(void)toastsucess:(UIView *) view cotent:(NSString *) param;
  
 
 

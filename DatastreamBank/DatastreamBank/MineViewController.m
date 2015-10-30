@@ -7,7 +7,6 @@
 //
 
 #import "MineViewController.h"
-#import "MineHeadView.h"
 #import "FeedbackViewController.h"
 #import "AboutViewController.h"
 #import "MyOrderViewController.h"
@@ -15,6 +14,7 @@
 #import "MBProgressHUD.h"
 #import "UserLoginViewController.h"
 #import "AppDelegate.h"
+#import "UIButton+WebCache.h"
 
 @interface MineViewController ()
 
@@ -37,8 +37,31 @@
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *plistPath = [bundle pathForResource:@"mineitem" ofType:@"plist"];
     self.data = [[NSMutableArray  alloc] initWithContentsOfFile:plistPath];
-    MineHeadView *tableHeadView = [[MineHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 160)];
-    self.tableView.tableHeaderView =tableHeadView;
+    self.tableHeadView = [[MineHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 160)];
+    self.tableView.tableHeaderView =self.tableHeadView;
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    NSDictionary *userInfo = [defaults objectForKey:UserInfo];
+    NSString *mobile = [userInfo objectForKey:ican_mobile];
+    NSInteger virtualflow = [[userInfo objectForKey:ican_virtualflow] integerValue];
+    NSString *score = [userInfo objectForKey:ican_score];
+    NSString *headpath = [userInfo objectForKey:ican_headpath];
+    self.tableHeadView.label_userphone.text = [NSString stringWithFormat:@"账户：%@",mobile];
+    self.tableHeadView.label_virtualflow.text = [NSString stringWithFormat:@"备胎余额：%ldM",virtualflow];
+    self.tableHeadView.label_score.text = [NSString stringWithFormat:@"当前积分：%@",score];
+    if (headpath!=nil && headpath.length>10) {
+        NSString *headurl = [BaseUrlString stringByAppendingString:headpath];
+        NSLog(headurl,nil);
+        [self.tableHeadView.img_userhead sd_setImageWithURL:[NSURL URLWithString:headurl]
+                                                   forState:UIControlStateNormal
+                                           placeholderImage:[UIImage imageNamed:@"img_header_default.png"]
+                                                    options:SDWebImageDelayPlaceholder
+                                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                                                      NSLog(@"%@",error);
+                                                  }];
+        
+    }
+  
+    
 }
 
 #pragma mark -数据源方法
@@ -128,8 +151,9 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         [self toast:self.view cotent:@"注销成功"];
-         UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
-//        [self.navigationController pushViewController:loginCtrl animated:YES];
+        NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+        [defaults removeObjectForKey:UserInfo];
+        UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
         AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
         deleteview.window.rootViewController = loginCtrl;
     }

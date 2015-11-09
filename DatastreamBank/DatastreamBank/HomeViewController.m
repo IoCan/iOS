@@ -103,7 +103,6 @@
 //            NSLog(@"\n总流量查询：\n%@",responseObject);
             float already = [[responseObject objectForKey:@"already"] floatValue];
             float total = [[responseObject objectForKey:@"total"] floatValue];
-            sleep(1);
             float left = total - already;
             float pre = left/total;
             [_progressview updateProgress:isnan(pre)?0.0f:pre];

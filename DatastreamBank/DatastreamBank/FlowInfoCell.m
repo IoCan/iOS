@@ -35,29 +35,41 @@
     _bg_view.layer.borderWidth = 1.2f;
     _bg_view.layer.cornerRadius = 10;
     _bg_view.clipsToBounds = YES;
-//    if (_initProgress > 0.7) {
-//        _progressView.progressTintColor = RGBA(238, 129, 100, 1.0);
-//    } else {
-//        _progressView.progressTintColor = RGBA(82, 93, 170, 1.0);
-//    }
-    NSLog(@"%f",_initProgress);
-    [_progressView setProgress:_initProgress animated:NO];
+
+    if (_initProgress > 0.7) {
+        _progressView.progressTintColor = RGBA(238, 129, 100, 1.0);
+    }
+    [_progressView setProgress:_initProgress];
     if (_initProgress == 0) {
         CGRect f = _label_pre.frame;
         f.origin.x = _progressView.center.x-_label_pre.width/2;
+        _label_pre.text = @"0%";
         _label_pre.frame = f;
         _label_pre.textColor = [UIColor grayColor];
         
     } else {
-//        CGFloat p_width = _progressView.width;
-//        CGFloat p_p = p_width * _initProgress;//进度的长度
-//        _label_pre.text = [NSString stringWithFormat:@"%0.0f%%",_initProgress *100];
-//        if (p_p >_label_pre.width) {//如果进度超过百分比宽度
-//            CGRect f = _label_pre.frame;
-//            f.origin.x = (p_p-_label_pre.width);
-//            _label_pre.frame = f;
-//        }
+        if (_initProgress < 0.0099999999) {
+             //小于1%的百分比精确度显示，最多精确万分之一
+             _label_pre.text = [NSString stringWithFormat:@"%0.1f‰",_initProgress *1000];
+        } else {
+             _label_pre.text = [NSString stringWithFormat:@"%0.0f%%",_initProgress *100];
+        }
+        CGFloat p_width = _progressView.width;
+        CGFloat p_p = p_width * _initProgress;//进度的长度
+        if (p_p > _label_pre.width) {//如果进度超过百分比宽度
+            CGRect f = _label_pre.frame;
+            f.origin.x = (p_p-_label_pre.width);
+            _label_pre.textColor = [UIColor whiteColor];
+            _label_pre.frame = f;
+        } else {
+            CGRect f = _label_pre.frame;
+            f.origin.x = p_p;
+            _label_pre.textColor = [UIColor grayColor];
+            _label_pre.frame = f;
+        }
     }
+    
+
     
 }
 

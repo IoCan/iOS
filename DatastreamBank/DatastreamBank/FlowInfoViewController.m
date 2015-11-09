@@ -101,7 +101,6 @@
                 [_data addObject:flow];
             }
             [self.tableView reloadData];
-            MyLog(@"%ld====",_data.count);
         } else {
            [self alert:@"提示" msg:resultMsg];
         }

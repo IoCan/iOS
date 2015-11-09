@@ -34,6 +34,26 @@
 }
 
 
+//-(void)setSelected:(BOOL)selected {
+//    if (selected) {
+//        _view_bg.backgroundColor = [UIColor lightGrayColor];
+//        
+//    } else {
+//        _view_bg.backgroundColor = [UIColor whiteColor];
+//    }
+//    
+//}
+//
+//-(void)setHighlighted:(BOOL)highlighted {
+//    if (highlighted) {
+//        _view_bg.backgroundColor = [UIColor lightGrayColor];
+//        
+//    } else {
+//        _view_bg.backgroundColor = [UIColor whiteColor];
+//    }
+//    
+//}
+
 
 - (void)awakeFromNib {
     // Initialization code

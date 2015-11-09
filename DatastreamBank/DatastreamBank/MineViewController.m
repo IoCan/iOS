@@ -15,6 +15,9 @@
 #import "UserLoginViewController.h"
 #import "AppDelegate.h"
 #import "UIButton+WebCache.h"
+#import "UserInfoManager.h"
+
+
 
 @interface MineViewController ()
 
@@ -32,25 +35,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeHead:) name:loadhead object:nil];
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];
     NSBundle *bundle = [NSBundle mainBundle];
+//    NSLog(@"%@",[UserInfoManager readObjectByKey:ican_headpath]);
     NSString *plistPath = [bundle pathForResource:@"mineitem" ofType:@"plist"];
     self.data = [[NSMutableArray  alloc] initWithContentsOfFile:plistPath];
     self.tableHeadView = [[MineHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 160)];
     self.tableView.tableHeaderView =self.tableHeadView;
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    NSDictionary *userInfo = [defaults objectForKey:UserInfo];
-    NSString *mobile = [userInfo objectForKey:ican_mobile];
-    NSInteger virtualflow = [[userInfo objectForKey:ican_virtualflow] integerValue];
-    NSString *score = [userInfo objectForKey:ican_score];
-    NSString *headpath = [userInfo objectForKey:ican_headpath];
+    NSString *mobile = [UserInfoManager readObjectByKey:ican_mobile];
+    NSInteger virtualflow = [[UserInfoManager readObjectByKey:ican_virtualflow] integerValue];
+    NSString *score = [UserInfoManager readObjectByKey:ican_score];
+    NSString *headpath = [UserInfoManager readObjectByKey:ican_headpath];
     self.tableHeadView.label_userphone.text = [NSString stringWithFormat:@"账户：%@",mobile];
     self.tableHeadView.label_virtualflow.text = [NSString stringWithFormat:@"备胎余额：%ldM",virtualflow];
     self.tableHeadView.label_score.text = [NSString stringWithFormat:@"当前积分：%@",score];
     if (headpath!=nil && headpath.length>10) {
         NSString *headurl = [BaseUrlString stringByAppendingString:headpath];
-        NSLog(headurl,nil);
         [self.tableHeadView.img_userhead sd_setImageWithURL:[NSURL URLWithString:headurl]
                                                    forState:UIControlStateNormal
                                            placeholderImage:[UIImage imageNamed:@"img_header_default.png"]
@@ -151,8 +153,7 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         [self toast:self.view cotent:@"注销成功"];
-        NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-        [defaults removeObjectForKey:UserInfo];
+        [UserInfoManager clear];
         UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
         AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
         deleteview.window.rootViewController = loginCtrl;
@@ -160,22 +161,49 @@
     
 }
 
+-(void)changeHead:(BOOL)ischange {
+        NSString *headurl = [BaseUrlString stringByAppendingString:[UserInfoManager readObjectByKey:ican_headpath]];
+        [self.tableHeadView.img_userhead sd_setImageWithURL:[NSURL URLWithString:headurl]
+                                                   forState:UIControlStateNormal
+                                           placeholderImage:[UIImage imageNamed:@"img_header_default.png"]
+                                                    options:SDWebImageDelayPlaceholder
+                                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                                      //                                                      NSLog(@"%@",error);
+                                                  }];
 
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+   
 }
+
 
 
 -(id)getVauleForDicByGroup:(long) section selectRow:(long) row {
     return [[self.data objectAtIndex:section][row] objectForKey:@"title"];
 }
 
+#pragma mark - 生命周期处理
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSInteger virtualflow = [[UserInfoManager readObjectByKey:ican_virtualflow] integerValue];
+    NSString *score = [UserInfoManager readObjectByKey:ican_score];
+    self.tableHeadView.label_virtualflow.text = [NSString stringWithFormat:@"备胎余额：%ldM",virtualflow];
+    self.tableHeadView.label_score.text = [NSString stringWithFormat:@"当前积分：%@",score];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"" object:nil];
 }
 
 

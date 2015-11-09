@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CircularProgressView.h"
 
-@interface HomeProgress2View : UIView
+@interface HomeProgress2View : UIView<UIGestureRecognizerDelegate>
+
+
+@property (strong, nonatomic) IBOutlet UIView *view1;
+@property (strong, nonatomic) IBOutlet UIView *view2;
+@property (strong, nonatomic) IBOutlet UIView *view3;
+@property (strong, nonatomic) IBOutlet CircularProgressView *progress;
+@property (strong, nonatomic) IBOutlet UILabel *label_flow;
+
+@property (nonatomic) NSInteger initfow;
+
+-(void)setFlow:(NSInteger) flow;
 
 @end

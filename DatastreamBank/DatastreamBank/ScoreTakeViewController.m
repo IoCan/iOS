@@ -8,6 +8,7 @@
 
 #import "ScoreTakeViewController.h"
 #import "ScoreTakeViewCell.h"
+#import "BenefitsViewController.h"
 
 @interface ScoreTakeViewController ()
 
@@ -61,6 +62,32 @@
     cell.selectionStyle =UITableViewCellAccessoryNone;
    
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 取消选中高亮
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    NSLog(@"%ld",indexPath.row);
+    BaseViewController *ctrl;
+    switch (indexPath.row) {
+        case 0:
+            
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            ctrl = [[BenefitsViewController alloc] init];
+            break;
+        default:
+            break;
+    }
+    if (ctrl) {
+        [self.navigationController pushViewController:ctrl animated:YES];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

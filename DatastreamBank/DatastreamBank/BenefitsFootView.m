@@ -44,35 +44,31 @@
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Actiondo:)];
     tapGesture.delegate = self;
-    tapGesture.cancelsTouchesInView = NO;
     [_view1 addGestureRecognizer:tapGesture];
     UITapGestureRecognizer *tapGesture2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Actiondo:)];
     tapGesture2.delegate = self;
-    tapGesture2.cancelsTouchesInView = NO;
     [_view2 addGestureRecognizer:tapGesture2];
 }
 
 -(void)Actiondo:(UITapGestureRecognizer *)sender{
+    sender.view.backgroundColor = [UIColor whiteColor];
     if ([_view1 isEqual:sender.view]) {
         BtAcountViewController *btAcountViewController = [[BtAcountViewController alloc] init];
         [self.viewController.navigationController pushViewController:btAcountViewController animated:YES];
     }
     if ([_view2 isEqual:sender.view]) {
-
+        
+    
     }
-    sender.view.backgroundColor = [UIColor whiteColor];
+    
    
 }
 
 
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-    if(gestureRecognizer.delaysTouchesEnded){
-        
-    }
-     gestureRecognizer.view.backgroundColor = [UIColor whiteColor];
-    
-    return YES;
-}
+//-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+////     gestureRecognizer.view.backgroundColor = [UIColor whiteColor];
+//    return YES;
+//}
 
 //- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
 //    NSLog(@"=====shouldRequireFailureOfGestureRecognizer=====");
@@ -86,7 +82,7 @@
 
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    gestureRecognizer.view.backgroundColor = RGBA(255, 255, 241, 1.0);
+    gestureRecognizer.view.backgroundColor = RGBA(246, 246, 246, 1.0);
     return YES;
 }
 

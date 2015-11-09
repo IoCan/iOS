@@ -34,7 +34,6 @@
 
 
 #pragma mark -数据源方法
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identify = @"BtFlowDetailsCell";
     BtFlowDetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];

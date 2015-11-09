@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Av0-Vk-qQt" userLabel="TopView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="211"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_gywm_bt" translatesAutoresizingMaskIntoConstraints="NO" id="VnM-D1-RBK">
                             <rect key="frame" x="120" y="50" width="80" height="80"/>
@@ -36,7 +36,7 @@
                     <color key="backgroundColor" red="0.41176470590000003" green="0.79607843140000001" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="qdl-nB-AZz" secondAttribute="centerX" constant="-0.5" id="HQr-k4-KeR"/>
-                        <constraint firstAttribute="height" constant="211" id="anp-uP-Pfe"/>
+                        <constraint firstAttribute="height" constant="210" id="anp-uP-Pfe"/>
                         <constraint firstItem="qdl-nB-AZz" firstAttribute="top" secondItem="VnM-D1-RBK" secondAttribute="top" constant="101" id="bhT-GV-Fac"/>
                         <constraint firstItem="VnM-D1-RBK" firstAttribute="top" secondItem="Av0-Vk-qQt" secondAttribute="top" constant="50" id="wEy-qA-ijj"/>
                         <constraint firstAttribute="centerX" secondItem="VnM-D1-RBK" secondAttribute="centerX" id="zv4-1U-KdQ"/>
@@ -97,7 +97,7 @@
                                         <constraint firstAttribute="height" constant="60" id="m7M-Ca-JuZ"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce6-Wm-hNT">
                                     <rect key="frame" x="210" y="10" width="100" height="38"/>

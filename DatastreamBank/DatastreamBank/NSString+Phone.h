@@ -15,4 +15,6 @@
 
 + (BOOL)isSixCodeNumber:(NSString *)num;
 
++ (BOOL)isBlankString:(NSString *)string;
+
 @end

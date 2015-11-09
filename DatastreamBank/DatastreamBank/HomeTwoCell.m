@@ -24,7 +24,7 @@
 
 -(void)setSelected:(BOOL)selected {
     if (selected) {
-        self.backgroundView.backgroundColor = RGBA(255, 255, 241, 1.0);
+        self.backgroundView.backgroundColor = RGBA(246, 246, 246, 1.0);
         
     } else {
         self.backgroundView.backgroundColor = [UIColor whiteColor];
@@ -34,7 +34,7 @@
 
 -(void)setHighlighted:(BOOL)highlighted {
     if (highlighted) {
-        self.backgroundView.backgroundColor = RGBA(255, 255, 241, 1.0);
+        self.backgroundView.backgroundColor = RGBA(246, 246, 246, 1.0);
 
     } else {
         self.backgroundView.backgroundColor = [UIColor whiteColor];

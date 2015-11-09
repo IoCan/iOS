@@ -7,6 +7,7 @@
 //
 
 #import "HomeProgressView.h"
+#import "FlowInfoViewController.h"
 
 @implementation HomeProgressView
 
@@ -31,44 +32,50 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-
     _view1.layer.cornerRadius = _view1.width/2;
-    
-    
     _view1.layer.shadowColor = [UIColor whiteColor].CGColor;
     _view1.layer.shadowOffset = CGSizeMake(10, 10);
     _view1.layer.shadowOpacity = 0.3;
     _view1.layer.shadowRadius = _view1.width/2+50;
     _view1.clipsToBounds = YES;
-    
-    
-    
     _view2.layer.cornerRadius = _view2.width/2;
-    //
-    //    _view2.layer.shadowColor = [UIColor whiteColor].CGColor;
-    //    _view2.layer.shadowOffset = CGSizeMake(10, 10);
-    //    _view2.layer.shadowOpacity = 0.3;
-    //    _view2.layer.shadowRadius = _view1.width/2+50;
     _view2.clipsToBounds = YES;
-    
-    
     _view3.layer.cornerRadius = _view3.width/2;
     _view3.layer.shadowColor = [UIColor redColor].CGColor;
     _view3.layer.shadowOffset = CGSizeMake(50, 50);
     _view3.clipsToBounds = YES;
     
+    self.progress.imgName = @"zhizhen2.png";
     self.progress.progressColor = RGBA(54, 246, 226, 0.3);
     
     self.progress.lineWidth = 30;
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:@"438MB"];
-//    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
 
-    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Arial" size:14.0] range:NSMakeRange(3,2)];
-//    [str addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, str.length)];
+    [self setFlow:_initflow];
+    self.progress.progress = _initprogress;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Actiondo:)];
+    tapGesture.delegate = self;
+    [_view3 addGestureRecognizer:tapGesture];
+    [_label_flow addGestureRecognizer:tapGesture];
+    [_view1 addGestureRecognizer:tapGesture];
+}
+
+-(void)Actiondo:(UITapGestureRecognizer *)sender{
+    FlowInfoViewController *flowCtrl = [[FlowInfoViewController alloc] init];
+    [self.viewController.navigationController pushViewController:flowCtrl animated:YES];
+}
+
+-(void)setFlow:(NSInteger) flow {
+    NSString *tmp = [NSString stringWithFormat:@"%ldMB",flow];
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:tmp];
+    NSInteger start = tmp.length - 2;
+    [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Arial" size:14.0] range:NSMakeRange(start,2)];
     _label_flow.attributedText = str;
     
-    
-    //set CircularProgressView delegate
-    self.progress.progress = 0.7;
 }
+
+-(void)updateProgress:(float) progress {
+    [self.progress updateProgress:progress];
+}
+
 @end

@@ -19,11 +19,19 @@
 
 #import "HomeProgressView.h"
 #import "HomeProgress2View.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "MyScoreViewController.h"
+#import "WebViewController.h"
+
 
 @interface HomeViewController ()
-@property (assign) BOOL isShow;
+
 //当前选中页数
 @property (assign) NSInteger currentPage;
+@property(nonatomic,strong) AFHTTPRequestOperation *operation;
+@property(nonatomic,strong) HomeProgressView *progressview;
+@property(nonatomic,strong) HomeProgress2View *progressview2;
+@property(nonatomic,strong) UIAlertView *obview;
 
 @end
 
@@ -40,32 +48,110 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _isShow = YES;
+    [_collectionView registerClass:[HomeCell class] forCellWithReuseIdentifier:@"HomeCell"];
+    [_collectionTwoView registerClass:[HomeTwoCell class] forCellWithReuseIdentifier:@"HomeTwoCell"];
+    _contentScrollView.contentSize = CGSizeMake(ScreenWidth*2, 220);
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self bindDelegte];
+    [self initLocalData];
+    [self initView];
+    [self loaddata];
+}
+
+-(void)bindDelegte {
+    _collectionView.dataSource = self;
+    _collectionView.delegate = self;
+    _collectionTwoView.dataSource = self;
+    _collectionTwoView.delegate = self;
+    _contentScrollView.delegate = self;
+}
+
+-(void)initLocalData {
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *plistPath = [bundle pathForResource:@"home_item1" ofType:@"plist"];
     _data = [[NSMutableArray  alloc] initWithContentsOfFile:plistPath];
     plistPath = [bundle pathForResource:@"home_item2" ofType:@"plist"];
     _datatwo = [[NSMutableArray  alloc] initWithContentsOfFile:plistPath];
-    _collectionView.dataSource = self;
-    _collectionView.delegate = self;
-    _collectionTwoView.dataSource = self;
-    _collectionTwoView.delegate = self;
-    [_collectionView registerClass:[HomeCell class] forCellWithReuseIdentifier:@"HomeCell"];
-    [_collectionTwoView registerClass:[HomeTwoCell class] forCellWithReuseIdentifier:@"HomeTwoCell"];
-  
-    
-    _contentScrollView.contentSize = CGSizeMake(ScreenWidth*2, 220);
-    _contentScrollView.delegate = self;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    HomeProgressView *view = [[HomeProgressView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 220)];
-    [_contentScrollView addSubview:view];
-    
-    HomeProgress2View *view2 = [[HomeProgress2View alloc] initWithFrame:CGRectMake(ScreenWidth/2, 0, ScreenWidth, 220)];
-    [_contentScrollView addSubview:view2];
 }
 
-- (CAGradientLayer *)shadowAsInverse
-{
+-(void)initView {
+    _progressview = [[HomeProgressView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 220)];
+    _progressview2 = [[HomeProgress2View alloc] initWithFrame:CGRectMake(ScreenWidth/2, 0, ScreenWidth, 220)];
+    @try {
+        float already = [[UserInfoManager readObjectByKey:@"already"] floatValue];
+        float total = [[UserInfoManager readObjectByKey:@"total"] floatValue];
+        float left = total - already;
+        float pre = left/total;
+        _progressview.initflow = left;
+        _progressview.initprogress = pre;
+        _progressview2.initfow = [[UserInfoManager readObjectByKey:ican_virtualflow] integerValue];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    [_contentScrollView addSubview:_progressview];
+    [_contentScrollView addSubview:_progressview2];
+}
+
+-(void)loaddata {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+                                 ican_password:[UserInfoManager readObjectByKey:ican_password]};
+    self.operation = [manager POST:[BaseUrlString stringByAppendingString:@"flowmainquery.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        @try {
+            NSLog(@"\n总流量查询：\n%@",responseObject);
+            float already = [[responseObject objectForKey:@"already"] floatValue];
+            float total = [[responseObject objectForKey:@"total"] floatValue];
+ 
+            float left = total - already;
+            float pre = left/total;
+            [_progressview updateProgress:pre];
+            [_progressview setFlow:(int)left];
+            [UserInfoManager saveDic:responseObject];
+            NSString *resultMsg = [responseObject objectForKey:@"resultMsg"];
+            if (resultMsg) {
+                [self toast:self.view cotent:resultMsg];
+            }
+            
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+        }
+        @finally {
+            
+        }
+        
+       
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+       
+    }];
+    
+    parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+                   ican_password:[UserInfoManager readObjectByKey:ican_password]};
+    [manager POST:[BaseUrlString stringByAppendingString:@"virtualflowquery.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        @try {
+            NSLog(@"\n备胎余额：\n%@",responseObject);
+            NSInteger left = [[responseObject objectForKey:@"virtualflow"] integerValue];
+            [UserInfoManager updateWithObject:[responseObject objectForKey:@"virtualflow"] forKey:ican_virtualflow];
+            [self.progressview2 setFlow:left];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+        }
+        @finally {
+            
+        }
+      
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+
+
+}
+
+- (CAGradientLayer *)shadowAsInverse {
     CAGradientLayer *newShadow = [[CAGradientLayer alloc] init];
     CGRect newShadowFrame = CGRectMake(0, 0, 200, 200);
     newShadow.frame = newShadowFrame;
@@ -155,11 +241,18 @@
                 break;
             case 2:
                 //送好友
-                vCtrl = [[BtAcountViewController alloc] init];
+               
                 break;
             case 3:
                 //游乐场
-                
+                if (self.obview == nil) {
+                    self.obview  = [[UIAlertView alloc] initWithTitle: @"⚠"
+                                                                    message:@"抱歉，该功能正在建设中..."
+                                                                   delegate:self
+                                                          cancelButtonTitle:nil
+                                                          otherButtonTitles:@"确定", nil];
+                }
+                [self.obview show];
                 break;
             default:
                 break;
@@ -174,15 +267,19 @@
         switch (indexPath.row) {
             case 0:
                 //备胎流量
+                 vCtrl = [[BtAcountViewController alloc] init];
                 break;
             case 1:
                 //积分优惠
+                vCtrl =  [[MyScoreViewController alloc] init];
                 break;
             case 2:
                 //注册好礼
+               vCtrl = [[WebViewController alloc] initWithUrl:@"http://jsurl.huilongkj.com/js/151027fkbt/index1.html"];
                 break;
             case 3:
                 //首订红包
+                vCtrl = [[WebViewController alloc] initWithUrl:@"http://jsurl.huilongkj.com/js/151027fkbt/2.html"];
                 break;
             case 4:
                 //充手机账户
@@ -236,6 +333,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    NSInteger left = [[UserInfoManager readObjectByKey:ican_virtualflow] integerValue];
+    [self.progressview2 setFlow:left];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

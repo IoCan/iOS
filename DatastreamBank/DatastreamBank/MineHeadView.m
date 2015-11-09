@@ -12,7 +12,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "MBProgressHUD.h"
 #import "SDWebImage/SDImageCache.h"
-
+#import "UIUtils.h"
 
 
 @implementation MineHeadView
@@ -108,39 +108,32 @@
     [UIView animateWithDuration:0.5 animations:^{
         [_img_userhead setImage:_headImage forState:UIControlStateNormal];
     }];
-    
+    [(BaseViewController *)[self.superview.superview nextResponder] showStatusTip:YES title:@"正在发送..."];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    NSDictionary *userInfo = [defaults objectForKey:UserInfo];
-    NSString *mobile = [userInfo objectForKey:ican_mobile];
-    NSString *password = [userInfo objectForKey:ican_password];
-    NSData *data = UIImageJPEGRepresentation(_headImage,0.5);
+    NSString *mobile = [UserInfoManager readObjectByKey:ican_mobile];
+    NSString *password = [UserInfoManager readObjectByKey:ican_password];
+    NSData *data = UIImageJPEGRepresentation(_headImage,0.2);
     NSDictionary *parameters = @{ican_mobile:mobile,ican_password:password};
+//    NSString *datetime = [UIUtils stringFromFomate:[NSDate date] formate:@"mmss"];
     NSString *url = [BaseUrlString stringByAppendingFormat:@"headupload.do?mobile=%@&password=%@",mobile,password];
     [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        
         [formData appendPartWithFileData:data name:@"item" fileName:@"item.jpg" mimeType:@"image/jpeg"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *resultMsg = [responseObject objectForKey:@"resultMsg"];
         if ([[responseObject objectForKey:@"result"] isEqualToString:@"00"]) {
-//            NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
             NSString *headpath = [responseObject objectForKey:ican_headpath];
-//            [defaults setValue:headpath forKeyPath:@""];
-//            NSMutableDictionary *userInfo = [defaults objectForKey:UserInfo];
-//            [userInfo removeObjectForKey:ican_headpath];
-//            [userInfo setObject:[responseObject objectForKey:ican_headpath] forKey:ican_headpath];
-//        
-//            [defaults removeObjectForKey:UserInfo];
-//            NSDictionary *dic = [NSDictionary dictionaryWithDictionary:userInfo];
-//            [defaults setObject:dic forKey:UserInfo];
-//            [defaults synchronize];
-            [[SDImageCache sharedImageCache] removeImageForKey:[BaseUrlString stringByAppendingString:headpath] fromDisk:YES];
+            NSString *oldHeadPath = [UserInfoManager readObjectByKey:ican_headpath];
+            [UserInfoManager updateWithObject:headpath forKey:ican_headpath];
+            [[SDImageCache sharedImageCache] removeImageForKey:[BaseUrlString stringByAppendingString:oldHeadPath] fromDisk:YES];
+            [[SDImageCache sharedImageCache] storeImage:self.headImage forKey:[BaseUrlString stringByAppendingString:headpath] toDisk:YES];
+            [(BaseViewController *)[self.superview.superview nextResponder] showStatusTip:NO title:@"保存头像成功"];
+        } else {
+            [(BaseViewController *)[self.superview.superview nextResponder] showStatusTip:NO title:resultMsg];
         }
-//        NSLog(@"Success: %@", responseObject);
-//        NSString *resultMsg = [responseObject objectForKey:@"resultMsg"];
-//        [self toast:resultMsg];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"Error: %@", error);
+          NSString *param = [NSString stringWithFormat:@"%ld错误,%@",error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
+         [(BaseViewController *)[self.superview.superview nextResponder] showStatusTip:NO title:param];
     }];
     
    

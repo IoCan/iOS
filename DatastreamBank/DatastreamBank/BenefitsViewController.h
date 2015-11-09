@@ -11,6 +11,6 @@
 @interface BenefitsViewController : BaseViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (strong, nonatomic) NSMutableArray *data;//数据源
 
 @end

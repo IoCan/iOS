@@ -46,17 +46,6 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
-    
-    //draw background circle
-//    UIBezierPath *backCircle = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) / 2)
-//                                                              radius:(CGRectGetWidth(self.bounds) - self.lineWidth) / 2
-//                                                          startAngle:(CGFloat) - M_PI_2
-//                                                            endAngle:(CGFloat)(1.5 * M_PI)
-//                                                           clockwise:YES];
-//    [self.backColor setStroke];
-//    backCircle.lineWidth = self.lineWidth;
-//    [backCircle stroke];
-    
     if (self.progress) {
         //draw progress circle
         CGPoint center = CGPointMake(CGRectGetWidth(self.bounds) / 2,CGRectGetHeight(self.bounds) / 2);
@@ -67,7 +56,7 @@
                                                                   startAngle:startAngle
                                                                     endAngle:(CGFloat)(- M_PI_2 + self.progress * 2 * M_PI)
                                                                    clockwise:YES];
-//        [self.progressColor setStroke];
+
         [RGBA(143, 245, 238, 0.45) setStroke];
         progressCircle.lineWidth = self.lineWidth;
         [progressCircle stroke];
@@ -82,20 +71,20 @@
         [RGBA(143, 245, 238, 0.8) setStroke];
         progressCircle2.lineWidth = lineWidth1;
         [progressCircle2 stroke];
-//        UIImage *image = [self image:[UIImage imageNamed:@"zhizhen.png"] rotation:UIImageOrientationLeft];
-        UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zhizhen2.png"]];
-        imgView.frame = CGRectMake(self.height/2-74, self.width/2-74, 148, 148);
-        imgView.tag = 22;
+        if (_imgView == nil) {
+            _imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:_imgName]];
+            _imgView.frame = CGRectMake(self.height/2-74, self.width/2-74, 148, 148);
+            _imgView.tag = 22;
+            [self addSubview:_imgView];
+        }
         
-       
-        [self addSubview:imgView];
         CGAffineTransform transform =CGAffineTransformMakeRotation((CGFloat)( self.progress * 2 * M_PI));
-        imgView.transform = transform;
+        _imgView.transform = transform;
     }
 }
 
--(UIImage *)image:(UIImage *)image rotation:(UIImageOrientation)orientation
-{
+
+-(UIImage *)image:(UIImage *)image rotation:(UIImageOrientation)orientation {
     long double rotate = 0.0;
     CGRect rect;
     float translateX = 0;
@@ -151,6 +140,35 @@
     return newPic;
 }
 
+
+-(void)updateProgress:(float) vaules {
+    _updateprogress = vaules;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.05f target:self selector:@selector(updateProgressCircle) userInfo:nil repeats:YES];
+}
+
+-(void)updateProgressCircle {
+    if (_updateprogress > _progress) {
+        //增加
+        _progress = _progress + 0.05;
+         [self setNeedsDisplay];
+        if (_progress >= _updateprogress) {
+            _progress = _updateprogress;
+            [self.timer invalidate];
+        }
+        
+    } else if (_updateprogress < _progress) {
+        //减少
+        _progress = _progress - 0.05;
+        [self setNeedsDisplay];
+        if (_progress <= _updateprogress) {
+            _progress = _updateprogress;
+            [self.timer invalidate];
+        }
+        
+    } else {
+        [self.timer invalidate];
+    }
+}
 
 #pragma mark AVAudioPlayerDelegate method
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{

@@ -22,11 +22,17 @@
 
 //@property (nonatomic) UIColor *backColor;
 @property (nonatomic) UIColor *progressColor;
+@property (nonatomic, strong) NSString * imgName;
+@property (nonatomic, strong) UIImageView *imgView;
 @property (assign, nonatomic) float progress;
+@property (assign, nonatomic) float updateprogress;
+
 @property (assign, nonatomic) CGFloat lineWidth;
 @property (assign, nonatomic) NSTimeInterval duration;
 @property (assign, nonatomic) BOOL playOrPauseButtonIsPlaying;
 @property (assign, nonatomic) id <CircularProgressViewDelegate> delegate;
+
+-(void)updateProgress:(float) vaules;
 
 - (id)initWithFrame:(CGRect)frame
           backColor:(UIColor *)backColor

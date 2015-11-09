@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
+#import "UIImageView+WebCache.h"
 
-@interface MyScoreViewController : BaseViewController
+@interface MyScoreViewController : BaseViewController<UIAlertViewDelegate>
 //{
 //@private
 //    UIScrollView *scrollView;
@@ -31,6 +32,8 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *view_allbg;
 
+- (IBAction)actionChange1:(id)sender;
+- (IBAction)actionChange2:(id)sender;
 
 - (IBAction)actionTake:(id)sender;
 

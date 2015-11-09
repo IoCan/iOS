@@ -55,14 +55,11 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    NSDictionary *userInfo = [defaults objectForKey:UserInfo];
-    NSString *mobile = [userInfo objectForKey:ican_mobile];
-    NSString *password = [userInfo objectForKey:ican_password];
+    NSString *mobile = [UserInfoManager readObjectByKey:ican_mobile];
+    NSString *password = [UserInfoManager readObjectByKey:ican_password];
     NSString *leavemsg = _utv_content.text;
     NSDictionary *parameters = @{ican_mobile:mobile,@"password":password,@"leavemsg":leavemsg};
     [manager POST:[BaseUrlString stringByAppendingString:@"feedbackadd.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"-----------%@",responseObject);
         [toast hide:YES];
         NSString *result = [responseObject objectForKey:@"result"];
         NSString *resultMsg = [responseObject objectForKey:@"resultMsg"];
@@ -72,24 +69,12 @@
             _btn_submit.enabled = NO;
             _utv_content.textColor = [UIColor lightGrayColor];
         } else {
-            UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                             message:resultMsg
-                                                            delegate:self
-                                                   cancelButtonTitle:nil
-                                                   otherButtonTitles:@"确定", nil];
-            
-            [alert show];
+            [self alert:@"提示" msg:resultMsg];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [toast hide:YES];
         NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
-        UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                         message:param
-                                                        delegate:self
-                                               cancelButtonTitle:nil
-                                               otherButtonTitles:@"确定", nil];
-        
-        [alert show];
+        [self alert:@"提示" msg:param];
     }];
 
 }

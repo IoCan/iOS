@@ -40,7 +40,7 @@
 
 -(void)setSelected:(BOOL)selected {
     if (selected) {
-        _view_content.backgroundColor = RGBA(255, 255, 241, 1.0);
+        _view_content.backgroundColor = RGBA(246, 246, 246, 1.0);
         
     } else {
        _view_content.backgroundColor = [UIColor whiteColor];
@@ -50,7 +50,7 @@
 
 -(void)setHighlighted:(BOOL)highlighted {
     if (highlighted) {
-        _view_content.backgroundColor = RGBA(255, 255, 241, 1.0);
+        _view_content.backgroundColor = RGBA(246, 246, 246, 1.0);
         
     } else {
         _view_content.backgroundColor = [UIColor whiteColor];

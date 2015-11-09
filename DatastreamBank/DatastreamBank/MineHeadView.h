@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SDImageCache.h"
+#import "UIUtils.h"
 
 @interface MineHeadView : UIView<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        
+        <dict>
+            <key>desc</key>
+            <string>5元30M</string>
+            <key>title</key>
+            <string>1M=¥0.167</string>
+        </dict>
+        <dict>
+            <key>desc</key>
+            <string>7元50M</string>
+            <key>title</key>
+            <string>1M=¥0.14</string>
+        </dict>
+        <dict>
+            <key>desc</key>
+            <string>10元100M</string>
+            <key>title</key>
+            <string>1M=¥0.1</string>
+        </dict>
+        <dict>
+            <key>desc</key>
+            <string>15元200M</string>
+            <key>title</key>
+            <string>1M=¥0.075</string>
+        </dict>
+        <dict>
+            <key>desc</key>
+            <string>30元500M</string>
+            <key>title</key>
+            <string>1M=¥0.06</string>
+        </dict>
+        <dict>
+            <key>desc</key>
+            <string>70元1024M</string>
+            <key>title</key>
+            <string>1M=¥0.068</string>
+        </dict>
+    </array>
+</plist>

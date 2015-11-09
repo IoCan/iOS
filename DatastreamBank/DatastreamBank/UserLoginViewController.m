@@ -20,17 +20,24 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "NSString+Phone.h"
 #import "UIDeviceHardware.h"
+
+
 #define lightGray RGBA(204,204,204,1.0)
 
 
 int secondsCountDown;
 @interface UserLoginViewController ()
-@property (nonatomic) NSTimer *timer;
-
+@property (nonatomic,strong) NSTimer *timer;
 @end
 
 @implementation UserLoginViewController
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardShowNotification:) name:UIKeyboardWillShowNotification object:nil];
+    }
+    return self;
+}
 
 
 
@@ -60,11 +67,21 @@ int secondsCountDown;
      //手机号判断
     if (textField.tag == 1) {
         if ([NSString isMobileNumber:text]) {
-            [_btn_code setEnabled:YES];
-            [_btn_code setBackgroundColor:RGBA(124, 206, 183, 1.0)];
+            NSString *codeStr = [_btn_code titleForState:UIControlStateNormal];
+            if (![codeStr containsString:@"重新获取"]) {
+                [_btn_code setEnabled:YES];
+                [_btn_code setBackgroundColor:RGBA(124, 206, 183, 1.0)];
+            }
+            if ([NSString isSixCodeNumber:_txt_code.text]) {
+                [_btn_login setEnabled:YES];
+                [_btn_login setBackgroundColor:RGBA(87, 187, 211, 1.0)];
+            }
         }else{
             [_btn_code setEnabled:NO];
             [_btn_code setBackgroundColor:lightGray];
+            
+            [_btn_login setEnabled:NO];
+            [_btn_login setBackgroundColor:lightGray];
         }
     }
     //验证码判断
@@ -76,9 +93,46 @@ int secondsCountDown;
             [_btn_login setEnabled:NO];
             [_btn_login setBackgroundColor:lightGray];
         }
-
     }
     return YES;
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
+    if (textField.tag == 1) {
+        [_btn_code setEnabled:NO];
+        [_btn_code setBackgroundColor:lightGray];
+    }
+    [_btn_login setEnabled:NO];
+    [_btn_login setBackgroundColor:lightGray];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    self.view.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+}
+//
+//
+//
+#pragma  mark -键盘的通知监听
+-(void)keyBoardShowNotification:(NSNotification *)notification{
+    NSValue *value = [notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect rect = [value CGRectValue];
+    float y = rect.origin.y;
+    if (y < 270 && [self.txt_phone isFirstResponder]) {
+        CGFloat offy = y - 270;
+        CGRect frame = self.view.frame;
+        frame.origin.y = offy;
+        self.view.frame = frame;
+        NSLog(@"phone up");
+    }
+    if (y < 330 && [self.txt_code isFirstResponder]) {
+        CGFloat offy = y - 330;
+        CGRect frame = self.view.frame;
+        frame.origin.y = offy;
+        self.view.frame = frame;
+        NSLog(@"code up");
+    }
+    
 }
 
 
@@ -107,35 +161,38 @@ int secondsCountDown;
 
     [manager POST:[BaseUrlString stringByAppendingString:@"userlogin.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [toast hide:YES];
-        NSLog(@"----%@",responseObject);
         NSString *result = [responseObject objectForKey:@"result"];
          if ([result isEqualToString:@"00"]) {
              NSDictionary *userList = [responseObject objectForKey:UserInfo];
-             NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-             [defaults setObject:userList forKey:UserInfo];
-             [defaults synchronize];
-             [self setupViewControllers]; 
+             BOOL isSavesuccess = [UserInfoManager saveDic:userList];
+             if (isSavesuccess) {
+                 [self setupViewControllers];
+             } else {
+                 MBProgressHUD *toast = [[MBProgressHUD alloc] initWithView:self.view];
+                 toast.labelText = @"登录失败，请重试！";
+                 toast.mode = MBProgressHUDModeText;
+                 [self.view addSubview:toast];
+                 [toast show:YES];
+                 [toast hide:YES afterDelay:2];
+             }
+             
          } else {
              NSString *resultMsg = [responseObject objectForKey:@"resultMsg"];
-             UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                              message:resultMsg
-                                                             delegate:self
-                                                    cancelButtonTitle:nil
-                                                    otherButtonTitles:@"确定", nil];
-             
-             [alert show];
+             [self alert:@"提示" msg:resultMsg];
          }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [toast hide:YES];
-        NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
-        UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                         message:param
-                                                        delegate:self
-                                               cancelButtonTitle:nil
-                                               otherButtonTitles:@"确定", nil];
-        
-        [alert show];
+        NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",(long)error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
+        [self alert:@"提示" msg:param];
     }];
+}
+
+
+//客户端提示信息
+- (void)alert:(NSString *)title msg:(NSString *)msg {
+    UIAlertView *alter = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    
+    [alter show];
 }
 
 - (IBAction)action_code:(id)sender {
@@ -156,29 +213,18 @@ int secondsCountDown;
             [self toast:self.view cotent:@"短信发送成功"];
             secondsCountDown = 60;
             [_btn_code setEnabled:NO];
-            [ _btn_code setTitle:@"(60)重获取" forState:UIControlStateNormal];
+            [_btn_code setBackgroundColor:lightGray];
+            [ _btn_code setTitle:@"(60)重新获取" forState:UIControlStateNormal];
             [_btn_code setBackgroundColor:[UIColor lightGrayColor]];
             self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
         } else {
             NSString *resultMsg = [responseObject objectForKey:@"resultMsg"];
-            UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                             message:resultMsg
-                                                            delegate:self
-                                                   cancelButtonTitle:nil
-                                                   otherButtonTitles:@"确定", nil];
-          
-           [alert show];
+            [self alert:@"提示" msg:resultMsg];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [toast hide:YES];
-        NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
-        UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                         message:param
-                                                        delegate:self
-                                               cancelButtonTitle:nil
-                                               otherButtonTitles:@"确定", nil];
-        
-        [alert show];
+        NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",(long)error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
+        [self alert:@"提示" msg:param];
     }];
 }
 
@@ -195,7 +241,7 @@ int secondsCountDown;
 }
 
 - (void)updateTimer {
-    [ _btn_code setTitle:[NSString stringWithFormat:@"(%d)重获取",secondsCountDown] forState:UIControlStateNormal];
+    [ _btn_code setTitle:[NSString stringWithFormat:@"(%d)重新获取",secondsCountDown] forState:UIControlStateNormal];
     secondsCountDown--;
     if(secondsCountDown == 0){
         [_btn_code setTitle:@"重发" forState:UIControlStateNormal];
@@ -348,4 +394,8 @@ int secondsCountDown;
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+}
 @end

@@ -16,12 +16,17 @@
 
 @property(nonatomic,assign)BOOL isBackButton;
 @property(nonatomic,assign)BOOL isCancelButton;
- 
+@property(nonatomic,strong)UIWindow *tipWindow;
+
+
 -(void)setWhiteNav;
 -(void)setBlueNav;
 -(void)toast:(UIView *) view cotent:(NSString *) param;
 -(void)toastsucess:(UIView *) view cotent:(NSString *) param;
- 
+//状态栏
+-(void)showStatusTip:(BOOL)show title:(NSString *)title;
+-(void)okAction;
 
+- (void)alert:(NSString *)title msg:(NSString *)msg;
 
 @end

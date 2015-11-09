@@ -18,7 +18,8 @@
 #import "UserLoginViewController.h"
 #import "NSString+Phone.h"
 #import "SDWebImage/SDImageCache.h"
-
+#import <AlipaySDK/AlipaySDK.h>
+#import "payRequsestHandler.h"
 @interface AppDelegate ()
 
 @end
@@ -31,20 +32,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOption {
     [application setStatusBarStyle:UIStatusBarStyleLightContent];//设置全局状态栏颜色
     [application setStatusBarHidden:NO]; //启动的时候设置显示, 启动后要打开
-    
+    [WXApi registerApp:APP_ID withDescription:@"流量备胎"];
     NSString *bundledPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"IoCanImages"];
     [[SDImageCache sharedImageCache] addReadOnlyCachePath:bundledPath];
     
-    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:50 * 1024 * 1024 diskPath:nil];
     [NSURLCache setSharedURLCache:URLCache];
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    NSDictionary *userInfo = [defaults objectForKey:UserInfo];
-    NSString *mobile = [userInfo objectForKey:ican_mobile];
+    NSString *mobile = [UserInfoManager readObjectByKey:ican_mobile];
     if ([NSString isMobileNumber:mobile]) {
         //主页面
         [self setupViewControllers];
@@ -92,6 +91,61 @@
 //程序即将退出时调用。记得保存数据，如applicationDidEnterBackground方法一样。
 - (void)applicationWillTerminate:(UIApplication *)application {
    
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    //跳转支付宝钱包进行支付，处理支付结果
+    [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+        NSLog(@"result = %@",resultDic);
+    }];
+    [WXApi handleOpenURL:url delegate:self];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return  [WXApi handleOpenURL:url delegate:self];
+}
+
+ 
+-(void) onResp:(BaseResp*)resp {
+    NSString *strMsg = [NSString stringWithFormat:@"errcode:%d", resp.errCode];
+    NSString *strTitle;
+    
+    if([resp isKindOfClass:[SendMessageToWXResp class]])
+    {
+        strTitle = [NSString stringWithFormat:@"发送媒体消息结果"];
+    }
+    if([resp isKindOfClass:[PayResp class]]){
+        //支付返回结果，实际支付结果需要去微信服务器端查询
+        strTitle = [NSString stringWithFormat:@"支付结果"];
+        
+        switch (resp.errCode) {
+            case WXSuccess:
+                strMsg = @"支付结果：成功！";
+                NSLog(@"支付成功－PaySuccess，retcode = %d", resp.errCode);
+                break;
+                
+            default:
+//                strMsg = [NSString stringWithFormat:@"支付结果：失败！retcode = %d, retstr = %@", resp.errCode,resp.errStr];
+                strMsg = @"支付结果：失败！";
+                NSLog(@"错误，retcode = %d, retstr = %@", resp.errCode,resp.errStr);
+                break;
+        }
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+//客户端提示信息
+- (void)alert:(NSString *)title msg:(NSString *)msg
+{
+    UIAlertView *alter = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    
+    [alter show];
 }
 
 #pragma mark - 初始化模块页面

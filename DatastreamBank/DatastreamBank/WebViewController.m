@@ -16,13 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    NSURL *url = [NSURL URLWithString:_url];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    [_webView loadRequest:request];
-     NSString *htmlString = [NSString stringWithContentsOfFile:_url encoding:NSUTF8StringEncoding error:nil];
-    [_webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:_url]];
-    _webView.delegate = self;
-    self.title = @"";
+    if ([_url containsString:@"http"]) {
+        self.title = @"加载中...";
+        NSURL *url = [NSURL URLWithString:_url];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+         _webView.delegate = self;
+        [_webView loadRequest:request];
+    } else {
+        NSString *htmlString = [NSString stringWithContentsOfFile:_url encoding:NSUTF8StringEncoding error:nil];
+        [_webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:_url]];
+        _webView.delegate = self;
+        self.title = @"";
+    }
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
@@ -30,6 +35,11 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     self.title = title;
+}
+
+-(void)dealloc {
+    [_webView stopLoading];
+    _webView = nil;
 }
 
 - (void)didReceiveMemoryWarning {

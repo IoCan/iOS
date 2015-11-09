@@ -8,8 +8,12 @@
 
 #import "MyOrderViewController.h"
 #import "MyOrderCell.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "UserInfoManager.h"
 
 @interface MyOrderViewController ()
+
+@property(nonatomic,strong) AFHTTPRequestOperation *operation;
 
 @end
 
@@ -25,25 +29,60 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.tableView.dataSource = self;
-//    self.tableView.delegate = self;
+    [self loaddata];
+}
+
+-(void)loaddata {
+    MBProgressHUD *toast = [[MBProgressHUD alloc] initWithView:self.view];
+    toast.labelText = @"正在加载";
+    toast.mode = MBProgressHUDModeIndeterminate;
+    [self.view addSubview:toast];
+    [toast show:YES];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+                                 ican_password:[UserInfoManager readObjectByKey:ican_password]};
+    self.operation = [manager POST:[BaseUrlString stringByAppendingString:@"orderquery.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [toast hide:YES];
+        NSString *result = [responseObject objectForKey:@"result"];
+        if ([result isEqualToString:@"00"]) {
+            self.data = [responseObject objectForKey:@"resultList"];
+            [self.tableView reloadData];
+         
+        } else {
+            NSString *resultMsg = [responseObject objectForKey:@"resultMsg"];
+            [self alert:@"提示信息" msg:resultMsg];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [toast hide:YES];
+        NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",(long)error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
+        [self alert:@"提示信息" msg:param];
+    }];
 }
 
 #pragma mark -数据源方法
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identify = @"MyOrderCell";
     MyOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
     if (cell == nil) {
         cell = [[MyOrderCell alloc] initWithFrame:CGRectZero];
     }
-    if (indexPath.row % 2 == 0) {
-        [cell.img_icon setImage:[UIImage imageNamed:@"icon_dd_1"]];
-        cell.label_type.text = @"流量操作：备胎－购买";
-    } else {
+  
+   
+     NSDictionary *item = self.data[indexPath.row];
+     NSString *type = [item objectForKey:@"content"];
+    if ([type containsString:@"退订"]) {
         [cell.img_icon setImage:[UIImage imageNamed:@"icon_dd_2"]];
-        cell.label_type.text = @"流量操作：备胎－退订";
+    } else {
+        [cell.img_icon setImage:[UIImage imageNamed:@"icon_dd_1"]];
     }
+    NSInteger flowchange = [[item objectForKey:@"flowchange"] integerValue];
+    NSInteger price = [[item objectForKey:@"price"] integerValue];
+    NSString *createTime = [item objectForKey:@"createTime"];
+    cell.label_flow.text = [NSString stringWithFormat:@"备胎流量状态：%ldM",flowchange];
+    cell.label_time.text = [@"完成时间：" stringByAppendingString:createTime];
+    cell.label_price.text = [NSString stringWithFormat:@"价格：%ld元",price];
+    cell.label_type.text = [@"流量操作：" stringByAppendingString:type];
     return cell;
 }
 
@@ -52,13 +91,18 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    return 4;
+    return self.data.count;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc {
+    if(self.operation != nil) {
+        [self.operation cancel];
+    }
 }
 
 /*

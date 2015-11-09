@@ -8,10 +8,17 @@
 
 #import "BaseViewController.h"
 
+
 @interface ConfirmOrderViewController : BaseViewController
 
 @property (strong, nonatomic) IBOutlet UIButton *btn_chk1;
 @property (strong, nonatomic) IBOutlet UIButton *btn_chk2;
 @property (strong, nonatomic) IBOutlet UIButton *btn_order;
+@property (strong, nonatomic) IBOutlet UILabel *label_prompt;
+
+- (IBAction)action_ok:(id)sender;
+@property (strong,nonatomic) NSMutableDictionary *dic;
+
+
 
 @end

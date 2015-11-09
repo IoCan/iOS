@@ -22,6 +22,7 @@
 #import "WXHLGlobalUICommon.h"
 #import "UIViewExt.h"
 #import "UIView+ClickActions.h"
+#import "UserInfoManager.h"
 
 //获取设备的物理高度
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -78,6 +79,13 @@
 #define ican_virtualflow @"virtualflow"
 #define ican_score @"score"
 #define ican_password @"password"
+
+
+//通知标示
+#define loadhead @"loadhead"
+
+
+
 
 
 

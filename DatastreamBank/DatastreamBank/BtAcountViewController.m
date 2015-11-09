@@ -15,7 +15,7 @@
 #import "FlowUnsubscribeViewController.h"
 #import "RechargeViewController.h"
 #import "TimingRechargeViewController.h"
-
+#import "MyOrderViewController.h"
 
 static NSString *kcellIdentifier = @"BtAcountCell";
 static NSString *kheaderIdentifier = @"headerIdentifier";
@@ -140,7 +140,7 @@ static NSString *kfooterIdentifier = @"footerIdentifier";
             ctrl = [[FlowUnsubscribeViewController alloc] init];
             break;
         case 5:
-            ctrl = [[BtFlowDetailsViewController alloc] init];
+            ctrl = [[MyOrderViewController alloc] init];
             break;
         default:
             break;

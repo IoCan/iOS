@@ -10,6 +10,7 @@
                 <outlet property="btn_chk1" destination="UFU-t7-92A" id="9rq-6f-QiW"/>
                 <outlet property="btn_chk2" destination="ghx-vq-cdX" id="mQq-Dy-FNU"/>
                 <outlet property="btn_order" destination="NdJ-na-qzX" id="6HH-I6-6Ie"/>
+                <outlet property="label_prompt" destination="hDc-Vi-hhx" id="dSh-oN-Oax"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,16 +23,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYG-gz-V84" userLabel="contentview">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="622"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="639"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="亲爱的151505175425用户，您选择了5元30m备胎流量，确认订购请选择以下支付方式：" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDc-Vi-hhx">
-                                    <rect key="frame" x="10" y="10" width="300" height="61"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="10" y="10" width="300" height="58"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" red="0.4823529411764706" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFU-t7-92A">
-                                    <rect key="frame" x="10" y="81" width="300" height="50"/>
+                                    <rect key="frame" x="10" y="98" width="300" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="i7g-Uh-sEc"/>
                                     </constraints>
@@ -40,7 +41,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghx-vq-cdX">
-                                    <rect key="frame" x="10" y="141" width="300" height="50"/>
+                                    <rect key="frame" x="10" y="158" width="300" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="bKH-if-3IQ"/>
                                     </constraints>
@@ -48,21 +49,24 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdJ-na-qzX">
-                                    <rect key="frame" x="10" y="212" width="300" height="46"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdJ-na-qzX">
+                                    <rect key="frame" x="10" y="229" width="300" height="46"/>
                                     <color key="backgroundColor" red="0.47450980392156861" green="0.80784313725490198" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="300" id="IHq-aE-Fpn"/>
                                         <constraint firstAttribute="height" constant="46" id="inG-XW-O5z"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <state key="normal" title="确认订购">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="action_ok:" destination="-1" eventType="touchUpInside" id="icV-Yo-EMC"/>
+                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRs-f4-gYP" userLabel="View3">
-                                    <rect key="frame" x="0.0" y="281" width="320" height="321"/>
+                                    <rect key="frame" x="0.0" y="298" width="320" height="321"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtV-ZZ-0V2" userLabel="第四个横线">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
@@ -86,7 +90,12 @@
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XqX-Sa-JEf">
                                             <rect key="frame" x="15" y="51" width="290" height="249"/>
-                                            <string key="text">1、备胎流量为三网通用流量；2、备胎流量充至手机账户后全国范围内均可使用；3、订购备胎流量可选择支付宝或微信支付方式付款，购买后直接充至用户备胎账户；4、备胎流量可根据用户需求进行赠送、退订、游戏等操作；5、备胎流量月底不清零，不可直接抵扣手机上网产生的流量，若需流量进行上网体验，请先充值至手机账户；6、因系统原因，操作成功时间会有所延迟，请及时查看备胎账户情况。</string>
+                                            <string key="text">1、备胎流量为三网通用流量；
+2、备胎流量充至手机账户后全国范围内均可使用；
+3、订购备胎流量可选择支付宝或微信支付方式付款，购买后直接充至用户备胎账户；
+4、备胎流量可根据用户需求进行赠送、退订、游戏等操作；
+5、备胎流量月底不清零，不可直接抵扣手机上网产生的流量，若需流量进行上网体验，请先充值至手机账户；
+6、因系统原因，操作成功时间会有所延迟，请及时查看备胎账户情况。</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -130,7 +139,7 @@
                                 <constraint firstAttribute="centerX" secondItem="NdJ-na-qzX" secondAttribute="centerX" id="DEb-DL-Fka"/>
                                 <constraint firstAttribute="trailing" secondItem="VRs-f4-gYP" secondAttribute="trailing" id="KRb-Sk-Gj2"/>
                                 <constraint firstAttribute="centerX" secondItem="VRs-f4-gYP" secondAttribute="centerX" id="OZZ-p6-H2t"/>
-                                <constraint firstItem="UFU-t7-92A" firstAttribute="top" secondItem="hDc-Vi-hhx" secondAttribute="bottom" constant="10" id="QTc-je-Asd"/>
+                                <constraint firstItem="UFU-t7-92A" firstAttribute="top" secondItem="hDc-Vi-hhx" secondAttribute="bottom" constant="30" id="QTc-je-Asd"/>
                                 <constraint firstItem="VRs-f4-gYP" firstAttribute="top" secondItem="NdJ-na-qzX" secondAttribute="bottom" constant="23" id="RFF-3h-aDL"/>
                                 <constraint firstItem="ghx-vq-cdX" firstAttribute="top" secondItem="UFU-t7-92A" secondAttribute="bottom" constant="10" id="RuB-hb-FmV"/>
                                 <constraint firstItem="UFU-t7-92A" firstAttribute="leading" secondItem="zYG-gz-V84" secondAttribute="leading" constant="10" id="XdN-6N-cHd"/>

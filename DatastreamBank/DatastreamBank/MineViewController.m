@@ -53,7 +53,7 @@
     self.tableHeadView.label_score.text = [NSString stringWithFormat:@"当前积分：%@",score];
     if (headpath!=nil && headpath.length>10) {
         NSString *headurl = [BaseUrlString stringByAppendingString:headpath];
-        [self.tableHeadView.img_userhead sd_setImageWithURL:[NSURL URLWithString:headurl]
+        [self.tableHeadView.img_userhead sd_setBackgroundImageWithURL:[NSURL URLWithString:headurl]
                                                    forState:UIControlStateNormal
                                            placeholderImage:[UIImage imageNamed:@"img_header_default.png"]
                                                     options:SDWebImageDelayPlaceholder

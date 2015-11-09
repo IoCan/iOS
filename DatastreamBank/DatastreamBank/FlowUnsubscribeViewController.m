@@ -56,7 +56,7 @@
     self.label_balance.text = [NSString stringWithFormat:@"备胎余额：%dM",_virtualflow];
     if (headpath!=nil && headpath.length>10) {
         NSString *headurl = [BaseUrlString stringByAppendingString:headpath];
-        [_btn_header sd_setImageWithURL:[NSURL URLWithString:headurl]
+        [_btn_header sd_setBackgroundImageWithURL:[NSURL URLWithString:headurl]
                                forState:UIControlStateNormal
                        placeholderImage:[UIImage imageNamed:@"img_header_default.png"]
                                 options:SDWebImageDelayPlaceholder

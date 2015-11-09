@@ -58,7 +58,6 @@
     tapGesture.delegate = self;
     [_view3 addGestureRecognizer:tapGesture];
     [_view1 addGestureRecognizer:tapGesture];
-    [_view2 addGestureRecognizer:tapGesture];
     [_label_flow addGestureRecognizer:tapGesture];
 }
 

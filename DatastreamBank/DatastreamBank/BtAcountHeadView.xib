@@ -47,7 +47,7 @@
                         <constraint firstAttribute="height" constant="60" id="JIU-at-fij"/>
                         <constraint firstAttribute="width" constant="60" id="ow4-Qs-87Y"/>
                     </constraints>
-                    <state key="normal" image="img_header_default.png">
+                    <state key="normal" backgroundImage="img_header_default.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>

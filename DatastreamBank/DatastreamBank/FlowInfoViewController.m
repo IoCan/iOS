@@ -46,6 +46,22 @@
     FlowInfo *flow = [_data objectAtIndex:indexPath.row];
     cell.label_title.text = flow.title;
     cell.initProgress = flow.progress;
+//    switch (indexPath.row) {
+//        case 0:
+//            cell.initProgress = 0.01;
+//            break;
+//        case 1:
+//            cell.initProgress = 0.2;
+//            break;
+//        case 2:
+//            cell.initProgress = 0.8;
+//            break;
+//        case 3:
+//            cell.initProgress = 0.0003;
+//            break;
+//        default:
+//            break;
+//    }
     NSString *left = [NSString stringWithFormat:@"%0.1f",flow.left];
     NSString *used = [NSString stringWithFormat:@"%0.1f",flow.used];
     NSString *param = [NSString stringWithFormat:@"已用%@MB,剩余%@MB",used,left];

@@ -220,6 +220,7 @@
 		0496EFB51BB2A6F700F93E8A /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496EFB41BB2A6F700F93E8A /* libicucore.dylib */; };
 		0496EFB71BB2A78700F93E8A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496EFB61BB2A78700F93E8A /* libsqlite3.dylib */; };
 		0496EFBB1BB2A7A900F93E8A /* FDStatusBarNotifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496EFBA1BB2A7A900F93E8A /* FDStatusBarNotifierView.m */; };
+		049A29A81BF1850400127398 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049A29A71BF1850400127398 /* AssetsLibrary.framework */; };
 		049D34691BDCA3F1009F7A5B /* BtAcountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D34671BDCA3F1009F7A5B /* BtAcountCell.m */; };
 		049D346A1BDCA3F1009F7A5B /* BtAcountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049D34681BDCA3F1009F7A5B /* BtAcountCell.xib */; };
 		049D346E1BDCA7A2009F7A5B /* BtAcountHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D346C1BDCA7A2009F7A5B /* BtAcountHeadView.m */; };
@@ -627,6 +628,7 @@
 		0496EFB61BB2A78700F93E8A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		0496EFB91BB2A7A900F93E8A /* FDStatusBarNotifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStatusBarNotifierView.h; sourceTree = "<group>"; };
 		0496EFBA1BB2A7A900F93E8A /* FDStatusBarNotifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStatusBarNotifierView.m; sourceTree = "<group>"; };
+		049A29A71BF1850400127398 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		049D34661BDCA3F1009F7A5B /* BtAcountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtAcountCell.h; sourceTree = "<group>"; };
 		049D34671BDCA3F1009F7A5B /* BtAcountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtAcountCell.m; sourceTree = "<group>"; };
 		049D34681BDCA3F1009F7A5B /* BtAcountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BtAcountCell.xib; sourceTree = "<group>"; };
@@ -781,6 +783,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049A29A81BF1850400127398 /* AssetsLibrary.framework in Frameworks */,
 				04BB1AB21BEA07FD009C1CF5 /* libz.dylib in Frameworks */,
 				0496EFB71BB2A78700F93E8A /* libsqlite3.dylib in Frameworks */,
 				0496EFB51BB2A6F700F93E8A /* libicucore.dylib in Frameworks */,
@@ -1446,6 +1449,7 @@
 		048868D91BB0089200BFFC2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				049A29A71BF1850400127398 /* AssetsLibrary.framework */,
 				04BB1AB11BEA07FD009C1CF5 /* libz.dylib */,
 				0496EFB61BB2A78700F93E8A /* libsqlite3.dylib */,
 				0496EFB41BB2A6F700F93E8A /* libicucore.dylib */,

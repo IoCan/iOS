@@ -56,8 +56,11 @@
         [self.window setRootViewController:login];
         [self.window makeKeyAndVisible];
     }
+    
     return YES;
 }
+
+
 
 //程序将要失去Active状态时调用，比如按下Home键或有电话信息进来
 //对应applicationWillEnterForeground（将进入前台）
@@ -90,7 +93,7 @@
 
 //程序即将退出时调用。记得保存数据，如applicationDidEnterBackground方法一样。
 - (void)applicationWillTerminate:(UIApplication *)application {
-   
+    
 }
 
 - (BOOL)application:(UIApplication *)application

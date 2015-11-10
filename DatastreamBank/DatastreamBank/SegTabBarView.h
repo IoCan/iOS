@@ -20,7 +20,7 @@
 #define default_selected_titlecolor RGBA(91, 190, 211, 1)
 
 
-@interface SegTabBarView : UIView<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface SegTabBarView : UIView<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate>
 
  
 

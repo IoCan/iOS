@@ -83,7 +83,7 @@
 
 //通知标示
 #define loadhead @"loadhead"
-
+#define countNum @"countNum"
 
 
 

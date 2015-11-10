@@ -54,6 +54,17 @@
 }
 
 
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (gestureRecognizer.state != 0)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
 #pragma mark -- 初始化滑动的指示View
 -(void) initSlideView{
     CGFloat width = self.frame.size.width / default_count;
@@ -82,6 +93,17 @@
 }
 
 
+#pragma mark * UIPanGestureRecognizer delegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    //    NSString *str = [NSString stringWithUTF8String:object_getClassName(gestureRecognizer)];
+    NSLog(@"======");
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        CGPoint translation = [(UIPanGestureRecognizer *)gestureRecognizer translationInView:self];
+        return fabs(translation.x) > fabs(translation.y);
+    }
+    return YES;
+}
+
 #pragma mark -- 实例化ScrollView
 -(void) initScrollView{
     _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, default_topview_height, self.frame.size.width, self.frame.size.height - default_topview_height)];
@@ -89,6 +111,7 @@
     _scrollView.backgroundColor = [UIColor whiteColor];
     _scrollView.pagingEnabled = YES;
     _scrollView.delegate = self;
+    _scrollView.scrollEnabled = NO;
     [self addSubview:_scrollView];
 }
 
@@ -101,7 +124,7 @@
         width = self.frame.size.width / self.tabCount;
     }
     _topMainView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, default_topview_height)];
-    _topScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, default_topview_height)];
+    _topScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, default_topview_height+1)];
     _topScrollView.showsHorizontalScrollIndicator = NO;
     _topScrollView.showsVerticalScrollIndicator = YES;
     _topScrollView.bounces = NO;
@@ -114,6 +137,9 @@
     
     [self addSubview:_topMainView];
     [_topMainView addSubview:_topScrollView];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, default_topview_height, ScreenWidth, 1)];
+    view.backgroundColor = RGBA(238, 238, 238, 1.0);
+    [_topScrollView addSubview:view];
     UIColor *defaultColor = RGBA(246, 246, 246, 1);
     for (int i = 0; i < _tabCount; i ++) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i * width, 0, width, default_topview_height)];
@@ -125,12 +151,16 @@
         [button setTitleColor:default_normal_titlecolor forState:UIControlStateNormal];
         [button addTarget:self action:@selector(tabButton:) forControlEvents:UIControlEventTouchUpInside];
         [view addSubview:button];
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake((width - default_badgelabel_wh), 5, default_badgelabel_wh, default_badgelabel_wh)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((width - default_badgelabel_wh), 5, default_badgelabel_wh, default_badgelabel_wh)];
         label.text = @"●";
+        label.textColor = [UIColor redColor];
+        label.tag = i+10;
         label.font = [UIFont boldSystemFontOfSize:18];
+        [view addSubview:label];
         [_topViews addObject:view];
         [_topScrollView addSubview:view];
     }
+ 
 }
 
 
@@ -235,6 +265,42 @@
 
 
 #pragma mark -- talbeView的代理方法
+//先要设Cell可编辑
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+//修改编辑按钮文字
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"删除";
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    /*
+     if(indexPath.row ==0)
+     {
+     [tableView setEditing:YES animated:YES];  //这个是整体出现
+     }
+     */
+    return UITableViewCellEditingStyleDelete;
+}
+
+//进入编辑模式，按下出现的编辑按钮后
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"touchIIddddd");
+    [_dataSource[_currentPage] removeObjectAtIndex:indexPath.row];
+    NSIndexPath *indexPath_1=[NSIndexPath indexPathForRow:indexPath.row inSection:0];
+    NSArray *indexArray=[NSArray arrayWithObject:indexPath_1];
+    UITableView *reuseTableView = _scrollTableViews[_currentPage];
+    [reuseTableView deleteRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationBottom];
+    /*
+     if(indexPath ==0)
+     {
+     [tableView setEditing:NO animated:YES];
+     }
+     */
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }

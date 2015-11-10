@@ -16,7 +16,8 @@
 #import "FlowUnsubscribeViewController.h"
 #import "RechargeViewController.h"
 #import "TimingRechargeViewController.h"
-
+#import "RDVTabBarController.h"
+#import "RDVTabBarItem.h"
 #import "HomeProgressView.h"
 #import "HomeProgress2View.h"
 #import "AFHTTPRequestOperationManager.h"
@@ -42,6 +43,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"首页";
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(countMsNum:) name:countNum object:nil];
     }
     return self;
 }
@@ -93,14 +95,38 @@
     [_contentScrollView addSubview:_progressview2];
 }
 
+-(void)countMsNum:(NSNotification *)notification{
+    @try {
+        NSMutableDictionary *dic = notification.object;
+        int count = [[dic objectForKey:@"count"] intValue];
+        NSString *num;
+        if (count == 0) {
+            num = @"";
+        } else if (count < 99 && count>0) {
+            num = [NSString stringWithFormat:@"%d",count];
+        } else {
+            num = @"··";
+        }
+        RDVTabBarItem *item = [self rdv_tabBarController].tabBar.items[1];
+        [item setBadgeValue:num];
+        [item setBadgeTextFont:[UIFont systemFontOfSize:10]];
+    }
+    @catch (NSException *exception) {
+        MyLog(@"%@",exception.description);
+    }
+    @finally {
+        
+    }
+}
+
 -(void)loaddata {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
                                  ican_password:[UserInfoManager readObjectByKey:ican_password]};
+    //**********************总套餐内流量查询************************//
     self.operation = [manager POST:[BaseUrlString stringByAppendingString:@"flowmainquery.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         @try {
-//            NSLog(@"\n总流量查询：\n%@",responseObject);
             float already = [[responseObject objectForKey:@"already"] floatValue];
             float total = [[responseObject objectForKey:@"total"] floatValue];
             float left = total - already;
@@ -126,11 +152,11 @@
        
     }];
     
+     //**********************备胎剩余流量查询************************//
     parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
                    ican_password:[UserInfoManager readObjectByKey:ican_password]};
     [manager POST:[BaseUrlString stringByAppendingString:@"virtualflowquery.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         @try {
-//            NSLog(@"\n备胎余额：\n%@",responseObject);
             NSInteger left = [[responseObject objectForKey:@"virtualflow"] integerValue];
             [UserInfoManager updateWithObject:[responseObject objectForKey:@"virtualflow"] forKey:ican_virtualflow];
             [self.progressview2 setFlow:left];
@@ -146,6 +172,31 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
+    
+     //**********************未读信息数量查询************************//
+    parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+                   ican_password:[UserInfoManager readObjectByKey:ican_password],
+                   @"type":@""};
+    [manager POST:[BaseUrlString stringByAppendingString:@"msgcount.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        @try {
+            NSString *result = [responseObject objectForKey:@"result"];
+            if ([@"00" isEqualToString:result]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:countNum object:responseObject];
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+        }
+        @finally {
+            
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+
 
 
 }
@@ -342,6 +393,9 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:countNum object:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

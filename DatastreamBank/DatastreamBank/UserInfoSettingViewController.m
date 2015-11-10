@@ -19,6 +19,8 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "UserInfoManager.h"
 #import "UIUtils.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface UserInfoSettingViewController ()
 @property(nonatomic,strong) LocationSheetView *locateView;
@@ -176,6 +178,18 @@
     
         UIImagePickerControllerSourceType sourceType;
         if (buttonIndex == 0) {
+            
+            NSString *mediaType = AVMediaTypeVideo;
+            AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+            if(authStatus == AVAuthorizationStatusDenied){
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                                message:@"请在iPhone的\"设置-隐私-相机\"中允许\"流量备胎\"访问相机。"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"确定"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                return;
+            }
             //拍照
             if (![UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"没有找到摄像头设备" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
@@ -183,8 +197,18 @@
                 return;
             }
             sourceType = UIImagePickerControllerSourceTypeCamera;
-            
         } else if(buttonIndex == 1){
+            int author = [ALAssetsLibrary authorizationStatus];
+            if(author == ALAuthorizationStatusRestricted || author == ALAuthorizationStatusDenied) {
+                // The user has explicitly denied permission for media capture.
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                                message:@"请在iPhone的\"设置-隐私-照片\"中允许\"流量备胎\"访问照片。"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"确定"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                return;
+            }
             //用户相册
             sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         }else if(buttonIndex == 2){
@@ -198,7 +222,6 @@
         imagePicker.editing = YES;
         imagePicker.allowsEditing = YES;
         [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
-    
     }
     
 }

@@ -298,7 +298,7 @@
                 if (self.obview == nil) {
                     self.obview  = [[UIAlertView alloc] initWithTitle: @"⚠"
                                                                     message:@"抱歉，该功能正在建设中..."
-                                                                   delegate:self
+                                                                   delegate:nil
                                                           cancelButtonTitle:nil
                                                           otherButtonTitles:@"确定", nil];
                 }

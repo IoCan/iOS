@@ -60,7 +60,11 @@
         
     }
 
- 
+}
+
+-(void)setNeedsDisplay {
+    NSInteger virtualflow = [[UserInfoManager readObjectByKey:ican_virtualflow] integerValue];
+    self.label_balance.text = [NSString stringWithFormat:@"备胎余额：%ldM",virtualflow];
 }
 
 

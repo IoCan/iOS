@@ -7,11 +7,20 @@
 //
 
 #import "BaseViewController.h"
+@protocol UpdateUserInfoDelegate <NSObject>
 
-@interface BtAcountViewController : BaseViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@optional
 
+- (void)update;
+
+@end
+
+@interface BtAcountViewController : BaseViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>  
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
 @property (strong, nonatomic) NSMutableArray *data;//数据源
+
+@property (assign, nonatomic) id <UpdateUserInfoDelegate> delegate;
+
 @end

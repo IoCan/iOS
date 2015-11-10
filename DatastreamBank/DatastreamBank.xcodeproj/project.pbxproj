@@ -221,6 +221,13 @@
 		0496EFB71BB2A78700F93E8A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496EFB61BB2A78700F93E8A /* libsqlite3.dylib */; };
 		0496EFBB1BB2A7A900F93E8A /* FDStatusBarNotifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496EFBA1BB2A7A900F93E8A /* FDStatusBarNotifierView.m */; };
 		049A29A81BF1850400127398 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049A29A71BF1850400127398 /* AssetsLibrary.framework */; };
+		049A29AC1BF1C0F300127398 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049A29AA1BF1C0F300127398 /* AddressBook.framework */; };
+		049A29BD1BF1C17C00127398 /* THContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 049A29B11BF1C17C00127398 /* THContact.m */; };
+		049A29BF1BF1C17C00127398 /* THContactPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049A29B51BF1C17C00127398 /* THContactPickerTableViewCell.m */; };
+		049A29C01BF1C17C00127398 /* THContactPickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049A29B61BF1C17C00127398 /* THContactPickerTableViewCell.xib */; };
+		049A29C21BF1C17C00127398 /* THContactPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049A29BA1BF1C17C00127398 /* THContactPickerViewController.m */; };
+		049A29C31BF1C17C00127398 /* THContactPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049A29BB1BF1C17C00127398 /* THContactPickerViewController.xib */; };
+		049A29D21BF1F1EB00127398 /* AuthorityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 049A29D11BF1F1EB00127398 /* AuthorityHelper.m */; };
 		049D34691BDCA3F1009F7A5B /* BtAcountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D34671BDCA3F1009F7A5B /* BtAcountCell.m */; };
 		049D346A1BDCA3F1009F7A5B /* BtAcountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049D34681BDCA3F1009F7A5B /* BtAcountCell.xib */; };
 		049D346E1BDCA7A2009F7A5B /* BtAcountHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D346C1BDCA7A2009F7A5B /* BtAcountHeadView.m */; };
@@ -629,6 +636,18 @@
 		0496EFB91BB2A7A900F93E8A /* FDStatusBarNotifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStatusBarNotifierView.h; sourceTree = "<group>"; };
 		0496EFBA1BB2A7A900F93E8A /* FDStatusBarNotifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStatusBarNotifierView.m; sourceTree = "<group>"; };
 		049A29A71BF1850400127398 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		049A29AA1BF1C0F300127398 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		049A29AB1BF1C0F300127398 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		049A29B01BF1C17C00127398 /* THContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContact.h; sourceTree = "<group>"; };
+		049A29B11BF1C17C00127398 /* THContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContact.m; sourceTree = "<group>"; };
+		049A29B41BF1C17C00127398 /* THContactPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactPickerTableViewCell.h; sourceTree = "<group>"; };
+		049A29B51BF1C17C00127398 /* THContactPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactPickerTableViewCell.m; sourceTree = "<group>"; };
+		049A29B61BF1C17C00127398 /* THContactPickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THContactPickerTableViewCell.xib; sourceTree = "<group>"; };
+		049A29B91BF1C17C00127398 /* THContactPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactPickerViewController.h; sourceTree = "<group>"; };
+		049A29BA1BF1C17C00127398 /* THContactPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactPickerViewController.m; sourceTree = "<group>"; };
+		049A29BB1BF1C17C00127398 /* THContactPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THContactPickerViewController.xib; sourceTree = "<group>"; };
+		049A29D01BF1F1EB00127398 /* AuthorityHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorityHelper.h; sourceTree = "<group>"; };
+		049A29D11BF1F1EB00127398 /* AuthorityHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorityHelper.m; sourceTree = "<group>"; };
 		049D34661BDCA3F1009F7A5B /* BtAcountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtAcountCell.h; sourceTree = "<group>"; };
 		049D34671BDCA3F1009F7A5B /* BtAcountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtAcountCell.m; sourceTree = "<group>"; };
 		049D34681BDCA3F1009F7A5B /* BtAcountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BtAcountCell.xib; sourceTree = "<group>"; };
@@ -783,6 +802,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049A29AC1BF1C0F300127398 /* AddressBook.framework in Frameworks */,
 				049A29A81BF1850400127398 /* AssetsLibrary.framework in Frameworks */,
 				04BB1AB21BEA07FD009C1CF5 /* libz.dylib in Frameworks */,
 				0496EFB71BB2A78700F93E8A /* libsqlite3.dylib in Frameworks */,
@@ -908,6 +928,7 @@
 		0461E53D1BB157D000614492 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				049A29A91BF1C0A500127398 /* SysmtemModel */,
 				046CEFE51BEC4EBB00AEEA85 /* Dao */,
 				047EAD391BE49D4C00BE0C73 /* Data */,
 				048229691BE36E3300159192 /* Model */,
@@ -1115,6 +1136,8 @@
 				04A4768C1BE21D880030580C /* UIDeviceHardware.m */,
 				047B0F3A1BE1F2E100C516C8 /* NSString+Phone.h */,
 				047B0F3B1BE1F2E100C516C8 /* NSString+Phone.m */,
+				049A29D01BF1F1EB00127398 /* AuthorityHelper.h */,
+				049A29D11BF1F1EB00127398 /* AuthorityHelper.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1449,6 +1472,8 @@
 		048868D91BB0089200BFFC2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				049A29AA1BF1C0F300127398 /* AddressBook.framework */,
+				049A29AB1BF1C0F300127398 /* AddressBookUI.framework */,
 				049A29A71BF1850400127398 /* AssetsLibrary.framework */,
 				04BB1AB11BEA07FD009C1CF5 /* libz.dylib */,
 				0496EFB61BB2A78700F93E8A /* libsqlite3.dylib */,
@@ -1558,6 +1583,21 @@
 				0496EFBA1BB2A7A900F93E8A /* FDStatusBarNotifierView.m */,
 			);
 			path = FDStatusBarNotifierView;
+			sourceTree = "<group>";
+		};
+		049A29A91BF1C0A500127398 /* SysmtemModel */ = {
+			isa = PBXGroup;
+			children = (
+				049A29B01BF1C17C00127398 /* THContact.h */,
+				049A29B11BF1C17C00127398 /* THContact.m */,
+				049A29B41BF1C17C00127398 /* THContactPickerTableViewCell.h */,
+				049A29B51BF1C17C00127398 /* THContactPickerTableViewCell.m */,
+				049A29B61BF1C17C00127398 /* THContactPickerTableViewCell.xib */,
+				049A29B91BF1C17C00127398 /* THContactPickerViewController.h */,
+				049A29BA1BF1C17C00127398 /* THContactPickerViewController.m */,
+				049A29BB1BF1C17C00127398 /* THContactPickerViewController.xib */,
+			);
+			name = SysmtemModel;
 			sourceTree = "<group>";
 		};
 		04A02D571BE996AA005547CC /* Test */ = {
@@ -1887,8 +1927,10 @@
 			files = (
 				047A7C381BD8C6DD0082F3C6 /* b5.png in Resources */,
 				047EAD611BE621E300BE0C73 /* LocationSheetView.xib in Resources */,
+				049A29C31BF1C17C00127398 /* THContactPickerViewController.xib in Resources */,
 				04760F2A1BC903CD0008F4AE /* mineitem.plist in Resources */,
 				046D56041BCDFD2700F3B37C /* bg_white_sxline.png in Resources */,
+				049A29C01BF1C17C00127398 /* THContactPickerTableViewCell.xib in Resources */,
 				04901B651BDA1A2A00E9A607 /* BtAcountViewController.xib in Resources */,
 				04BEA5E61BD4CB76000D45BB /* FriendsCell.xib in Resources */,
 				043020071BCBA98A008EF0FF /* FeedbackViewController.xib in Resources */,
@@ -1999,6 +2041,7 @@
 				046C47B71BDE357600C76A1C /* TimingRechargeViewController.m in Sources */,
 				0496EF981BB2A2D100F93E8A /* AFURLConnectionOperation.m in Sources */,
 				0496EFA31BB2A2D100F93E8A /* UIWebView+AFNetworking.m in Sources */,
+				049A29BD1BF1C17C00127398 /* THContact.m in Sources */,
 				04BB1A981BE9D838009C1CF5 /* MD5DataSigner.m in Sources */,
 				04BB1A9A1BE9D838009C1CF5 /* openssl_wrapper.m in Sources */,
 				048867E71BAFE26E00BFFC2B /* MJRefreshAutoFooter.m in Sources */,
@@ -2010,6 +2053,7 @@
 				0496EF971BB2A2D100F93E8A /* AFSecurityPolicy.m in Sources */,
 				0488681F1BAFE2B500BFFC2B /* SDWebImageCompat.m in Sources */,
 				048868221BAFE2B500BFFC2B /* SDWebImageDownloaderOperation.m in Sources */,
+				049A29BF1BF1C17C00127398 /* THContactPickerTableViewCell.m in Sources */,
 				047EAD3C1BE49D6600BE0C73 /* UserInfoManager.m in Sources */,
 				04BB1AB01BEA0142009C1CF5 /* WXUtil.mm in Sources */,
 				046D50161BCD0B6800523798 /* MyScoreViewController.m in Sources */,
@@ -2049,6 +2093,7 @@
 				0496EF991BB2A2D100F93E8A /* AFURLRequestSerialization.m in Sources */,
 				048868CD1BAFFC3A00BFFC2B /* WXHLGlobalUICommon.m in Sources */,
 				04A71D261BC76194002F45F1 /* BaseNavigationController.m in Sources */,
+				049A29C21BF1C17C00127398 /* THContactPickerViewController.m in Sources */,
 				04BB1A971BE9D838009C1CF5 /* DataVerifier.m in Sources */,
 				048868931BAFF08800BFFC2B /* UIViewExt.m in Sources */,
 				047EAD7E1BE756D300BE0C73 /* UIViewController+BackButtonHandler.m in Sources */,
@@ -2065,6 +2110,7 @@
 				047EAD661BE6F18C00BE0C73 /* DatePickerSheetView.m in Sources */,
 				048868BD1BAFF4A700BFFC2B /* NSObject+MJProperty.m in Sources */,
 				048117171BD5D7B700970389 /* InviteFriendsViewController.m in Sources */,
+				049A29D21BF1F1EB00127398 /* AuthorityHelper.m in Sources */,
 				0496EF951BB2A2D100F93E8A /* AFHTTPSessionManager.m in Sources */,
 				0488687A1BAFEA3100BFFC2B /* FMDatabasePool.m in Sources */,
 				046D560D1BCE451800F3B37C /* WebViewController.m in Sources */,

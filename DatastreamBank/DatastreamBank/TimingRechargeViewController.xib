@@ -59,16 +59,6 @@
                                             <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peT-yP-8S6">
-                                            <rect key="frame" x="265" y="24" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="Eoi-JI-gD0"/>
-                                                <constraint firstAttribute="width" constant="40" id="axn-cj-Zo1"/>
-                                            </constraints>
-                                            <state key="normal" image="icon_yqpy_1">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVG-zZ-L5B">
                                             <rect key="frame" x="15" y="122" width="90" height="60"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -111,7 +101,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="peT-yP-8S6" firstAttribute="top" secondItem="8oN-er-lxM" secondAttribute="top" constant="24" id="9PM-1r-oTe"/>
                                         <constraint firstItem="vYJ-ef-HQY" firstAttribute="leading" secondItem="Mqn-Yd-3CF" secondAttribute="trailing" constant="10" id="9lv-VH-Ogk"/>
                                         <constraint firstAttribute="height" constant="200" id="B9l-wQ-0aZ"/>
                                         <constraint firstAttribute="bottom" secondItem="c5s-EY-ffC" secondAttribute="bottom" id="Da2-eT-qua"/>
@@ -125,7 +114,6 @@
                                         <constraint firstItem="y9Q-IC-cFB" firstAttribute="top" secondItem="8oN-er-lxM" secondAttribute="top" constant="80" id="kOo-k7-fLf"/>
                                         <constraint firstItem="vYJ-ef-HQY" firstAttribute="centerY" secondItem="bVG-zZ-L5B" secondAttribute="centerY" id="nAc-Ru-Xt7"/>
                                         <constraint firstItem="bVG-zZ-L5B" firstAttribute="leading" secondItem="8oN-er-lxM" secondAttribute="leading" constant="15" id="qFx-U3-6Nj"/>
-                                        <constraint firstAttribute="trailing" secondItem="peT-yP-8S6" secondAttribute="trailing" constant="15" id="shj-3n-pho"/>
                                         <constraint firstItem="bVG-zZ-L5B" firstAttribute="centerY" secondItem="Mqn-Yd-3CF" secondAttribute="centerY" id="sif-fJ-lgs"/>
                                         <constraint firstAttribute="bottom" secondItem="bVG-zZ-L5B" secondAttribute="bottom" constant="18" id="sxN-zy-k6j"/>
                                         <constraint firstItem="Mqn-Yd-3CF" firstAttribute="leading" secondItem="bVG-zZ-L5B" secondAttribute="trailing" constant="10" id="xI6-V5-6Vq"/>
@@ -215,7 +203,9 @@
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KkR-7f-PA0">
                                             <rect key="frame" x="15" y="51" width="290" height="134"/>
-                                            <string key="text">1.用户可自行设定生效时间，时间范围为设定次日至第三个月月底，如2015年7 月1日开始设置定时生效，可选时间范围为2015年7月2日至2015年9月30日；2.定时生效成功后，对应的备胎流量将于设定时间自动充至绑定手机账户；3.充值至手机的流量生效当月使用有效。</string>
+                                            <string key="text">1.用户可自行设定生效时间，时间范围为设定次日至第三个月月底，如2015年7 月1日开始设置定时生效，可选时间范围为2015年7月2日至2015年9月30日；
+2.定时生效成功后，对应的备胎流量将于设定时间自动充至绑定手机账户；
+3.充值至手机的流量生效当月使用有效。</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.4823529411764706" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -288,7 +278,6 @@
     </objects>
     <resources>
         <image name="bg_check_blue.png" width="35" height="35"/>
-        <image name="icon_yqpy_1" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -17,4 +17,5 @@
 
 + (BOOL)isBlankString:(NSString *)string;
 
++ (NSString *)formatPhoneNum:(NSString *)phone;
 @end

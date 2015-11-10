@@ -61,8 +61,15 @@
 }
 
 -(void)Actiondo:(UITapGestureRecognizer *)sender{
-    FlowInfoViewController *flowCtrl = [[FlowInfoViewController alloc] init];
-    [self.viewController.navigationController pushViewController:flowCtrl animated:YES];
+    if ([[UserInfoManager readObjectByKey:ican_operator] isEqualToString:@"电信"]) {
+        FlowInfoViewController *flowCtrl = [[FlowInfoViewController alloc] init];
+        [self.viewController.navigationController pushViewController:flowCtrl animated:YES];
+    } else {
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"只支持电信用户流量详情查询" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alter show];
+
+    }
+   
 }
 
 -(void)setFlow:(NSInteger) flow {

@@ -23,6 +23,8 @@
 
 +(BOOL)updateWithObject:(id)obj forKey:(NSString *)key;
 
++(BOOL)addObject:(id)obj forKey:(NSString *)key;
+
 +(BOOL)updateWithBool:(BOOL)boolValue forKey:(NSString *)key;
 
 +(BOOL)updateWithFloat:(float)floatValue forKey:(NSString *)key;

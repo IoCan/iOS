@@ -36,6 +36,7 @@
         self.navigationItem.backBarButtonItem = backItem;
  
     }
+    
     if (self.isCancelButton) {
         UIButton *button = [[UIButton alloc] init];
         button.frame = CGRectMake(0, 0, 45, 30);

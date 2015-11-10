@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="THContactPickerViewController">
+            <connections>
+                <outlet property="tableView" destination="lSd-XW-85d" id="PcX-Q9-gjC"/>
+                <outlet property="top_view" destination="XuX-eW-L82" id="Ekg-Zl-X4G"/>
+                <outlet property="txt_phone" destination="hIk-zu-SFC" id="VkG-cz-pfv"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XuX-eW-L82">
+                    <rect key="frame" x="10" y="10" width="300" height="46"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hIk-zu-SFC">
+                            <rect key="frame" x="12" y="3" width="236" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="PZg-bj-12s"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPE-yg-eWC">
+                            <rect key="frame" x="260" y="8" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Am7-0G-jOb"/>
+                                <constraint firstAttribute="width" constant="30" id="e56-lj-82i"/>
+                            </constraints>
+                            <state key="normal" image="icon_yqpy_2">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="action_add:" destination="-1" eventType="touchUpInside" id="Gei-dw-8MG"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="hIk-zu-SFC" firstAttribute="leading" secondItem="XuX-eW-L82" secondAttribute="leading" constant="12" id="3Kb-Mf-2lB"/>
+                        <constraint firstItem="SPE-yg-eWC" firstAttribute="leading" secondItem="hIk-zu-SFC" secondAttribute="trailing" constant="12" id="LDD-xH-8rA"/>
+                        <constraint firstAttribute="centerY" secondItem="hIk-zu-SFC" secondAttribute="centerY" id="Qdd-KT-TJP"/>
+                        <constraint firstAttribute="centerY" secondItem="SPE-yg-eWC" secondAttribute="centerY" id="SF9-oY-5Jl"/>
+                        <constraint firstAttribute="height" constant="46" id="s9R-QP-GZX"/>
+                        <constraint firstAttribute="trailing" secondItem="SPE-yg-eWC" secondAttribute="trailing" constant="10" id="wsV-8h-Sd3"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ti3-iT-pW0">
+                    <rect key="frame" x="0.0" y="65" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="QVV-Vr-tHk"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lSd-XW-85d">
+                    <rect key="frame" x="0.0" y="66" width="320" height="502"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="cvK-fd-qzQ"/>
+                        <outlet property="delegate" destination="-1" id="qaK-63-wG4"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XuX-eW-L82" secondAttribute="trailing" constant="10" id="0e6-69-j6H"/>
+                <constraint firstItem="ti3-iT-pW0" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="5dG-tV-lLh"/>
+                <constraint firstItem="XuX-eW-L82" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="8Rs-Oj-Xpp"/>
+                <constraint firstItem="ti3-iT-pW0" firstAttribute="top" secondItem="1" secondAttribute="top" constant="65" id="Cad-oe-Tfp"/>
+                <constraint firstItem="XuX-eW-L82" firstAttribute="top" secondItem="1" secondAttribute="top" constant="10" id="Kd1-cK-5mn"/>
+                <constraint firstItem="lSd-XW-85d" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ORH-U8-old"/>
+                <constraint firstAttribute="bottom" secondItem="lSd-XW-85d" secondAttribute="bottom" id="RJd-ey-knT"/>
+                <constraint firstAttribute="trailing" secondItem="lSd-XW-85d" secondAttribute="trailing" id="ZG8-yh-H2z"/>
+                <constraint firstAttribute="trailing" secondItem="ti3-iT-pW0" secondAttribute="trailing" id="axf-rT-Od4"/>
+                <constraint firstItem="lSd-XW-85d" firstAttribute="top" secondItem="XuX-eW-L82" secondAttribute="bottom" constant="10" id="s5m-fb-E1I"/>
+            </constraints>
+            <point key="canvasLocation" x="33" y="316"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_yqpy_2" width="26" height="26"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

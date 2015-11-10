@@ -21,7 +21,7 @@ static NSString *kcellIdentifier = @"BtAcountCell";
 static NSString *kheaderIdentifier = @"headerIdentifier";
 static NSString *kfooterIdentifier = @"footerIdentifier";
 @interface BtAcountViewController ()
-
+@property (nonatomic,strong) BtAcountHeadView *acountHeadView;
 @end
 
 @implementation BtAcountViewController
@@ -63,11 +63,10 @@ static NSString *kfooterIdentifier = @"footerIdentifier";
 
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    BtAcountHeadView *view;
     if (kind == UICollectionElementKindSectionHeader) {
-        view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kheaderIdentifier forIndexPath:indexPath];
+        _acountHeadView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kheaderIdentifier forIndexPath:indexPath];
     }
-    return view;
+    return _acountHeadView;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -151,5 +150,25 @@ static NSString *kfooterIdentifier = @"footerIdentifier";
     }
 }
 
+#pragma mark - 生命周期处理
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [_acountHeadView setNeedsDisplay];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc {
+
+
+}
 
 @end

@@ -49,6 +49,8 @@ int secondsCountDown;
     _btn_login.clipsToBounds = YES;
     _txt_phone.delegate = self;
     _txt_code.delegate = self;
+    [_btn_login setEnabled:NO];
+    [_btn_code setEnabled:NO];
 }
 
 #pragma mark - UITextField代理

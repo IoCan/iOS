@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
+#import "THContactPickerViewController.h"
 
-@interface RechargeViewController : BaseViewController
+@interface RechargeViewController : BaseViewController<SelectedPhoneDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *btn_200;
 
@@ -16,4 +17,9 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *btn_1024;
 
+@property (strong, nonatomic) IBOutlet UILabel *label_phone;
+
+@property (strong, nonatomic) IBOutlet UILabel *label_city;
+
+- (IBAction)action_seluser:(id)sender;
 @end

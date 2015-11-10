@@ -65,6 +65,10 @@
     return  [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
++(BOOL)addObject:(id)obj forKey:(NSString *)key {
+    [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key];
+    return  [[NSUserDefaults standardUserDefaults] synchronize];
+}
  
 
 +(BOOL)updateWithBool:(BOOL)boolValue forKey:(NSString *)key {

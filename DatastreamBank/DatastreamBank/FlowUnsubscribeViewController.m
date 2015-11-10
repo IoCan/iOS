@@ -46,6 +46,8 @@
     [self canlayer:_txt_name left:YES];
     [self canlayer:_txt_acount left:YES];
     
+    _txt_acount.text = [UserInfoManager readObjectByKey:ican_unsubscribe_acount];
+    _txt_name.text = [UserInfoManager readObjectByKey:ican_unsubscribe_name];
     _txt_canback.delegate = self;
     _txt_name.delegate = self;
     _txt_acount.delegate = self;
@@ -230,6 +232,8 @@
             NSString *flow = [responseObject objectForKey:@"flow"];
             self.label_balance.text = [NSString stringWithFormat:@"备胎余额：%@M",flow];
             [UserInfoManager updateWithObject:flow forKey:ican_virtualflow];
+            [UserInfoManager updateWithObject:acount forKey:ican_unsubscribe_acount];
+            [UserInfoManager updateWithObject:name forKey:ican_unsubscribe_name];
             [self alert:@"提示信息" msg:@"退款请求成功，系统将在2-7个工作日内为您退款至相应的账户，请注意查收。"];
         } else {
             [self alert:@"提示信息" msg:resultMsg];

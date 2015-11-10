@@ -8,6 +8,7 @@
 
 #import "RechargeViewController.h"
 
+
 @interface RechargeViewController ()
 @property (strong, nonatomic) UIButton *selBtn;
 @end
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     UIImage *image = [UIImage imageNamed:@"bg_check_blue.png"];
     image = [image stretchableImageWithLeftCapWidth:2 topCapHeight:2];
     UIImage *selImage = [UIImage imageNamed:@"bg_check_sel2.png"];
@@ -52,6 +54,18 @@
     [_btn_200 addTarget:self action:@selector(checkboxClick:)forControlEvents:UIControlEventTouchUpInside];
     [_btn_500 addTarget:self action:@selector(checkboxClick:)forControlEvents:UIControlEventTouchUpInside];
     [_btn_1024 addTarget:self action:@selector(checkboxClick:)forControlEvents:UIControlEventTouchUpInside];
+    
+    NSString *phone = [UserInfoManager readObjectByKey:ican_mobile];
+    NSString *tmp;
+    tmp = phone;
+    if (phone.length == 11) {
+        NSRange rang = {0,3};
+        NSRange rang1 = {3,4};
+        NSRange rang2 = {6,4};
+        tmp = [NSString stringWithFormat:@"%@ %@ %@",[phone substringWithRange:rang],[phone substringWithRange:rang1],[phone substringWithRange:rang2]];
+    }
+    _label_phone.text = tmp;
+    _label_city.text = [[[UserInfoManager readObjectByKey:ican_address] stringByAppendingString:@" "] stringByAppendingString:[UserInfoManager readObjectByKey:ican_operator]];
 }
 
 -(void)checkboxClick:(UIButton*)btn{
@@ -63,8 +77,7 @@
     
     if(btn.selected){
         
-    }else{
-        
+    } else {
         //在此实现打勾时的方法
         
     }
@@ -73,19 +86,21 @@
     
 }
 
+-(void)selectedPhone:(NSString *)values {
+    NSLog(@"获取de手机号：%@",values);
+}
+
+
+
+- (IBAction)action_seluser:(id)sender {
+    THContactPickerViewController *ctrl = [[THContactPickerViewController alloc] init];
+    ctrl.delegate = self;
+    [self.navigationController pushViewController:ctrl animated:YES];
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

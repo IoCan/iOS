@@ -153,7 +153,7 @@
             [(BaseViewController *)[self.superview.superview nextResponder] showStatusTip:NO title:resultMsg];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-          NSString *param = [NSString stringWithFormat:@"%ld错误,%@",error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
+          NSString *param = [NSString stringWithFormat:@"%ld错误,%@",(long)error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
          [(BaseViewController *)[self.superview.superview nextResponder] showStatusTip:NO title:param];
     }];
     

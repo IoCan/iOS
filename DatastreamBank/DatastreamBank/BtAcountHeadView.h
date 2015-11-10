@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BtAcountViewController.h"
+
 
 @interface BtAcountHeadView : UICollectionReusableView
 @property (strong, nonatomic) IBOutlet UIButton *btn_header;
 
 @property (strong, nonatomic) IBOutlet UILabel *label_userphone;
 @property (strong, nonatomic) IBOutlet UILabel *label_balance;
+
+
 
 @end

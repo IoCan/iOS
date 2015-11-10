@@ -67,6 +67,38 @@
     }
 }
 
++ (NSString *)formatPhoneNum:(NSString *)phone {
+    if ([phone hasPrefix:@"86"]) {
+        NSString *formatStr = [phone substringWithRange:NSMakeRange(2, [phone length]-2)];
+        return formatStr;
+    }
+    else if ([phone hasPrefix:@"+86"])
+    {
+        if ([phone hasPrefix:@"+86·"]) {
+            NSString *formatStr = [phone substringWithRange:NSMakeRange(4, [phone length]-4)];
+            return formatStr;
+        }
+        else
+        {
+            NSString *formatStr = [phone substringWithRange:NSMakeRange(3, [phone length]-3)];
+            return formatStr;
+        }
+    }
+    else if ([phone containsString:@"-"])
+    {
+
+        //1. 去除掉首尾的空白字符和换行字符
+        phone = [phone stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        //2. 去除掉其它位置的空白字符和换行字符
+        phone = [phone stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+        phone = [phone stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        phone = [phone stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        phone = [phone stringByReplacingOccurrencesOfString:@"－" withString:@""];
+        return phone;
+    }
+    return phone;
+}
+
 
 + (BOOL) isBlankString:(NSString *)string {
     if (string == nil || string == NULL) {

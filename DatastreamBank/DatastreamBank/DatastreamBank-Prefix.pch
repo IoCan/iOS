@@ -80,6 +80,11 @@
 #define ican_score @"score"
 #define ican_password @"password"
 
+#define ican_unsubscribe_acount @"unsubscribeacount"//退订缓存帐号
+#define ican_unsubscribe_name @"unsubscribename"//退订缓存姓名
+
+#define ican_login_acount @"loginacount"//历史登录帐号
+
 
 //通知标示
 #define loadhead @"loadhead"

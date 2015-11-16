@@ -22,6 +22,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zb0-BF-CRE"/>
+                        <outlet property="delegate" destination="-1" id="Xab-h1-B1M"/>
+                    </connections>
                 </tableView>
                 <view contentMode="scaleToFill" id="E9s-FL-jAx">
                     <rect key="frame" x="0.0" y="500" width="320" height="68"/>
@@ -41,9 +45,12 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="action_present:" destination="-1" eventType="touchUpInside" id="DWv-fh-8jq"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B1C-iq-KzM">
-                            <rect key="frame" x="166.99999990792114" y="13" width="145" height="40"/>
+                            <rect key="frame" x="166.99999990792111" y="13" width="145" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" red="0.25882352941176467" green="0.68627450980392157" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -51,6 +58,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="action_demand:" destination="-1" eventType="touchUpInside" id="PaO-FN-Qr8"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

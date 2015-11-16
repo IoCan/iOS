@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *view2;
 
+@property(nonatomic,strong) UIAlertView *obview;
+
 @end

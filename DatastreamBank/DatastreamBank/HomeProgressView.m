@@ -61,11 +61,12 @@
 }
 
 -(void)Actiondo:(UITapGestureRecognizer *)sender{
-    if ([[UserInfoManager readObjectByKey:ican_operator] isEqualToString:@"电信"]) {
+    NSString *operator = [UserInfoManager readObjectByKey:ican_operator];
+    if ([operator containsString:@"电信"]) {
         FlowInfoViewController *flowCtrl = [[FlowInfoViewController alloc] init];
         [self.viewController.navigationController pushViewController:flowCtrl animated:YES];
     } else {
-        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"只支持电信用户流量详情查询" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"目前只支持江苏电信用户流量详情查询" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alter show];
 
     }

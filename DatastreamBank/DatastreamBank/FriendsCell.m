@@ -25,11 +25,9 @@
 
 -(void)layoutSubviews {
     [super layoutSubviews];
-    self.contentView.width = ScreenWidth;
-    self.contentView.height = 80;
+    self.contentView.frame = CGRectMake(0, 0, ScreenWidth, 80);
     _btn_head.layer.cornerRadius = _btn_head.frame.size.width/2;
     _btn_head.clipsToBounds = YES;
-    self.selectedBackgroundView.backgroundColor = RGBA(255, 250, 246, 1.0);
 }
 
 
@@ -38,9 +36,7 @@
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    _btn_chk.selected = selected;
 }
 
 @end

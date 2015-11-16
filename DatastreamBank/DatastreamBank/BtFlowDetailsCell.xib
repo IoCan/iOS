@@ -10,6 +10,9 @@
             <connections>
                 <outlet property="backgroundView" destination="KGk-i7-Jjw" id="eOp-D3-ZdS"/>
                 <outlet property="img_icon" destination="pdi-MC-17c" id="3mA-ad-gqw"/>
+                <outlet property="label_date" destination="EIv-z2-kiR" id="N4d-nJ-Uue"/>
+                <outlet property="label_flow" destination="oaI-ZA-iib" id="i2p-OA-tfk"/>
+                <outlet property="label_state" destination="WKD-kt-jRC" id="Qi7-BB-YhO"/>
                 <outlet property="view_bg" destination="Qc0-rd-2uP" id="Hfw-Lt-hDY"/>
             </connections>
         </placeholder>
@@ -22,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qc0-rd-2uP">
-                        <rect key="frame" x="10" y="10" width="300" height="100"/>
+                        <rect key="frame" x="8" y="10" width="304" height="100"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dd_1" translatesAutoresizingMaskIntoConstraints="NO" id="pdi-MC-17c">
                                 <rect key="frame" x="12" y="25" width="50" height="50"/>
@@ -60,12 +63,12 @@
                 </subviews>
                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="Qc0-rd-2uP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="DXo-x9-pAf"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Qc0-rd-2uP" secondAttribute="trailing" constant="2" id="NGh-3T-CDd"/>
+                    <constraint firstItem="Qc0-rd-2uP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DXo-x9-pAf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Qc0-rd-2uP" secondAttribute="trailing" id="NGh-3T-CDd"/>
                     <constraint firstAttribute="centerY" secondItem="Qc0-rd-2uP" secondAttribute="centerY" id="t65-5R-f6w"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="356" y="407"/>
+            <point key="canvasLocation" x="56" y="295.5"/>
         </tableViewCell>
     </objects>
     <resources>

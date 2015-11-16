@@ -206,22 +206,22 @@
 
 //客户端提示信息
 - (void)alert:(NSString *)title msg:(NSString *)msg {
-    if ([msg containsString:@"非法操作"]) {
-        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:title message:@"您的帐号可能在别处登录，请重新登录！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        [alter show];
-    } else {
+//    if ([msg containsString:@"非法操作"]) {
+//        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:title message:@"您的帐号可能在别处登录，请重新登录！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+//        [alter show];
+//    } else {
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alter show];
-    }
+//    }
     
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [UserInfoManager clear];
-    UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
-    AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
-    deleteview.window.rootViewController = loginCtrl;
-}
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    [UserInfoManager clear];
+//    UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
+//    AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    deleteview.window.rootViewController = loginCtrl;
+//}
 
 
 - (void)didReceiveMemoryWarning {

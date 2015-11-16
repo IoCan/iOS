@@ -15,6 +15,7 @@
 #import "UIUtils.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "InviteFriendsViewController.h"
 
 @implementation MineHeadView
 
@@ -62,7 +63,8 @@
 }
 
 - (IBAction)action_add:(id)sender {
-    
+    InviteFriendsViewController *iCtrl = [[InviteFriendsViewController alloc] init];
+    [self.viewController.navigationController pushViewController:iCtrl animated:YES];
 }
 
 - (IBAction)action_head:(id)sender {
@@ -117,7 +119,7 @@
     imagePicker.delegate = self;
     imagePicker.editing = YES;
     imagePicker.allowsEditing = YES;
-    [(UIViewController *)[self.superview.superview nextResponder] presentViewController:imagePicker animated:YES completion:nil];
+    [self.viewController presentViewController:imagePicker animated:YES completion:nil];
     
 }
 

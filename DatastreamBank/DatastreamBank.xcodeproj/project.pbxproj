@@ -10,12 +10,18 @@
 		040072CE1BC78FD1009AC7AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040072CD1BC78FD1009AC7AD /* Images.xcassets */; };
 		040072D31BC793C5009AC7AD /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040072D11BC793C5009AC7AD /* MessageViewController.m */; };
 		040072D41BC793C5009AC7AD /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040072D21BC793C5009AC7AD /* MessageViewController.xib */; };
+		040A406C1BF332D000D67DC7 /* MessageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A406B1BF332D000D67DC7 /* MessageInfo.m */; };
+		040A406F1BF332E700D67DC7 /* MsgInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A406E1BF332E700D67DC7 /* MsgInfo.m */; };
 		043020061BCBA98A008EF0FF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043020041BCBA98A008EF0FF /* FeedbackViewController.m */; };
 		043020071BCBA98A008EF0FF /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043020051BCBA98A008EF0FF /* FeedbackViewController.xib */; };
 		043C74511BCB84B300CF0003 /* mine_bg_aplha.png in Resources */ = {isa = PBXBuildFile; fileRef = 043C74501BCB84B300CF0003 /* mine_bg_aplha.png */; };
+		044112031BF8602C00CFF500 /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044112011BF8602C00CFF500 /* PresentViewController.m */; };
+		044112041BF8602C00CFF500 /* PresentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044112021BF8602C00CFF500 /* PresentViewController.xib */; };
 		0449C7D81BDF67F400CB5856 /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449C7D71BDF67F400CB5856 /* CircularProgressView.m */; };
 		0449C7DA1BDF74E600CB5856 /* guangyun.png in Resources */ = {isa = PBXBuildFile; fileRef = 0449C7D91BDF74E600CB5856 /* guangyun.png */; };
 		044D17D51BB3D1400077FAC9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044D17D41BB3D1400077FAC9 /* BaseViewController.m */; };
+		044E46691BF7B742001AB413 /* InviteFriendsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E46681BF7B742001AB413 /* InviteFriendsHeadView.m */; };
+		044E466B1BF7B76F001AB413 /* InviteFriendsHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044E466A1BF7B76F001AB413 /* InviteFriendsHeadView.xib */; };
 		045360CE1BCF4DAB008F7B64 /* scoretake.plist in Resources */ = {isa = PBXBuildFile; fileRef = 045360CD1BCF4DAB008F7B64 /* scoretake.plist */; };
 		0453D3C11BCB8A4C00E1E39B /* mine_horizontal_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 0453D3C01BCB8A4C00E1E39B /* mine_horizontal_line.png */; };
 		0461E4FB1BB0FCA600614492 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048868C61BAFF74B00BFFC2B /* SystemConfiguration.framework */; };
@@ -26,6 +32,11 @@
 		0461E50E1BB155B700614492 /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0461E50C1BB155B700614492 /* FriendsViewController.xib */; };
 		0461E5121BB155C600614492 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461E5101BB155C600614492 /* MineViewController.m */; };
 		0461E5131BB155C600614492 /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0461E5111BB155C600614492 /* MineViewController.xib */; };
+		04683BE01BF42AB400DAEA1F /* AppUpdateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04683BDF1BF42AB400DAEA1F /* AppUpdateHelper.m */; };
+		04683BE41BF4949D00DAEA1F /* TestTbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04683BE21BF4949D00DAEA1F /* TestTbViewController.m */; };
+		04683BE51BF4949D00DAEA1F /* TestTbViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04683BE31BF4949D00DAEA1F /* TestTbViewController.xib */; };
+		04683BE91BF494F800DAEA1F /* TestTbCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04683BE71BF494F800DAEA1F /* TestTbCell.m */; };
+		04683BEA1BF494F800DAEA1F /* TestTbCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04683BE81BF494F800DAEA1F /* TestTbCell.xib */; };
 		046A489B1BCB461700BED0C0 /* MineHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046A489A1BCB461700BED0C0 /* MineHeadView.xib */; };
 		046A489F1BCB4ACA00BED0C0 /* mine_head_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 046A489E1BCB4ACA00BED0C0 /* mine_head_default.png */; };
 		046A48A21BCB4BAC00BED0C0 /* mine_btn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 046A48A01BCB4BAC00BED0C0 /* mine_btn1.png */; };
@@ -68,6 +79,10 @@
 		046D56121BCE459500F3B37C /* ScoreTakeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D56101BCE459500F3B37C /* ScoreTakeViewCell.m */; };
 		046D56131BCE459500F3B37C /* ScoreTakeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D56111BCE459500F3B37C /* ScoreTakeViewCell.xib */; };
 		046D56161BCE4B6A00F3B37C /* jf_rule.html in Resources */ = {isa = PBXBuildFile; fileRef = 046D56151BCE4B6A00F3B37C /* jf_rule.html */; };
+		046D5AF31BF8C7F500053F4F /* PresentFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D5AF11BF8C7F500053F4F /* PresentFriendsViewController.m */; };
+		046D5AF41BF8C7F500053F4F /* PresentFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D5AF21BF8C7F500053F4F /* PresentFriendsViewController.xib */; };
+		046D5AF71BF8D0F400053F4F /* PresentFriendsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D5AF61BF8D0F400053F4F /* PresentFriendsHeadView.m */; };
+		046D5AF91BF8D10100053F4F /* PresentFriendsHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D5AF81BF8D10100053F4F /* PresentFriendsHeadView.xib */; };
 		046F4CB71BCE8A880055A0DF /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046F4CB51BCE8A880055A0DF /* TestViewController.m */; };
 		047036D31BCFFB2200CE3AC9 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047036D21BCFFB2200CE3AC9 /* TestViewController.xib */; };
 		04760F2A1BC903CD0008F4AE /* mineitem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04760F291BC903CD0008F4AE /* mineitem.plist */; };
@@ -222,11 +237,6 @@
 		0496EFBB1BB2A7A900F93E8A /* FDStatusBarNotifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496EFBA1BB2A7A900F93E8A /* FDStatusBarNotifierView.m */; };
 		049A29A81BF1850400127398 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049A29A71BF1850400127398 /* AssetsLibrary.framework */; };
 		049A29AC1BF1C0F300127398 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049A29AA1BF1C0F300127398 /* AddressBook.framework */; };
-		049A29BD1BF1C17C00127398 /* THContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 049A29B11BF1C17C00127398 /* THContact.m */; };
-		049A29BF1BF1C17C00127398 /* THContactPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049A29B51BF1C17C00127398 /* THContactPickerTableViewCell.m */; };
-		049A29C01BF1C17C00127398 /* THContactPickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049A29B61BF1C17C00127398 /* THContactPickerTableViewCell.xib */; };
-		049A29C21BF1C17C00127398 /* THContactPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049A29BA1BF1C17C00127398 /* THContactPickerViewController.m */; };
-		049A29C31BF1C17C00127398 /* THContactPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049A29BB1BF1C17C00127398 /* THContactPickerViewController.xib */; };
 		049A29D21BF1F1EB00127398 /* AuthorityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 049A29D11BF1F1EB00127398 /* AuthorityHelper.m */; };
 		049D34691BDCA3F1009F7A5B /* BtAcountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049D34671BDCA3F1009F7A5B /* BtAcountCell.m */; };
 		049D346A1BDCA3F1009F7A5B /* BtAcountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049D34681BDCA3F1009F7A5B /* BtAcountCell.xib */; };
@@ -234,7 +244,18 @@
 		049D346F1BDCA7A2009F7A5B /* BtAcountHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049D346D1BDCA7A2009F7A5B /* BtAcountHeadView.xib */; };
 		049D34711BDCBFDB009F7A5B /* btacount.plist in Resources */ = {isa = PBXBuildFile; fileRef = 049D34701BDCBFDB009F7A5B /* btacount.plist */; };
 		04A4768D1BE21D880030580C /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4768C1BE21D880030580C /* UIDeviceHardware.m */; };
+		04A4ED181BF7202200206304 /* IoContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4ED161BF7202200206304 /* IoContactCell.m */; };
+		04A4ED191BF7202200206304 /* IoContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A4ED171BF7202200206304 /* IoContactCell.xib */; };
+		04A4ED1D1BF7203700206304 /* IoContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4ED1B1BF7203700206304 /* IoContactViewController.m */; };
+		04A4ED1E1BF7203700206304 /* IoContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A4ED1C1BF7203700206304 /* IoContactViewController.xib */; };
+		04A4ED211BF7204D00206304 /* IoContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4ED201BF7204D00206304 /* IoContact.m */; };
+		04A4ED261BF7364400206304 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4ED251BF7364400206304 /* UIImage+Scale.m */; };
 		04A71D261BC76194002F45F1 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A71D251BC76194002F45F1 /* BaseNavigationController.m */; };
+		04B951A11BF58CB100316393 /* ECapAFN.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B951A01BF58CB100316393 /* ECapAFN.m */; };
+		04B951A61BF5D3BF00316393 /* ApplyFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B951A41BF5D3BF00316393 /* ApplyFriendsViewController.m */; };
+		04B951A71BF5D3BF00316393 /* ApplyFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B951A51BF5D3BF00316393 /* ApplyFriendsViewController.xib */; };
+		04B951AB1BF5D7FA00316393 /* ApplyFriendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B951A91BF5D7FA00316393 /* ApplyFriendsCell.m */; };
+		04B951AC1BF5D7FA00316393 /* ApplyFriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B951AA1BF5D7FA00316393 /* ApplyFriendsCell.xib */; };
 		04BB1A8F1BE9D838009C1CF5 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04BB1A231BE9D838009C1CF5 /* AlipaySDK.bundle */; };
 		04BB1A911BE9D838009C1CF5 /* APAuthV2Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB1A261BE9D838009C1CF5 /* APAuthV2Info.m */; };
 		04BB1A921BE9D838009C1CF5 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BB1A271BE9D838009C1CF5 /* libcrypto.a */; };
@@ -288,15 +309,25 @@
 		040072D01BC793C5009AC7AD /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		040072D11BC793C5009AC7AD /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		040072D21BC793C5009AC7AD /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		040A406A1BF332D000D67DC7 /* MessageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageInfo.h; sourceTree = "<group>"; };
+		040A406B1BF332D000D67DC7 /* MessageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageInfo.m; sourceTree = "<group>"; };
+		040A406D1BF332E700D67DC7 /* MsgInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgInfo.h; sourceTree = "<group>"; };
+		040A406E1BF332E700D67DC7 /* MsgInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgInfo.m; sourceTree = "<group>"; };
 		043020031BCBA98A008EF0FF /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		043020041BCBA98A008EF0FF /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		043020051BCBA98A008EF0FF /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
 		043C74501BCB84B300CF0003 /* mine_bg_aplha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_bg_aplha.png; sourceTree = "<group>"; };
+		044112001BF8602C00CFF500 /* PresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentViewController.h; sourceTree = "<group>"; };
+		044112011BF8602C00CFF500 /* PresentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentViewController.m; sourceTree = "<group>"; };
+		044112021BF8602C00CFF500 /* PresentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PresentViewController.xib; sourceTree = "<group>"; };
 		0449C7D61BDF67F400CB5856 /* CircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularProgressView.h; sourceTree = "<group>"; };
 		0449C7D71BDF67F400CB5856 /* CircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularProgressView.m; sourceTree = "<group>"; };
 		0449C7D91BDF74E600CB5856 /* guangyun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guangyun.png; sourceTree = "<group>"; };
 		044D17D31BB3D1400077FAC9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		044D17D41BB3D1400077FAC9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		044E46671BF7B742001AB413 /* InviteFriendsHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendsHeadView.h; sourceTree = "<group>"; };
+		044E46681BF7B742001AB413 /* InviteFriendsHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendsHeadView.m; sourceTree = "<group>"; };
+		044E466A1BF7B76F001AB413 /* InviteFriendsHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteFriendsHeadView.xib; sourceTree = "<group>"; };
 		045360CD1BCF4DAB008F7B64 /* scoretake.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scoretake.plist; sourceTree = "<group>"; };
 		0453D3C01BCB8A4C00E1E39B /* mine_horizontal_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_horizontal_line.png; sourceTree = "<group>"; };
 		0461E5051BB155A200614492 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -308,6 +339,14 @@
 		0461E50F1BB155C600614492 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		0461E5101BB155C600614492 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		0461E5111BB155C600614492 /* MineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
+		04683BDE1BF42AB400DAEA1F /* AppUpdateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUpdateHelper.h; sourceTree = "<group>"; };
+		04683BDF1BF42AB400DAEA1F /* AppUpdateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUpdateHelper.m; sourceTree = "<group>"; };
+		04683BE11BF4949D00DAEA1F /* TestTbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTbViewController.h; sourceTree = "<group>"; };
+		04683BE21BF4949D00DAEA1F /* TestTbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTbViewController.m; sourceTree = "<group>"; };
+		04683BE31BF4949D00DAEA1F /* TestTbViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTbViewController.xib; sourceTree = "<group>"; };
+		04683BE61BF494F800DAEA1F /* TestTbCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTbCell.h; sourceTree = "<group>"; };
+		04683BE71BF494F800DAEA1F /* TestTbCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTbCell.m; sourceTree = "<group>"; };
+		04683BE81BF494F800DAEA1F /* TestTbCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTbCell.xib; sourceTree = "<group>"; };
 		046A489A1BCB461700BED0C0 /* MineHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeadView.xib; sourceTree = "<group>"; };
 		046A489E1BCB4ACA00BED0C0 /* mine_head_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_head_default.png; sourceTree = "<group>"; };
 		046A48A01BCB4BAC00BED0C0 /* mine_btn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_btn1.png; sourceTree = "<group>"; };
@@ -369,6 +408,12 @@
 		046D56101BCE459500F3B37C /* ScoreTakeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTakeViewCell.m; sourceTree = "<group>"; };
 		046D56111BCE459500F3B37C /* ScoreTakeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreTakeViewCell.xib; sourceTree = "<group>"; };
 		046D56151BCE4B6A00F3B37C /* jf_rule.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jf_rule.html; sourceTree = "<group>"; };
+		046D5AF01BF8C7F500053F4F /* PresentFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentFriendsViewController.h; sourceTree = "<group>"; };
+		046D5AF11BF8C7F500053F4F /* PresentFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentFriendsViewController.m; sourceTree = "<group>"; };
+		046D5AF21BF8C7F500053F4F /* PresentFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PresentFriendsViewController.xib; sourceTree = "<group>"; };
+		046D5AF51BF8D0F400053F4F /* PresentFriendsHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentFriendsHeadView.h; sourceTree = "<group>"; };
+		046D5AF61BF8D0F400053F4F /* PresentFriendsHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentFriendsHeadView.m; sourceTree = "<group>"; };
+		046D5AF81BF8D10100053F4F /* PresentFriendsHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PresentFriendsHeadView.xib; sourceTree = "<group>"; };
 		046F4CB41BCE8A880055A0DF /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		046F4CB51BCE8A880055A0DF /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		047036D21BCFFB2200CE3AC9 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
@@ -638,14 +683,6 @@
 		049A29A71BF1850400127398 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		049A29AA1BF1C0F300127398 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		049A29AB1BF1C0F300127398 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		049A29B01BF1C17C00127398 /* THContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContact.h; sourceTree = "<group>"; };
-		049A29B11BF1C17C00127398 /* THContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContact.m; sourceTree = "<group>"; };
-		049A29B41BF1C17C00127398 /* THContactPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactPickerTableViewCell.h; sourceTree = "<group>"; };
-		049A29B51BF1C17C00127398 /* THContactPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactPickerTableViewCell.m; sourceTree = "<group>"; };
-		049A29B61BF1C17C00127398 /* THContactPickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THContactPickerTableViewCell.xib; sourceTree = "<group>"; };
-		049A29B91BF1C17C00127398 /* THContactPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactPickerViewController.h; sourceTree = "<group>"; };
-		049A29BA1BF1C17C00127398 /* THContactPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactPickerViewController.m; sourceTree = "<group>"; };
-		049A29BB1BF1C17C00127398 /* THContactPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THContactPickerViewController.xib; sourceTree = "<group>"; };
 		049A29D01BF1F1EB00127398 /* AuthorityHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorityHelper.h; sourceTree = "<group>"; };
 		049A29D11BF1F1EB00127398 /* AuthorityHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorityHelper.m; sourceTree = "<group>"; };
 		049D34661BDCA3F1009F7A5B /* BtAcountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtAcountCell.h; sourceTree = "<group>"; };
@@ -657,8 +694,27 @@
 		049D34701BDCBFDB009F7A5B /* btacount.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = btacount.plist; sourceTree = "<group>"; };
 		04A4768B1BE21D880030580C /* UIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
 		04A4768C1BE21D880030580C /* UIDeviceHardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceHardware.m; sourceTree = "<group>"; };
+		04A4ED151BF7202200206304 /* IoContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IoContactCell.h; sourceTree = "<group>"; };
+		04A4ED161BF7202200206304 /* IoContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IoContactCell.m; sourceTree = "<group>"; };
+		04A4ED171BF7202200206304 /* IoContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IoContactCell.xib; sourceTree = "<group>"; };
+		04A4ED1A1BF7203700206304 /* IoContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IoContactViewController.h; sourceTree = "<group>"; };
+		04A4ED1B1BF7203700206304 /* IoContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IoContactViewController.m; sourceTree = "<group>"; };
+		04A4ED1C1BF7203700206304 /* IoContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IoContactViewController.xib; sourceTree = "<group>"; };
+		04A4ED1F1BF7204D00206304 /* IoContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IoContact.h; sourceTree = "<group>"; };
+		04A4ED201BF7204D00206304 /* IoContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IoContact.m; sourceTree = "<group>"; };
+		04A4ED231BF7239900206304 /* CellClickDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellClickDelegate.h; sourceTree = "<group>"; };
+		04A4ED241BF7364400206304 /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
+		04A4ED251BF7364400206304 /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
 		04A71D241BC76194002F45F1 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		04A71D251BC76194002F45F1 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		04B9519F1BF58CB100316393 /* ECapAFN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECapAFN.h; sourceTree = "<group>"; };
+		04B951A01BF58CB100316393 /* ECapAFN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECapAFN.m; sourceTree = "<group>"; };
+		04B951A31BF5D3BF00316393 /* ApplyFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyFriendsViewController.h; sourceTree = "<group>"; };
+		04B951A41BF5D3BF00316393 /* ApplyFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyFriendsViewController.m; sourceTree = "<group>"; };
+		04B951A51BF5D3BF00316393 /* ApplyFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyFriendsViewController.xib; sourceTree = "<group>"; };
+		04B951A81BF5D7FA00316393 /* ApplyFriendsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyFriendsCell.h; sourceTree = "<group>"; };
+		04B951A91BF5D7FA00316393 /* ApplyFriendsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyFriendsCell.m; sourceTree = "<group>"; };
+		04B951AA1BF5D7FA00316393 /* ApplyFriendsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyFriendsCell.xib; sourceTree = "<group>"; };
 		04BB1A231BE9D838009C1CF5 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		04BB1A251BE9D838009C1CF5 /* APAuthV2Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAuthV2Info.h; sourceTree = "<group>"; };
 		04BB1A261BE9D838009C1CF5 /* APAuthV2Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAuthV2Info.m; sourceTree = "<group>"; };
@@ -834,6 +890,7 @@
 		040072CF1BC79353009AC7AD /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				04B951A21BF5D38E00316393 /* Apply */,
 				040072D01BC793C5009AC7AD /* MessageViewController.h */,
 				040072D11BC793C5009AC7AD /* MessageViewController.m */,
 				040072D21BC793C5009AC7AD /* MessageViewController.xib */,
@@ -860,6 +917,7 @@
 		0461E5021BB1545000614492 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				046D5AEF1BF8C7DC00053F4F /* Present */,
 				046CEFE91BEC8ADC00AEEA85 /* Flow */,
 				04A02D571BE996AA005547CC /* Test */,
 				04901B601BDA1A1300E9A607 /* BtAcount */,
@@ -899,6 +957,12 @@
 				048117141BD5D7B700970389 /* InviteFriendsViewController.h */,
 				048117151BD5D7B700970389 /* InviteFriendsViewController.m */,
 				048117161BD5D7B700970389 /* InviteFriendsViewController.xib */,
+				044E46671BF7B742001AB413 /* InviteFriendsHeadView.h */,
+				044E46681BF7B742001AB413 /* InviteFriendsHeadView.m */,
+				044E466A1BF7B76F001AB413 /* InviteFriendsHeadView.xib */,
+				044112001BF8602C00CFF500 /* PresentViewController.h */,
+				044112011BF8602C00CFF500 /* PresentViewController.m */,
+				044112021BF8602C00CFF500 /* PresentViewController.xib */,
 			);
 			name = Friends;
 			sourceTree = "<group>";
@@ -928,6 +992,7 @@
 		0461E53D1BB157D000614492 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				04A4ED221BF7235D00206304 /* Delegate */,
 				049A29A91BF1C0A500127398 /* SysmtemModel */,
 				046CEFE51BEC4EBB00AEEA85 /* Dao */,
 				047EAD391BE49D4C00BE0C73 /* Data */,
@@ -1016,6 +1081,8 @@
 			children = (
 				046CEFE61BEC4EF300AEEA85 /* UserInfoDao.h */,
 				046CEFE71BEC4EF300AEEA85 /* UserInfoDao.m */,
+				04B9519F1BF58CB100316393 /* ECapAFN.h */,
+				04B951A01BF58CB100316393 /* ECapAFN.m */,
 			);
 			name = Dao;
 			sourceTree = "<group>";
@@ -1081,6 +1148,19 @@
 			name = MyOrder;
 			sourceTree = "<group>";
 		};
+		046D5AEF1BF8C7DC00053F4F /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				046D5AF01BF8C7F500053F4F /* PresentFriendsViewController.h */,
+				046D5AF11BF8C7F500053F4F /* PresentFriendsViewController.m */,
+				046D5AF21BF8C7F500053F4F /* PresentFriendsViewController.xib */,
+				046D5AF51BF8D0F400053F4F /* PresentFriendsHeadView.h */,
+				046D5AF61BF8D0F400053F4F /* PresentFriendsHeadView.m */,
+				046D5AF81BF8D10100053F4F /* PresentFriendsHeadView.xib */,
+			);
+			name = Present;
+			sourceTree = "<group>";
+		};
 		047A7C0F1BD86BC10082F3C6 /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
@@ -1138,6 +1218,8 @@
 				047B0F3B1BE1F2E100C516C8 /* NSString+Phone.m */,
 				049A29D01BF1F1EB00127398 /* AuthorityHelper.h */,
 				049A29D11BF1F1EB00127398 /* AuthorityHelper.m */,
+				04683BDE1BF42AB400DAEA1F /* AppUpdateHelper.h */,
+				04683BDF1BF42AB400DAEA1F /* AppUpdateHelper.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1209,6 +1291,8 @@
 				04901B671BDA34B400E9A607 /* UIView+Layer.m */,
 				047EAD7C1BE756D300BE0C73 /* UIViewController+BackButtonHandler.h */,
 				047EAD7D1BE756D300BE0C73 /* UIViewController+BackButtonHandler.m */,
+				04A4ED241BF7364400206304 /* UIImage+Scale.h */,
+				04A4ED251BF7364400206304 /* UIImage+Scale.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1227,6 +1311,10 @@
 			children = (
 				046CEFF41BEC916300AEEA85 /* FlowInfo.h */,
 				046CEFF51BEC916300AEEA85 /* FlowInfo.m */,
+				040A406A1BF332D000D67DC7 /* MessageInfo.h */,
+				040A406B1BF332D000D67DC7 /* MessageInfo.m */,
+				040A406D1BF332E700D67DC7 /* MsgInfo.h */,
+				040A406E1BF332E700D67DC7 /* MsgInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1588,14 +1676,14 @@
 		049A29A91BF1C0A500127398 /* SysmtemModel */ = {
 			isa = PBXGroup;
 			children = (
-				049A29B01BF1C17C00127398 /* THContact.h */,
-				049A29B11BF1C17C00127398 /* THContact.m */,
-				049A29B41BF1C17C00127398 /* THContactPickerTableViewCell.h */,
-				049A29B51BF1C17C00127398 /* THContactPickerTableViewCell.m */,
-				049A29B61BF1C17C00127398 /* THContactPickerTableViewCell.xib */,
-				049A29B91BF1C17C00127398 /* THContactPickerViewController.h */,
-				049A29BA1BF1C17C00127398 /* THContactPickerViewController.m */,
-				049A29BB1BF1C17C00127398 /* THContactPickerViewController.xib */,
+				04A4ED151BF7202200206304 /* IoContactCell.h */,
+				04A4ED161BF7202200206304 /* IoContactCell.m */,
+				04A4ED171BF7202200206304 /* IoContactCell.xib */,
+				04A4ED1A1BF7203700206304 /* IoContactViewController.h */,
+				04A4ED1B1BF7203700206304 /* IoContactViewController.m */,
+				04A4ED1C1BF7203700206304 /* IoContactViewController.xib */,
+				04A4ED1F1BF7204D00206304 /* IoContact.h */,
+				04A4ED201BF7204D00206304 /* IoContact.m */,
 			);
 			name = SysmtemModel;
 			sourceTree = "<group>";
@@ -1606,8 +1694,35 @@
 				046F4CB41BCE8A880055A0DF /* TestViewController.h */,
 				046F4CB51BCE8A880055A0DF /* TestViewController.m */,
 				047036D21BCFFB2200CE3AC9 /* TestViewController.xib */,
+				04683BE11BF4949D00DAEA1F /* TestTbViewController.h */,
+				04683BE21BF4949D00DAEA1F /* TestTbViewController.m */,
+				04683BE31BF4949D00DAEA1F /* TestTbViewController.xib */,
+				04683BE61BF494F800DAEA1F /* TestTbCell.h */,
+				04683BE71BF494F800DAEA1F /* TestTbCell.m */,
+				04683BE81BF494F800DAEA1F /* TestTbCell.xib */,
 			);
 			name = Test;
+			sourceTree = "<group>";
+		};
+		04A4ED221BF7235D00206304 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				04A4ED231BF7239900206304 /* CellClickDelegate.h */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		04B951A21BF5D38E00316393 /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+				04B951A31BF5D3BF00316393 /* ApplyFriendsViewController.h */,
+				04B951A41BF5D3BF00316393 /* ApplyFriendsViewController.m */,
+				04B951A51BF5D3BF00316393 /* ApplyFriendsViewController.xib */,
+				04B951A81BF5D7FA00316393 /* ApplyFriendsCell.h */,
+				04B951A91BF5D7FA00316393 /* ApplyFriendsCell.m */,
+				04B951AA1BF5D7FA00316393 /* ApplyFriendsCell.xib */,
+			);
+			name = Apply;
 			sourceTree = "<group>";
 		};
 		04BB1A211BE9D838009C1CF5 /* lib */ = {
@@ -1894,6 +2009,7 @@
 				TargetAttributes = {
 					04D31D3C1BA00F6E00EA3DC2 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = S876CMQRKA;
 					};
 					04D31D581BA00F6E00EA3DC2 = {
 						CreatedOnToolsVersion = 6.4;
@@ -1927,16 +2043,17 @@
 			files = (
 				047A7C381BD8C6DD0082F3C6 /* b5.png in Resources */,
 				047EAD611BE621E300BE0C73 /* LocationSheetView.xib in Resources */,
-				049A29C31BF1C17C00127398 /* THContactPickerViewController.xib in Resources */,
 				04760F2A1BC903CD0008F4AE /* mineitem.plist in Resources */,
 				046D56041BCDFD2700F3B37C /* bg_white_sxline.png in Resources */,
-				049A29C01BF1C17C00127398 /* THContactPickerTableViewCell.xib in Resources */,
+				04683BE51BF4949D00DAEA1F /* TestTbViewController.xib in Resources */,
 				04901B651BDA1A2A00E9A607 /* BtAcountViewController.xib in Resources */,
 				04BEA5E61BD4CB76000D45BB /* FriendsCell.xib in Resources */,
 				043020071BCBA98A008EF0FF /* FeedbackViewController.xib in Resources */,
 				04D31D4F1BA00F6E00EA3DC2 /* Main.storyboard in Resources */,
 				046D56091BCE44BD00F3B37C /* ScoreTakeViewController.xib in Resources */,
+				04A4ED191BF7202200206304 /* IoContactCell.xib in Resources */,
 				04BEA5DA1BD229F8000D45BB /* MessageCell.xib in Resources */,
+				04A4ED1E1BF7203700206304 /* IoContactViewController.xib in Resources */,
 				046A48A91BCB502700BED0C0 /* mine_vertical_line.png in Resources */,
 				046CEFF31BEC90CF00AEEA85 /* FlowInfoCell.xib in Resources */,
 				047D34E81BDF499E005DD451 /* bg_check_blue.png in Resources */,
@@ -1956,6 +2073,7 @@
 				047EAD751BE72CD800BE0C73 /* queue_statusbar_progress.png in Resources */,
 				047EAD621BE621E300BE0C73 /* ProvincesAndCities.plist in Resources */,
 				04901B5F1BDA1A0400E9A607 /* FlowUnsubscribeViewController.xib in Resources */,
+				04683BEA1BF494F800DAEA1F /* TestTbCell.xib in Resources */,
 				047D34E61BDF4934005DD451 /* bg_check.png in Resources */,
 				046A48A21BCB4BAC00BED0C0 /* mine_btn1.png in Resources */,
 				047D34DC1BDF0C24005DD451 /* ConfirmOrderViewController.xib in Resources */,
@@ -1974,12 +2092,15 @@
 				046A489F1BCB4ACA00BED0C0 /* mine_head_default.png in Resources */,
 				04901B501BD9DBE500E9A607 /* nav_back3.png in Resources */,
 				047A7C351BD8C6DD0082F3C6 /* b2.png in Resources */,
+				04B951AC1BF5D7FA00316393 /* ApplyFriendsCell.xib in Resources */,
 				046D50021BCCAAC100523798 /* AboutViewController.xib in Resources */,
 				047A7C141BD86F2C0082F3C6 /* UserLoginViewController.xib in Resources */,
 				04ED37A61BCFA6090053621C /* infosetting_header_default.png in Resources */,
 				047D34E51BDF4934005DD451 /* bg_check_sel.png in Resources */,
+				046D5AF41BF8C7F500053F4F /* PresentFriendsViewController.xib in Resources */,
 				049D346A1BDCA3F1009F7A5B /* BtAcountCell.xib in Resources */,
 				04846EDD1BE06CE4007B8120 /* zhizhen2.png in Resources */,
+				046D5AF91BF8D10100053F4F /* PresentFriendsHeadView.xib in Resources */,
 				046D56131BCE459500F3B37C /* ScoreTakeViewCell.xib in Resources */,
 				04EC591A1BE8B79D0049E71B /* Benefits.plist in Resources */,
 				047A7C1B1BD8AE170082F3C6 /* home_item2.plist in Resources */,
@@ -1987,6 +2108,7 @@
 				04BEA5E11BD4BEDB000D45BB /* FriendsHeadView.xib in Resources */,
 				0461E5091BB155A200614492 /* HomeViewController.xib in Resources */,
 				047A7C211BD8C0C80082F3C6 /* BenefitsViewController.xib in Resources */,
+				044112041BF8602C00CFF500 /* PresentViewController.xib in Resources */,
 				047A7C2B1BD8C31F0082F3C6 /* BenefitsFootView.xib in Resources */,
 				046A48B01BCB576800BED0C0 /* mine_bg.png in Resources */,
 				043C74511BCB84B300CF0003 /* mine_bg_aplha.png in Resources */,
@@ -2001,6 +2123,7 @@
 				04846EDB1BE06710007B8120 /* zhizhen.png in Resources */,
 				047A7C361BD8C6DD0082F3C6 /* b3.png in Resources */,
 				04846EE31BE0BDA4007B8120 /* HomeProgessView.xib in Resources */,
+				044E466B1BF7B76F001AB413 /* InviteFriendsHeadView.xib in Resources */,
 				048867F51BAFE26E00BFFC2B /* MJRefresh.bundle in Resources */,
 				046A48A31BCB4BAC00BED0C0 /* mine_btn2.png in Resources */,
 				046C47B81BDE357600C76A1C /* TimingRechargeViewController.xib in Resources */,
@@ -2014,6 +2137,7 @@
 				049D34711BDCBFDB009F7A5B /* btacount.plist in Resources */,
 				046D50171BCD0B6800523798 /* MyScoreViewController.xib in Resources */,
 				048117181BD5D7B700970389 /* InviteFriendsViewController.xib in Resources */,
+				04B951A71BF5D3BF00316393 /* ApplyFriendsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2041,7 +2165,6 @@
 				046C47B71BDE357600C76A1C /* TimingRechargeViewController.m in Sources */,
 				0496EF981BB2A2D100F93E8A /* AFURLConnectionOperation.m in Sources */,
 				0496EFA31BB2A2D100F93E8A /* UIWebView+AFNetworking.m in Sources */,
-				049A29BD1BF1C17C00127398 /* THContact.m in Sources */,
 				04BB1A981BE9D838009C1CF5 /* MD5DataSigner.m in Sources */,
 				04BB1A9A1BE9D838009C1CF5 /* openssl_wrapper.m in Sources */,
 				048867E71BAFE26E00BFFC2B /* MJRefreshAutoFooter.m in Sources */,
@@ -2052,8 +2175,9 @@
 				0461E50D1BB155B700614492 /* FriendsViewController.m in Sources */,
 				0496EF971BB2A2D100F93E8A /* AFSecurityPolicy.m in Sources */,
 				0488681F1BAFE2B500BFFC2B /* SDWebImageCompat.m in Sources */,
+				044112031BF8602C00CFF500 /* PresentViewController.m in Sources */,
 				048868221BAFE2B500BFFC2B /* SDWebImageDownloaderOperation.m in Sources */,
-				049A29BF1BF1C17C00127398 /* THContactPickerTableViewCell.m in Sources */,
+				04B951A11BF58CB100316393 /* ECapAFN.m in Sources */,
 				047EAD3C1BE49D6600BE0C73 /* UserInfoManager.m in Sources */,
 				04BB1AB01BEA0142009C1CF5 /* WXUtil.mm in Sources */,
 				046D50161BCD0B6800523798 /* MyScoreViewController.m in Sources */,
@@ -2081,6 +2205,7 @@
 				048868861BAFEACC00BFFC2B /* RDVTabBarItem.m in Sources */,
 				048868291BAFE2B500BFFC2B /* UIImageView+HighlightedWebCache.m in Sources */,
 				048867F81BAFE26E00BFFC2B /* UIScrollView+MJRefresh.m in Sources */,
+				046D5AF31BF8C7F500053F4F /* PresentFriendsViewController.m in Sources */,
 				0496EF9A1BB2A2D100F93E8A /* AFURLResponseSerialization.m in Sources */,
 				046CEFF61BEC916300AEEA85 /* FlowInfo.m in Sources */,
 				048867ED1BAFE26E00BFFC2B /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -2090,10 +2215,10 @@
 				048868261BAFE2B500BFFC2B /* UIImage+GIF.m in Sources */,
 				048868D01BAFFC6900BFFC2B /* UIView+ClickActions.m in Sources */,
 				048868BC1BAFF4A700BFFC2B /* NSObject+MJKeyValue.m in Sources */,
+				04A4ED181BF7202200206304 /* IoContactCell.m in Sources */,
 				0496EF991BB2A2D100F93E8A /* AFURLRequestSerialization.m in Sources */,
 				048868CD1BAFFC3A00BFFC2B /* WXHLGlobalUICommon.m in Sources */,
 				04A71D261BC76194002F45F1 /* BaseNavigationController.m in Sources */,
-				049A29C21BF1C17C00127398 /* THContactPickerViewController.m in Sources */,
 				04BB1A971BE9D838009C1CF5 /* DataVerifier.m in Sources */,
 				048868931BAFF08800BFFC2B /* UIViewExt.m in Sources */,
 				047EAD7E1BE756D300BE0C73 /* UIViewController+BackButtonHandler.m in Sources */,
@@ -2109,10 +2234,12 @@
 				046D56081BCE44BD00F3B37C /* ScoreTakeViewController.m in Sources */,
 				047EAD661BE6F18C00BE0C73 /* DatePickerSheetView.m in Sources */,
 				048868BD1BAFF4A700BFFC2B /* NSObject+MJProperty.m in Sources */,
+				04683BE41BF4949D00DAEA1F /* TestTbViewController.m in Sources */,
 				048117171BD5D7B700970389 /* InviteFriendsViewController.m in Sources */,
 				049A29D21BF1F1EB00127398 /* AuthorityHelper.m in Sources */,
 				0496EF951BB2A2D100F93E8A /* AFHTTPSessionManager.m in Sources */,
 				0488687A1BAFEA3100BFFC2B /* FMDatabasePool.m in Sources */,
+				04683BE91BF494F800DAEA1F /* TestTbCell.m in Sources */,
 				046D560D1BCE451800F3B37C /* WebViewController.m in Sources */,
 				04BB1A911BE9D838009C1CF5 /* APAuthV2Info.m in Sources */,
 				046CEFE81BEC4EF300AEEA85 /* UserInfoDao.m in Sources */,
@@ -2120,6 +2247,7 @@
 				048868D31BAFFE2400BFFC2B /* NSString+URLEncode.m in Sources */,
 				047A7C291BD8C23D0082F3C6 /* BenefitsFootView.m in Sources */,
 				04BB1AAF1BEA0142009C1CF5 /* payRequsestHandler.mm in Sources */,
+				04A4ED211BF7204D00206304 /* IoContact.m in Sources */,
 				047A7C131BD86F2C0082F3C6 /* UserLoginViewController.m in Sources */,
 				04BB1A941BE9D838009C1CF5 /* Order.m in Sources */,
 				047A7C181BD8815D0082F3C6 /* HomeTwoCell.m in Sources */,
@@ -2137,23 +2265,30 @@
 				0481171C1BD6100300970389 /* UIButton+IcUIButton.m in Sources */,
 				0488681C1BAFE2B500BFFC2B /* MKAnnotationView+WebCache.m in Sources */,
 				048867F61BAFE26E00BFFC2B /* MJRefreshConst.m in Sources */,
+				046D5AF71BF8D0F400053F4F /* PresentFriendsHeadView.m in Sources */,
 				047A7C0B1BD76F1E0082F3C6 /* HomeCell.m in Sources */,
 				04BEA5D01BD2285B000D45BB /* SegTabBarView.m in Sources */,
 				048868211BAFE2B500BFFC2B /* SDWebImageDownloader.m in Sources */,
+				04A4ED261BF7364400206304 /* UIImage+Scale.m in Sources */,
 				048868921BAFF08800BFFC2B /* UIUtils.m in Sources */,
 				047EAD5F1BE621E300BE0C73 /* IcLocation.m in Sources */,
 				048868251BAFE2B500BFFC2B /* UIButton+WebCache.m in Sources */,
 				04A4768D1BE21D880030580C /* UIDeviceHardware.m in Sources */,
 				046CEFE41BEC32BD00AEEA85 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				04BB1A991BE9D838009C1CF5 /* NSDataEx.m in Sources */,
+				04B951A61BF5D3BF00316393 /* ApplyFriendsViewController.m in Sources */,
 				0496EF651BB29ADC00F93E8A /* MGJRequestManager.m in Sources */,
 				046C47A21BDDBAA000C76A1C /* BtFlowDetailsCell.m in Sources */,
 				0496EF961BB2A2D100F93E8A /* AFNetworkReachabilityManager.m in Sources */,
 				04846EE61BE0BDC7007B8120 /* HomeProgressView.m in Sources */,
 				048867EC1BAFE26E00BFFC2B /* MJRefreshAutoGifFooter.m in Sources */,
+				040A406C1BF332D000D67DC7 /* MessageInfo.m in Sources */,
 				04BB1A9C1BE9D838009C1CF5 /* RSADataVerifier.m in Sources */,
+				04A4ED1D1BF7203700206304 /* IoContactViewController.m in Sources */,
 				0496EF9B1BB2A2D100F93E8A /* AFURLSessionManager.m in Sources */,
 				048117201BD62F5500970389 /* JDFPeekabooCoordinator.m in Sources */,
+				044E46691BF7B742001AB413 /* InviteFriendsHeadView.m in Sources */,
+				04683BE01BF42AB400DAEA1F /* AppUpdateHelper.m in Sources */,
 				047EAD601BE621E300BE0C73 /* LocationSheetView.m in Sources */,
 				047D34DB1BDF0C24005DD451 /* ConfirmOrderViewController.mm in Sources */,
 				04BB1A9B1BE9D838009C1CF5 /* RSADataSigner.m in Sources */,
@@ -2171,6 +2306,7 @@
 				0496EF931BB2A2D100F93E8A /* AFHTTPRequestOperation.m in Sources */,
 				040072D31BC793C5009AC7AD /* MessageViewController.m in Sources */,
 				047EAD3F1BE4A68F00BE0C73 /* UserInfoSettingCell.m in Sources */,
+				04B951AB1BF5D7FA00316393 /* ApplyFriendsCell.m in Sources */,
 				0488681E1BAFE2B500BFFC2B /* SDImageCache.m in Sources */,
 				04BEA5DD1BD4BEA4000D45BB /* FriendsHeadView.m in Sources */,
 				048868B51BAFF4A700BFFC2B /* MJExtensionConst.m in Sources */,
@@ -2181,6 +2317,7 @@
 				04D31D431BA00F6E00EA3DC2 /* main.m in Sources */,
 				046CEFE11BEC329C00AEEA85 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				049D346E1BDCA7A2009F7A5B /* BtAcountHeadView.m in Sources */,
+				040A406F1BF332E700D67DC7 /* MsgInfo.m in Sources */,
 				048868841BAFEACC00BFFC2B /* RDVTabBar.m in Sources */,
 				048868BE1BAFF4A700BFFC2B /* NSString+MJExtension.m in Sources */,
 				047B0F3C1BE1F2E100C516C8 /* NSString+Phone.m in Sources */,
@@ -2316,6 +2453,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/DatastreamBank",
@@ -2337,6 +2476,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -2349,6 +2489,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/DatastreamBank",
@@ -2370,6 +2512,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
 				VALID_ARCHS = "arm64 armv7 armv7s";

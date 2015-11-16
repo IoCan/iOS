@@ -35,7 +35,6 @@
     NSArray *array = @[@"消息通知", @"备胎消息", @"优惠消息"];
     NSMutableArray *items =[[NSMutableArray alloc] initWithArray:array];
     _segTabBarView = [[SegTabBarView alloc] initWithFrame:self.view.frame WithArray:items];
-    [self.view addSubview:_segTabBarView];
     [self loaddata];
 }
 
@@ -51,12 +50,21 @@
                    ican_password:[UserInfoManager readObjectByKey:ican_password],
                    @"today":@""};
     [manager POST:[BaseUrlString stringByAppendingString:@"sysmessagequery.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
         @try {
             NSString *result = [responseObject objectForKey:@"result"];
             if ([@"00" isEqualToString:result]) {
-//                [[NSNotificationCenter defaultCenter] postNotificationName:countNum object:responseObject];
+                _data = [responseObject objectForKey:@"resultlist"];
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.%@ contains[cd] %@", @"sm.type", @"btinfo"];
+                _btdata = [self.data filteredArrayUsingPredicate:predicate];
+                NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"self.%@ contains[cd] %@", @"sm.type", @"sysinfo"];
+                _yhdata = [self.data filteredArrayUsingPredicate:predicate2];
+//                NSLog(@"%ld-%ld-%ld",_data.count,_btdata.count,_yhdata.count);
+                _segTabBarView.data = [[NSMutableArray alloc] initWithArray:_yhdata];
+                _segTabBarView.btdata = [[NSMutableArray alloc] initWithArray:_btdata];
+                _segTabBarView.yhdata = [[NSMutableArray alloc] init];
+                [self.view addSubview:_segTabBarView];
             }
+            
         }
         @catch (NSException *exception) {
             NSLog(@"%@",exception.description);

@@ -20,22 +20,32 @@
 
 -(void)layoutSubviews {
     [super layoutSubviews];
-    _btn_state.layer.borderColor = RGBA(209, 209, 209, 1).CGColor;
-    _btn_state.layer.backgroundColor = RGBA(209, 209, 209, 1).CGColor;
-    _btn_state.layer.borderWidth = 2.0f;
-    _btn_state.layer.cornerRadius = 5.0f;
-    _btn_state.titleLabel.font = [UIFont boldSystemFontOfSize:16];
-    _btn_state.enabled = NO;
-    _btn_state.clipsToBounds = YES;
-   
-//    _label_state.textColor = [UIColor redColor];
-    
+    _label_state.layer.borderColor = RGBA(209, 209, 209, 1).CGColor;
+    _label_state.layer.backgroundColor = RGBA(209, 209, 209, 1).CGColor;
+    _label_state.layer.borderWidth = 2.0f;
+    _label_state.layer.cornerRadius = 5.0f;
+    _label_state.clipsToBounds = YES;
 }
+
+
+
+-(void)setState:(NSString *)state {
+    if ([state isEqualToString:@"N"]) {
+        _label_state.textColor = [UIColor redColor];
+        _label_state.text = @"未读";
+    }else if ([state isEqualToString:@"Y"]) {
+        _label_state.text = @"已读";
+        _label_state.textColor = [UIColor whiteColor];
+    }else if ([state isEqualToString:@"D"]) {
+        _label_state.text = @"已删除";
+        _label_state.textColor = [UIColor whiteColor];
+    }
+}
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

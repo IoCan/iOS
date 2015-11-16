@@ -110,6 +110,7 @@
 - (IBAction)actionRule:(id)sender {
     NSString *filePath = [[NSBundle mainBundle]pathForResource:@"jf_rule" ofType:@"html"];
     WebViewController *webView = [[WebViewController alloc] initWithUrl:filePath];
+    webView.isBottm = YES;
     [self.navigationController pushViewController:webView animated:YES];
 }
 

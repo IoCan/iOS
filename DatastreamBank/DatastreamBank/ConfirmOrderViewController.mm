@@ -11,6 +11,8 @@
 #import "UIUtils.h"
 #import "payRequsestHandler.h"
 #import "WXApi.h"
+#import "UserInfoDao.h"
+#import "MyOrderViewController.h"
 
 //------支付宝------
 #import "Order.h"
@@ -223,17 +225,21 @@ static NSString *alipayNotifServerURL = @"http://202.102.39.91/spare_wheel/libt_
                 if ([resultDic[@"resultStatus"] intValue]==9000) {
                     //进入充值列表页面
                     NSLog(@"支付成功");
-                    
+                    [UserInfoDao updateLocalUserInfoFromService];
+                   
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"支付成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                    [alert show];
                 }
                 else{
                     NSString *resultMes = resultDic[@"memo"];
                     resultMes = (resultMes.length<=0?@"支付失败":resultMes);
-                    NSLog(@"%@",resultMes);
+                    [self alert:@"提示" msg:resultMes];
                 }
             }];
         }
         @catch (NSException *exception) {
              NSLog(@"%@",exception.description);
+            [self alert:@"Error" msg:exception.description];
             
         }
         @finally {
@@ -292,6 +298,15 @@ static NSString *alipayNotifServerURL = @"http://202.102.39.91/spare_wheel/libt_
     }
 }
 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    if ([alertView.message containsString:@"成功"]) {
+        MyOrderViewController *mCtrl = [[MyOrderViewController alloc] init];
+        [self.navigationController popViewControllerAnimated:NO];
+        [self.navigationController pushViewController:mCtrl animated:YES];
+    }
+}
 
 
 -(int)getRandomNumber:(int)from to:(int)to {

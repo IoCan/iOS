@@ -11,5 +11,9 @@
 @interface FriendsCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIButton *btn_head;
+@property (strong, nonatomic) IBOutlet UILabel *label_name;
+@property (strong, nonatomic) IBOutlet UIButton *btn_phone;
+@property (strong, nonatomic) IBOutlet UIButton *btn_scrore;
+@property (strong, nonatomic) IBOutlet UIButton *btn_chk;
 
 @end

@@ -1,15 +1,14 @@
 //
-//  ContactPickerViewController.h
-//  ContactPicker
+//  IoContactViewController.h
+//  DatastreamBank
 //
-//  Created by Tristan Himmelman on 11/2/12.
-//  Copyright (c) 2012 Tristan Himmelman. All rights reserved.
+//  Created by OsnDroid on 15/11/14.
+//  Copyright (c) 2015年 OsnDroid. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "THContactPickerTableViewCell.h"
 #import "BaseViewController.h"
-
+#import "IoContactCell.h"
+#import "NSString+Phone.h"
 
 @protocol SelectedPhoneDelegate <NSObject>
 
@@ -19,7 +18,7 @@
 
 @end
 
-@interface THContactPickerViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate,UIAlertViewDelegate>
+@interface IoContactViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate,UIAlertViewDelegate,UITextFieldDelegate,CellClickDelegate>
 
 
 
@@ -29,7 +28,8 @@
 - (IBAction)action_add:(id)sender;
 
 @property (nonatomic, strong) NSMutableArray *contacts;
-
+@property (nonatomic, strong) NSArray *filteredContacts;
+@property (nonatomic,assign) BOOL isAdd;
 @property (assign, nonatomic) id <SelectedPhoneDelegate> delegate;
 
 @end

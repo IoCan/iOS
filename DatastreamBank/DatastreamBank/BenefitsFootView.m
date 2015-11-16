@@ -58,7 +58,14 @@
     }
     if ([_view2 isEqual:sender.view]) {
         
-    
+        if (self.obview == nil) {
+            self.obview  = [[UIAlertView alloc] initWithTitle: @"⚠"
+                                                      message:@"抱歉，该功能正在建设中..."
+                                                     delegate:nil
+                                            cancelButtonTitle:nil
+                                            otherButtonTitles:@"确定", nil];
+        }
+        [self.obview show];
     }
     
    

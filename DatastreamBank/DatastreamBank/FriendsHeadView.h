@@ -23,4 +23,6 @@
 
 - (IBAction)action_add:(id)sender;
 
+@property (assign,nonatomic,setter=setCount:) int count;
+
 @end

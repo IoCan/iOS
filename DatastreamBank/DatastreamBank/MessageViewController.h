@@ -10,5 +10,8 @@
 
 @interface MessageViewController : BaseViewController
 
+@property(nonatomic,strong) NSMutableArray *data;
+@property(nonatomic,strong) NSArray *btdata;
+@property(nonatomic,strong) NSArray *yhdata;
 
 @end

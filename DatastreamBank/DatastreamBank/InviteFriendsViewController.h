@@ -7,10 +7,11 @@
 //
 
 #import "BaseViewController.h"
-#import "JDFPeekabooCoordinator.h"
+#import "InviteFriendsHeadView.h"
 
-@interface InviteFriendsViewController : BaseViewController
-@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@interface InviteFriendsViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,HeadViewClickDelegate>
 
-@property (nonatomic, strong) JDFPeekabooCoordinator *scrollCoordinator;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+
 @end

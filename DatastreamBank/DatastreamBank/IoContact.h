@@ -1,14 +1,14 @@
 //
-//  Contact.h
-//  upsi
+//  IoContact.h
+//  DatastreamBank
 //
-//  Created by Mac on 3/24/14.
-//  Copyright (c) 2014 Laith. All rights reserved.
+//  Created by OsnDroid on 15/11/14.
+//  Copyright (c) 2015年 OsnDroid. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface THContact : NSObject
+@interface IoContact : NSObject
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 - (NSString *)fullName;
@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, assign) NSString *phone;
+
+@property (nonatomic, assign) NSString *showphone;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, assign, getter = isSelected) BOOL selected;

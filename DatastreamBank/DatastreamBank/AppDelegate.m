@@ -20,6 +20,9 @@
 #import "SDWebImage/SDImageCache.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "payRequsestHandler.h"
+#import "UserInfoDao.h"
+#import "MyOrderViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -128,19 +131,28 @@
         
         switch (resp.errCode) {
             case WXSuccess:
-                strMsg = @"支付结果：成功！";
+                strMsg = @"支付成功！";
                 NSLog(@"支付成功－PaySuccess，retcode = %d", resp.errCode);
+                [UserInfoDao updateLocalUserInfoFromService];
+                
                 break;
                 
             default:
 //                strMsg = [NSString stringWithFormat:@"支付结果：失败！retcode = %d, retstr = %@", resp.errCode,resp.errStr];
-                strMsg = @"支付结果：失败！";
+                strMsg = @"支付失败！";
                 NSLog(@"错误，retcode = %d, retstr = %@", resp.errCode,resp.errStr);
                 break;
         }
     }
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if ([alertView.message containsString:@"成功"]) {
+        MyOrderViewController *mCtrl = [[MyOrderViewController alloc] init];
+        [self.viewController.navigationController pushViewController:mCtrl animated:YES];
+    }
 }
 
 //客户端提示信息

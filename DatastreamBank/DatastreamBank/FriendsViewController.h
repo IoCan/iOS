@@ -17,4 +17,11 @@
 @property (strong, nonatomic) IBOutlet UIButton *btn_demand;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)action_present:(id)sender;
+- (IBAction)action_demand:(id)sender;
+
+
+@property(nonatomic,strong) NSMutableArray *data;
+
 @end

@@ -16,8 +16,10 @@
 #import "AppDelegate.h"
 #import "UIButton+WebCache.h"
 #import "UserInfoManager.h"
-
-
+#import "AppUpdateHelper.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "NSString+Phone.h"
+#import "MJRefresh.h"
 
 @interface MineViewController ()
 
@@ -62,8 +64,35 @@
                                                   }];
         
     }
-  
+    [self updateFromAppStore:self.view isShow:NO];
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+    }];
     
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(updateDate)];
+    [self.tableView.header beginRefreshing];
+}
+
+-(void)updateDate {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSString *mobile = [UserInfoManager readObjectByKey:ican_mobile];
+    NSString *password = [UserInfoManager readObjectByKey:ican_password];
+    NSDictionary *parameters = @{ican_mobile:mobile,ican_password:password};
+    [manager POST:[BaseUrlString stringByAppendingString:@"userquery.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *result = [responseObject objectForKey:@"result"];
+        if ([result isEqualToString:@"00"]) {
+            NSDictionary *userList = [responseObject objectForKey:UserInfo];
+            [UserInfoManager saveDic:userList];
+        }
+        [self.tableView.header endRefreshing];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.tableView.header endRefreshing];
+        NSString *param = [NSString stringWithFormat:@"%@",[error.userInfo objectForKey:@"NSLocalizedDescription"]];
+        [self toast:self.view cotent:param];
+    }];
+
 }
 
 #pragma mark -数据源方法
@@ -93,7 +122,7 @@
        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
        cell.detailTextLabel.text = @"●";
-        cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:20];
+       cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:20];
        cell.detailTextLabel.textColor = [UIColor redColor];
     }
     return cell;
@@ -121,17 +150,7 @@
     }
     if ([[self getVauleForDicByGroup:1 selectRow:1] isEqualToString:selabel]) {
         //检查更新
-        MBProgressHUD *toast = [[MBProgressHUD alloc] initWithView:self.view];
-        toast.labelText = @"正在检查";
-        toast.mode = MBProgressHUDModeIndeterminate;
-        [self.view addSubview:toast];
-        [toast showAnimated:YES whileExecutingBlock:^{
-            sleep(1);
-        } completionBlock:^{
-            
-//            toast = nil;
-            [self toast:self.view cotent:@"已经是最新的了！"];
-        }];
+        [self updateFromAppStore:self.view isShow:YES];
     }
     if ([[self getVauleForDicByGroup:1 selectRow:2] isEqualToString:selabel]) {
         //关于我们
@@ -174,6 +193,94 @@
    
 }
 
+#pragma -mark更新
+-(void)changeUpdateState {
+    [[[self.data objectAtIndex:1] objectAtIndex:1] setValue:@"01" forKey:@"desc"];
+    NSIndexPath *indexPath_1=[NSIndexPath indexPathForRow:1 inSection:1];
+    NSArray *indexArray=[NSArray arrayWithObject:indexPath_1];
+    [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
+}
+
+
+-(void)updateFromAppStore:(UIView *)view isShow:(BOOL)show{
+    NSString *version = [UserInfoManager readObjectByKey:@"version"];
+    NSString *localVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    if (![NSString isBlankString:version] && ![version isEqualToString:localVersion]) {
+        [self changeUpdateState];
+        if (show) {
+            NSString *releaseNotes = [UserInfoManager readObjectByKey:@"releaseNotes"];
+            UIAlertView *createUserResponseAlert = [[UIAlertView alloc] initWithTitle:@"有新版本!" message:releaseNotes delegate:self cancelButtonTitle:@"取消" otherButtonTitles: @"更新", nil];
+            [createUserResponseAlert show];
+        }
+        return;
+    }
+  
+    MBProgressHUD *toast = [[MBProgressHUD alloc] initWithView:view];
+    toast.labelText = @"正在检查";
+    toast.mode = MBProgressHUDModeIndeterminate;
+    if (show) {
+        [view addSubview:toast];
+        [toast show:YES];
+    }
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [manager GET:updateurl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (show) {
+            [toast hide:YES];
+        }
+        
+        NSLog(@"%@",responseObject);
+        NSArray *configData = [responseObject valueForKey:@"results"];
+        NSString *version;
+        NSString *releaseNotes;
+        NSString *trackViewUrl;
+        for (id config in configData)
+        {
+            version = [config valueForKey:@"version"];
+            releaseNotes = [config valueForKey:@"releaseNotes"];
+            trackViewUrl = [config valueForKey:@"trackViewUrl"];
+            [UserInfoManager addObject:trackViewUrl forKey:@"trackViewUrl"];
+            [UserInfoManager addObject:version forKey:@"version"];
+            [UserInfoManager addObject:releaseNotes forKey:@"releaseNotes"];
+        }
+        NSString *localVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+       
+        if (![version isEqualToString:localVersion])
+        {
+            [self changeUpdateState];
+            UIAlertView *createUserResponseAlert = [[UIAlertView alloc] initWithTitle:@"有新版本!" message:releaseNotes delegate:self cancelButtonTitle:@"取消" otherButtonTitles: @"更新", nil];
+            [createUserResponseAlert show];
+        } else {
+          if (show) {
+                MBProgressHUD *toastsuccess = [[MBProgressHUD alloc] initWithView:view];
+                toastsuccess.labelText = @"已经是最新的了！";
+                toastsuccess.mode = MBProgressHUDModeText;
+                [view addSubview:toast];
+                [toastsuccess show:YES];
+                [toastsuccess hide:YES afterDelay:2];
+            }
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (show) {
+            [toast hide:YES];
+            NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",(long)error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
+            UIAlertView *createUserResponseAlert = [[UIAlertView alloc] initWithTitle:@"提示" message: param delegate:nil cancelButtonTitle:nil  otherButtonTitles: @"确定", nil];
+            [createUserResponseAlert show];
+        }
+    }];
+    
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1)
+    {
+        NSString *iTunesLink = [UserInfoManager readObjectByKey:@"trackViewUrl"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
+    }
+}
 
 
 -(id)getVauleForDicByGroup:(long) section selectRow:(long) row {

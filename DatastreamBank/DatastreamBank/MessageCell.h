@@ -12,10 +12,12 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *label_title;
 
-
-@property (strong, nonatomic) IBOutlet UIButton *btn_state;
+@property (strong, nonatomic) IBOutlet UILabel *label_state;
 
 @property (strong, nonatomic) IBOutlet UILabel *label_date;
 
 @property (strong, nonatomic) IBOutlet UILabel *label_detail;
+
+@property (nonatomic,strong,setter=setState:) NSString *state;
+
 @end

@@ -89,8 +89,13 @@
 //通知标示
 #define loadhead @"loadhead"
 #define countNum @"countNum"
+#define sysNum @"sysNum"
+#define btNum @"btNum"
 
 
+
+//更新链接
+#define updateurl @"http://itunes.apple.com/lookup?id=903331047"
 
 
 

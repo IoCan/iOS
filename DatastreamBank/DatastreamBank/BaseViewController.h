@@ -10,7 +10,7 @@
 #import "MBProgressHUD.h"
 
 
-@interface BaseViewController : UIViewController<UIAlertViewDelegate>
+@interface BaseViewController : UIViewController
 
 @property (nonatomic,strong) MBProgressHUD *toast;
 

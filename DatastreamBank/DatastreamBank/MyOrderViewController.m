@@ -9,7 +9,6 @@
 #import "MyOrderViewController.h"
 #import "MyOrderCell.h"
 #import "AFHTTPRequestOperationManager.h"
-#import "UserInfoManager.h"
 
 @interface MyOrderViewController ()
 
@@ -29,6 +28,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UILabel *label = [[UILabel alloc] init];
+    label.text = @"您还没有订单记录";
+    label.textColor = [UIColor lightGrayColor];
+    label.tag = 10;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.frame = CGRectMake(ScreenWidth/2-100, _tableView.height/2-20, 200, 40);
+    label.hidden = YES;
+    [_tableView addSubview:label];
     [self loaddata];
 }
 
@@ -46,9 +53,15 @@
         [toast hide:YES];
         NSString *result = [responseObject objectForKey:@"result"];
         if ([result isEqualToString:@"00"]) {
-            self.data = [responseObject objectForKey:@"resultList"];
-            [self.tableView reloadData];
-         
+            NSArray *array = [responseObject objectForKey:@"resultList"];
+            NSMutableArray *marray = [[NSMutableArray alloc] initWithArray:array];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.%@ > %d", @"price", 0];
+            self.data = [marray filteredArrayUsingPredicate:predicate];
+            if (self.data.count == 0) {
+                [_tableView viewWithTag:10].hidden = NO;
+            } else {
+                [self.tableView reloadData];
+            }
         } else {
             NSString *resultMsg = [responseObject objectForKey:@"resultMsg"];
             [self alert:@"提示信息" msg:resultMsg];
@@ -58,6 +71,8 @@
         NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",(long)error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
         [self alert:@"提示信息" msg:param];
     }];
+
+//    [manager cancelAllHTTPOperationsWithMethod:@"POST" path:@"product/like"];
 }
 
 #pragma mark -数据源方法
@@ -100,9 +115,11 @@
 }
 
 -(void)dealloc {
-    if(self.operation != nil) {
+    if(self.operation) {
         [self.operation cancel];
+//        self.operation = nil;
     }
+    
 }
 
 /*

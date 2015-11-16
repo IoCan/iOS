@@ -23,8 +23,12 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "MyScoreViewController.h"
 #import "WebViewController.h"
+#import "TestTbViewController.h"
+#import "UserInfoDao.h"
+#import "PresentFriendsViewController.h"
+#import "MJRefresh.h"
 
-
+#pragma mark - 系统首页
 @interface HomeViewController ()
 
 //当前选中页数
@@ -39,6 +43,7 @@
 @implementation HomeViewController
 
 
+#pragma nib初始化
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -48,6 +53,7 @@
     return self;
 }
 
+#pragma mark - 系统view初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_collectionView registerClass:[HomeCell class] forCellWithReuseIdentifier:@"HomeCell"];
@@ -58,8 +64,17 @@
     [self initLocalData];
     [self initView];
     [self loaddata];
+    [self loadUnReadMsgNum:nil];
+    //更新本地数据
+    [UserInfoDao updateLocalUserInfoFromService];
+    //定时器 每60秒获取一次未读消息
+    [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(loadUnReadMsgNum:) userInfo:nil repeats:YES];
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    self.scrollView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loaddata)];
+//    [self.scrollView.header beginRefreshing];
 }
 
+#pragma mark - 代理绑定
 -(void)bindDelegte {
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
@@ -68,6 +83,7 @@
     _contentScrollView.delegate = self;
 }
 
+#pragma mark - 初始化本地数据
 -(void)initLocalData {
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *plistPath = [bundle pathForResource:@"home_item1" ofType:@"plist"];
@@ -76,6 +92,7 @@
     _datatwo = [[NSMutableArray  alloc] initWithContentsOfFile:plistPath];
 }
 
+#pragma mark - 加载动态页面
 -(void)initView {
     _progressview = [[HomeProgressView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 220)];
     _progressview2 = [[HomeProgress2View alloc] initWithFrame:CGRectMake(ScreenWidth/2, 0, ScreenWidth, 220)];
@@ -95,19 +112,23 @@
     [_contentScrollView addSubview:_progressview2];
 }
 
+#pragma mark - 服务窗的消息数量监听
 -(void)countMsNum:(NSNotification *)notification{
     @try {
         NSMutableDictionary *dic = notification.object;
         int count = [[dic objectForKey:@"count"] intValue];
-        NSString *num;
-        if (count == 0) {
-            num = @"";
-        } else if (count < 99 && count>0) {
-            num = [NSString stringWithFormat:@"%d",count];
-        } else {
-            num = @"··";
-        }
+        NSString *num = [self fomatNum:count];
         RDVTabBarItem *item = [self rdv_tabBarController].tabBar.items[1];
+        NSString *method = [dic objectForKey:@"method"];
+        if ([method isEqualToString:@"fg"]) {
+            
+        } if ([method isEqualToString:@"js"]) {
+            int current = [item.badgeValue intValue];
+            if (current > 0) {
+                current = current-1;
+            }
+            num = [self fomatNum:current];
+        }
         [item setBadgeValue:num];
         [item setBadgeTextFont:[UIFont systemFontOfSize:10]];
     }
@@ -119,6 +140,19 @@
     }
 }
 
+-(NSString *) fomatNum:(int)count{
+    NSString *num;
+    if (count == 0) {
+        num = @"";
+    } else if (count < 99 && count>0) {
+        num = [NSString stringWithFormat:@"%d",count];
+    } else {
+        num = @"··";
+    }
+    return num;
+}
+
+#pragma mark - 访问流量相关数据
 -(void)loaddata {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
@@ -144,12 +178,12 @@
             NSLog(@"%@",exception.description);
         }
         @finally {
-            
+            [self.scrollView.header endRefreshing];
         }
         
        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-       
+       [self.scrollView.header endRefreshing];
     }];
     
      //**********************备胎剩余流量查询************************//
@@ -165,24 +199,34 @@
             NSLog(@"%@",exception.description);
         }
         @finally {
-            
+            [self.scrollView.header endRefreshing];
         }
       
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        [self.scrollView.header endRefreshing];
     }];
-    
-     //**********************未读信息数量查询************************//
+
+}
+
+
+-(void)loadUnReadMsgNum:(NSTimer *) timer{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+                                 ican_password:[UserInfoManager readObjectByKey:ican_password]};
+    //**********************未读信息总数量查询************************//
     parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
                    ican_password:[UserInfoManager readObjectByKey:ican_password],
                    @"type":@""};
     [manager POST:[BaseUrlString stringByAppendingString:@"msgcount.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
         @try {
             NSString *result = [responseObject objectForKey:@"result"];
             if ([@"00" isEqualToString:result]) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:countNum object:responseObject];
+                NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:responseObject];
+                [dic setValue:@"fg" forKey:@"method"];
+                [[NSNotificationCenter defaultCenter] postNotificationName:countNum object:dic];
+
             }
         }
         @catch (NSException *exception) {
@@ -196,9 +240,59 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
-
-
-
+    
+    //**********************未读系统信息数量查询************************//
+    parameters = @{ican_mobile:[UserInfoManager readObjectByKey:ican_mobile],
+                   ican_password:[UserInfoManager readObjectByKey:ican_password],
+                   @"type":@"system"};
+    [manager POST:[BaseUrlString stringByAppendingString:@"msgcount.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        @try {
+            NSString *result = [responseObject objectForKey:@"result"];
+            if ([@"00" isEqualToString:result]) {
+                NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:responseObject];
+                [dic setValue:@"fg" forKey:@"method"];
+                [[NSNotificationCenter defaultCenter] postNotificationName:sysNum object:dic];
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+        }
+        @finally {
+            
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+    
+    //**********************未读系统信息数量查询************************//
+    parameters = @{ican_mobile:[UserInfoManager readObjectByKey:ican_mobile],
+                   ican_password:[UserInfoManager readObjectByKey:ican_password],
+                   @"type":@"betai"};
+    [manager POST:[BaseUrlString stringByAppendingString:@"msgcount.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        @try {
+            NSString *result = [responseObject objectForKey:@"result"];
+            if ([@"00" isEqualToString:result]) {
+                NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:responseObject];
+                [dic setValue:@"fg" forKey:@"method"];
+                [[NSNotificationCenter defaultCenter] postNotificationName:btNum object:dic];
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@",exception.description);
+        }
+        @finally {
+            
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+    
 }
 
 - (CAGradientLayer *)shadowAsInverse {
@@ -291,7 +385,7 @@
                 break;
             case 2:
                 //送好友
-               
+                vCtrl = [[PresentFriendsViewController alloc] init];
                 break;
             case 3:
                 //游乐场
@@ -325,7 +419,7 @@
                 break;
             case 2:
                 //注册好礼
-               vCtrl = [[WebViewController alloc] initWithUrl:@"http://jsurl.huilongkj.com/js/151027fkbt/index1.html"];
+                vCtrl = [[WebViewController alloc] initWithUrl:@"http://jsurl.huilongkj.com/js/151027fkbt/index1.html"];
                 break;
             case 3:
                 //首订红包

@@ -11,6 +11,6 @@
 @interface BtFlowDetailsViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *data;
+@property (strong, nonatomic) NSArray *data;
 
 @end

@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 
 
-@interface ConfirmOrderViewController : BaseViewController
+@interface ConfirmOrderViewController : BaseViewController<UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *btn_chk1;
 @property (strong, nonatomic) IBOutlet UIButton *btn_chk2;

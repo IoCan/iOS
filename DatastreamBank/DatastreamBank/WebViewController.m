@@ -14,8 +14,18 @@
 
 @implementation WebViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = @"";
+        self.isBottm = NO;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.label_bottom.hidden = YES;
     if ([_url containsString:@"http"]) {
         self.title = @"加载中...";
         NSURL *url = [NSURL URLWithString:_url];
@@ -29,12 +39,14 @@
         self.title = @"";
     }
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     self.title = title;
+    self.label_bottom.hidden = self.isBottm;
 }
 
 -(void)dealloc {

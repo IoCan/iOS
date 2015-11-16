@@ -7,43 +7,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InviteFriendsViewController">
             <connections>
-                <outlet property="scrollView" destination="yOW-u8-TKf" id="W4S-rB-Giu"/>
                 <outlet property="searchDisplayController" destination="QMa-uV-4xd" id="hqB-FO-bJi"/>
+                <outlet property="tableView" destination="rAW-f2-BVB" id="8y6-BH-1Y3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOW-u8-TKf">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGz-v5-Lbh">
-                            <rect key="frame" x="169" y="999" width="46" height="30"/>
-                            <state key="normal" title="Button">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="KGz-v5-Lbh" secondAttribute="trailing" constant="160" id="DD8-Ly-YiO"/>
-                        <constraint firstItem="KGz-v5-Lbh" firstAttribute="top" secondItem="yOW-u8-TKf" secondAttribute="top" constant="999" id="Dzc-nT-riE"/>
-                        <constraint firstItem="KGz-v5-Lbh" firstAttribute="leading" secondItem="yOW-u8-TKf" secondAttribute="leading" constant="169" id="fva-ih-bme"/>
-                        <constraint firstAttribute="bottom" secondItem="KGz-v5-Lbh" secondAttribute="bottom" constant="-362" id="q20-5K-rc3"/>
-                    </constraints>
-                </scrollView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="rAW-f2-BVB">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="WSE-l0-K4S"/>
+                        <outlet property="delegate" destination="-1" id="6mN-NM-ROD"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="yOW-u8-TKf" secondAttribute="trailing" id="fhc-1J-XdD"/>
-                <constraint firstItem="yOW-u8-TKf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="szr-WQ-Dup"/>
-                <constraint firstItem="yOW-u8-TKf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uMS-PH-RuX"/>
-                <constraint firstAttribute="bottom" secondItem="yOW-u8-TKf" secondAttribute="bottom" id="yty-Ew-qg0"/>
+                <constraint firstItem="rAW-f2-BVB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3V9-3C-JIK"/>
+                <constraint firstAttribute="trailing" secondItem="rAW-f2-BVB" secondAttribute="trailing" id="Sco-sR-Izk"/>
+                <constraint firstAttribute="bottom" secondItem="rAW-f2-BVB" secondAttribute="bottom" id="kJi-1x-HLb"/>
+                <constraint firstItem="rAW-f2-BVB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uJ7-yM-sOn"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="446.5" y="298.5"/>
+            <point key="canvasLocation" x="298" y="259"/>
         </view>
         <searchDisplayController id="QMa-uV-4xd">
             <connections>

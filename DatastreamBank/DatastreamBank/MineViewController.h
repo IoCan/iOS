@@ -11,7 +11,7 @@
 #import "MineHeadView.h"
 #import "UserInfoSettingViewController.h"
 
-@interface MineViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,ChangeHeaderDelegate>
+@interface MineViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,ChangeHeaderDelegate,UIAlertViewDelegate>
 
 //@property (nonatomic,strong) MBProgressHUD *toast;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

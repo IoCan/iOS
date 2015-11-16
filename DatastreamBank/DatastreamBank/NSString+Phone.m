@@ -99,6 +99,23 @@
     return phone;
 }
 
++ (BOOL)isPureInt:(NSString*)string{
+    NSScanner* scan = [NSScanner scannerWithString:string];
+    int val;
+    return [scan scanInt:&val] && [scan isAtEnd];
+}
+
+
++(NSString *)carveupPhoneNum:(NSString *)phone {
+    NSString *formatStr = phone;
+    if ([self isMobileNumber:phone]) {
+        NSRange rang = {0,3};
+        NSRange rang1 = {3,4};
+        NSRange rang2 = {7,4};
+        formatStr = [NSString stringWithFormat:@"%@ %@ %@",[phone substringWithRange:rang],[phone substringWithRange:rang1],[phone substringWithRange:rang2]];
+    }
+    return formatStr;
+}
 
 + (BOOL) isBlankString:(NSString *)string {
     if (string == nil || string == NULL) {

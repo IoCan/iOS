@@ -9,6 +9,8 @@
 #import "ScoreTakeViewController.h"
 #import "ScoreTakeViewCell.h"
 #import "BenefitsViewController.h"
+#import "PresentFriendsViewController.h"
+#import "InviteFriendsViewController.h"
 
 @interface ScoreTakeViewController ()
 
@@ -74,10 +76,14 @@
             
             break;
         case 1:
+            //赠送
+            ctrl = [[PresentFriendsViewController alloc] init];
             break;
         case 2:
+            //索要
             break;
         case 3:
+            //
             break;
         case 4:
             ctrl = [[BenefitsViewController alloc] init];

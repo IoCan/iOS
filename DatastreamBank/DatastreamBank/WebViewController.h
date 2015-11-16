@@ -18,4 +18,9 @@
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 
+@property (nonatomic,assign) BOOL isBottm;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *label_bottom;
+
 @end

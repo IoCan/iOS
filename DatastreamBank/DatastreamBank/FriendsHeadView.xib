@@ -10,7 +10,6 @@
                 <outlet property="btn_add" destination="P6E-1V-8Wq" id="f5E-k1-ANX"/>
                 <outlet property="btn_head" destination="vXm-kt-gMH" id="ZYw-vf-bmI"/>
                 <outlet property="label_balance" destination="jLI-qh-tkq" id="Jax-R6-oo0"/>
-                <outlet property="label_count" destination="fzY-SY-S6t" id="3MA-pW-Tz5"/>
                 <outlet property="label_userphone" destination="ZrB-8C-wxg" id="IJ9-qm-5le"/>
             </connections>
         </placeholder>
@@ -44,7 +43,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vXm-kt-gMH">
                             <rect key="frame" x="16" y="20" width="60" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                            <state key="normal" image="img_header_default.png">
+                            <state key="normal" backgroundImage="img_header_default.png">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -56,27 +55,17 @@
                     <rect key="frame" x="0.0" y="100" width="375" height="40"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 朋友圈成员" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RCW-ZP-ztx">
-                            <rect key="frame" x="8" y="9" width="90" height="22"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                            <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(20)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fzY-SY-S6t">
-                            <rect key="frame" x="106" y="9" width="28" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="P6E-1V-8Wq">
-                            <rect key="frame" x="143" y="10" width="20" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="icon_pyq_3">
-                                <color key="titleColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <view contentMode="scaleToFill" id="F90-uI-PJh">
+                            <rect key="frame" x="0.0" y="40" width="375" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="P6E-1V-8Wq">
+                            <rect key="frame" x="10" y="7" width="200" height="24"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <state key="normal" title=" 朋友圈成员(0)" image="icon_pyq_3">
+                                <color key="titleColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="action_add:" destination="IhM-SK-Woa" eventType="touchUpInside" id="DLO-WV-oRp"/>
@@ -96,7 +85,6 @@
                 <outlet property="btn_add" destination="P6E-1V-8Wq" id="uqz-6z-yCo"/>
                 <outlet property="btn_head" destination="vXm-kt-gMH" id="oJQ-QA-cOK"/>
                 <outlet property="label_balance" destination="jLI-qh-tkq" id="oNS-rI-0wc"/>
-                <outlet property="label_count" destination="fzY-SY-S6t" id="Cxa-yw-YZS"/>
                 <outlet property="label_userphone" destination="ZrB-8C-wxg" id="9vH-QV-N18"/>
             </connections>
             <point key="canvasLocation" x="778" y="55"/>

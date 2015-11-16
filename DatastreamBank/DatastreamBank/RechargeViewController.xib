@@ -10,7 +10,6 @@
                 <outlet property="btn_1024" destination="y6k-pa-Qsy" id="Thw-pe-dDQ"/>
                 <outlet property="btn_200" destination="sMC-r5-fA1" id="XBx-jB-RQ9"/>
                 <outlet property="btn_500" destination="tdp-UL-aHL" id="6T2-zP-TGd"/>
-                <outlet property="label_city" destination="HbW-99-8pc" id="xzk-aa-ZhY"/>
                 <outlet property="label_phone" destination="d0M-1Y-CKj" id="d1M-9N-lkl"/>
                 <outlet property="view" destination="nbh-nt-PgU" id="aTL-XV-H7l"/>
             </connections>
@@ -43,18 +42,6 @@
                                                 <constraint firstAttribute="height" constant="1" id="Upu-5F-q8H"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="189 8585 8685" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0M-1Y-CKj">
-                                            <rect key="frame" x="15" y="21" width="127" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="江苏 南京 电信" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbW-99-8pc">
-                                            <rect key="frame" x="15" y="48" width="112" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.6588235294117647" green="0.6588235294117647" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="选择充值额度" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaC-bl-wGM">
                                             <rect key="frame" x="15" y="91" width="102" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -113,19 +100,22 @@
                                                 <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="189 8585 8685" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0M-1Y-CKj">
+                                            <rect key="frame" x="15" y="33" width="127" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="y6k-pa-Qsy" firstAttribute="centerY" secondItem="sMC-r5-fA1" secondAttribute="centerY" id="3kO-Eg-uFd"/>
-                                        <constraint firstItem="HbW-99-8pc" firstAttribute="top" secondItem="d0M-1Y-CKj" secondAttribute="bottom" constant="6" id="8Bd-lU-sQa"/>
-                                        <constraint firstItem="HbW-99-8pc" firstAttribute="trailing" secondItem="IPR-d3-Kfs" secondAttribute="trailing" id="9K9-eH-P8P"/>
                                         <constraint firstItem="sMC-r5-fA1" firstAttribute="leading" secondItem="aN0-yX-jE3" secondAttribute="leading" constant="15" id="Cfa-1W-qkg"/>
                                         <constraint firstItem="y6k-pa-Qsy" firstAttribute="leading" secondItem="tdp-UL-aHL" secondAttribute="trailing" constant="10" id="Cw5-UG-krp"/>
                                         <constraint firstItem="sMC-r5-fA1" firstAttribute="width" secondItem="tdp-UL-aHL" secondAttribute="width" id="GYQ-pD-Uga"/>
                                         <constraint firstAttribute="trailing" secondItem="OAh-uh-d5b" secondAttribute="trailing" id="JDc-NR-8cy"/>
                                         <constraint firstItem="d0M-1Y-CKj" firstAttribute="leading" secondItem="aN0-yX-jE3" secondAttribute="leading" constant="15" id="Jkt-16-SuY"/>
-                                        <constraint firstItem="HbW-99-8pc" firstAttribute="leading" secondItem="aN0-yX-jE3" secondAttribute="leading" constant="15" id="LsQ-Ve-m61"/>
-                                        <constraint firstItem="d0M-1Y-CKj" firstAttribute="top" secondItem="aN0-yX-jE3" secondAttribute="top" constant="21" id="Spm-p9-J2H"/>
+                                        <constraint firstItem="d0M-1Y-CKj" firstAttribute="top" secondItem="aN0-yX-jE3" secondAttribute="top" constant="33" id="Spm-p9-J2H"/>
                                         <constraint firstAttribute="bottom" secondItem="OAh-uh-d5b" secondAttribute="bottom" id="VKQ-Ci-2Ny"/>
                                         <constraint firstAttribute="height" constant="200" id="Vwd-Lp-CRP"/>
                                         <constraint firstItem="IPR-d3-Kfs" firstAttribute="top" secondItem="aN0-yX-jE3" secondAttribute="top" constant="24" id="Wgl-KT-4RM"/>

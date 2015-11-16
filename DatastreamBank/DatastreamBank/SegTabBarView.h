@@ -14,7 +14,7 @@
 //默认容器内容页面总数
 #define default_count 6
 //默认红色提示宽高
-#define default_badgelabel_wh 20
+#define default_badgelabel_wh 16
 
 #define default_normal_titlecolor RGBA(74,74,74,1)
 #define default_selected_titlecolor RGBA(91, 190, 211, 1)
@@ -32,6 +32,10 @@
 
 //TableViews的数据源
 @property (strong, nonatomic) NSMutableArray *dataSource;
+
+@property(nonatomic,strong) NSMutableArray *data;
+@property(nonatomic,strong) NSMutableArray *btdata;
+@property(nonatomic,strong) NSMutableArray *yhdata;
 
 //顶部菜单数据
 @property (strong, nonatomic) NSMutableArray *topItems;

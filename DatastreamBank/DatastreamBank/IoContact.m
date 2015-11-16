@@ -1,14 +1,14 @@
 //
-//  Contact.m
-//  upsi
+//  IoContact.m
+//  DatastreamBank
 //
-//  Created by Mac on 3/24/14.
-//  Copyright (c) 2014 Laith. All rights reserved.
+//  Created by OsnDroid on 15/11/14.
+//  Copyright (c) 2015年 OsnDroid. All rights reserved.
 //
 
-#import "THContact.h"
+#import "IoContact.h"
 
-@implementation THContact
+@implementation IoContact
 
 #pragma mark - NSObject - Creating, Copying, and Deallocating Objects
 
@@ -61,5 +61,7 @@
         return @"";
     }
 }
+
+
 
 @end

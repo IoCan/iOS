@@ -37,6 +37,14 @@
     _view_bg.layer.masksToBounds = YES;
 }
 
+-(void)setState:(NSString *)state {
+    _label_state.text = [NSString stringWithFormat:@"流量操作：%@",state];
+    if ([state containsString:@"赠送"]) {
+        [_img_icon setImage:[UIImage imageNamed:@"icon_btxq_2"]];
+    } else {
+        [_img_icon setImage:[UIImage imageNamed:@"icon_btxq_1"]];
+    }
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -20,82 +20,137 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_bg.png" id="i8K-Z9-2Ju">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="i8K-Z9-2Ju">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="71y-ej-TxI">
-                    <rect key="frame" x="18" y="24" width="60" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="img_header_default.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="action_head:" destination="-1" eventType="touchUpInside" id="mBy-mp-PcW"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HxV-hX-UzO">
-                    <rect key="frame" x="93" y="8" width="207" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                </label>
-                <button opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uSy-EP-aIY">
-                    <rect key="frame" x="89" y="53" width="108" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
-                    <state key="normal" title="添加好友" image="mine_icon_add">
-                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="action_add:" destination="-1" eventType="touchUpInside" id="g5w-RH-bDe"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_bg_aplha.png" id="GPd-iL-LX7">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHu-wd-8Rs">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71y-ej-TxI">
+                            <rect key="frame" x="10" y="22" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="gwm-Gm-5VB"/>
+                                <constraint firstAttribute="height" constant="60" id="jHN-9K-TZp"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="img_header_default.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="action_head:" destination="-1" eventType="touchUpInside" id="mBy-mp-PcW"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxV-hX-UzO">
+                            <rect key="frame" x="78" y="22" width="54" height="22"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                        </label>
+                        <button opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSy-EP-aIY">
+                            <rect key="frame" x="78" y="47" width="108" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="lCh-rd-lGa"/>
+                                <constraint firstAttribute="width" constant="108" id="lDG-IR-33u"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                            <state key="normal" title="添加好友" image="mine_icon_add">
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="action_add:" destination="-1" eventType="touchUpInside" id="g5w-RH-bDe"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mine_horizontal_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="qIa-XJ-lsv">
+                            <rect key="frame" x="0.0" y="102" width="375" height="2"/>
+                        </imageView>
+                        <button opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjk-W4-X9q">
+                            <rect key="frame" x="194" y="47" width="108" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="108" id="99k-fl-wDL"/>
+                                <constraint firstAttribute="height" constant="34" id="ac8-FJ-zCa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                            <state key="normal" title="资料设置" image="mine_icon_set">
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="action_set:" destination="-1" eventType="touchUpInside" id="eML-88-VkV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="uSy-EP-aIY" firstAttribute="width" secondItem="xjk-W4-X9q" secondAttribute="width" id="3Bh-JH-0al"/>
+                        <constraint firstItem="uSy-EP-aIY" firstAttribute="bottom" secondItem="71y-ej-TxI" secondAttribute="bottom" constant="-1" id="Bva-cG-FRd"/>
+                        <constraint firstAttribute="height" constant="104" id="FS3-x2-vVd"/>
+                        <constraint firstItem="HxV-hX-UzO" firstAttribute="leading" secondItem="71y-ej-TxI" secondAttribute="trailing" constant="8" id="JTq-X2-YMY"/>
+                        <constraint firstItem="uSy-EP-aIY" firstAttribute="leading" secondItem="71y-ej-TxI" secondAttribute="trailing" constant="8" id="Oe6-E9-mUa"/>
+                        <constraint firstItem="HxV-hX-UzO" firstAttribute="top" secondItem="71y-ej-TxI" secondAttribute="top" id="Vrr-sQ-3JP"/>
+                        <constraint firstAttribute="centerY" secondItem="71y-ej-TxI" secondAttribute="centerY" id="azp-NB-1rh"/>
+                        <constraint firstItem="xjk-W4-X9q" firstAttribute="leading" secondItem="uSy-EP-aIY" secondAttribute="trailing" constant="8" id="csa-rH-Fy5"/>
+                        <constraint firstItem="71y-ej-TxI" firstAttribute="leading" secondItem="AHu-wd-8Rs" secondAttribute="leading" constant="10" id="p9d-k2-L9e"/>
+                        <constraint firstItem="xjk-W4-X9q" firstAttribute="centerY" secondItem="uSy-EP-aIY" secondAttribute="centerY" id="zOH-bR-hBU"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riD-RC-rnF">
                     <rect key="frame" x="0.0" y="104" width="375" height="56"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备胎余额：0M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jgo-5n-KY7">
-                    <rect key="frame" x="0.0" y="104" width="186" height="56"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_vertical_line.png" id="hts-G0-rTA">
-                    <rect key="frame" x="186" y="104" width="2" height="56"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前积分：0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hpu-OL-Rrw">
-                    <rect key="frame" x="187.99999990321865" y="104" width="186" height="56"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_horizontal_line.png" id="qIa-XJ-lsv">
-                    <rect key="frame" x="0.0" y="102" width="375" height="2"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                </imageView>
-                <button opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xjk-W4-X9q">
-                    <rect key="frame" x="208" y="53" width="108" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
-                    <state key="normal" title="资料设置" image="mine_icon_set">
-                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="action_set:" destination="-1" eventType="touchUpInside" id="eML-88-VkV"/>
-                    </connections>
-                </button>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备胎余额：0M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgo-5n-KY7">
+                            <rect key="frame" x="0.0" y="0.0" width="186" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="fmJ-k6-Lwd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_vertical_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="hts-G0-rTA">
+                            <rect key="frame" x="186" y="0.0" width="2" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="VGd-aj-dLg"/>
+                                <constraint firstAttribute="width" constant="2" id="YbO-Vt-knl"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前积分：0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpu-OL-Rrw">
+                            <rect key="frame" x="186" y="0.0" width="186" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="312-i6-VIz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.11" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="Hpu-OL-Rrw" secondAttribute="centerY" id="3e3-4v-C3b"/>
+                        <constraint firstAttribute="centerY" secondItem="hts-G0-rTA" secondAttribute="centerY" id="MeJ-PJ-cx4"/>
+                        <constraint firstItem="Jgo-5n-KY7" firstAttribute="leading" secondItem="riD-RC-rnF" secondAttribute="leading" id="OEK-5w-TJx"/>
+                        <constraint firstAttribute="height" constant="56" id="Z2k-g3-DcP"/>
+                        <constraint firstItem="Hpu-OL-Rrw" firstAttribute="width" secondItem="Jgo-5n-KY7" secondAttribute="width" id="aRJ-E3-0Cc"/>
+                        <constraint firstItem="Hpu-OL-Rrw" firstAttribute="leading" secondItem="Jgo-5n-KY7" secondAttribute="trailing" id="mbu-3x-eWk"/>
+                        <constraint firstAttribute="centerX" secondItem="hts-G0-rTA" secondAttribute="centerX" constant="0.5" id="rUx-mX-a5r"/>
+                        <constraint firstAttribute="centerY" secondItem="Jgo-5n-KY7" secondAttribute="centerY" id="vQA-mC-KFG"/>
+                        <constraint firstAttribute="trailing" secondItem="Hpu-OL-Rrw" secondAttribute="trailing" constant="3" id="ySe-66-5UA"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="AHu-wd-8Rs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FfQ-CP-wIy"/>
+                <constraint firstItem="i8K-Z9-2Ju" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IGl-QE-zv2"/>
+                <constraint firstAttribute="bottom" secondItem="i8K-Z9-2Ju" secondAttribute="bottom" id="Z0r-OF-cvV"/>
+                <constraint firstAttribute="trailing" secondItem="AHu-wd-8Rs" secondAttribute="trailing" id="abf-zl-zQh"/>
+                <constraint firstItem="riD-RC-rnF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bf1-fK-4pv"/>
+                <constraint firstAttribute="trailing" secondItem="i8K-Z9-2Ju" secondAttribute="trailing" id="cDh-Qp-rpc"/>
+                <constraint firstAttribute="trailing" secondItem="riD-RC-rnF" secondAttribute="trailing" id="mnl-T1-pQP"/>
+                <constraint firstAttribute="bottom" secondItem="riD-RC-rnF" secondAttribute="bottom" id="rxj-3h-qP9"/>
+                <constraint firstItem="i8K-Z9-2Ju" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xKi-2i-eBP"/>
+                <constraint firstItem="AHu-wd-8Rs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yfP-Ta-upl"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
@@ -107,7 +162,6 @@
     <resources>
         <image name="img_header_default.png" width="60" height="60"/>
         <image name="mine_bg.png" width="640" height="215"/>
-        <image name="mine_bg_aplha.png" width="20" height="70"/>
         <image name="mine_horizontal_line.png" width="320" height="3"/>
         <image name="mine_icon_add" width="15" height="15"/>
         <image name="mine_icon_set" width="15" height="15"/>

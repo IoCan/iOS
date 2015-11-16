@@ -1,6 +1,6 @@
 //
 //  BaseNavigationController.h
-//  OsnDroidWeiBo
+//  UINavigationController 基子类
 //
 //  Created by OsnDroid on 14-8-2.
 //  Copyright (c) 2014年 OsnDroid. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  BaseViewController.m
-//  OsnDroidWeiBo
+//  UIViewController 基子类
 //
 //  Created by OsnDroid on 14-8-2.
 //  Copyright (c) 2014年 OsnDroid. All rights reserved.
@@ -17,6 +17,7 @@
 @end
 
 @implementation BaseViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -60,6 +61,7 @@
   
 }
 
+#pragma mark - 页面已经出现
 - (void)viewDidAppear:(BOOL)animated {
 
     [super viewDidAppear:animated];
@@ -69,20 +71,19 @@
     }
 }
 
+#pragma mark - 页面将要出现
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (self.navigationController.viewControllers.count==1) {
-        //[[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
         [self setBlueNav];
     }else{
         [self setWhiteNav];
-//        self.navigationController.navigationBar.hidden = NO;
         [[self rdv_tabBarController] setTabBarHidden:YES animated:animated];
     }
  
 }
 
-
+#pragma mark - 按钮事件处理
 -(void)cancleAction {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -130,13 +131,18 @@
     }
     [self.navigationController.navigationBar setBackgroundImage:backgroundImage
                                                   forBarMetrics:UIBarMetricsDefault];
+    //***********隐藏导航底部的灰色线************//
+//    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init]
+//                                      forBarPosition:UIBarPositionAny
+//                                          barMetrics:UIBarMetricsDefault];
+//    
+//    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
-    
     [self.navigationController.navigationBar setTintColor:color];
-
 }
 
 
+#pragma mark - 消息提示
 -(void)toast:(UIView *) view cotent:(NSString *) param{
     _toast = [[MBProgressHUD alloc] initWithView:view];
     _toast.labelText = param;
@@ -158,7 +164,7 @@
 }
 
 
-//状态栏
+#pragma mark - 状态栏提示
 -(void)showStatusTip:(BOOL)show title:(NSString *)title{
     if (_tipWindow == nil) {
         _tipWindow = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 20)];
@@ -199,29 +205,16 @@
 
 
 -(void)removeTip{
-    
     _tipWindow.hidden = YES;
 }
 
 
-//客户端提示信息
+#pragma mark - 弹窗提示
 - (void)alert:(NSString *)title msg:(NSString *)msg {
-//    if ([msg containsString:@"非法操作"]) {
-//        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:title message:@"您的帐号可能在别处登录，请重新登录！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-//        [alter show];
-//    } else {
-        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        [alter show];
-//    }
-    
+    UIAlertView *alter = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alter show];
 }
 
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    [UserInfoManager clear];
-//    UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
-//    AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    deleteview.window.rootViewController = loginCtrl;
-//}
 
 
 - (void)didReceiveMemoryWarning {

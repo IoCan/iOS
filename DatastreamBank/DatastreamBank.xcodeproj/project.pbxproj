@@ -992,6 +992,7 @@
 		0461E53D1BB157D000614492 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				04724A231BF9AC6D00C8B695 /* Category */,
 				04A4ED221BF7235D00206304 /* Delegate */,
 				049A29A91BF1C0A500127398 /* SysmtemModel */,
 				046CEFE51BEC4EBB00AEEA85 /* Dao */,
@@ -1161,6 +1162,23 @@
 			name = Present;
 			sourceTree = "<group>";
 		};
+		04724A231BF9AC6D00C8B695 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				046CEFE21BEC32BD00AEEA85 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				046CEFE31BEC32BD00AEEA85 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				0481171A1BD6100300970389 /* UIButton+IcUIButton.h */,
+				0481171B1BD6100300970389 /* UIButton+IcUIButton.m */,
+				04901B661BDA34B400E9A607 /* UIView+Layer.h */,
+				04901B671BDA34B400E9A607 /* UIView+Layer.m */,
+				047EAD7C1BE756D300BE0C73 /* UIViewController+BackButtonHandler.h */,
+				047EAD7D1BE756D300BE0C73 /* UIViewController+BackButtonHandler.m */,
+				04A4ED241BF7364400206304 /* UIImage+Scale.h */,
+				04A4ED251BF7364400206304 /* UIImage+Scale.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		047A7C0F1BD86BC10082F3C6 /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
@@ -1281,18 +1299,8 @@
 				047EAD421BE4BDED00BE0C73 /* CustomeSheet */,
 				046CEFDF1BEC329C00AEEA85 /* TPKeyboardAvoidingScrollView.h */,
 				046CEFE01BEC329C00AEEA85 /* TPKeyboardAvoidingScrollView.m */,
-				046CEFE21BEC32BD00AEEA85 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				046CEFE31BEC32BD00AEEA85 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 				0449C7D61BDF67F400CB5856 /* CircularProgressView.h */,
 				0449C7D71BDF67F400CB5856 /* CircularProgressView.m */,
-				0481171A1BD6100300970389 /* UIButton+IcUIButton.h */,
-				0481171B1BD6100300970389 /* UIButton+IcUIButton.m */,
-				04901B661BDA34B400E9A607 /* UIView+Layer.h */,
-				04901B671BDA34B400E9A607 /* UIView+Layer.m */,
-				047EAD7C1BE756D300BE0C73 /* UIViewController+BackButtonHandler.h */,
-				047EAD7D1BE756D300BE0C73 /* UIViewController+BackButtonHandler.m */,
-				04A4ED241BF7364400206304 /* UIImage+Scale.h */,
-				04A4ED251BF7364400206304 /* UIImage+Scale.m */,
 			);
 			name = View;
 			sourceTree = "<group>";

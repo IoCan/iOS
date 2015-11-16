@@ -52,7 +52,7 @@
         [self setupViewControllers];
         [self.window setRootViewController:self.viewController];
         [self.window makeKeyAndVisible];
-        [self customizeInterface];
+//        [self customizeInterface];
     } else {
         //登录页面
         UserLoginViewController *login = [[UserLoginViewController alloc] init];
@@ -156,10 +156,8 @@
 }
 
 //客户端提示信息
-- (void)alert:(NSString *)title msg:(NSString *)msg
-{
+- (void)alert:(NSString *)title msg:(NSString *)msg {
     UIAlertView *alter = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-    
     [alter show];
 }
 
@@ -190,9 +188,6 @@
                                            thirdNavigationController,fourNavigationController]];
 
     self.viewController = tabBarController;
-  
-//    [tabBarController.tabBar.items[2] setBadgeValue:@"9"];
-//    [tabBarController.tabBar.items[2] setBadgeTextFont:[UIFont systemFontOfSize:10]];
     [self customizeTabBarForController:tabBarController];
 }
 
@@ -248,37 +243,5 @@
         index++;
     }
 }
-
-#pragma mark - 处理navigationbar的属性
-- (void)customizeInterface {
-    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
-    
-    UIImage *backgroundImage = nil;
-    NSDictionary *textAttributes = nil;
-    
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-        backgroundImage = [UIImage imageNamed:@"navigationbar_background_tall"];
-        
-        textAttributes = @{
-                           NSFontAttributeName: [UIFont boldSystemFontOfSize:18],
-                           NSForegroundColorAttributeName: [UIColor whiteColor],
-                           };
-    } else {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-        backgroundImage = [UIImage imageNamed:@"navigationbar_background"];
-        
-        textAttributes = @{
-                           UITextAttributeFont: [UIFont boldSystemFontOfSize:18],
-                           UITextAttributeTextColor: [UIColor whiteColor],
-                           UITextAttributeTextShadowColor: [UIColor clearColor],
-                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                           };
-#endif
-    }
-   
-    [navigationBarAppearance setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
-    [navigationBarAppearance setTitleTextAttributes:textAttributes];
-}
-
  
 @end

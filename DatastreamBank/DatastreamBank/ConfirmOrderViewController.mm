@@ -191,7 +191,7 @@ static NSString *alipayNotifServerURL = @"http://202.102.39.91/spare_wheel/libt_
     order.partner = alipayPartner;
     order.seller = alipaySeller;
     order.tradeNO = tn; //订单ID（由商家自行制定）
-    order.productName = [@"流量备胎－购买" stringByAppendingString:_content];//_content; //商品标题
+    order.productName = [@"备胎－购买" stringByAppendingString:_content];//_content; //商品标题
     order.productDescription = [@"流量购买-" stringByAppendingString:_content]; //商品描述
     NSString *price =[NSString stringWithFormat:@"%ld",(long)[[_dic objectForKey:@"price"] integerValue]];
     order.amount = price; //商品价格
@@ -303,8 +303,8 @@ static NSString *alipayNotifServerURL = @"http://202.102.39.91/spare_wheel/libt_
 
     if ([alertView.message containsString:@"成功"]) {
         MyOrderViewController *mCtrl = [[MyOrderViewController alloc] init];
-        [self.navigationController popViewControllerAnimated:NO];
         [self.navigationController pushViewController:mCtrl animated:YES];
+        [self.navigationController popViewControllerAnimated:NO];
     }
 }
 

@@ -37,15 +37,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeHead:) name:loadhead object:nil];
-    [self.tableView setDataSource:self];
-    [self.tableView setDelegate:self];
     NSBundle *bundle = [NSBundle mainBundle];
-//    NSLog(@"%@",[UserInfoManager readObjectByKey:ican_headpath]);
     NSString *plistPath = [bundle pathForResource:@"mineitem" ofType:@"plist"];
     self.data = [[NSMutableArray  alloc] initWithContentsOfFile:plistPath];
     self.tableHeadView = [[MineHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 160)];
     self.tableView.tableHeaderView =self.tableHeadView;
+    [self updateFromAppStore:self.view isShow:NO];
+    [self setData];
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(updateDate)];
+}
+
+-(void)setData {
     NSString *mobile = [UserInfoManager readObjectByKey:ican_mobile];
     NSInteger virtualflow = [[UserInfoManager readObjectByKey:ican_virtualflow] integerValue];
     NSString *score = [UserInfoManager readObjectByKey:ican_score];
@@ -56,22 +58,15 @@
     if (headpath!=nil && headpath.length>10) {
         NSString *headurl = [BaseUrlString stringByAppendingString:headpath];
         [self.tableHeadView.img_userhead sd_setBackgroundImageWithURL:[NSURL URLWithString:headurl]
-                                                   forState:UIControlStateNormal
-                                           placeholderImage:[UIImage imageNamed:@"img_header_default.png"]
-                                                    options:SDWebImageDelayPlaceholder
-                                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//                                                      NSLog(@"%@",error);
-                                                  }];
+                                                             forState:UIControlStateNormal
+                                                     placeholderImage:[UIImage imageNamed:@"img_header_default.png"]
+                                                              options:SDWebImageDelayPlaceholder
+                                                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                                                //                                                      NSLog(@"%@",error);
+                                                            }];
         
     }
-    [self updateFromAppStore:self.view isShow:NO];
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        // 进入刷新状态后会自动调用这个block
-    }];
-    
-    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(updateDate)];
-    [self.tableView.header beginRefreshing];
+
 }
 
 -(void)updateDate {
@@ -85,6 +80,7 @@
         if ([result isEqualToString:@"00"]) {
             NSDictionary *userList = [responseObject objectForKey:UserInfo];
             [UserInfoManager saveDic:userList];
+            [self setData];
         }
         [self.tableView.header endRefreshing];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

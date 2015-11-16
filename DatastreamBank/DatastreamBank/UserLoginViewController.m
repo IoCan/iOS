@@ -51,7 +51,17 @@ int secondsCountDown;
     _txt_code.delegate = self;
     [_btn_login setEnabled:NO];
     [_btn_code setEnabled:NO];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Actiondo:)];
+    tapGesture.delegate = self;
+    [_top_view addGestureRecognizer:tapGesture];
+    
 }
+
+-(void)Actiondo:(UITapGestureRecognizer *)sender{
+    [_txt_code resignFirstResponder];
+    [_txt_phone resignFirstResponder];
+}
+
 
 #pragma mark - UITextField代理
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
@@ -120,15 +130,15 @@ int secondsCountDown;
     NSValue *value = [notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect rect = [value CGRectValue];
     float y = rect.origin.y;
-    if (y < 270 && [self.txt_phone isFirstResponder]) {
-        CGFloat offy = y - 270;
+    if (y < 400 && [self.txt_phone isFirstResponder]) {
+        CGFloat offy = y - 400;
         CGRect frame = self.view.frame;
         frame.origin.y = offy;
         self.view.frame = frame;
         NSLog(@"phone up");
     }
-    if (y < 330 && [self.txt_code isFirstResponder]) {
-        CGFloat offy = y - 330;
+    if (y < 420 && [self.txt_code isFirstResponder]) {
+        CGFloat offy = y - 420;
         CGRect frame = self.view.frame;
         frame.origin.y = offy;
         self.view.frame = frame;
@@ -347,36 +357,6 @@ int secondsCountDown;
     }
 }
 
-#pragma mark - 处理navigationbar的属性
-- (void)customizeInterface {
-    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
-    
-    UIImage *backgroundImage = nil;
-    NSDictionary *textAttributes = nil;
-    
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-        backgroundImage = [UIImage imageNamed:@"navigationbar_background_tall"];
-        
-        textAttributes = @{
-                           NSFontAttributeName: [UIFont boldSystemFontOfSize:18],
-                           NSForegroundColorAttributeName: [UIColor whiteColor],
-                           };
-    } else {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-        backgroundImage = [UIImage imageNamed:@"navigationbar_background"];
-        
-        textAttributes = @{
-                           UITextAttributeFont: [UIFont boldSystemFontOfSize:18],
-                           UITextAttributeTextColor: [UIColor whiteColor],
-                           UITextAttributeTextShadowColor: [UIColor clearColor],
-                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                           };
-#endif
-    }
-    
-    [navigationBarAppearance setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
-    [navigationBarAppearance setTitleTextAttributes:textAttributes];
-}
 
 
 #pragma mark - 生命周期处理

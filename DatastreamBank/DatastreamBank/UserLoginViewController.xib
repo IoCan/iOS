@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="btn_code" destination="Ce6-Wm-hNT" id="mZG-jh-rPD"/>
                 <outlet property="btn_login" destination="wTd-vg-noX" id="kLb-uf-Ced"/>
+                <outlet property="top_view" destination="Av0-Vk-qQt" id="zEH-yC-Vyy"/>
                 <outlet property="txt_code" destination="0Ru-c3-6eb" id="b3x-7c-8Fu"/>
                 <outlet property="txt_phone" destination="y2k-1l-nbv" id="fuZ-6D-C0S"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

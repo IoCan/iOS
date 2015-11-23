@@ -74,7 +74,13 @@
 }
 
 -(void)setFlow:(NSInteger) flow {
-    NSString *tmp = [NSString stringWithFormat:@"%ldMB",flow];
+    NSString *tmp;
+    if (flow > 1024) {
+        float a = flow/1024.0f;
+        tmp = [NSString stringWithFormat:@"%0.1fGB",a];
+    } else {
+        tmp = [NSString stringWithFormat:@"%ldMB",flow];
+    }
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:tmp];
     NSInteger start = tmp.length - 2;
     [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Arial" size:14.0] range:NSMakeRange(start,2)];

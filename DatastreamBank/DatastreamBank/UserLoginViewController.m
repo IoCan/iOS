@@ -9,14 +9,7 @@
 #import "UserLoginViewController.h"
 #import "RDVTabBarController.h"
 #import "AppDelegate.h"
-
-
-#import "RDVTabBarItem.h"
-#import "HomeViewController.h"
-#import "MineViewController.h"
-#import "FriendsViewController.h"
-#import "MessageViewController.h"
-#import "BaseNavigationController.h"
+#import "MainViewController.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "NSString+Phone.h"
 #import "UIDeviceHardware.h"
@@ -31,6 +24,7 @@ int secondsCountDown;
 @end
 
 @implementation UserLoginViewController
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -178,7 +172,20 @@ int secondsCountDown;
              NSDictionary *userList = [responseObject objectForKey:UserInfo];
              BOOL isSavesuccess = [UserInfoManager saveDic:userList];
              if (isSavesuccess) {
-                 [self setupViewControllers];
+                 RDVTabBarController *tabBarController = [[[MainViewController alloc] init] setupViewControllers];
+                 [tabBarController setTabBarHidden:YES];
+                 AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
+                 
+                 [UIView transitionFromView:deleteview.window.rootViewController.view
+                                     toView:tabBarController.view
+                                   duration:1.0
+                                    options:UIViewAnimationOptionTransitionCurlUp
+                                 completion:^(BOOL finished)
+                  {
+                      deleteview.window.rootViewController  = tabBarController;
+                      [[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
+                      
+                  }];
              } else {
                  MBProgressHUD *toast = [[MBProgressHUD alloc] initWithView:self.view];
                  toast.labelText = @"登录失败，请重试！";
@@ -260,100 +267,6 @@ int secondsCountDown;
         [self.timer invalidate];
         [_btn_code setEnabled:YES];
         [_btn_code setBackgroundColor:RGBA(124, 206, 183, 1.0)];
-    }
-}
-
-#pragma mark - 初始化模块页面
-
-- (void)setupViewControllers {
-    UIViewController *firstViewController = [[HomeViewController alloc] init];
-    UIViewController *firstNavigationController = [[BaseNavigationController alloc]
-                                                   initWithRootViewController:firstViewController];
-    
-    
-    UIViewController *secondViewController = [[MessageViewController alloc] init];
-    UIViewController *secondNavigationController = [[BaseNavigationController alloc]
-                                                    initWithRootViewController:secondViewController];
-    
-    UIViewController *thirdViewController = [[FriendsViewController alloc] init];
-    UIViewController *thirdNavigationController = [[BaseNavigationController alloc]
-                                                   initWithRootViewController:thirdViewController];
-    
-    UIViewController *fourViewController = [[MineViewController alloc] init];
-    UIViewController *fourNavigationController = [[BaseNavigationController alloc]
-                                                  initWithRootViewController:fourViewController];
-    
-    
-    
-    RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];
-    [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController,
-                                           thirdNavigationController,fourNavigationController]];
-    [self customizeTabBarForController:tabBarController];
-    [tabBarController setTabBarHidden:YES];
-    AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
-    
-    [UIView transitionFromView:deleteview.window.rootViewController.view
-                        toView:tabBarController.view
-                      duration:1.0
-                       options:UIViewAnimationOptionTransitionCurlUp
-                    completion:^(BOOL finished)
-     {
-          deleteview.window.rootViewController  = tabBarController;
-          [[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
-         
-     }];
-    
-   
-}
-
-#pragma mark - 设置item的图标和字体颜色
-- (void)customizeTabBarForController:(RDVTabBarController *)tabBarController {
-    UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
-    NSDictionary *textAttributes = nil;
-    NSDictionary *textAttributes2 = nil;
-    
-    UIColor *selcolor = RGBA(0, 175, 209, 1.0);
-    UIColor *color = RGBA(153, 153, 153, 1.0);
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-        textAttributes = @{
-                           NSFontAttributeName: [UIFont systemFontOfSize:10],
-                           NSForegroundColorAttributeName: color,
-                           };
-        textAttributes2 = @{
-                            NSFontAttributeName:[UIFont systemFontOfSize:10],
-                            NSForegroundColorAttributeName: selcolor,
-                            
-                            };
-    } else {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-        
-        
-        textAttributes = @{
-                           UITextAttributeFont: [UIFont systemFontOfSize:10],
-                           UITextAttributeTextColor: color,
-                           UITextAttributeTextShadowColor: [UIColor clearColor],
-                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                           };
-        
-        textAttributes2 = @{
-                            UITextAttributeFont: [UIFont systemFontOfSize:10],
-                            UITextAttributeTextColor: selcolor,
-                            UITextAttributeTextShadowColor: [UIColor clearColor],
-                            UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                            };
-        
-#endif
-    }
-    
-    NSInteger index = 1;
-    for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {
-        [item setBackgroundSelectedImage:unfinishedImage withUnselectedImage:unfinishedImage];
-        UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"icon_undertab_%lda",(long)index]];
-        UIImage *unselectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"icon_undertab_%ld",(long)index]];
-        [item setFinishedSelectedImage:selectedimage withFinishedUnselectedImage:unselectedimage];
-        [item setSelectedTitleAttributes:textAttributes2];
-        [item setUnselectedTitleAttributes:textAttributes];
-        index++;
     }
 }
 

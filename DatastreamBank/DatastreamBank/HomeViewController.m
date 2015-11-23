@@ -101,9 +101,9 @@
         float total = [[UserInfoManager readObjectByKey:@"total"] floatValue];
         float left = total - already;
         float pre = left/total;
-        _progressview.initflow = left;
+        [_progressview setFlow:left];
         _progressview.initprogress = isnan(pre)?0.0f:pre;
-        _progressview2.initfow = [[UserInfoManager readObjectByKey:ican_virtualflow] integerValue];
+        [_progressview2 setFlow:[[UserInfoManager readObjectByKey:ican_virtualflow] integerValue]];
     }
     @catch (NSException *exception) {
         

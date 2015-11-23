@@ -169,6 +169,7 @@
     if (buttonIndex == 0) {
         [self toast:self.view cotent:@"注销成功"];
         [UserInfoManager clear];
+        [UserInfoManager updateWithObject:@"100" forKey:ican_isfirst];
         UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
         AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
         deleteview.window.rootViewController = loginCtrl;

@@ -84,6 +84,7 @@
 #define ican_unsubscribe_name @"unsubscribename"//退订缓存姓名
 
 #define ican_login_acount @"loginacount"//历史登录帐号
+#define ican_isfirst @"isfirst"//是否为第一次
 
 
 //通知标示

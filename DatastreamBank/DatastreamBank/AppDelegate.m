@@ -22,6 +22,8 @@
 #import "payRequsestHandler.h"
 #import "UserInfoDao.h"
 #import "MyOrderViewController.h"
+#import "GuideViewController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -47,16 +49,26 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     NSString *mobile = [UserInfoManager readObjectByKey:ican_mobile];
-    if ([NSString isMobileNumber:mobile]) {
-        //主页面
-        [self setupViewControllers];
-        [self.window setRootViewController:self.viewController];
-        [self.window makeKeyAndVisible];
-//        [self customizeInterface];
+//   [UserInfoManager updateWithObject:@"1020" forKey:ican_isfirst];
+    NSString *first = [UserInfoManager readObjectByKey:ican_isfirst];
+    if ([@"100" isEqualToString:first]) {
+        if ([NSString isMobileNumber:mobile]) {
+            //主页面
+            RDVTabBarController *tabBarController = [[[MainViewController alloc] init] setupViewControllers];
+            [self.window setRootViewController:tabBarController];
+            [self.window makeKeyAndVisible];
+            //        [self customizeInterface];
+        } else {
+            //登录页面
+            UserLoginViewController *login = [[UserLoginViewController alloc] init];
+            [self.window setRootViewController:login];
+            [self.window makeKeyAndVisible];
+        }
+
     } else {
-        //登录页面
-        UserLoginViewController *login = [[UserLoginViewController alloc] init];
-        [self.window setRootViewController:login];
+        [UserInfoManager updateWithObject:@"100" forKey:ican_isfirst];
+        GuideViewController *gCtrl = [[GuideViewController alloc] init];
+        [self.window setRootViewController:gCtrl];
         [self.window makeKeyAndVisible];
     }
     
@@ -161,87 +173,4 @@
     [alter show];
 }
 
-#pragma mark - 初始化模块页面
-
-- (void)setupViewControllers {
-    UIViewController *firstViewController = [[HomeViewController alloc] init];
-    UIViewController *firstNavigationController = [[BaseNavigationController alloc]
-                                                   initWithRootViewController:firstViewController];
-    
-    
-    UIViewController *secondViewController = [[MessageViewController alloc] init];
-    UIViewController *secondNavigationController = [[BaseNavigationController alloc]
-                                                  initWithRootViewController:secondViewController];
-    
-    UIViewController *thirdViewController = [[FriendsViewController alloc] init];
-    UIViewController *thirdNavigationController = [[BaseNavigationController alloc]
-                                                    initWithRootViewController:thirdViewController];
-    
-    UIViewController *fourViewController = [[MineViewController alloc] init];
-    UIViewController *fourNavigationController = [[BaseNavigationController alloc]
-                                                   initWithRootViewController:fourViewController];
-    
-   
-    
-    RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];
-    [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController,
-                                           thirdNavigationController,fourNavigationController]];
-
-    self.viewController = tabBarController;
-    [self customizeTabBarForController:tabBarController];
-}
-
-#pragma mark - 设置item的图标和字体颜色
-- (void)customizeTabBarForController:(RDVTabBarController *)tabBarController {
-//  UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_background"];
-    UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
-//  NSArray *tabBarItemImages = @[@"icon_undertab_", @"second", @"third"];
-    NSDictionary *textAttributes = nil;
-    NSDictionary *textAttributes2 = nil;
-    
-    UIColor *selcolor = RGBA(0, 175, 209, 1.0);
-    UIColor *color = RGBA(153, 153, 153, 1.0);
-    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-        textAttributes = @{
-                           NSFontAttributeName: [UIFont systemFontOfSize:10],
-                           NSForegroundColorAttributeName: color,
-                           };
-        textAttributes2 = @{
-                            NSFontAttributeName:[UIFont systemFontOfSize:10],
-                            NSForegroundColorAttributeName: selcolor,
-                            
-                            };
-    } else {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-
-        
-        textAttributes = @{
-                           UITextAttributeFont: [UIFont systemFontOfSize:10],
-                           UITextAttributeTextColor: color,
-                           UITextAttributeTextShadowColor: [UIColor clearColor],
-                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                           };
-        
-        textAttributes2 = @{
-                           UITextAttributeFont: [UIFont systemFontOfSize:10],
-                           UITextAttributeTextColor: selcolor,
-                           UITextAttributeTextShadowColor: [UIColor clearColor],
-                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                           };
-
-#endif
-    }
-
-    NSInteger index = 1;
-    for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {
-        [item setBackgroundSelectedImage:unfinishedImage withUnselectedImage:unfinishedImage];
-        UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"icon_undertab_%lda",(long)index]];
-        UIImage *unselectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"icon_undertab_%ld",(long)index]];
-        [item setFinishedSelectedImage:selectedimage withFinishedUnselectedImage:unselectedimage];
-        [item setSelectedTitleAttributes:textAttributes2];
-        [item setUnselectedTitleAttributes:textAttributes];
-        index++;
-    }
-}
- 
 @end

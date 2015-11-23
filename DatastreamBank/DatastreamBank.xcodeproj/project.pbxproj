@@ -109,6 +109,10 @@
 		047A7C381BD8C6DD0082F3C6 /* b5.png in Resources */ = {isa = PBXBuildFile; fileRef = 047A7C321BD8C6DD0082F3C6 /* b5.png */; };
 		047A7C3F1BD8C99B0082F3C6 /* checkbox_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 047A7C3D1BD8C99B0082F3C6 /* checkbox_1.png */; };
 		047A7C401BD8C99B0082F3C6 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 047A7C3E1BD8C99B0082F3C6 /* checkbox.png */; };
+		047B076B1BFEF5AD00ED9409 /* Introduction.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047B076A1BFEF5AD00ED9409 /* Introduction.xcassets */; };
+		047B076F1BFEFDD400ED9409 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B076D1BFEFDD400ED9409 /* GuideViewController.m */; };
+		047B07701BFEFDD400ED9409 /* GuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047B076E1BFEFDD400ED9409 /* GuideViewController.xib */; };
+		047B077B1BFF108800ED9409 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B077A1BFF108800ED9409 /* MainViewController.m */; };
 		047B0F3C1BE1F2E100C516C8 /* NSString+Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B0F3B1BE1F2E100C516C8 /* NSString+Phone.m */; };
 		047D34DB1BDF0C24005DD451 /* ConfirmOrderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 047D34D91BDF0C24005DD451 /* ConfirmOrderViewController.mm */; };
 		047D34DC1BDF0C24005DD451 /* ConfirmOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047D34DA1BDF0C24005DD451 /* ConfirmOrderViewController.xib */; };
@@ -447,6 +451,12 @@
 		047A7C321BD8C6DD0082F3C6 /* b5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b5.png; sourceTree = "<group>"; };
 		047A7C3D1BD8C99B0082F3C6 /* checkbox_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_1.png; sourceTree = "<group>"; };
 		047A7C3E1BD8C99B0082F3C6 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		047B076A1BFEF5AD00ED9409 /* Introduction.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Introduction.xcassets; sourceTree = "<group>"; };
+		047B076C1BFEFDD400ED9409 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
+		047B076D1BFEFDD400ED9409 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
+		047B076E1BFEFDD400ED9409 /* GuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuideViewController.xib; sourceTree = "<group>"; };
+		047B07791BFF108800ED9409 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		047B077A1BFF108800ED9409 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		047B0F3A1BE1F2E100C516C8 /* NSString+Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Phone.h"; sourceTree = "<group>"; };
 		047B0F3B1BE1F2E100C516C8 /* NSString+Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Phone.m"; sourceTree = "<group>"; };
 		047D34D81BDF0C24005DD451 /* ConfirmOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmOrderViewController.h; sourceTree = "<group>"; };
@@ -1185,6 +1195,11 @@
 				047A7C101BD86F2C0082F3C6 /* UserLoginViewController.h */,
 				047A7C111BD86F2C0082F3C6 /* UserLoginViewController.m */,
 				047A7C121BD86F2C0082F3C6 /* UserLoginViewController.xib */,
+				047B076C1BFEFDD400ED9409 /* GuideViewController.h */,
+				047B076D1BFEFDD400ED9409 /* GuideViewController.m */,
+				047B076E1BFEFDD400ED9409 /* GuideViewController.xib */,
+				047B07791BFF108800ED9409 /* MainViewController.h */,
+				047B077A1BFF108800ED9409 /* MainViewController.m */,
 			);
 			name = Introduction;
 			sourceTree = "<group>";
@@ -1909,6 +1924,7 @@
 				04D31D4D1BA00F6E00EA3DC2 /* Main.storyboard */,
 				04D31D521BA00F6E00EA3DC2 /* LaunchScreen.xib */,
 				040072CD1BC78FD1009AC7AD /* Images.xcassets */,
+				047B076A1BFEF5AD00ED9409 /* Introduction.xcassets */,
 				0461E53D1BB157D000614492 /* Src */,
 				04D31D401BA00F6E00EA3DC2 /* Supporting Files */,
 			);
@@ -2062,6 +2078,7 @@
 				04A4ED191BF7202200206304 /* IoContactCell.xib in Resources */,
 				04BEA5DA1BD229F8000D45BB /* MessageCell.xib in Resources */,
 				04A4ED1E1BF7203700206304 /* IoContactViewController.xib in Resources */,
+				047B076B1BFEF5AD00ED9409 /* Introduction.xcassets in Resources */,
 				046A48A91BCB502700BED0C0 /* mine_vertical_line.png in Resources */,
 				046CEFF31BEC90CF00AEEA85 /* FlowInfoCell.xib in Resources */,
 				047D34E81BDF499E005DD451 /* bg_check_blue.png in Resources */,
@@ -2097,6 +2114,7 @@
 				04BB1A8F1BE9D838009C1CF5 /* AlipaySDK.bundle in Resources */,
 				046D500A1BCCD7FF00523798 /* MyOrderViewController.xib in Resources */,
 				047A7C3F1BD8C99B0082F3C6 /* checkbox_1.png in Resources */,
+				047B07701BFEFDD400ED9409 /* GuideViewController.xib in Resources */,
 				046A489F1BCB4ACA00BED0C0 /* mine_head_default.png in Resources */,
 				04901B501BD9DBE500E9A607 /* nav_back3.png in Resources */,
 				047A7C351BD8C6DD0082F3C6 /* b2.png in Resources */,
@@ -2174,6 +2192,7 @@
 				0496EF981BB2A2D100F93E8A /* AFURLConnectionOperation.m in Sources */,
 				0496EFA31BB2A2D100F93E8A /* UIWebView+AFNetworking.m in Sources */,
 				04BB1A981BE9D838009C1CF5 /* MD5DataSigner.m in Sources */,
+				047B077B1BFF108800ED9409 /* MainViewController.m in Sources */,
 				04BB1A9A1BE9D838009C1CF5 /* openssl_wrapper.m in Sources */,
 				048867E71BAFE26E00BFFC2B /* MJRefreshAutoFooter.m in Sources */,
 				04901B681BDA34B400E9A607 /* UIView+Layer.m in Sources */,
@@ -2272,6 +2291,7 @@
 				048868851BAFEACC00BFFC2B /* RDVTabBarController.m in Sources */,
 				0481171C1BD6100300970389 /* UIButton+IcUIButton.m in Sources */,
 				0488681C1BAFE2B500BFFC2B /* MKAnnotationView+WebCache.m in Sources */,
+				047B076F1BFEFDD400ED9409 /* GuideViewController.m in Sources */,
 				048867F61BAFE26E00BFFC2B /* MJRefreshConst.m in Sources */,
 				046D5AF71BF8D0F400053F4F /* PresentFriendsHeadView.m in Sources */,
 				047A7C0B1BD76F1E0082F3C6 /* HomeCell.m in Sources */,
@@ -2460,7 +2480,6 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
@@ -2496,7 +2515,6 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;

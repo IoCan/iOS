@@ -41,7 +41,7 @@
     UIImageView *view3 = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth*2, 0, ScreenWidth, ScreenHeight)];
     UIImageView *view4 = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth*3, 0, ScreenWidth, ScreenHeight)];
     [view4 setUserInteractionEnabled:YES];
-    UIButton *btn =[[UIButton alloc] initWithFrame:CGRectMake(ScreenWidth/2-60, ScreenHeight - 100, 120, 36)];
+    UIButton *btn =[[UIButton alloc] initWithFrame:CGRectMake(ScreenWidth/2-80, ScreenHeight - 100, 160, 38)];
     [btn setTitle:@"立即开玩" forState:UIControlStateNormal];
     btn.titleLabel.textColor = [UIColor whiteColor];
     btn.titleLabel.tintColor = [UIColor whiteColor];

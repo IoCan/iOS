@@ -18,9 +18,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *btn_add;
 
 
-@property (assign,nonatomic) NSIndexPath * indexPath;
+@property (strong,nonatomic) NSIndexPath * indexPath;
 @property (nonatomic,strong,setter=setPhone:) NSString *phone;
 
-@property (assign, nonatomic) id <CellClickDelegate> delegate;
+@property (weak, nonatomic) id <CellClickDelegate> delegate;
 
 @end

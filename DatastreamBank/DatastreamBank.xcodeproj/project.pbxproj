@@ -280,7 +280,6 @@
 		04BB1AB01BEA0142009C1CF5 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04BB1AAD1BEA0142009C1CF5 /* WXUtil.mm */; };
 		04BB1AB21BEA07FD009C1CF5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BB1AB11BEA07FD009C1CF5 /* libz.dylib */; };
 		04BEA5CC1BD13B7F000D45BB /* img_header_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BEA5CB1BD13B7F000D45BB /* img_header_default.png */; };
-		04BEA5D01BD2285B000D45BB /* SegTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEA5CF1BD2285B000D45BB /* SegTabBarView.m */; };
 		04BEA5D91BD229F8000D45BB /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEA5D71BD229F8000D45BB /* MessageCell.m */; };
 		04BEA5DA1BD229F8000D45BB /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BEA5D81BD229F8000D45BB /* MessageCell.xib */; };
 		04BEA5DD1BD4BEA4000D45BB /* FriendsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BEA5DC1BD4BEA4000D45BB /* FriendsHeadView.m */; };
@@ -836,8 +835,6 @@
 		04BB1AAD1BEA0142009C1CF5 /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
 		04BB1AB11BEA07FD009C1CF5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		04BEA5CB1BD13B7F000D45BB /* img_header_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_header_default.png; sourceTree = "<group>"; };
-		04BEA5CE1BD2285B000D45BB /* SegTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegTabBarView.h; sourceTree = "<group>"; };
-		04BEA5CF1BD2285B000D45BB /* SegTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegTabBarView.m; sourceTree = "<group>"; };
 		04BEA5D61BD229F8000D45BB /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
 		04BEA5D71BD229F8000D45BB /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		04BEA5D81BD229F8000D45BB /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
@@ -904,8 +901,6 @@
 				040072D01BC793C5009AC7AD /* MessageViewController.h */,
 				040072D11BC793C5009AC7AD /* MessageViewController.m */,
 				040072D21BC793C5009AC7AD /* MessageViewController.xib */,
-				04BEA5CE1BD2285B000D45BB /* SegTabBarView.h */,
-				04BEA5CF1BD2285B000D45BB /* SegTabBarView.m */,
 				04BEA5D61BD229F8000D45BB /* MessageCell.h */,
 				04BEA5D71BD229F8000D45BB /* MessageCell.m */,
 				04BEA5D81BD229F8000D45BB /* MessageCell.xib */,
@@ -2037,6 +2032,7 @@
 					};
 					04D31D581BA00F6E00EA3DC2 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = S876CMQRKA;
 						TestTargetID = 04D31D3C1BA00F6E00EA3DC2;
 					};
 				};
@@ -2295,7 +2291,6 @@
 				048867F61BAFE26E00BFFC2B /* MJRefreshConst.m in Sources */,
 				046D5AF71BF8D0F400053F4F /* PresentFriendsHeadView.m in Sources */,
 				047A7C0B1BD76F1E0082F3C6 /* HomeCell.m in Sources */,
-				04BEA5D01BD2285B000D45BB /* SegTabBarView.m in Sources */,
 				048868211BAFE2B500BFFC2B /* SDWebImageDownloader.m in Sources */,
 				04A4ED261BF7364400206304 /* UIImage+Scale.m in Sources */,
 				048868921BAFF08800BFFC2B /* UIUtils.m in Sources */,
@@ -2412,6 +2407,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2434,6 +2430,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2455,6 +2452,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2470,6 +2468,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2480,6 +2479,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
@@ -2515,6 +2515,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
@@ -2549,6 +2550,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2560,6 +2563,7 @@
 				INFOPLIST_FILE = DatastreamBankTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DatastreamBank.app/DatastreamBank";
 			};
 			name = Debug;
@@ -2568,6 +2572,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2575,6 +2581,7 @@
 				INFOPLIST_FILE = DatastreamBankTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DatastreamBank.app/DatastreamBank";
 			};
 			name = Release;

@@ -7,6 +7,7 @@
 //
 
 #import "UserInfoManager.h"
+#import "NSString+Phone.h"
 
 @implementation UserInfoManager
 

@@ -13,7 +13,7 @@
 #import "AuthorityHelper.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "ApplyFriendsViewController.h"
-
+#import "IoContactCell.h"
 
 @interface IoContactViewController ()
 @property (nonatomic, assign) ABAddressBookRef addressBookRef;
@@ -210,23 +210,37 @@
 
 #pragma mark - cell代理 
 -(void)click:(NSIndexPath *)indexPath {
-    MyLog(@"===%ld",(long)indexPath.row);
-    IoContact *user = [self.contacts objectAtIndex:indexPath.row];
-    NSString *phone = [NSString formatPhoneNum:user.phone];
-    if (self.isAdd) {
-        [self fdapplyfor:phone];
-    } else {
-        if (self.delegate) {
-            [self.delegate selectedPhone:phone];
+//    MyLog(@"===%ld",(long)indexPath.row);
+    @try {
+        IoContact *user = [self.filteredContacts objectAtIndex:indexPath.row];
+        NSString *phone = [NSString formatPhoneNum:user.phone];
+        if (self.isAdd) {
+            [self fdapplyfor:phone];
+        } else {
+            if (self.delegate) {
+                [self.delegate selectedPhone:phone];
+            }
+            [self.navigationController popViewControllerAnimated:YES];
         }
-        [self.navigationController popViewControllerAnimated:YES];
     }
+    @catch (NSException *exception) {
+        MyLog(@"===error%@",exception);
+    }
+    @finally {
+        
+    }
+    
 }
 
 #pragma mark - 查询用户信息
 -(void)fdapplyfor:(NSString *)fdmobile {
+//    MyLog(@"%@",fdmobile);
+    if ([fdmobile isEqualToString:[UserInfoManager readObjectByKey:ican_mobile]]) {
+        [self alert:@"提示" msg:@"不能添加自己为好友"];
+        return;
+    }
     MBProgressHUD *toast = [[MBProgressHUD alloc] initWithView:self.view];
-    toast.labelText = @"查询中";
+    toast.labelText = @"正在查询";
     toast.mode = MBProgressHUDModeIndeterminate;
     [self.view addSubview:toast];
     [toast show:YES];
@@ -243,7 +257,7 @@
                                  };
     [manager POST:[BaseUrlString stringByAppendingString:@"fdapplyfor.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [toast hide:YES];
-        MyLog(@"%@",responseObject);
+//        MyLog(@"%@",responseObject);
         NSString *result = [responseObject objectForKey:@"result"];
         NSString *resultMsg = [responseObject objectForKey:@"resultMsg"];
         if ([result isEqualToString:@"00"]) {
@@ -269,7 +283,7 @@
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [toast hide:YES];
-        NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
+        NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",(long)error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
         [self alert:@"提示信息" msg:param];
     }];
     

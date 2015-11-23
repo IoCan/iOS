@@ -84,7 +84,7 @@
             return formatStr;
         }
     }
-    else if ([phone containsString:@"-"])
+    else if ([phone rangeOfString:@"-"].length > 0)
     {
 
         //1. 去除掉首尾的空白字符和换行字符

@@ -53,7 +53,7 @@
     NSString *score = [UserInfoManager readObjectByKey:ican_score];
     NSString *headpath = [UserInfoManager readObjectByKey:ican_headpath];
     self.tableHeadView.label_userphone.text = [NSString stringWithFormat:@"账户：%@",mobile];
-    self.tableHeadView.label_virtualflow.text = [NSString stringWithFormat:@"备胎余额：%ldM",virtualflow];
+    self.tableHeadView.label_virtualflow.text = [NSString stringWithFormat:@"备胎余额：%ldM",(long)virtualflow];
     self.tableHeadView.label_score.text = [NSString stringWithFormat:@"当前积分：%@",score];
     if (headpath!=nil && headpath.length>10) {
         NSString *headurl = [BaseUrlString stringByAppendingString:headpath];
@@ -155,7 +155,9 @@
     if ([[self getVauleForDicByGroup:2 selectRow:0] isEqualToString:selabel]) {
         //注销
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"注销后将会移除本地缓存历史数据，下次登录将会加载最新数据。" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"注销" otherButtonTitles:nil, nil];
-        [actionSheet showInView:self.view];
+        actionSheet.tag = 200;
+        [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
+//        [actionSheet showInView:self.view];
     }
     if (viewCtrl) {
         [self.navigationController pushViewController:viewCtrl animated:YES];
@@ -166,14 +168,20 @@
 
 #pragma mark -UIActionSheet delegate
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 0) {
-        [self toast:self.view cotent:@"注销成功"];
-        [UserInfoManager clear];
-        [UserInfoManager updateWithObject:@"100" forKey:ican_isfirst];
-        UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
-        AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
-        deleteview.window.rootViewController = loginCtrl;
+    if (actionSheet.tag == 200) {
+        if (buttonIndex == 0) {
+            [self toast:self.view cotent:@"注销成功"];
+            [UserInfoManager clear];
+            [UserInfoManager updateWithObject:@"100" forKey:ican_isfirst];
+            UserLoginViewController *loginCtrl = [[UserLoginViewController alloc] init];
+            AppDelegate *deleteview =  (AppDelegate *)[UIApplication sharedApplication].delegate;
+            deleteview.window.rootViewController = loginCtrl;
+        }
+        if (buttonIndex == 1) {
+            
+        }
     }
+    
     
 }
 

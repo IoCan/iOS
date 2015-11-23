@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.label_bottom.hidden = YES;
-    if ([_url containsString:@"http"]) {
+    if ([_url hasPrefix:@"http"]) {
         self.title = @"加载中...";
         NSURL *url = [NSURL URLWithString:_url];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];

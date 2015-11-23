@@ -40,7 +40,7 @@
 
 
 -(void)layoutSubviews{
-    [super layoutSubviews];
+    
     self.frame = CGRectMake(0, 0, ScreenWidth, 160);
     UIImage *buttonImage = [UIImage imageNamed:@"mine_btn_bg.png"];
     UIEdgeInsets insets = UIEdgeInsetsMake(8, 12, 8, 12);
@@ -53,6 +53,7 @@
     _img_userhead.layer.borderColor = [UIColor whiteColor].CGColor;
     _img_userhead.layer.borderWidth = 2;
     _img_userhead.clipsToBounds = YES;
+    [super layoutSubviews];
 }
 
 

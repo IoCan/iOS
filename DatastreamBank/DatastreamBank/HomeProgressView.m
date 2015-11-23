@@ -62,7 +62,7 @@
 
 -(void)Actiondo:(UITapGestureRecognizer *)sender{
     NSString *operator = [UserInfoManager readObjectByKey:ican_operator];
-    if ([operator containsString:@"电信"]) {
+    if ([operator rangeOfString:@"电信"].length > 0) {
         FlowInfoViewController *flowCtrl = [[FlowInfoViewController alloc] init];
         [self.viewController.navigationController pushViewController:flowCtrl animated:YES];
     } else {
@@ -79,7 +79,7 @@
         float a = flow/1024.0f;
         tmp = [NSString stringWithFormat:@"%0.1fGB",a];
     } else {
-        tmp = [NSString stringWithFormat:@"%ldMB",flow];
+        tmp = [NSString stringWithFormat:@"%ldMB",(long)flow];
     }
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:tmp];
     NSInteger start = tmp.length - 2;

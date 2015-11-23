@@ -39,7 +39,7 @@
 
 -(void)setState:(NSString *)state {
     _label_state.text = [NSString stringWithFormat:@"流量操作：%@",state];
-    if ([state containsString:@"赠送"]) {
+    if ([state rangeOfString:@"赠送"].length > 0) {
         [_img_icon setImage:[UIImage imageNamed:@"icon_btxq_2"]];
     } else {
         [_img_icon setImage:[UIImage imageNamed:@"icon_btxq_1"]];

@@ -33,7 +33,7 @@
     label.textColor = [UIColor lightGrayColor];
     label.tag = 10;
     label.textAlignment = NSTextAlignmentCenter;
-    label.frame = CGRectMake(ScreenWidth/2-100, _tableView.height/2-20, 200, 40);
+    label.frame = CGRectMake(ScreenWidth/2-100, ScreenHeight/2-52, 200, 40);
     label.hidden = YES;
     [_tableView addSubview:label];
     [self loaddata];

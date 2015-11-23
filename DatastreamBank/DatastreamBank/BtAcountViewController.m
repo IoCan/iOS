@@ -16,6 +16,7 @@
 #import "RechargeViewController.h"
 #import "TimingRechargeViewController.h"
 #import "BtFlowDetailsViewController.h"
+#import "PresentFriendsViewController.h"
 
 static NSString *kcellIdentifier = @"BtAcountCell";
 static NSString *kheaderIdentifier = @"headerIdentifier";
@@ -133,6 +134,7 @@ static NSString *kfooterIdentifier = @"footerIdentifier";
             break;
         case 3:
             //赠送给TA
+            ctrl = [[PresentFriendsViewController alloc] init];
             break;
         case 4:
             //流量用不完

@@ -74,7 +74,8 @@ int secondsCountDown;
     if (textField.tag == 1) {
         if ([NSString isMobileNumber:text]) {
             NSString *codeStr = [_btn_code titleForState:UIControlStateNormal];
-            if (![codeStr containsString:@"重新获取"]) {
+            NSRange range = [codeStr rangeOfString:@"新获取"];
+            if (range.length == 0) {
                 [_btn_code setEnabled:YES];
                 [_btn_code setBackgroundColor:RGBA(124, 206, 183, 1.0)];
             }

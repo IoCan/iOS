@@ -33,7 +33,19 @@
 }
 
 -(void)action_add:(id)sender {
-    [self.delegate click:self.indexPath];
+    @try {
+//        NSLog(@"%@",self.indexPath);
+        if (self.delegate) {
+            [self.delegate click:self.indexPath];
+        }
+    }
+    @catch (NSException *exception) {
+        MyLog(@"===:%@",exception);
+    }
+    @finally {
+        
+    }
+   
 }
 
 -(void)setPhone:(NSString *)phone {

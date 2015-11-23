@@ -91,7 +91,7 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [toast hide:YES];
-        NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
+        NSString *param = [NSString stringWithFormat:@"请求错误码：%ld,%@",(long)error.code, [error.userInfo objectForKey:@"NSLocalizedDescription"]];
         [self alert:@"提示" msg:param];
     }];
     

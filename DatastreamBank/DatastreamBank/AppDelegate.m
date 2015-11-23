@@ -49,7 +49,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     NSString *mobile = [UserInfoManager readObjectByKey:ican_mobile];
-//   [UserInfoManager updateWithObject:@"1020" forKey:ican_isfirst];
     NSString *first = [UserInfoManager readObjectByKey:ican_isfirst];
     if ([@"100" isEqualToString:first]) {
         if ([NSString isMobileNumber:mobile]) {
@@ -57,7 +56,6 @@
             RDVTabBarController *tabBarController = [[[MainViewController alloc] init] setupViewControllers];
             [self.window setRootViewController:tabBarController];
             [self.window makeKeyAndVisible];
-            //        [self customizeInterface];
         } else {
             //登录页面
             UserLoginViewController *login = [[UserLoginViewController alloc] init];

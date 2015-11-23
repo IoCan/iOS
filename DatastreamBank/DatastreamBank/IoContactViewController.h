@@ -7,8 +7,8 @@
 //
 
 #import "BaseViewController.h"
-#import "IoContactCell.h"
 #import "NSString+Phone.h"
+#import "CellClickDelegate.h"
 
 @protocol SelectedPhoneDelegate <NSObject>
 

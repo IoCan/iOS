@@ -30,13 +30,14 @@
 }
 
 -(void)layoutSubviews{
-    [super layoutSubviews];
+    
     self.frame = CGRectMake(0, 0, ScreenWidth, 60);
     _bg_view.layer.borderColor = RGBA(229, 229, 229, 1.0).CGColor;
     _bg_view.layer.borderWidth = 0.8f;
     _bg_view.layer.cornerRadius = _bg_view.height/2;
     _bg_view.clipsToBounds = YES;
     _txt_phone.delegate = self;
+    [super layoutSubviews];
     //根据号码查询注册信息 fdapplyfor.do
     //参数 mobile password fdmobile
     
@@ -72,7 +73,7 @@
 
 
 - (IBAction)action_add:(id)sender {
-    [_txt_phone resignFirstResponder];
+//    [_txt_phone resignFirstResponder];
     InviteFriendsViewController *iCtrl = [[InviteFriendsViewController alloc] init];
     [self.viewController.navigationController pushViewController:iCtrl animated:YES];
 }

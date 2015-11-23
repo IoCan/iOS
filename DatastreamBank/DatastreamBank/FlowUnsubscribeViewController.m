@@ -90,7 +90,7 @@
             [self toast:self.view cotent:@"请输入数字类型"];
             return NO;
         }
-        NSString *text = textField.text;
+        NSString *text;
         //如果string为空，表示删除
         if (string.length > 0) {
             text = [NSString stringWithFormat:@"%@%@",textField.text,string];

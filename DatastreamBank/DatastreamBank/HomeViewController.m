@@ -213,10 +213,10 @@
 -(void)loadUnReadMsgNum:(NSTimer *) timer{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
-                                 ican_password:[UserInfoManager readObjectByKey:ican_password]};
+//    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+//                                 ican_password:[UserInfoManager readObjectByKey:ican_password]};
     //**********************未读信息总数量查询************************//
-    parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
                    ican_password:[UserInfoManager readObjectByKey:ican_password],
                    @"type":@""};
     [manager POST:[BaseUrlString stringByAppendingString:@"msgcount.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -306,7 +306,7 @@
 
 #pragma mark - Collection View Data Source
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    NSInteger count;
+    NSInteger count = 0;
     if ([_collectionView isEqual:collectionView]) {
         count = _data.count;
     }

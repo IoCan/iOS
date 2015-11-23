@@ -58,20 +58,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.view.frame = CGRectMake(0,0,ScreenWidth,ScreenHeight);
     [self loaddata];
-    
 }
 
 
 -(void)loaddata {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
-                                 ican_password:[UserInfoManager readObjectByKey:ican_password]};
-
     //**********************消息查询************************//
-    parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
                    ican_password:[UserInfoManager readObjectByKey:ican_password],
                    @"today":@""};
     [manager POST:[BaseUrlString stringByAppendingString:@"sysmessagequery.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -83,8 +78,6 @@
                 NSMutableArray *btdata = [[NSMutableArray alloc] initWithArray:[data filteredArrayUsingPredicate:predicate]];
                 NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"self.%@ contains[cd] %@", @"sm.type", @"sysinfo"];
                 NSMutableArray *yhdata = [[NSMutableArray alloc] initWithArray:[data filteredArrayUsingPredicate:predicate2]];
-               
-                
                 _dataSource = [[NSMutableArray alloc] initWithCapacity:_tabCount];
                 [_dataSource addObject:yhdata];
                 [_dataSource addObject:btdata];
@@ -131,16 +124,6 @@
 }
 
 
-
-#pragma mark * UIPanGestureRecognizer delegate
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    //    NSString *str = [NSString stringWithUTF8String:object_getClassName(gestureRecognizer)];
-    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-        CGPoint translation = [(UIPanGestureRecognizer *)gestureRecognizer translationInView:self.view];
-        return fabs(translation.x) > fabs(translation.y);
-    }
-    return YES;
-}
 
 #pragma mark -- 实例化ScrollView
 -(void) initScrollView{
@@ -285,11 +268,9 @@
 -(void)updatedata {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
-                                 ican_password:[UserInfoManager readObjectByKey:ican_password]};
     
     //**********************消息查询************************//
-    parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
                    ican_password:[UserInfoManager readObjectByKey:ican_password],
                    @"today":@""};
     [manager POST:[BaseUrlString stringByAppendingString:@"sysmessagequery.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -563,15 +544,21 @@
 
 -(UITableViewCell *)tableView:tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+//    
+//    BOOL nibsRegistered=NO;
+//    if (!nibsRegistered) {
+//        UINib *nib=[UINib nibWithNibName:@"MessageCell" bundle:nil];
+//        [tableView registerNib:nib forCellReuseIdentifier:@"MessageCell"];
+//        nibsRegistered=YES;
+//    }
+//    
+//    MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
     
-    BOOL nibsRegistered=NO;
-    if (!nibsRegistered) {
-        UINib *nib=[UINib nibWithNibName:@"MessageCell" bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:@"MessageCell"];
-        nibsRegistered=YES;
+    static NSString *identify = @"MessageCell";
+    MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
+    if (cell == nil) {
+        cell = [[MessageCell alloc] initWithFrame:CGRectZero];
     }
-    
-    MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
     if ([tableView isEqual:_scrollTableViews[_currentPage%3]]) {
         NSDictionary *dic = _dataSource[_currentPage][indexPath.row];
         NSDictionary *sm = [dic objectForKey:@"sm"];

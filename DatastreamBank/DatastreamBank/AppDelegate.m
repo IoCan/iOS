@@ -10,10 +10,6 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "RDVTabBarController.h"
 #import "RDVTabBarItem.h"
-#import "HomeViewController.h"
-#import "MineViewController.h"
-#import "FriendsViewController.h"
-#import "MessageViewController.h"
 #import "BaseNavigationController.h"
 #import "UserLoginViewController.h"
 #import "NSString+Phone.h"
@@ -24,6 +20,7 @@
 #import "MyOrderViewController.h"
 #import "GuideViewController.h"
 #import "MainViewController.h"
+#import "UncaughtExceptionHandler.h"
 
 @interface AppDelegate ()
 
@@ -38,6 +35,7 @@
     [application setStatusBarStyle:UIStatusBarStyleLightContent];//设置全局状态栏颜色
     [application setStatusBarHidden:NO]; //启动的时候设置显示, 启动后要打开
     [WXApi registerApp:APP_ID withDescription:@"流量备胎"];
+    InstallUncaughtExceptionHandler();
     NSString *bundledPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"IoCanImages"];
     [[SDImageCache sharedImageCache] addReadOnlyCachePath:bundledPath];
     

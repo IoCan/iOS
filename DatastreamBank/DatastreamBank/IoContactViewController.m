@@ -74,18 +74,28 @@
 -(void)getContactsFromAddressBook
 {
     CFErrorRef error = NULL;
-    self.contacts = [[NSMutableArray alloc]init];
+//    self.contacts = [[NSMutableArray alloc]init];
     
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, &error);
     if (addressBook) {
-        NSArray *allContacts = (__bridge_transfer NSArray*)ABAddressBookCopyArrayOfAllPeople(addressBook);
         _contacts = [[NSMutableArray alloc] init];
-        
-        NSUInteger i = 0;
-        for (i = 0; i<[allContacts count]; i++)
+        NSArray *allContacts = (__bridge_transfer NSArray*)ABAddressBookCopyArrayOfAllPeople(addressBook);
+        NSUInteger count = [allContacts count];
+        for (NSUInteger i = 0; i<count; i++)
         {
-            IoContact *contact = [[IoContact alloc] init];
+           
             ABRecordRef contactPerson = (__bridge ABRecordRef)allContacts[i];
+            
+            // Get mobile number
+            ABMultiValueRef phonesRef = ABRecordCopyValue(contactPerson, kABPersonPhoneProperty);
+            NSString *phone = [self getMobilePhoneProperty:phonesRef];
+         
+            if(phonesRef) {
+                CFRelease(phonesRef);
+            }
+            
+            // Get image if it exists
+            IoContact *contact = [[IoContact alloc] init];
             contact.recordId = ABRecordGetRecordID(contactPerson);
             
             // Get first and last names
@@ -95,25 +105,16 @@
             // Set Contact properties
             contact.firstName = firstName;
             contact.lastName = lastName;
-            
-            // Get mobile number
-            ABMultiValueRef phonesRef = ABRecordCopyValue(contactPerson, kABPersonPhoneProperty);
-            NSString *phone = [self getMobilePhoneProperty:phonesRef];
+
             NSString *tmp = [NSString formatPhoneNum:phone];
-            if(phonesRef) {
-                CFRelease(phonesRef);
-            }
-            
-            // Get image if it exists
-            NSData  *imgData = (__bridge_transfer NSData *)ABPersonCopyImageData(contactPerson);
-            contact.image = [UIImage imageWithData:imgData];
-            if (!contact.image) {
-                contact.image = [UIImage imageNamed:@"icon-avatar-60x60"];
-            }
-            
-            if (tmp.length == 11 && [tmp hasPrefix:@"1"]) {
+            if ([NSString isMobileNumber:tmp]) {
                 contact.phone = phone;
                 contact.showphone = tmp;
+                NSData  *imgData = (__bridge_transfer NSData *)ABPersonCopyImageData(contactPerson);
+                contact.image = [UIImage imageWithData:imgData];
+                if (!contact.image) {
+                    contact.image = [UIImage imageNamed:@"icon-avatar-60x60"];
+                }
                 [self.contacts addObject:contact];
             }
         }
@@ -300,7 +301,7 @@
         if (string.length>0 && ![NSString isPureInt:string]) {
             return NO;
         }
-        NSString *text = textField.text;
+        NSString *text;
         //如果string为空，表示删除
         if (string.length > 0) {
             text = [NSString stringWithFormat:@"%@%@",textField.text,string];

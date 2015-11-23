@@ -176,7 +176,7 @@
         }
     } else {
     
-        UIImagePickerControllerSourceType sourceType;
+        UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
         if (buttonIndex == 0) {
             
             NSString *mediaType = AVMediaTypeVideo;

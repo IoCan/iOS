@@ -62,11 +62,11 @@
 -(void)loadFriends {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
-                                 ican_password:[UserInfoManager readObjectByKey:ican_password]};
+//    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+//                                 ican_password:[UserInfoManager readObjectByKey:ican_password]};
     
     //**********************朋友圈查询************************//
-    parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
+    NSDictionary *parameters = @{ican_mobile: [UserInfoManager readObjectByKey:ican_mobile],
                    ican_password:[UserInfoManager readObjectByKey:ican_password]};
     [manager POST:[BaseUrlString stringByAppendingString:@"friendquery.do"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         @try {

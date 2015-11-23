@@ -23,7 +23,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Av0-Vk-qQt" userLabel="TopView">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="210"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_gywm_bt" translatesAutoresizingMaskIntoConstraints="NO" id="VnM-D1-RBK">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_gywm_bt" translatesAutoresizingMaskIntoConstraints="NO" id="VnM-D1-RBK">
                             <rect key="frame" x="260" y="50" width="80" height="80"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>

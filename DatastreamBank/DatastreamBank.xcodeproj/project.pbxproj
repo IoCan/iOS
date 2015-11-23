@@ -12,6 +12,7 @@
 		040072D41BC793C5009AC7AD /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040072D21BC793C5009AC7AD /* MessageViewController.xib */; };
 		040A406C1BF332D000D67DC7 /* MessageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A406B1BF332D000D67DC7 /* MessageInfo.m */; };
 		040A406F1BF332E700D67DC7 /* MsgInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A406E1BF332E700D67DC7 /* MsgInfo.m */; };
+		0421C0BF1C02F7DA00E21B28 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421C0BE1C02F7DA00E21B28 /* UncaughtExceptionHandler.m */; };
 		043020061BCBA98A008EF0FF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043020041BCBA98A008EF0FF /* FeedbackViewController.m */; };
 		043020071BCBA98A008EF0FF /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043020051BCBA98A008EF0FF /* FeedbackViewController.xib */; };
 		043C74511BCB84B300CF0003 /* mine_bg_aplha.png in Resources */ = {isa = PBXBuildFile; fileRef = 043C74501BCB84B300CF0003 /* mine_bg_aplha.png */; };
@@ -316,6 +317,8 @@
 		040A406B1BF332D000D67DC7 /* MessageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageInfo.m; sourceTree = "<group>"; };
 		040A406D1BF332E700D67DC7 /* MsgInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgInfo.h; sourceTree = "<group>"; };
 		040A406E1BF332E700D67DC7 /* MsgInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgInfo.m; sourceTree = "<group>"; };
+		0421C0BD1C02F7DA00E21B28 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		0421C0BE1C02F7DA00E21B28 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		043020031BCBA98A008EF0FF /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		043020041BCBA98A008EF0FF /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		043020051BCBA98A008EF0FF /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
@@ -1240,6 +1243,8 @@
 		047B0F391BE1F2B300C516C8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0421C0BD1C02F7DA00E21B28 /* UncaughtExceptionHandler.h */,
+				0421C0BE1C02F7DA00E21B28 /* UncaughtExceptionHandler.m */,
 				04A4768B1BE21D880030580C /* UIDeviceHardware.h */,
 				04A4768C1BE21D880030580C /* UIDeviceHardware.m */,
 				047B0F3A1BE1F2E100C516C8 /* NSString+Phone.h */,
@@ -2214,6 +2219,7 @@
 				048868B61BAFF4A700BFFC2B /* MJFoundation.m in Sources */,
 				043020061BCBA98A008EF0FF /* FeedbackViewController.m in Sources */,
 				04D31D491BA00F6E00EA3DC2 /* DatastreamBank.xcdatamodeld in Sources */,
+				0421C0BF1C02F7DA00E21B28 /* UncaughtExceptionHandler.m in Sources */,
 				048868BB1BAFF4A700BFFC2B /* NSObject+MJCoding.m in Sources */,
 				047A7C201BD8C0C80082F3C6 /* BenefitsViewController.m in Sources */,
 				0488682A1BAFE2B500BFFC2B /* UIImageView+WebCache.m in Sources */,

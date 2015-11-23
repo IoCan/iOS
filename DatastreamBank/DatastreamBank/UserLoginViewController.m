@@ -63,7 +63,7 @@ int secondsCountDown;
         [textField resignFirstResponder];
         return YES;
     }
-    NSString *text = textField.text;
+    NSString *text;
     //如果string为空，表示删除
     if (string.length > 0) {
         text = [NSString stringWithFormat:@"%@%@",textField.text,string];
@@ -279,16 +279,16 @@ int secondsCountDown;
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [[self rdv_tabBarController] setTabBarHidden:YES animated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//    [[self rdv_tabBarController] setTabBarHidden:YES animated:YES];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
+//}
 
 
 -(void)dealloc{

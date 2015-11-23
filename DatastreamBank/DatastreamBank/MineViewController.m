@@ -254,8 +254,8 @@
         if (![version isEqualToString:localVersion])
         {
             [self changeUpdateState];
-            UIAlertView *createUserResponseAlert = [[UIAlertView alloc] initWithTitle:@"有新版本!" message:releaseNotes delegate:self cancelButtonTitle:@"取消" otherButtonTitles: @"更新", nil];
-            [createUserResponseAlert show];
+//            UIAlertView *createUserResponseAlert = [[UIAlertView alloc] initWithTitle:@"有新版本!" message:releaseNotes delegate:self cancelButtonTitle:@"取消" otherButtonTitles: @"更新", nil];
+//            [createUserResponseAlert show];
         } else {
           if (show) {
                 MBProgressHUD *toastsuccess = [[MBProgressHUD alloc] initWithView:view];

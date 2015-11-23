@@ -15,10 +15,9 @@
 @synthesize locate;
 
 
-- (id)initWithTitle:(NSString *)title delegate:(id /*<UIActionSheetDelegate>*/)delegate
-{
-    self = [[[NSBundle mainBundle] loadNibNamed:@"LocationSheetView" owner:self options:nil] objectAtIndex:0];
-    if (self) {
+- (id)initWithTitle:(NSString *)title delegate:(id /*<UIActionSheetDelegate>*/)delegate {
+       if (self == nil) {
+           self = [[[NSBundle mainBundle] loadNibNamed:@"LocationSheetView" owner:self options:nil] objectAtIndex:0];
         self.delegate = delegate;
         self.titleLabel.text = title;
         self.frame = CGRectMake(0, 0, ScreenWidth, 224);

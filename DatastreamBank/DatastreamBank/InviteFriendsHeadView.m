@@ -49,13 +49,13 @@
         if (string.length>0 && ![NSString isPureInt:string]) {
             return NO;
         }
-        NSString *text = textField.text;
-        //如果string为空，表示删除
-        if (string.length > 0) {
-            text = [NSString stringWithFormat:@"%@%@",textField.text,string];
-        }else{
-            text = [textField.text substringToIndex:range.location];
-        }
+//        NSString *text;
+//        //如果string为空，表示删除
+//        if (string.length > 0) {
+//            text = [NSString stringWithFormat:@"%@%@",textField.text,string];
+//        }else{
+//            text = [textField.text substringToIndex:range.location];
+//        }
         
     }
     return YES;

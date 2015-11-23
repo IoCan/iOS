@@ -75,7 +75,7 @@
 
 #pragma mark -UIActionSheet delegate
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    UIImagePickerControllerSourceType sourceType;
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     if (buttonIndex == 0) {
         
         NSString *mediaType = AVMediaTypeVideo;

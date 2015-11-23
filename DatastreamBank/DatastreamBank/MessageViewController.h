@@ -21,7 +21,7 @@
 #define default_normal_titlecolor RGBA(74,74,74,1)
 #define default_selected_titlecolor RGBA(91, 190, 211, 1)
 
-@interface MessageViewController : BaseViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate>
+@interface MessageViewController : BaseViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 
 //上方的按钮数组

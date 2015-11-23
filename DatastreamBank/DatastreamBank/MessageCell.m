@@ -15,11 +15,21 @@
 }
 
 
-
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        UIView *view = [[NSBundle mainBundle] loadNibNamed:@"MessageCell" owner:self options:nil][0];
+        self.frame =  CGRectMake(0, 0, ScreenWidth, 112);
+        [self addSubview:view];
+        
+    }
+    return self;
+}
 
 
 -(void)layoutSubviews {
     [super layoutSubviews];
+    self.contentView.frame = CGRectMake(0, 0, ScreenWidth, 112);
     _label_state.layer.borderColor = RGBA(209, 209, 209, 1).CGColor;
     _label_state.layer.backgroundColor = RGBA(209, 209, 209, 1).CGColor;
     _label_state.layer.borderWidth = 2.0f;

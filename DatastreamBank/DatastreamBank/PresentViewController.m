@@ -72,17 +72,17 @@
         if (string.length>0 && ![NSString isPureInt:string]) {
             return NO;
         }
-        NSString *text = textField.text;
+        NSString *text;
         //如果string为空，表示删除
         if (string.length > 0) {
             text = [NSString stringWithFormat:@"%@%@",textField.text,string];
         }else{
             text = [textField.text substringToIndex:range.location];
         }
-        int tmpflow = [text intValue];
-        if (tmpflow > _virtualflow) {
-            tmpflow = _virtualflow;
-        }
+//        int tmpflow = [text intValue];
+//        if (tmpflow > _virtualflow) {
+//            tmpflow = _virtualflow;
+//        }
         if ([text intValue] > _virtualflow) {
             _txt_flow.text = @"";
             _txt_flow.text = [NSString stringWithFormat:@"%d",_virtualflow];

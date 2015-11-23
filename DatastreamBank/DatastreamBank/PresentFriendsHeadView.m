@@ -56,7 +56,7 @@
         if (string.length>0 && ![NSString isPureInt:string]) {
             return NO;
         }
-        NSString *text = textField.text;
+        NSString *text;
         //如果string为空，表示删除
         if (string.length > 0) {
             text = [NSString stringWithFormat:@"%@%@",textField.text,string];
